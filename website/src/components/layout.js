@@ -33,7 +33,7 @@ const Layout = ({ pageTitle, children }) => {
           </li>
           <li className={navLinkItem}>
             <Link to="/about" className={navLinkText}>
-              ¿Quienes somos?
+              ¿Quiénes somos?
             </Link>
           </li>
           <li className={navLinkItem}>
