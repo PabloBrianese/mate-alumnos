@@ -1,0 +1,292 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a17:906:4102:0:0:0:0 with SMTP id j2csp349864ejk;
+        Fri, 6 Aug 2021 08:05:58 -0700 (PDT)
+X-Received: by 2002:a25:9b03:: with SMTP id y3mr12310136ybn.264.1628262358304;
+        Fri, 06 Aug 2021 08:05:58 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1628262358; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fd5171YMY2guklcuBiJsTUXOk3yNVPI84CKsxKNRN11sYOjulfIZEGi5/8cjMTEfa1
+         PvLH77tOuzUYcDRoGAyc7Qm3SyVDpq7fOav0qFm4QArheeNP/zFU2MfZHHsNn//8S1AG
+         pE0jSVNxPutZ0+DSN94ijiX21oGiqXNP2t9Rl1ZFziEqOneVrXgkk2SQ6VjnYFmWtFCl
+         7cPSjn+pYqZDMex9eiW9LGKaO7ldqKcuV7UW4UA0JBUjNa/JctqGTGxq0qZs/T5vqbAS
+         G02r4ile+3QUbD18LejQNOk07Fd707vPmCKXJmfrX0z2k/z5Tu6ybG0FpEyMVt0JeGL7
+         G0Mw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=AF6XYrDIb5w5dfmjnKYftey7JVQd+cIN4lUyqTOCcU0=;
+        b=Cr05UIr8cbV7brw86bLX5TxgQxTmhtpPJi0r+qTzHsU+XtT9K+E7XEHSsJjQJxsX+B
+         310rV8wl0TSHJEdqhWdTJD0EUSsTw+XIY6AAvD2qLtcZv+4oKREdGgWW6S0gnktMtbDh
+         RTkRHBptOGaW0cXCRVroRlbcn3zwYUmcB3Jx5+LaVFAXR/34CN5JSMWnkmdJ3lTpQcOn
+         diKsI2mxUDLOSvG3DsX5yGidfl3fTFPWSD0hlWctRdXMK9lDnH0FB5hXzvrFLjMTk64Y
+         ozpAq8doGBNYyj4/vvgg9Lfteaeji+YaoKLRWpd4rvgXUSh4wrbgkjVZRVDLbgvFE+wq
+         K1zA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=WnBN5pQn;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id t10sor2915818ybg.108.2021.08.06.08.05.58
+        (Google Transport Security);
+        Fri, 06 Aug 2021 08:05:58 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=WnBN5pQn;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=AF6XYrDIb5w5dfmjnKYftey7JVQd+cIN4lUyqTOCcU0=;
+        b=WnBN5pQnYRSHZ+/KDq7I6U7HxDIrkKDT7J+ROKj8SMao758UqV4IedLWXQvl3S3QPD
+         lgAdadjGBCXe+nVyqvSRnccxCbG523wZWl38MJDxIHg0P++N+oBLQpZxEO3cQrv5KXDQ
+         sDYUk0VsOkbWq42+ZSx05VjB+UhjqjmhtfbjbGLXXS+/oL1WQUvKZu+stf9rXqCh5Lru
+         WLkqyIrxm8CYw0lkbrpOvLk48WzEAUhkluAS9lG0jG8SjcnNJ4AyNY4fNQ8epirOkpEG
+         YTj6+gbOr58AGSzq/uX8gn+RkHcilxGdv6HCcEUubAbbWIBZMIhMWpvtFLcCQnffimcO
+         hPzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=AF6XYrDIb5w5dfmjnKYftey7JVQd+cIN4lUyqTOCcU0=;
+        b=cyVJNQq3ytVNvnZzr8wqaI0ILQYcCvMe3Vf/Yu89GBTFsxw8mQf9WNDSLKuoYxPukW
+         u/BnJOe4AUqAFz7IqYQP2SXUZDPXzS4wDZi92QVFgNmIuBT9UcfGf/QER58cRllTdiX4
+         5QaeRMvRdaF/IoRPfaiaKbJCGxT8lC9uy3H/AYo6HKTc9G84VgnDDuxNnSOq23bVSxdr
+         TCi9P9O7wtZJLelDcREEmL8go45OtAhJhV6+0i9Fgr6h8MhX+ZDKy2jOSN7MOYuSkfUv
+         i1S41z3r4qAXh1ye/jHoskoXD8YSUyKtIMppesp2aHoETI04i40JCEPJgmcV0zyYKYe+
+         UUjg==
+X-Gm-Message-State: AOAM532VLJepDHCZ69Ue3XU6SclAjBA80vdu0174/hIF7/FZnhTyqjXJ
+	rUMavdhzK0TC9LsDEpHHHrMkqTX3uxfqb5qLefs=
+X-Google-Smtp-Source: ABdhPJy53J2DVvorcCBYRFEj8F5R2GhLMwbRpocpg7ThimHbcOPppcLsOKZQGh5bz8RbX6QrwWsudNK/HoBXEAZMrz4=
+X-Received: by 2002:a25:2785:: with SMTP id n127mr13358638ybn.235.1628262357950;
+ Fri, 06 Aug 2021 08:05:57 -0700 (PDT)
+MIME-Version: 1.0
+References: <10349af03b0a058785f3418f4e72be1e@mate.unlp.edu.ar>
+In-Reply-To: <10349af03b0a058785f3418f4e72be1e@mate.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Fri, 6 Aug 2021 12:05:47 -0300
+Message-ID: <CAN5uefbR+7Tr4n-OjfS5T9_RPempoa1V-O=rFLFi5wz+EzB75g@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Materias_optativas_2do_cuatrimestre_2021=2C_Depar?=
+	=?UTF-8?Q?tamento_de_Matem=C3=A1tica?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, unlplnr2019ak@gmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000072635d05c8e55ff6"
+
+--00000000000072635d05c8e55ff6
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: secre <secre@mate.unlp.edu.ar>
+Date: vie, 6 ago 2021 a las 11:28
+Subject: Materias optativas 2do cuatrimestre 2021, Departamento de
+Matem=C3=A1tica
+To: Secretar=C3=ADa de Asuntos Estudiantiles <estudia@exactas.unlp.edu.ar>,=
+ <
+secre@fisica.unlp.edu.ar>, <secretaria.academica@info.unlp.edu.ar>,
+Departamento Ciencias exactas y Naturales <deptoceyn@fahce.unlp.edu.ar>,
+Alumnos mate <alumnosm@gmail.com>
+
+
+El Departamento de Matem=C3=A1tica de la Facultad de Ciencias Exactas
+ofrecer=C3=A1 el dictado de las siguientes
+materias optativas para el segundo cuatrimestre 2021:
+
+-Temas de Probabilidades(Grado), Prof. Alberto Maltz
+(alberto@mate.unlp.edu.ar)
+
+-Teor=C3=ADa de Galois (Grado y posgrado), Prof. Gast=C3=B3n Garc=C3=ADa
+(ggarcia@mate.unlp.edu.ar)
+
+-Algebra del c=C3=A1lculo proposicional y aplicaciones (Grado y posgrado),
+Prof. Hern=C3=A1n San Mart=C3=ADn (hsanmartin@mate.unlp.edu.ar)
+
+-M=C3=A9todos de geometr=C3=ADa diferencial en teor=C3=ADa de la informaci=
+=C3=B3n (Grado y
+Posgrado), Prof. Mariela Portesi (portesi@fisica.unlp.edu.ar)
+
+-Teor=C3=ADa de grafos (Grado), Prof. Pablo De Caria
+(pdecaria@mate.unlp.edu.ar)
+
+-An=C3=A1lisis Arm=C3=B3nico (Grado y posgrado), Prof. Irene Drelichman
+(idrelichman@mate.unlp.edu.ar)
+
+-Una introducci=C3=B3n a los conjuntos y sistemas borrosos (Grado y
+posgrado), Prof. Jos=C3=A9 Luis Castiglioni (jlc@mate.unlp.edu.ar)
+
+-Estad=C3=ADstica I (Grado), Prof. Nadia Kudraszow
+(nkudraszow@mate.unlp.edu.ar)
+
+-M=C3=A9todos num=C3=A9ricos de optimizaci=C3=B3n con restricciones (Grado =
+y
+posgrado), Prof. Ra=C3=BAl Vignau (rpvignau@gmail.com)
+
+Se solicita a los interesados comunicarse con el docente
+correspondiente.
+
+Saludos cordiales
+
+--=20
+Departamento de Matem=C3=A1tica
+Facultad de Ciencias Exactas
+UNLP
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--00000000000072635d05c8e55ff6
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">secre</strong> <span dir=3D"auto">&lt;<a=
+ href=3D"mailto:secre@mate.unlp.edu.ar">secre@mate.unlp.edu.ar</a>&gt;</spa=
+n><br>Date: vie, 6 ago 2021 a las 11:28<br>Subject: Materias optativas 2do =
+cuatrimestre 2021, Departamento de  Matem=C3=A1tica<br>To: Secretar=C3=ADa =
+de Asuntos Estudiantiles &lt;<a href=3D"mailto:estudia@exactas.unlp.edu.ar"=
+>estudia@exactas.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secre@fisica.u=
+nlp.edu.ar">secre@fisica.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secret=
+aria.academica@info.unlp.edu.ar">secretaria.academica@info.unlp.edu.ar</a>&=
+gt;, Departamento Ciencias exactas y  Naturales &lt;<a href=3D"mailto:depto=
+ceyn@fahce.unlp.edu.ar">deptoceyn@fahce.unlp.edu.ar</a>&gt;, Alumnos mate &=
+lt;<a href=3D"mailto:alumnosm@gmail.com">alumnosm@gmail.com</a>&gt;<br></di=
+v><br><br>El Departamento de Matem=C3=A1tica de la Facultad de Ciencias Exa=
+ctas <br>
+ofrecer=C3=A1 el dictado de las siguientes<br>
+materias optativas para el segundo cuatrimestre 2021:<br>
+<br>
+-Temas de Probabilidades(Grado), Prof. Alberto Maltz <br>
+(<a href=3D"mailto:alberto@mate.unlp.edu.ar" target=3D"_blank">alberto@mate=
+.unlp.edu.ar</a>)<br>
+<br>
+-Teor=C3=ADa de Galois (Grado y posgrado), Prof. Gast=C3=B3n Garc=C3=ADa <b=
+r>
+(<a href=3D"mailto:ggarcia@mate.unlp.edu.ar" target=3D"_blank">ggarcia@mate=
+.unlp.edu.ar</a>)<br>
+<br>
+-Algebra del c=C3=A1lculo proposicional y aplicaciones (Grado y posgrado), =
+<br>
+Prof. Hern=C3=A1n San Mart=C3=ADn (<a href=3D"mailto:hsanmartin@mate.unlp.e=
+du.ar" target=3D"_blank">hsanmartin@mate.unlp.edu.ar</a>)<br>
+<br>
+-M=C3=A9todos de geometr=C3=ADa diferencial en teor=C3=ADa de la informaci=
+=C3=B3n (Grado y <br>
+Posgrado), Prof. Mariela Portesi (<a href=3D"mailto:portesi@fisica.unlp.edu=
+.ar" target=3D"_blank">portesi@fisica.unlp.edu.ar</a>)<br>
+<br>
+-Teor=C3=ADa de grafos (Grado), Prof. Pablo De Caria <br>
+(<a href=3D"mailto:pdecaria@mate.unlp.edu.ar" target=3D"_blank">pdecaria@ma=
+te.unlp.edu.ar</a>)<br>
+<br>
+-An=C3=A1lisis Arm=C3=B3nico (Grado y posgrado), Prof. Irene Drelichman <br=
+>
+(<a href=3D"mailto:idrelichman@mate.unlp.edu.ar" target=3D"_blank">idrelich=
+man@mate.unlp.edu.ar</a>)<br>
+<br>
+-Una introducci=C3=B3n a los conjuntos y sistemas borrosos (Grado y <br>
+posgrado), Prof. Jos=C3=A9 Luis Castiglioni (<a href=3D"mailto:jlc@mate.unl=
+p.edu.ar" target=3D"_blank">jlc@mate.unlp.edu.ar</a>)<br>
+<br>
+-Estad=C3=ADstica I (Grado), Prof. Nadia Kudraszow <br>
+(<a href=3D"mailto:nkudraszow@mate.unlp.edu.ar" target=3D"_blank">nkudraszo=
+w@mate.unlp.edu.ar</a>)<br>
+<br>
+-M=C3=A9todos num=C3=A9ricos de optimizaci=C3=B3n con restricciones (Grado =
+y <br>
+posgrado), Prof. Ra=C3=BAl Vignau (<a href=3D"mailto:rpvignau@gmail.com" ta=
+rget=3D"_blank">rpvignau@gmail.com</a>)<br>
+<br>
+Se solicita a los interesados comunicarse con el docente <br>
+correspondiente.<br>
+<br>
+Saludos cordiales<br>
+<br>
+-- <br>
+Departamento de Matem=C3=A1tica<br>
+Facultad de Ciencias Exactas<br>
+UNLP<br>
+<br>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--00000000000072635d05c8e55ff6--

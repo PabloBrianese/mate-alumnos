@@ -1,0 +1,430 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a17:906:4102:0:0:0:0 with SMTP id j2csp645178ejk;
+        Thu, 5 Aug 2021 12:09:26 -0700 (PDT)
+X-Received: by 2002:a25:810c:: with SMTP id o12mr7881594ybk.249.1628190566724;
+        Thu, 05 Aug 2021 12:09:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1628190566; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ymXG5BXjAu6w2VnqbD6tpEr/CDuu8i2Dd1Zp02rxYtvW8ptkYVaVKesbdaIx/W58T5
+         fOA0N47e/Kky/Onz3Zl3+jwOlyt1PPPQlN/gsJULIGeLsg78GlErDegJCDdqdjKvrepq
+         puLinw9ILXLstxlNd+E4mHRSJDyVeltIFrR2oEHF4Jgy+PRgGn2Hid50VUcLuDdDdTp0
+         sp7d4kw8L+KFgKqBZ6Qq5l3DZ2vXX+miAIHg+hebbIIBc71VMJ26UpDOPDg2JdicBDau
+         3nfeamwrrryg4iq1EuZdZD1GZaOq+ImkYbv+A5ijcuVqkLp7Y7xortZcB66o1zrPbEZj
+         u1nw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=t+lK6ahUktsn3zJ8wdgEVG/y3KDi3w/TplU3KxwboBE=;
+        b=tb3SQFtuUm3uj/BH1R1LGuQJoqWio9s3OiWSuYCOhJVOxBvggY1HANsncl3CLwN4a8
+         BuIH3LQoQYNlSZ/LHSR4VhmSP9L8zKG3THiRqdSBsxGd0eUvD5MfsgxviCWGgrtvT+/k
+         YgcD5praakaM4w+DozEUj4jE2+BAfJctF3GVatD8diuFQAaYvKa5qQyfbeRILtm2I+kL
+         +0eWN8PSn4BbeLZpzjFXgS3Sb810a7hBM8V4cwo5C0PpTT7qVRFqpPxH/OaPGtR2TjCl
+         j/yLcua2OQeHTuROaSATU+nI8/gld7mFVuiC0JNULTrMP9fiH6xO8FWoTY0enaEVohkZ
+         9dFw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=kB+s5+Ef;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d11sor1964770ybq.72.2021.08.05.12.09.26
+        (Google Transport Security);
+        Thu, 05 Aug 2021 12:09:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=kB+s5+Ef;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=t+lK6ahUktsn3zJ8wdgEVG/y3KDi3w/TplU3KxwboBE=;
+        b=kB+s5+EfV9of+MGjMR+TO3I7juuoDnGKVT1Fs8xD0M4ohdrflt7fw/CrM/swnQg3GX
+         fyTEQwhi3NYnWhGzjkYdRwES89v8ndRB0O8y6YOMGX6D5IZSyjX0CoBH9zZikWpNkuxm
+         odZLdT6aH8RBkOCCdFPv4E+sUjJIJ0jBY+hKp5WY4O0h1PW12v/JrbiFGu+NIGyPCRQp
+         N3lOtC92zgdeucjA/Q5bHDOQgnRrBh9/YboSdEPyeP7ULQzh8+8ik1Tb53MaV2YQSnQw
+         1q1UcFhYFw8HWB3PmVmVg7PNg8fPJRj+Hkg2+Bcw6o5kARvHutbJScHQl/43nZ2rx+Ah
+         Ajjg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=t+lK6ahUktsn3zJ8wdgEVG/y3KDi3w/TplU3KxwboBE=;
+        b=D508GGFDIsZ7WsKg1LFNBMCXqnL4c+tlDBBHe6hBYaYARcKyXj3b3KuFjwq8nBA4mC
+         yhuIp8Af6dxXFqQz0CG+RjACsKL9ve7l3HU0MfEt1lvgygdVvPZeifeD6kHL4xBn9H0r
+         MNp/2nf4vyQYgfChRCf3sqKbymBeCD7TQQ5o0BsGvR1GA+gYw+DCGpsSdfHRPHvWbwSw
+         OiltmRn/MD2U9mQe+SOp/MfGitX/o1uJ8jddgkYF3FUMHxPeQgqSz8QhAcB0dP+N69+N
+         Ejvf7GnlxsHIeuCSlm74qZ357c1fxBH419VT63CpoZaGun01/A0FrVgyujryd2yee56n
+         h6Ig==
+X-Gm-Message-State: AOAM530HYy9MP2d8eB399wRowAxe6or6VxPPtuIcOP91Orn0graSEx2d
+	8MQ2Ck4wme/iaYptNlG/hNQwL8di1KwzOTdYb7I=
+X-Google-Smtp-Source: ABdhPJyEGx0UR8KtcA3xVB65o1ibicy5K8qGG4n7jUWyoA0Wu7lGYsQ9MZjk1BxulsFuy76tYnfaLnuOhIjkmXbsAXs=
+X-Received: by 2002:a25:5606:: with SMTP id k6mr472040ybb.89.1628190565944;
+ Thu, 05 Aug 2021 12:09:25 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAJnLM4i4xXA=Zqk0jCdgP=Nfb6iT_B3iOCtLzKUtz6J7Yk+z-Q@mail.gmail.com>
+ <CAFeScTBo9a+DichN86+fUYiWaCg9pw5paW=MdQgQAnEPp63TfA@mail.gmail.com> <CAAYRPUsKFVK1oMcg1Z=rwwPj9uKNjX6QqBpOpCbcB81Y0s3szw@mail.gmail.com>
+In-Reply-To: <CAAYRPUsKFVK1oMcg1Z=rwwPj9uKNjX6QqBpOpCbcB81Y0s3szw@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Thu, 5 Aug 2021 16:09:14 -0300
+Message-ID: <CAN5uefZgyvYSA+t==oibo-eqO8n2VzFdn_-j_SagJhqf7aedUA@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Encuentro_Latinoamericano_de_Matem=C3=A1ticas_y_Apl?=
+	=?UTF-8?Q?icaciones_=28Elamap=29?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, unlplnr2019ak@gmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000004f511405c8d4a88f"
+
+--0000000000004f511405c8d4a88f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa <ggarcia@famaf.unc.edu.ar>
+Date: jue, 5 ago 2021 a las 13:00
+Subject: Fwd: Encuentro Latinoamericano de Matem=C3=A1ticas y Aplicaciones
+(Elamap)
+To: <all@mate.unlp.edu.ar>, Alumnos <alumnosm@gmail.com>
+
+
+
+---------- Forwarded message ---------
+De: Aleja Rada <alejandra.rada@ufabc.edu.br>
+Date: lun, 26 jul 2021 a las 17:46
+
+Estimados compa=C3=B1eros y estudiantes,
+
+este mensaje es para dar a conocer el Encuentro Latinoamericano de Matem=C3=
+=A1ticas y
+Aplicaciones (Elamap), evento virtual, que se realizar=C3=A1 entre el 29 de
+noviembre y el 3
+de diciembre de 2021. Este evento est=C3=A1 siendo coorganizado por las
+Universidades Federales
+del  ABC (UFABC),  Santa Catarina (UFSC) y Pernambuco (UFPR) en Brasil y po=
+r la
+Universidad de Nari=C3=B1o en Colombia.
+
+Habr=C3=A1n conferencias en espa=C3=B1ol, portugu=C3=A9s e ingl=C3=A9s para=
+ que el idioma
+no sea un obst=C3=A1culo
+en el encuentro!
+
+Tendremos:
+
+* 2 minicursos:*
+- Recorr=C3=AAncia e valores extremos para sistemas din=C3=A2micos,  ofreci=
+do
+porAna Cristina Moreira y Jorge Milhazes Freitas  (Universidade do
+Porto - Portugal)- Introducci=C3=B3n a la Criptograf=C3=ADa, ofrecido por
+Valerie Gauthier Uma=C3=B1a (Universidad del Rosario - Colombia).
+
+
+* 4 conferencistas plenarios:- *Juliana Xavier (Universidad de la
+Rep=C3=BAblica -  Uruguay)
+- Abraham Mart=C3=ADn del Campo (CIMAT - M=C3=A9xico)
+- Ram=C3=B3n Flores (Universidad de Sevilla - Espa=C3=B1a)
+- Umberto Hryniewicz (UFRJ - Brasil; RWTH Aachen Unyversyty - Alemania)
+
+*8 conferencistas invitados:*
+
+- Fernando Fantino (Universidad Nacional de C=C3=B3rdoba - Argentina)
+- Isabel Cristina Garc=C3=ADa (Universidad Javeriana de Cali - Colombia)
+- Javiera Barrera (Universidad Adolfo Ib=C3=A1=C3=B1ez -  Chile)
+- Maristela Santos (ICMC- USP - Brasil)
+- Pricila da Silva Barbosa (Universidade Tecnol=C3=B3gica Federal do Paran=
+=C3=A1 -
+Brasil)
+- Ricardo Miranda Martins (Unicamp - Brasil)
+- Rigoberto Florez (The Citadel - United States)
+- Sara Cardell (UFABC-Brasil)
+
+Inscripciones e informaci=C3=B3n adicional en:
+https://sites.google.com/view/elamap2021/
+
+Por favor, divulgar a posibles interesados.
+
+Abrazos
+
+Alejandra Rada
+Profesora adjunta CMCC
+UFABC - Brasil
+
+
+
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--0000000000004f511405c8d4a88f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa</str=
+ong> <span dir=3D"auto">&lt;<a href=3D"mailto:ggarcia@famaf.unc.edu.ar">gga=
+rcia@famaf.unc.edu.ar</a>&gt;</span><br>Date: jue, 5 ago 2021 a las 13:00<b=
+r>Subject: Fwd: Encuentro Latinoamericano de Matem=C3=A1ticas y Aplicacione=
+s (Elamap)<br>To:  &lt;<a href=3D"mailto:all@mate.unlp.edu.ar">all@mate.unl=
+p.edu.ar</a>&gt;, Alumnos &lt;<a href=3D"mailto:alumnosm@gmail.com">alumnos=
+m@gmail.com</a>&gt;<br></div><br><br><div dir=3D"ltr"><div class=3D"gmail_q=
+uote"><div dir=3D"ltr"><br><div class=3D"gmail_quote"><div dir=3D"ltr" clas=
+s=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong clas=
+s=3D"gmail_sendername" dir=3D"auto">Aleja Rada</strong> <span dir=3D"auto">=
+&lt;<a href=3D"mailto:alejandra.rada@ufabc.edu.br" target=3D"_blank">alejan=
+dra.rada@ufabc.edu.br</a>&gt;</span><br>Date: lun, 26 jul 2021 a las 17:46<=
+br></div><div dir=3D"ltr">
+<div style=3D"text-align:left"><pre id=3D"m_-4969429827925224943m_521214980=
+6410091455m_1506642691619863484m_3728906920807739200gmail-tw-target-text" d=
+ir=3D"ltr"><span style=3D"font-family:arial,sans-serif"><span lang=3D"es">E=
+stimados compa=C3=B1eros y estudiantes,
+
+este mensaje es para dar a conocer el Encuentro Latinoamericano de Matem=C3=
+=A1ticas y<br>Aplicaciones (Elamap), <span lang=3D"es"><span lang=3D"es">ev=
+ento virtual, que se realizar=C3=A1 entre el 29 de noviembre y el 3 <br>de =
+diciembre de 2021.</span></span> Este evento est=C3=A1 siendo coorganizado =
+por las Universidades Federales <br>del  ABC (UFABC),  Santa Catarina (UFSC=
+) y Pernambuco (UFPR) en Brasil y por la <br>Universidad de Nari=C3=B1o en =
+Colombia.<font size=3D"2"><span style=3D"font-variant:normal;vertical-align=
+:baseline"><br></span></font></span></span></pre><pre id=3D"m_-496942982792=
+5224943m_5212149806410091455m_1506642691619863484m_3728906920807739200gmail=
+-tw-target-text"><span style=3D"font-family:arial,sans-serif"><span lang=3D=
+"es"><font size=3D"2"><span style=3D"font-variant:normal;vertical-align:bas=
+eline">Habr=C3=A1n conferencias en espa=C3=B1ol, portugu=C3=A9s e ingl=C3=
+=A9s para que el idioma no sea un obst=C3=A1culo <br>en el encuentro!<br></=
+span></font></span></span></pre><pre id=3D"m_-4969429827925224943m_52121498=
+06410091455m_1506642691619863484m_3728906920807739200gmail-tw-target-text">=
+<span style=3D"font-family:arial,sans-serif"><span lang=3D"es"><font size=
+=3D"2"><span style=3D"font-variant:normal;vertical-align:baseline">Tendremo=
+s:<br><br><i> 2 minicursos:</i><br>- </span></font></span></span><font size=
+=3D"2"><span style=3D"font-family:arial,sans-serif"><span style=3D"font-var=
+iant:normal;vertical-align:baseline">Recorr=C3=AAncia e valores extremos pa=
+ra sistemas din=C3=A2micos, <span style=3D"color:rgb(0,0,0)"> ofrecido por
+<span style=3D"white-space:pre-wrap"></span><span style=3D"vertical-align:b=
+aseline">Ana Cristina Moreira y Jorge Milhazes Freitas  (Universidade do Po=
+rto </span><span style=3D"font-style:normal;font-variant:normal;vertical-al=
+ign:baseline">- Portugal</span><span style=3D"vertical-align:baseline">)</s=
+pan></span>
+</span></span></font><font size=3D"2"><span style=3D"font-family:arial,sans=
+-serif"><span style=3D"font-variant:normal;vertical-align:baseline">- Intro=
+ducci=C3=B3n a la Criptograf=C3=ADa, ofrecido por <span style=3D"color:rgb(=
+0,0,0)"><span style=3D"vertical-align:baseline">Valerie Gauthier Uma=C3=B1a=
+ (Universidad del Rosario - Colombia)</span>.</span></span></span></font></=
+pre>
+
+<pre id=3D"m_-4969429827925224943m_5212149806410091455m_1506642691619863484=
+m_3728906920807739200gmail-tw-target-text"><span style=3D"font-family:arial=
+,sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-variant=
+:normal;vertical-align:baseline"><i> 4 conferencistas plenarios:<br>- </i><=
+/span></font></span></span><font size=3D"2"><span style=3D"font-family:aria=
+l,sans-serif"><span style=3D"font-variant:normal;vertical-align:baseline"><=
+span style=3D"color:rgb(0,0,0)"></span>Juliana Xavier (Universidad de la Re=
+p=C3=BAblica -=C2=A0 Uruguay)</span></span></font><font size=3D"2"><span st=
+yle=3D"font-family:arial,sans-serif"><span style=3D"font-variant:normal;ver=
+tical-align:baseline"><br>- Abraham Mart=C3=ADn del Campo (CIMAT - M=C3=A9x=
+ico)</span></span></font><font size=3D"2"><span style=3D"font-family:arial,=
+sans-serif"><span style=3D"font-variant:normal;vertical-align:baseline"><br=
+>- Ram=C3=B3n Flores (Universidad de Sevilla - Espa=C3=B1a)</span></span></=
+font><font size=3D"2"><span style=3D"font-family:arial,sans-serif"><span st=
+yle=3D"font-variant:normal;vertical-align:baseline"><br>- Umberto Hryniewic=
+z (UFRJ - Brasil; RWTH Aachen Unyversyty - Alemania)<br><br></span></span><=
+/font></pre><pre id=3D"m_-4969429827925224943m_5212149806410091455m_1506642=
+691619863484m_3728906920807739200gmail-tw-target-text"><font size=3D"2"><sp=
+an style=3D"font-family:arial,sans-serif"><span style=3D"font-variant:norma=
+l;vertical-align:baseline"><i>8 conferencistas invitados:</i><br></span></s=
+pan></font></pre><span style=3D"font-family:arial,sans-serif"><span lang=3D=
+"es"><font size=3D"2"><span style=3D"font-variant:normal;vertical-align:bas=
+eline">- <font size=3D"2"><span style=3D"font-family:arial,sans-serif"><spa=
+n style=3D"font-variant:normal;vertical-align:baseline">Fernando Fantino	(U=
+niversidad Nacional de C=C3=B3rdoba - Argentina)</span></span></font></span=
+></font></span></span><br><span style=3D"font-family:arial,sans-serif"><spa=
+n lang=3D"es"><font size=3D"2"><span style=3D"font-variant:normal;vertical-=
+align:baseline"><font size=3D"2"><span style=3D"font-family:arial,sans-seri=
+f"><span style=3D"font-variant:normal;vertical-align:baseline"></span></spa=
+n></font></span></font></span></span><span style=3D"font-family:arial,sans-=
+serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-variant:norma=
+l;vertical-align:baseline"><font size=3D"2"><span style=3D"font-family:aria=
+l,sans-serif"><span style=3D"font-variant:normal;vertical-align:baseline">-=
+ Isabel Cristina Garc=C3=ADa	(Universidad Javeriana de Cali - Colombia)</sp=
+an></span></font></span></font></span></span><br><span style=3D"font-family=
+:arial,sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-v=
+ariant:normal;vertical-align:baseline"><font size=3D"2"><span style=3D"font=
+-family:arial,sans-serif"><span style=3D"font-variant:normal;vertical-align=
+:baseline"></span></span></font></span></font></span></span><span style=3D"=
+font-family:arial,sans-serif"><span lang=3D"es"><font size=3D"2"><span styl=
+e=3D"font-variant:normal;vertical-align:baseline"><font size=3D"2"><span st=
+yle=3D"font-family:arial,sans-serif"></span></font></span></font></span></s=
+pan><span style=3D"font-family:arial,sans-serif"><span lang=3D"es"><font si=
+ze=3D"2"><span style=3D"font-variant:normal;vertical-align:baseline"><font =
+size=3D"2"><span style=3D"font-family:arial,sans-serif"><span style=3D"font=
+-variant:normal;vertical-align:baseline">- Javiera Barrera	(Universidad Ado=
+lfo Ib=C3=A1=C3=B1ez -=C2=A0 Chile)</span></span></font></span></font></spa=
+n></span><br><span style=3D"font-family:arial,sans-serif"><span lang=3D"es"=
+><font size=3D"2"><span style=3D"font-variant:normal;vertical-align:baselin=
+e"><font size=3D"2"><span style=3D"font-family:arial,sans-serif"><span styl=
+e=3D"font-variant:normal;vertical-align:baseline"></span></span></font></sp=
+an></font></span></span><span style=3D"font-family:arial,sans-serif"><span =
+lang=3D"es"><font size=3D"2"><span style=3D"font-variant:normal;vertical-al=
+ign:baseline"></span></font></span></span><span style=3D"font-family:arial,=
+sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-variant:=
+normal;vertical-align:baseline"><font size=3D"2"><span style=3D"font-family=
+:arial,sans-serif"><span style=3D"font-variant:normal;vertical-align:baseli=
+ne">- Maristela Santos	(ICMC- USP - Brasil)</span></span></font></span></fo=
+nt></span></span><br><span style=3D"font-family:arial,sans-serif"><span lan=
+g=3D"es"><font size=3D"2"><span style=3D"font-variant:normal;vertical-align=
+:baseline"><font size=3D"2"><span style=3D"font-family:arial,sans-serif"><s=
+pan style=3D"font-variant:normal;vertical-align:baseline"></span></span></f=
+ont></span></font></span></span><span style=3D"font-family:arial,sans-serif=
+"><span lang=3D"es"></span></span><span style=3D"font-family:arial,sans-ser=
+if"><span lang=3D"es"><font size=3D"2"><span style=3D"font-variant:normal;v=
+ertical-align:baseline"><font size=3D"2"><span style=3D"font-family:arial,s=
+ans-serif"><span style=3D"font-variant:normal;vertical-align:baseline">- Pr=
+icila da Silva Barbosa	(Universidade Tecnol=C3=B3gica Federal do Paran=C3=
+=A1 - Brasil)</span></span></font></span></font></span></span><br><span sty=
+le=3D"font-family:arial,sans-serif"><span lang=3D"es"><font size=3D"2"><spa=
+n style=3D"font-variant:normal;vertical-align:baseline"><font size=3D"2"><s=
+pan style=3D"font-family:arial,sans-serif"><span style=3D"font-variant:norm=
+al;vertical-align:baseline"></span></span></font></span></font></span></spa=
+n><span style=3D"font-family:arial,sans-serif"></span><span style=3D"font-f=
+amily:arial,sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"f=
+ont-variant:normal;vertical-align:baseline"><font size=3D"2"><span style=3D=
+"font-family:arial,sans-serif"><span style=3D"font-variant:normal;vertical-=
+align:baseline">- Ricardo Miranda Martins	(Unicamp - Brasil)</span></span><=
+/font></span></font></span></span><br><span style=3D"font-family:arial,sans=
+-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-variant:norm=
+al;vertical-align:baseline"><font size=3D"2"><span style=3D"font-family:ari=
+al,sans-serif"><span style=3D"font-variant:normal;vertical-align:baseline">=
+</span></span></font></span></font></span></span><span style=3D"font-family=
+:arial,sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-v=
+ariant:normal;vertical-align:baseline"><font size=3D"2"><span style=3D"font=
+-family:arial,sans-serif"><span style=3D"font-variant:normal;vertical-align=
+:baseline">- Rigoberto Florez	(The Citadel - United States)</span></span></=
+font></span></font></span></span><br><span style=3D"font-family:arial,sans-=
+serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-variant:norma=
+l;vertical-align:baseline"><font size=3D"2"><span style=3D"font-family:aria=
+l,sans-serif"><span style=3D"font-variant:normal;vertical-align:baseline"><=
+/span></span></font></span></font></span></span><span style=3D"font-family:=
+arial,sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-va=
+riant:normal;vertical-align:baseline"><font size=3D"2"><span style=3D"font-=
+family:arial,sans-serif"></span></font></span></font></span></span><span st=
+yle=3D"font-family:arial,sans-serif"><span lang=3D"es"><font size=3D"2"><sp=
+an style=3D"font-variant:normal;vertical-align:baseline"><font size=3D"2"><=
+span style=3D"font-family:arial,sans-serif"><span style=3D"font-variant:nor=
+mal;vertical-align:baseline">- Sara Cardell	(UFABC-Brasil)</span></span></f=
+ont>
+</span></font></span></span><span style=3D"font-family:arial,sans-serif"><s=
+pan lang=3D"es"><font size=3D"2"><span style=3D"font-variant:normal;vertica=
+l-align:baseline"></span></font></span></span><pre id=3D"m_-496942982792522=
+4943m_5212149806410091455m_1506642691619863484m_3728906920807739200gmail-tw=
+-target-text"><span style=3D"font-family:arial,sans-serif"><span lang=3D"es=
+"><font size=3D"2"><span style=3D"font-variant:normal;vertical-align:baseli=
+ne">
+<span lang=3D"es">Inscripciones e informaci=C3=B3n adicional en: <a href=3D=
+"https://sites.google.com/view/elamap2021/" target=3D"_blank">https://sites=
+.google.com/view/elamap2021/</a><br><br></span></span></font></span></span>=
+</pre><pre id=3D"m_-4969429827925224943m_5212149806410091455m_1506642691619=
+863484m_3728906920807739200gmail-tw-target-text"><span style=3D"font-family=
+:arial,sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-v=
+ariant:normal;vertical-align:baseline"><span lang=3D"es">Por favor, divulga=
+r a posibles interesados.<br><br></span></span></font></span></span></pre><=
+pre id=3D"m_-4969429827925224943m_5212149806410091455m_1506642691619863484m=
+_3728906920807739200gmail-tw-target-text"><span style=3D"font-family:arial,=
+sans-serif"><span lang=3D"es"><font size=3D"2"><span style=3D"font-variant:=
+normal;vertical-align:baseline"><span lang=3D"es">Abrazos<br><br></span></s=
+pan></font></span></span></pre><pre id=3D"m_-4969429827925224943m_521214980=
+6410091455m_1506642691619863484m_3728906920807739200gmail-tw-target-text"><=
+span style=3D"font-family:arial,sans-serif"><span lang=3D"es"><font size=3D=
+"2"><span style=3D"font-variant:normal;vertical-align:baseline"><span lang=
+=3D"es">Alejandra Rada<br>Profesora adjunta CMCC<br>UFABC - Brasil</span>
+
+
+
+</span></font></span></span></pre></div><span lang=3D"es"><font size=3D"2">=
+<span style=3D"font-family:arial,sans-serif"><span style=3D"font-variant:no=
+rmal;vertical-align:baseline"></span></span></font></span><pre id=3D"m_-496=
+9429827925224943m_5212149806410091455m_1506642691619863484m_372890692080773=
+9200gmail-tw-target-text" style=3D"text-align:left" dir=3D"ltr"><span lang=
+=3D"es"><font size=3D"2"><span style=3D"font-family:arial,sans-serif"><span=
+ style=3D"font-variant:normal;vertical-align:baseline">
+<br></span></span></font></span></pre></div></div></div></div><br></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--0000000000004f511405c8d4a88f--

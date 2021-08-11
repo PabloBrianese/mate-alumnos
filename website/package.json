@@ -1,0 +1,34 @@
+{
+  "homepage": "https://pablobrianese.github.com/gatsby-tutorial",
+  "name": "my-fist-gatsby-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My Fist Gatsby Site",
+  "author": "PabloBrianese",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "gh-pages -d public"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "eml-format": "^0.6.1",
+    "gatsby": "^3.11.0",
+    "gatsby-plugin-image": "^1.11.0",
+    "gatsby-plugin-mdx": "^2.11.0",
+    "gatsby-plugin-sharp": "^3.11.0",
+    "gatsby-source-filesystem": "^3.11.0",
+    "gatsby-transformer-json": "^3.11.0",
+    "gh-pages": "^3.2.3",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
