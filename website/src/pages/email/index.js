@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 
 
-const Email = ({ slug, date, subject}) => {
+const Email = ({ slug, date, subject }) => {
   return (
     <article>
       <h2>
@@ -20,7 +20,7 @@ const EmailPage = ({ data }) => {
     <Email
       slug={node.fields.unixMsTimestamp}
       date={node.date}
-      subject={node.subject}
+      subject={node.fields.prettySubject}
       key={node.id}
     />
   )
@@ -33,11 +33,11 @@ const EmailPage = ({ data }) => {
 
 export const query = graphql`
 {
-  allEmailJson {
+  allEmailJson(sort: {fields: date, order: DESC}) {
     nodes {
-      subject
       id
       fields {
+        prettySubject
         unixMsTimestamp
       }
       date

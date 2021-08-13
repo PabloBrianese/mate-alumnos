@@ -7,14 +7,13 @@ var emailDirectory = __dirname + "/../../website/email/"
 function hasEmlExtension(file) { return file.slice(-4) === '.eml' }
 function removeEmlExtension(file) { return file.slice(0, -4) }
 
-
 fsPromises.readdir(emailDirectory)
   .then(files => files.filter(hasEmlExtension))
   .then(emlFiles => emlFiles.map(removeEmlExtension))
   .then(emailNames => emailNames.map(emailName => ({
         name: emailName,
         content:
-          fs.readFileSync(emailDirectory + emailName + '.eml').toString()
+          fs.readFileSync(emailDirectory + emailName + '.eml', 'utf-8').toString()
       })
     )
   )
@@ -22,7 +21,7 @@ fsPromises.readdir(emailDirectory)
     for (var email of emails) {
       emlformat.read(email.content, (error, data) => { 
         if (error) return console.log(error)
-        fs.writeFileSync(
+          fs.writeFileSync(
           emailDirectory + email.name +'.json',
           JSON.stringify(data, " ", 2))
       })

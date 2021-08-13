@@ -1,0 +1,286 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a17:906:4102:0:0:0:0 with SMTP id j2csp676227ejk;
+        Thu, 12 Aug 2021 05:25:23 -0700 (PDT)
+X-Received: by 2002:a25:ba10:: with SMTP id t16mr4089352ybg.87.1628771123375;
+        Thu, 12 Aug 2021 05:25:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1628771123; cv=none;
+        d=google.com; s=arc-20160816;
+        b=F2TXzerdKlAtf+C5zB3IqZWm/gTahYz1fJyCHVktjSmywilB+A345JKESd1LAnCwnF
+         DoxnjPlK7//bzug2sTFpsX0sE6m7uH+wLP6YPynI7lwmKj079QjMqrBgRTcqRLA2hHSl
+         3ado1IbibAuQNBfAjCSJ0pOL0Ev7TtFmH3Z5Lv0JnIsqAPpU5St4fcToeMcSbIJMToOf
+         Mf2CtREJnfulG1a4j9enn/LEkmgHePXHTqfkPE0/oFFi8BpqICP1EB7SAUDebS1PKkxO
+         ah/TWfDQR+zmrvUOu36X/PeCecQf6JJbTMl2pgXtz5UpbhotALaV/GEfWxE5QrLZHNui
+         a4HA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=S3/lg7KChoSP5sjiW7rANwjYdIr1qogpl7KddB4NQkc=;
+        b=NNmOvx8owr+Gxko9DbN8mOg7Zrz50L8ZU4H0vr6jQFNhtenjgMBwxSqtg8/0Entqua
+         Dpyck6h2A/0ozBx2MMFqjLgFop3/J05/T5FJRPJ0Mlh09W5U/Ib1rkBjoCMQZflEhKrk
+         jdbOUcA1JAqDulx0UCm5BDIzUIVmoJOzlAGR+zTQxvhYly2oTxc9zz+aZOkdJwYWWapC
+         5WGgq38yOS1PWXYIwGbBoGsVVD5suSfz6rdnZOqSmdQKmljw2X17GSvo3YKMRHldYaet
+         gycJSmxwm9dtcdfoemDU5xjeu3w3jvWiLzaRzdWKvr9MjWWnAfQX3bINP44imLs7Troz
+         7scw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=kV3G02Up;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id l4sor852720ybk.76.2021.08.12.05.25.22
+        (Google Transport Security);
+        Thu, 12 Aug 2021 05:25:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=kV3G02Up;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=S3/lg7KChoSP5sjiW7rANwjYdIr1qogpl7KddB4NQkc=;
+        b=kV3G02Up7SzAoCZ3sbQB3ywerzPjxqXugAECzkDHIU4kW4eI54fnrd2DuaBGZlEtWg
+         FFGKNFiU2TwKibFDarwFuLrJ6b0jkfV/7BFe8MFJpEVc4xPIXqT4QXn3SzHKMwycKg5z
+         3+UMqcXW7ZaxAd/AJ7VRlYswHD5nXBTuNcTq/4CZJmzBzb1eJUXMZQvVkKqRbMWmxcYC
+         KxgDCNp45sgbbzywgx9O91/e9kw20NdZR9oUUC3Iv2h4UBO4wvGb/TdLHHLG8YU+YF8A
+         bGJ8GN1ZYv8k4L7G8vNCuDnYIZwny2/x93k0bMzqUg7pKWh2mw03u80CnqSAM3JKnU+a
+         dqWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=S3/lg7KChoSP5sjiW7rANwjYdIr1qogpl7KddB4NQkc=;
+        b=Ep/lT8bh6g11NcmUUjqtdSz/cbOxsGK/4ymyrIiWyIhNfu0XHDsbliLIq4P31w6mjo
+         nx0X3sXU3pDRR+V+dK+Ez3Fl6pBTWWCDqVkhq5NX7lIkYzVqdobU2q10pcql1UB/3pF7
+         HD421vyFYZ96VKpK6sN5BFXbIub4vL/+nsJ6xihcbver5tBVS/aEPGbzi1YXbJdKDqdb
+         5UbYgxaTiBc2IjxqBePOD4K4YwFcpHebJApccHkT+l3uWcEcjyHsagMvKsLcSEMDVFCN
+         CsU1JskSlZxU/wqRrUUspElchmVr93tneTNeoV91tbEW7J2ytJkTemG8U/YJIPSzs/T6
+         M1Pw==
+X-Gm-Message-State: AOAM530KDTLc/ca1k7ivYfqcvGq+IzoHj+F+jQn3LuwasNY9+hcG6nPH
+	DbAkEfZhhTsvKl4UtxI68pTjBL2HEyC5lBKnlQQ=
+X-Google-Smtp-Source: ABdhPJw2ciSFkpS/OLYE2V/93QcCON0M3fDNixR6oMs+NKRjRrvvEkJhEP4aNvuDWvLKNoWpwxA6gNkdTvlz/3siiNI=
+X-Received: by 2002:a25:7ac6:: with SMTP id v189mr3841858ybc.242.1628771122681;
+ Thu, 12 Aug 2021 05:25:22 -0700 (PDT)
+MIME-Version: 1.0
+References: <470753153.869663.1628688629969.ref@mail.yahoo.com>
+ <470753153.869663.1628688629969@mail.yahoo.com> <CAFndhdG8S1C-uCzkar-9a26_Skdc0rHy=pKr7gC5GKqvc-xz+g@mail.gmail.com>
+In-Reply-To: <CAFndhdG8S1C-uCzkar-9a26_Skdc0rHy=pKr7gC5GKqvc-xz+g@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Thu, 12 Aug 2021 09:25:11 -0300
+Message-ID: <CAN5uefZP0w_3dF=Qd5rAZNy3EWkHg=kg3az4zBsCp7sGTed42g@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Reuni=C3=B3n_para_coordinar_horarios_Estad=C3=ADstica_1?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, unlplnr2019ak@gmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000301c6505c95bd403"
+
+--000000000000301c6505c95bd403
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola a todos/as,
+                          les reenviamos un correo con informaci=C3=B3n
+importante acerca de la optativa de estad=C3=ADstica I para este cuatrimest=
+re.
+
+Saludos
+
+---------- Forwarded message ---------
+De: Anal=C3=ADa Pilco Rueda <an.pilco.r@gmail.com>
+Date: jue, 12 ago 2021 a las 9:16
+Subject: Fwd: Reuni=C3=B3n para coordinar horarios Estad=C3=ADstica 1
+To: <alumnosm@gmail.com>
+
+
+---------- Forwarded message ---------
+De: Nadia Kudraszow <n_kudraszow@yahoo.com>
+Date: mi=C3=A9., 11 ago. 2021 10:30
+Subject: Reuni=C3=B3n para coordinar horarios Estad=C3=ADstica 1
+To: Ivan Lucchesi <ivanslucchesi@gmail.com>, Manuela Fredriks <
+manufredriks@gmail.com>, Anal=C3=ADa Pilco Rueda <an.pilco.r@gmail.com>
+
+
+Hola! Les mando el link para reunirnos el viernes a las 16hs para fijar
+horarios.
+
+https://unlp.webex.com/unlp/j.php?MTID=3Dm626d0b917fef759d9fc13f7712dcca2e
+N=C3=BAmero de reuni=C3=B3n: 179 656 6878
+Contrase=C3=B1a: vfGVTwAN844
+
+Si quieren se pueden descargar la aplicaci=C3=B3n de webex en
+https://www.webex.com/es/downloads.html o pueden usarla desde su navegador.
+Pueden hacer una prueba desde el navegador en Cisco Webex | Conferencia de
+v=C3=ADdeo, seminarios web, uso compartido de pantalla y llamada de confere=
+ncia
+<https://www.webex.com/es/test-meeting.html#>
+
+Si pueden reenviar este mail al claustro de alumnos se los agradecer=C3=ADa=
+, as=C3=AD
+si hay otros interesados pueden venir.
+Saludos,
+Nadia
+
+--=20
+Dra. Kudraszow Nadia L.
+Dto. de Matem=C3=A1tica - FCE - UNLP
+CeMaLP - CONICET
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+Libre
+de virus. www.avast.com
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+
+--000000000000301c6505c95bd403
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hola a todos/as,<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 les reenviamos un c=
+orreo con informaci=C3=B3n importante acerca de la optativa de estad=C3=ADs=
+tica I para este cuatrimestre.</div><div><br></div><div>Saludos<br><br><div=
+ class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">---------- For=
+warded message ---------<br>De: <strong class=3D"gmail_sendername" dir=3D"a=
+uto">Anal=C3=ADa Pilco Rueda</strong> <span dir=3D"auto">&lt;<a href=3D"mai=
+lto:an.pilco.r@gmail.com">an.pilco.r@gmail.com</a>&gt;</span><br>Date: jue,=
+ 12 ago 2021 a las 9:16<br>Subject: Fwd: Reuni=C3=B3n para coordinar horari=
+os Estad=C3=ADstica 1<br>To:  &lt;<a href=3D"mailto:alumnosm@gmail.com">alu=
+mnosm@gmail.com</a>&gt;<br></div><br><br><div dir=3D"auto"><div class=3D"gm=
+ail_quote" dir=3D"auto"><div dir=3D"ltr" class=3D"gmail_attr">---------- Fo=
+rwarded message ---------<br>De: <strong class=3D"gmail_sendername" dir=3D"=
+auto">Nadia Kudraszow</strong> <span dir=3D"ltr">&lt;<a href=3D"mailto:n_ku=
+draszow@yahoo.com" target=3D"_blank">n_kudraszow@yahoo.com</a>&gt;</span><b=
+r>Date: mi=C3=A9., 11 ago. 2021 10:30<br>Subject: Reuni=C3=B3n para coordin=
+ar horarios Estad=C3=ADstica 1<br>To: Ivan Lucchesi &lt;<a href=3D"mailto:i=
+vanslucchesi@gmail.com" target=3D"_blank">ivanslucchesi@gmail.com</a>&gt;, =
+Manuela Fredriks &lt;<a href=3D"mailto:manufredriks@gmail.com" target=3D"_b=
+lank">manufredriks@gmail.com</a>&gt;, Anal=C3=ADa Pilco Rueda &lt;<a href=
+=3D"mailto:an.pilco.r@gmail.com" target=3D"_blank">an.pilco.r@gmail.com</a>=
+&gt;<br></div><br><br><div><div style=3D"font-family:Helvetica Neue,Helveti=
+ca,Arial,sans-serif;font-size:13px"><div dir=3D"ltr">Hola! Les mando el lin=
+k para reunirnos el viernes a las 16hs para fijar horarios.</div><div dir=
+=3D"ltr"><br></div><div dir=3D"ltr"><div><a href=3D"https://unlp.webex.com/=
+unlp/j.php?MTID=3Dm626d0b917fef759d9fc13f7712dcca2e" rel=3D"noreferrer" tar=
+get=3D"_blank">https://unlp.webex.com/unlp/j.php?MTID=3Dm626d0b917fef759d9f=
+c13f7712dcca2e</a><br></div><div>N=C3=BAmero de reuni=C3=B3n: 179 656 6878<=
+br></div><div>Contrase=C3=B1a: vfGVTwAN844</div><div><br></div><div><div di=
+r=3D"ltr"><div dir=3D"ltr" style=3D"font-family:Helvetica Neue,Helvetica,Ar=
+ial,sans-serif">Si quieren se pueden descargar la aplicaci=C3=B3n de webex =
+en=C2=A0<a href=3D"https://www.webex.com/es/downloads.html" style=3D"color:=
+rgb(25,106,212);text-decoration-line:underline" rel=3D"nofollow noreferrer"=
+ target=3D"_blank">https://www.webex.com/es/downloads.html</a>=C2=A0o puede=
+n usarla desde su navegador. Pueden hacer una prueba desde el navegador en=
+=C2=A0<a href=3D"https://www.webex.com/es/test-meeting.html#" style=3D"colo=
+r:rgb(25,106,212);text-decoration-line:underline" rel=3D"nofollow noreferre=
+r" target=3D"_blank">Cisco Webex | Conferencia de v=C3=ADdeo, seminarios we=
+b, uso compartido de pantalla y llamada de conferencia</a></div><div><br></=
+div><div dir=3D"ltr">Si pueden reenviar este mail al claustro de alumnos se=
+ los agradecer=C3=ADa, as=C3=AD si hay otros interesados pueden venir.</div=
+><div dir=3D"ltr">Saludos,=C2=A0</div><div dir=3D"ltr">Nadia</div></div></d=
+iv></div><div><br></div><div><div style=3D"font-family:Helvetica,Arial,sans=
+-serif;font-size:13px">--=C2=A0<div>Dra. Kudraszow Nadia L.=C2=A0 </div><di=
+v>Dto. de Matem=C3=A1tica - FCE - UNLP</div><div>CeMaLP - CONICET<br></div>=
+</div></div></div></div></div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div></div><div id=3D"DAB4FAD8-=
+2DD7-40BB-A1B8-4E2AA1F9FDF2"><br> <table style=3D"border-top:1px solid #d3d=
+4de">
+	<tr>
+      <td style=3D"width:55px;padding-top:18px"><a href=3D"https://www.avas=
+t.com/sig-email?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=
+=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_blank"><img src=3D"https=
+://ipmcdn.avast.com/images/icons/icon-envelope-tick-round-orange-animated-n=
+o-repeat-v1.gif" alt=3D"" width=3D"46" height=3D"29" style=3D"width: 46px; =
+height: 29px;"></a></td>
+		<td style=3D"width:470px;padding-top:17px;color:#41424e;font-size:13px;fo=
+nt-family:Arial,Helvetica,sans-serif;line-height:18px">Libre de virus. <a h=
+ref=3D"https://www.avast.com/sig-email?utm_medium=3Demail&amp;utm_source=3D=
+link&amp;utm_campaign=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_bla=
+nk" style=3D"color:#4453ea">www.avast.com</a> 		</td>
+	</tr>
+</table>
+<a href=3D"#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2" width=3D"1" height=3D"1">=
+</a></div>
+
+--000000000000301c6505c95bd403--
