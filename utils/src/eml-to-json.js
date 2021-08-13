@@ -28,3 +28,5 @@ fsPromises.readdir(emailDirectory)
     }
   })
   .catch(error => console.log(error))
+
+console.log('Transformed .eml files into .json format.')
