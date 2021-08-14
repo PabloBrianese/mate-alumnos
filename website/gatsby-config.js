@@ -9,12 +9,20 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-mdx",
     "gatsby-transformer-json",
+    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name:`email`,
+        name: "email",
         path: `${__dirname}/email`
       }
-    }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "markdown-pages",
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
   ],
 };

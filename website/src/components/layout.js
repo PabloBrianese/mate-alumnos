@@ -41,6 +41,11 @@ const Layout = ({ pageTitle, children }) => {
               Correo
             </Link>
           </li>
+          <li className={navLinkItem}>
+            <Link to="/virtual-library" className={navLinkText}>
+              Biblioteca virtual
+            </Link>
+          </li>
         </ul>
       </nav>
       <main>
