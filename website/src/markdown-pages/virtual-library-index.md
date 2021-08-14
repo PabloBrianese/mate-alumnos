@@ -4,8 +4,11 @@ date: "2021-08-14"
 title: "Biblioteca virtual"
 ---
 
-Aquí irá un texto con la descripción de la página, consejos y el link a la biblioteca virtual.
+Estamos armando una [Biblioteca virtual](https://drive.google.com/drive/folders/17DKHU77Eyp_dMaM6eEBQGqOwR4MjXK3s?usp=sharing) con materiales de estudio para las distintas materias de la carrera, con especial énfasis en los primeros años de cursada.
+Por favor compartí el link con tus conocidos
+> https://drive.google.com/drive/folders/17DKHU77Eyp_dMaM6eEBQGqOwR4MjXK3s?usp=sharing
 
+### Biblioteca Virtual para Estudiantes de Profesorado
 ¡Nuestros compañeros de Profesorado de Matemática también tienen su propia Biblioteca Virtual!
 Visitenla siguiendo el enlace que nos envió Jimena.
 
