@@ -4,9 +4,9 @@ date: "2021-08-14"
 title: "Biblioteca virtual"
 ---
 
-Estamos armando una [Biblioteca virtual](https://drive.google.com/drive/folders/17DKHU77Eyp_dMaM6eEBQGqOwR4MjXK3s?usp=sharing) con materiales de estudio para las distintas materias de la carrera, con especial énfasis en los primeros años de cursada.
+Estamos armando una [Biblioteca virtual](https://drive.google.com/drive/folders/1SodN69o81qqoC7g0P8VLGoL0GaPALjG8?usp=sharing) con materiales de estudio para las distintas materias de la carrera, con especial énfasis en los primeros años de cursada.
 Por favor compartí el link con tus conocidos
-> https://drive.google.com/drive/folders/17DKHU77Eyp_dMaM6eEBQGqOwR4MjXK3s?usp=sharing
+> https://drive.google.com/drive/folders/1SodN69o81qqoC7g0P8VLGoL0GaPALjG8?usp=sharing
 
 ### Biblioteca Virtual para Estudiantes de Profesorado
 ¡Nuestros compañeros de Profesorado de Matemática también tienen su propia Biblioteca Virtual!
