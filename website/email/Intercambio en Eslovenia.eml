@@ -1,0 +1,302 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a17:907:98d5:0:0:0:0 with SMTP id kd21csp114188ejc;
+        Wed, 18 Aug 2021 04:57:58 -0700 (PDT)
+X-Received: by 2002:a25:8101:: with SMTP id o1mr11465225ybk.83.1629287878597;
+        Wed, 18 Aug 2021 04:57:58 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1629287878; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YxenUAlAqpkFO7h1hKIV626T550OwJKAsJ/O4WG++mS6w3ccMI/XYWNweZyKI0TaAE
+         f/UHq7W6bpumxToMs8vlrydXkGnwn5k4ESCLTYqSZ4fosAnYQZGlHVLSOQTWTqn5bHyS
+         9vkZlnOOaZ9lWD6yo59AIu32nYL/wha3c6am5lqcNwi8xKMNn8clDz/4uStcDTw1wNRl
+         3x3npaXGnKQkjjo2DlgMqBhZd6vclkVY/6jNhpKCoKJp9dmk04gMJvcKLY3XaEveLp0e
+         ltXgPrtW3wlr+wf0ngozCB3K5gFACV1nVgw5lajtgUGP2GZvZBsCVRgEZdRp3nxhYov6
+         PZ6Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=CQIVmO4BnjOzOkaH2NFr+B7w3Gzik3FwxQBUiRLDr/k=;
+        b=g5hpCmzYe8GErbbm9L50NVjX/c+SIidDevVJvn7FBp1fXzSIM3S63LenNU/yMtFPZO
+         rRRy1CS1s71FZMwgzxtdQEBL/G7X3HgUzSePqnmlTy9hB+osmevVCm2AJ0zspI7jhQiM
+         taspxrVpoczthHOOnwc8sRVdhoBwY2w5/cAI9ADtPwFDEmU9iBVDckqhq21ysYhTgXCw
+         6X3WfjGOEZGw1K49XLUZbk24rUg2uWXO32eP0n4bt3IrgzOBxbNIOTDNOhm6eL1lIz/N
+         SjEtaDnQjkm4pp20NFGEBnXSrbK/JW+XoUuM2UZyU4F7fQ1Iv1NZlM/+j/8pZh4V9iZu
+         rgSg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=e0tCFZn7;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o21sor1569700ybc.149.2021.08.18.04.57.57
+        (Google Transport Security);
+        Wed, 18 Aug 2021 04:57:58 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=e0tCFZn7;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=CQIVmO4BnjOzOkaH2NFr+B7w3Gzik3FwxQBUiRLDr/k=;
+        b=e0tCFZn7hgp1Q6EhGzREZd+E4Aw6Adsdvbd9Kc3GmfZOkRIdOm0nOaG2XbzmI19Fxz
+         NhitZbOWjNkaO9/K9gvz+/9rEBgeT6lzUsjLBZE93l9+nsBtZ1WNfXv9wVWWQxGFlmjl
+         zRfzxW+GOL8dH5G7tW1PZxOJZke5b6CJsgmGvMDTGgXT3H8Nv1dAgI9qldC/Idssy2l8
+         PHWfaEKBNPKMLWeI6zPgiy03YWQ+7yXM9MN9ANRayvtBL9JWSyl/64Fko29kqKeQgaM7
+         wQuLTKF5RX49qQxuYGujHV70IzupBVQ2l+YpUCYTUXsCgwxiArpAfJfDFT8G0T7uUWgt
+         iM4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=CQIVmO4BnjOzOkaH2NFr+B7w3Gzik3FwxQBUiRLDr/k=;
+        b=oS+aSWm3sxvblKW/z6p+7bAqicjlrIQL971eLgN2KYo7q/7rXuTI6C2y0029Cjon5B
+         4yi4TeR4OD2Vd+qeKWPBjbxmMILA7gXI/yoZHkxOvs3Wknbdp89ZwnDK3pHnQusB7kK7
+         n8jSavH0wAKrq7MRhz331i7hPksXJw+JzWqyzkgui2Y0+krQwQGrYXlXsTQrBMhaKb3/
+         xgwLUAGQdY/NSoqsxqMwc2pRo/oUuUmAEi9GatJILa+H9El9sBvKYZZqEnI0+OVLBb0/
+         SPK9v+QimvxKKutBEucGd3Wd3ysvIMVh2ZZ1G0/WlgRq6V5V204JWs3WH63E/UQGYl+1
+         Zzag==
+X-Gm-Message-State: AOAM532qllBr/64ZiviS7tIrosHLOgyv41UlCHolhWEIhutGl6BGypEW
+	t6YhAV0TO9mzGx1yj1t2qxl0m2GtsJ784nfDS1A=
+X-Google-Smtp-Source: ABdhPJwI9vlQYpZU9XxsfjhxHui20CTJC8OIfdvRJ1wLOSYYY+Cx5kbLLeWx4YZg189GpIuXlc5nsrJypc5/Jd/rR1k=
+X-Received: by 2002:a25:bc01:: with SMTP id i1mr10802568ybh.225.1629287877645;
+ Wed, 18 Aug 2021 04:57:57 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAAg3cw3RJ2PF=8iV_Xv8f3fpVpNdTrtiK37+aGK6PZyeEUzY8Q@mail.gmail.com>
+In-Reply-To: <CAAg3cw3RJ2PF=8iV_Xv8f3fpVpNdTrtiK37+aGK6PZyeEUzY8Q@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Wed, 18 Aug 2021 08:57:45 -0300
+Message-ID: <CAN5uefZ86aw2AtV621YqePHc8OeYkAwrV+8PP9VsN6+f2vDfcA@mail.gmail.com>
+Subject: Fwd: Intercambio en Eslovenia
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, unlplnr2019ak@gmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000002f198305c9d4257a"
+
+--0000000000002f198305c9d4257a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola a todos/as,
+                         esperamos que se encuentren bien. Les escribimos
+con informaci=C3=B3n que puede resultarles de inter=C3=A9s acerca de becas =
+de
+intercambio con una universidad situada en Eslovenia.
+
+Saludos
+
+---------- Forwarded message ---------
+De: Blas Fernandez <fernandezblas92@gmail.com>
+Date: mar, 17 ago 2021 a las 22:40
+Subject: Intercambio en Eslovenia
+To: Alumnos <alumnosm@gmail.com>
+
+
+Hola!
+=C2=BFC=C3=B3mo est=C3=A1n?
+
+Les dejo un mensajito para que difundan. :)
+
+Quer=C3=ADa comentarles que la Facultad de Matem=C3=A1ticas, Ciencias Natur=
+ales y
+Tecnologias de la Informaci=C3=B3n de la Universidad de Primorska (UP FAMNI=
+T),
+sita en la ciudad de Koper en Eslovenia, est=C3=A1 ofreciendo una beca de
+intercambio para estudiantes de la UNLP.
+
+La beca cubre gastos de viajes y proporciona un estipendio mensual durante
+la estad=C3=ADa, que puede ser entre 3 y 5 meses. Dicha estad=C3=ADa se deb=
+e realizar
+antes de Julio de 2022. Con esa beca b=C3=A1sicamente uno puede ir a la
+universidad y tomar cursos que pueden ser reconocidos como v=C3=A1lidos par=
+a el
+plan de estudio de la carrera (dependiendo el curso, claro!).  Los cursos
+pueden tomarse en ingl=C3=A9s, con un ingl=C3=A9s b=C3=A1sico, se entienden=
+ bien. Claro
+que tambi=C3=A9n se pueden tomar cursos en esloveno si manejan el idioma. P=
+ara
+el d=C3=ADa a d=C3=ADa y la vida fuera de la universidad, si no hablan eslo=
+veno,
+hablar algo de ingl=C3=A9s/italiano alcanza.
+
+En el 2017 realic=C3=A9 un intercambio parecido y la experiencia fue muy
+enriquecedora.
+
+Les dejo el link de la universidad: https://www.famnit.upr.si/sl/
+
+Si hay alg=C3=BAn interesado, pueden pasarle mi correo (fernandezblas92@gma=
+il.com)
+y as=C3=AD brindarles m=C3=A1s informaci=C3=B3n al respecto, aclarar cualqu=
+ier duda que
+tengan, etc. Tambi=C3=A9n puedo ponerlos en contacto con la oficina de asun=
+tos
+internacionales que es la que los gu=C3=ADa en el proceso de aplicaci=C3=B3=
+n.
+
+Saludos,
+Blas
+
+
+
+
+
+
+
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+Libre
+de virus. www.avast.com
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+
+--0000000000002f198305c9d4257a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hola a todos/as,<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0esperamos que se enc=
+uentren bien. Les escribimos con informaci=C3=B3n que puede resultarles de =
+inter=C3=A9s acerca de becas de intercambio con una universidad situada en =
+Eslovenia.</div><div><br></div><div>Saludos<br><br><div class=3D"gmail_quot=
+e"><div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message -----=
+----<br>De: <strong class=3D"gmail_sendername" dir=3D"auto">Blas Fernandez<=
+/strong> <span dir=3D"auto">&lt;<a href=3D"mailto:fernandezblas92@gmail.com=
+">fernandezblas92@gmail.com</a>&gt;</span><br>Date: mar, 17 ago 2021 a las =
+22:40<br>Subject: Intercambio en Eslovenia<br>To: Alumnos &lt;<a href=3D"ma=
+ilto:alumnosm@gmail.com">alumnosm@gmail.com</a>&gt;<br></div><br><br><div d=
+ir=3D"ltr"><div>Hola! <br></div><div>=C2=BFC=C3=B3mo est=C3=A1n? <br></div>=
+<div><br></div><div>Les dejo un mensajito para que difundan. :) <br></div><=
+div><br></div><div>Quer=C3=ADa comentarles que la Facultad de Matem=C3=A1ti=
+cas, Ciencias Naturales y Tecnologias de la Informaci=C3=B3n de la Universi=
+dad de Primorska (UP FAMNIT), sita en la ciudad de Koper en Eslovenia, est=
+=C3=A1 ofreciendo una beca de intercambio para estudiantes de la UNLP. <br>=
+</div><div><br></div><div>La beca cubre gastos de viajes y proporciona un e=
+stipendio mensual durante la estad=C3=ADa, que puede ser entre 3 y 5 meses.=
+ Dicha estad=C3=ADa se debe realizar antes de Julio de 2022. Con esa beca b=
+=C3=A1sicamente uno puede ir a la universidad y tomar cursos que pueden ser=
+ reconocidos como v=C3=A1lidos para el plan de estudio de la carrera (depen=
+diendo el curso, claro!).=C2=A0 Los cursos pueden tomarse en ingl=C3=A9s, c=
+on un ingl=C3=A9s b=C3=A1sico, se entienden bien. Claro que tambi=C3=A9n se=
+ pueden tomar cursos en esloveno si manejan el idioma. Para el d=C3=ADa a d=
+=C3=ADa y la vida fuera de la universidad, si no hablan esloveno, hablar al=
+go de ingl=C3=A9s/italiano alcanza.=C2=A0<br></div><div><br></div><div>
+En el 2017 realic=C3=A9 un intercambio parecido y la experiencia fue muy en=
+riquecedora. <br></div><div><br></div><div>Les dejo el link de la universid=
+ad: <a href=3D"https://www.famnit.upr.si/sl/" target=3D"_blank">https://www=
+.famnit.upr.si/sl/</a></div><div><br></div><div>
+<div>Si hay alg=C3=BAn interesado, pueden pasarle mi correo (<a href=3D"mai=
+lto:fernandezblas92@gmail.com" target=3D"_blank">fernandezblas92@gmail.com<=
+/a>) y as=C3=AD brindarles=20
+m=C3=A1s informaci=C3=B3n al respecto, aclarar cualquier duda que tengan, e=
+tc.=20
+Tambi=C3=A9n puedo ponerlos en contacto con la oficina de asuntos internaci=
+onales que es la que los gu=C3=ADa en el proceso de aplicaci=C3=B3n. <br></=
+div><div><br></div><div>Saludos, <br></div><div>Blas<br></div><div><br></di=
+v>
+
+</div><div><br></div><br><div><br></div><div><br></div><div><br></div><div>=
+<br></div><div> <br></div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div></div><div id=3D"DAB4FAD8-=
+2DD7-40BB-A1B8-4E2AA1F9FDF2"><br> <table style=3D"border-top:1px solid #d3d=
+4de">
+	<tr>
+      <td style=3D"width:55px;padding-top:18px"><a href=3D"https://www.avas=
+t.com/sig-email?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=
+=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_blank"><img src=3D"https=
+://ipmcdn.avast.com/images/icons/icon-envelope-tick-round-orange-animated-n=
+o-repeat-v1.gif" alt=3D"" width=3D"46" height=3D"29" style=3D"width: 46px; =
+height: 29px;"></a></td>
+		<td style=3D"width:470px;padding-top:17px;color:#41424e;font-size:13px;fo=
+nt-family:Arial,Helvetica,sans-serif;line-height:18px">Libre de virus. <a h=
+ref=3D"https://www.avast.com/sig-email?utm_medium=3Demail&amp;utm_source=3D=
+link&amp;utm_campaign=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_bla=
+nk" style=3D"color:#4453ea">www.avast.com</a> 		</td>
+	</tr>
+</table>
+<a href=3D"#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2" width=3D"1" height=3D"1">=
+</a></div>
+
+--0000000000002f198305c9d4257a--
