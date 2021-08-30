@@ -1,0 +1,622 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:ad98:0:0:0:0 with SMTP id gc24csp3996052pxb;
+        Mon, 30 Aug 2021 08:31:19 -0700 (PDT)
+X-Received: by 2002:a25:d68e:: with SMTP id n136mr24849739ybg.271.1630337479764;
+        Mon, 30 Aug 2021 08:31:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1630337479; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tJFiA7Y1mWwa1y27zxvmXWtBFeQSBY+5YZ/CFLDJ43e9fpBKee1XQWRg17dvXa/wnK
+         p3Dxr4dgGFGBLzBUjZm4Ev4hCnUptYV5n4JQ3N8/Zkx4hvJtta+9gFV1aaCRWEIPwdPT
+         xUBs+nclWt9X5IeKm+9SghGXa5kedldJQOL7HJcMStGswPomgS9W2xAk2h6Qbh1s+QYu
+         pnAbJci/NVZntxM/ypvhooeIQTI3hbtsjANgLd+mAeEgaY6dsyu9CaVnkswJ0WQcld1X
+         Se9dCLNflTkkCPNBzfMOquDZnePxM0oRBM+/q7QJNjfqEfRxFL4pnJpiM8KjGSC98+Oi
+         QrDQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=aIjWeuMWsbAU0cXUdbY/z7qtPacooK2xDh6goSbT9dU=;
+        b=YcmsFepf+eodcxfT1QECbu1aiJIzyhkqhcnqM+VkOzQbc4HAOnBgRWrgAzAAVSWIXh
+         Wun8IldaLEtZT2u9vAiBcF4jSaMl0sIkkvvzZTRsorhwOMA00mr3AB13XrjyTi/sTmKy
+         Xd4sELGUnW9P+rqpMOeEauxG+sG7Jk9HLJ/LqTUJG2tYnkoCOyu/gD04SL2ILIxcsmBY
+         exZf9w7H6GU0UfnBNowC4RVg5C5baJxaE9yVzQTDNBcrsiWBd1nIsXQ+z8atKaduoGrq
+         wNe7O+qFks1Rm+PQ3JvAnh0HDElznlwHxnPLDIg4E4xRE313IoYHZ7Yohn5dbuMZJQgG
+         cJuw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=jr6CSGTo;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id s15sor4472158ybs.126.2021.08.30.08.31.18
+        (Google Transport Security);
+        Mon, 30 Aug 2021 08:31:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=jr6CSGTo;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=aIjWeuMWsbAU0cXUdbY/z7qtPacooK2xDh6goSbT9dU=;
+        b=jr6CSGToyG+16KudenEoKgIk356ISecb6sJhV58bQkdcDGFB0WrYHJyPyS+2KECFcl
+         ZzgIYR2FNyXFEK0Ikn8mhmfvz/oACXtMxwkEYZmSnyIHeWbhMPN3qNREMnEWj8jnVdE1
+         3g5bCZDPfSyyw1HoEI1awMG5wUXQds1m7B6wiNTV0iCANxQ9Wc/vkqVHTr7ztR5IJ4tt
+         YLTc6Vk0H1mFZpqlVJH9QiqA4WCFa0+N9deCQB0jMMuzVZ6bGMTVJB+keHjTrXpS034M
+         p/jKzVj1/3APClfoa3xvg7W/2zYfzSFRbvXr1HTH8LfP6ciur3jOD6fJ99teGO7azKY+
+         mesA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=aIjWeuMWsbAU0cXUdbY/z7qtPacooK2xDh6goSbT9dU=;
+        b=nbh0P+RhU3mj9h8an0J3jlYN18jgmG/bN0bU+taQ1yszduwEcjo/gAJVHbH9N77LXE
+         b2L1vj4VOlq1OhGvusshMp9d700CZQrSlUPljMbRqW34YeizuY8jVY9nH5iFMjd+ijP9
+         JhxFhkBnF9emcdgUXCps2G2b3p90299ZUHAkEHZXLavX7+5aa5RFijtGes9+NKVLmDxn
+         5wdOXH68cQu7v+yJ6DZQCZu0YCPNoGQU9NO9sfIQImWndB8HhwqsjvUh1p7hSZnqOIjJ
+         9Lr8LLc7ZproqrFYSsWS+BJqj/vkgASMC5MXTwFzL5Svde8lqFrEZc4YlhEEqnW2eQXY
+         YC/Q==
+X-Gm-Message-State: AOAM533vc1IViOh4xNuAT5jXbAS+sAIcrjqb9PusLFC/WdzPBriwodA9
+	Uq54TVswJh18Y0dKeMDPdRlvdTLhMEINxR2To4g=
+X-Google-Smtp-Source: ABdhPJyAmh8ewNjstv64F+GKFhaBtyiA55F/kDwM4lF+55x49rlFxbwBkQL4hiK7JiOoOxNnJ7XFF8nl6dQnurGy9uA=
+X-Received: by 2002:a25:76ce:: with SMTP id r197mr12718772ybc.242.1630337478489;
+ Mon, 30 Aug 2021 08:31:18 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAN1gEssMCMe4XWuHDJBti_2RsFxhtO771BdJsi_1KdZwuex=Dg@mail.gmail.com>
+ <CAN1gEst249j74KhoCT=0W6BP95BMJeo0gjDS0hv8GfjpAHS5Ag@mail.gmail.com>
+ <CAN1gEsuoScgNpdP5DSJqC=XJk3Km7N+57ixCYZkDn3wUPCb-3w@mail.gmail.com>
+ <CAN1gEssO5V0ZOaydYoVQ=xegW3=imTTwPTC2UcCMLgLevJzUww@mail.gmail.com> <CAAYRPUu1Adpmb6iEyTVM5L1P9hfGLmJ4LTYoWQ7CrYAM5Uw5PQ@mail.gmail.com>
+In-Reply-To: <CAAYRPUu1Adpmb6iEyTVM5L1P9hfGLmJ4LTYoWQ7CrYAM5Uw5PQ@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 30 Aug 2021 12:31:07 -0300
+Message-ID: <CAN5uefYG5Mt0=FY-fp6rnfc=e0uCTMJkeLr46UfwM0TysG98mw@mail.gmail.com>
+Subject: Fwd: Mathematics Sin Fronteras
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, unlplnr2019ak@gmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000044fbed05cac886e3"
+
+--00000000000044fbed05cac886e3
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola a todos/as,
+                         esperamos que se encuentren bien. Les reenviamos
+informaci=C3=B3n acerca de una serie de conferencias virtuales orientadas
+principalmente a los alumnos de los primeros a=C3=B1os de la licenciatura. =
+Las
+mismas tendr=C3=A1n lugar una vez por semana comenzando el 20 de septiembre=
+,
+pero como los cupos para inscripci=C3=B3n son limitados, quienes pudiesen l=
+legar
+a estar interesados deber=C3=ADan anotarse lo antes posible. En el texto
+reenviado se encuentran el enlace a la pagina del evento y del formulario
+de inscripci=C3=B3n.
+
+Saludos!
+
+---------- Forwarded message ---------
+De: Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa <gastonandresg@gmail.com>
+Date: vie, 27 ago 2021 a las 8:00
+Subject: Fwd: Mathematics Sin Fronteras
+To: Alumnos <alumnosm@gmail.com>, <alumnos@mate.unlp.edu.ar>
+
+---------- Forwarded message ---------
+De: Alicia Dickenstein <alidick@dm.uba.ar>
+Date: jue, 26 de ago. de 2021 a la(s) 23:58
+Subject: Mathematics Sin Fronteras
+To: UMA2014 <abenaven@gmail.com>, Sonia Trepode <strepode@gmail.com>,
+Liliana Forzani <liliana.forzani@gmail.com>, In=C3=A9s Pacharoni <
+inespacharoni@gmail.com>, Gabriel Soto <gabriel.r.soto@gmail.com>, Mar=C3=
+=ADa
+Chara <charamaria@gmail.com>, Gast=C3=B3n Garc=C3=ADa <gastonandresg@gmail.=
+com>,
+Emilio Lauret <emiliolauret@gmail.com>, cynthia will <cynthiawill@gmail.com=
+>,
+Ana Maria Sfer <asfer@herrera.unt.edu.ar>, <
+raquel.crescimbeni@faea.uncoma.edu.ar>
+
+
+Disculpen, les paso solo el texto m=C3=ADnimamente editado para pasar a lxs
+alumnxs interesadxs, con un mejor subject.  Gracias Alicia
+----------------------------------------------------------------
+
+
+*Mathematics Sin Fronteras (MSF)* es  un programa biling=C3=BCe
+(ingl=C3=A9s-castellano) (virtual) de  una duraci=C3=B3n de dos meses,  que=
+ consiste
+de una  serie de conferencias extracurriculares de  matem=C3=A1tica. Dicho
+programa  se desarrollar=C3=A1 del *20 de septiembre al 18 de noviembre de =
+2021,*
+con s=C3=B3lo una conferencia por semana durante un per=C3=ADodo de nueve
+semanas. Contar=C3=A1
+con dos  profesoras destacadas, cada una de las cuales impartir=C3=A1 una s=
+erie
+de cuatro conferencias repartidas en cuatros semanas. Todas las charlas se
+llevar=C3=A1n a cabo virtualmente a trav=C3=A9s  *de Zoom los jueves *de 15=
+:00 a
+16:30 ET (Eastern Time de EEUU, es decir que ser=C3=A1 de 16:00 a 17:30 hs =
+de
+Argentina hasta que cambie la hora en EEUU el 7 de noviembre y las dos
+=C3=BAltimas clases pasar=C3=A1n a ser de 17:00 a 18:30 hs de Argentina)
+
+MSF est=C3=A1 orientado a estudiantes universitarixs de los primeros a=C3=
+=B1os de la
+licenciatura y est=C3=A1 destinado a complementar el plan de estudios regul=
+ar.
+Los detalles del programa y c=C3=B3mo postularse se encuentran en el sitio =
+de
+web, el p=C3=B3ster y archivos adjuntos.  La participaci=C3=B3n es gratuita=
+, pero
+estudiantes interesadxs deben postularse debido a que hay un n=C3=BAmero
+limitado de vacantes.
+
+
+El formulario de solicitud breve y simple se puede encontrar en:
+https://tinyurl.com/MSF-Fall-21
+<https://urldefense.com/v3/__https://tinyurl.com/appMSF2021__;!!GCVVS_VUUfl=
+jVg!d81nzi2lC8Dtr6Lhvdb_E5-pv4moGgPQCqpFNGjYHXtoSCW7c9FQTL5X9e_V_a5vuHPuQw$=
+>
+
+Se anima especialmente a postularse a los grupos subrepresentados. Las
+solicitudes se aceptar=C3=A1n hasta que se cubran las vacantes, pero las
+solicitudes que lleguen antes del 5 de septiembre tendr=C3=A1n m=C3=A1xima
+consideraci=C3=B3n.
+
+El sitio web (en actualizaci=C3=B3n) puede visitarse en:
+https://tinyurl.com/MathSinFront
+<https://urldefense.com/v3/__https://tinyurl.com/MathSinFront__;!!GCVVS_VUU=
+fljVg!d81nzi2lC8Dtr6Lhvdb_E5-pv4moGgPQCqpFNGjYHXtoSCW7c9FQTL5X9e_V_a5L-qDfS=
+Q$>
+
+
+Expositoras y Temas:
+
+Mariana Olvera Craviato (UNC, Chapel Hill) -
+
+=E2=80=9CGr=C3=A1ficas aleatorias, redes sociales y el internet =E2=80=9D
+
+Carolina Benedetti Vel=C3=A1zquez (Colombia) =E2=80=93
+
+Universidad de los Andes, Bogota Colombia
+
+=E2=80=9CCaminos reticulares, =C3=A1lgebra lineal y combinatoria=E2=80=9D
+
+Lxs participantes que completen los seminarios y las tareas recibir=C3=A1n =
+un
+certificado.
+
+
+
+Este programa est=C3=A1 organizado por Math CoOp
+<https://www.dam.brown.edu/math-coop/> en la Universidad de Brown, Divisi=
+=C3=B3n
+de Matem=C3=A1ticas Aplicadas
+<https://www.brown.edu/academics/applied-mathematics/> de Brown University,
+la Iniciativa de Diversidad de los Institutos de Ciencias Matem=C3=A1ticas,
+Mathematical Sciences Institutes Diversity Initiative (MSIDI)
+<https://mathinstitutes.org/diversity/> de la "National Science
+Foundation (NSF)"
+<https://nsf.org/> en Estados Unidos, y el Sociedad de matem=C3=A1ticas
+industrialesy aplicadas (SIAM). <https://www.siam.org/> En particular,
+agradecemos el apoyo financiero de la MSIDI y SIAM.
+Comit=C3=A9 organizador:
+Javiera Paulina Barrera (Universidad Adolfo Ib=C3=A1=C3=B1ez, Chile)
+Alicia Dickenstein (Universidad de Buenos Aires and CONICET =E2=80=93 Argen=
+tina)
+Alicia Prieto Langarica (Youngstown State University, Ohio, US)
+Gabriela Ovando (Universidad Nacional de Rosario y CONICET, Argentina)
+Kavita Ramanan (Brown University, Rhode Island, US)
+Amal Taraabt (Pontificia Universidad Cat=C3=B3lica de Chile, Chile)
+
+
+
+
+--=20
+Dr. Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa
+CONICET
+Universidad Nacional de La Plata
+http://www.mate.unlp.edu.ar/~ggarcia/
+@gastonandresg
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+Libre
+de virus. www.avast.com
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+
+--00000000000044fbed05cac886e3
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hola a todos/as,<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0esperamos que se enc=
+uentren=C2=A0bien. Les reenviamos informaci=C3=B3n acerca de una serie de c=
+onferencias virtuales orientadas principalmente a los alumnos de los primer=
+os a=C3=B1os de la licenciatura. Las mismas tendr=C3=A1n lugar una vez por =
+semana comenzando el 20 de septiembre, pero como los cupos para inscripci=
+=C3=B3n son limitados, quienes pudiesen llegar a estar interesados deber=C3=
+=ADan anotarse lo antes posible. En el texto reenviado se encuentran el enl=
+ace a la pagina del evento y del formulario de inscripci=C3=B3n.</div><div>=
+<br></div><div>Saludos!<br><br><div class=3D"gmail_quote"><div dir=3D"ltr" =
+class=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong =
+class=3D"gmail_sendername" dir=3D"auto">Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa=
+</strong> <span dir=3D"auto">&lt;<a href=3D"mailto:gastonandresg@gmail.com"=
+>gastonandresg@gmail.com</a>&gt;</span><br>Date: vie, 27 ago 2021 a las 8:0=
+0<br>Subject: Fwd: Mathematics Sin Fronteras<br>To: Alumnos &lt;<a href=3D"=
+mailto:alumnosm@gmail.com">alumnosm@gmail.com</a>&gt;,  &lt;<a href=3D"mail=
+to:alumnos@mate.unlp.edu.ar">alumnos@mate.unlp.edu.ar</a>&gt;<br></div><br>=
+<div dir=3D"ltr"><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail=
+_attr">---------- Forwarded message ---------<br>De: <strong class=3D"gmail=
+_sendername" dir=3D"auto">Alicia Dickenstein</strong> <span dir=3D"auto">&l=
+t;<a href=3D"mailto:alidick@dm.uba.ar" target=3D"_blank">alidick@dm.uba.ar<=
+/a>&gt;</span><br>Date: jue, 26 de ago. de 2021 a la(s) 23:58<br>Subject: M=
+athematics Sin Fronteras<br>To: UMA2014 &lt;<a href=3D"mailto:abenaven@gmai=
+l.com" target=3D"_blank">abenaven@gmail.com</a>&gt;, Sonia Trepode &lt;<a h=
+ref=3D"mailto:strepode@gmail.com" target=3D"_blank">strepode@gmail.com</a>&=
+gt;, Liliana Forzani &lt;<a href=3D"mailto:liliana.forzani@gmail.com" targe=
+t=3D"_blank">liliana.forzani@gmail.com</a>&gt;, In=C3=A9s Pacharoni &lt;<a =
+href=3D"mailto:inespacharoni@gmail.com" target=3D"_blank">inespacharoni@gma=
+il.com</a>&gt;, Gabriel Soto &lt;<a href=3D"mailto:gabriel.r.soto@gmail.com=
+" target=3D"_blank">gabriel.r.soto@gmail.com</a>&gt;, Mar=C3=ADa Chara &lt;=
+<a href=3D"mailto:charamaria@gmail.com" target=3D"_blank">charamaria@gmail.=
+com</a>&gt;, Gast=C3=B3n Garc=C3=ADa &lt;<a href=3D"mailto:gastonandresg@gm=
+ail.com" target=3D"_blank">gastonandresg@gmail.com</a>&gt;, Emilio Lauret &=
+lt;<a href=3D"mailto:emiliolauret@gmail.com" target=3D"_blank">emiliolauret=
+@gmail.com</a>&gt;, cynthia will &lt;<a href=3D"mailto:cynthiawill@gmail.co=
+m" target=3D"_blank">cynthiawill@gmail.com</a>&gt;, Ana Maria Sfer &lt;<a h=
+ref=3D"mailto:asfer@herrera.unt.edu.ar" target=3D"_blank">asfer@herrera.unt=
+.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:raquel.crescimbeni@faea.uncoma.edu.=
+ar" target=3D"_blank">raquel.crescimbeni@faea.uncoma.edu.ar</a>&gt;<br></di=
+v><br><br><div dir=3D"ltr"><div class=3D"gmail_quote">Disculpen, les paso s=
+olo el texto m=C3=ADnimamente editado para pasar a lxs alumnxs interesadxs,=
+ con un mejor subject.=C2=A0 Gracias Alicia<br></div><div class=3D"gmail_qu=
+ote"><div dir=3D"ltr"><span style=3D"font-family:&quot;Times New Roman&quot=
+;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"><span><font=
+ color=3D"#5856d6"><span><span style=3D"font-family:&quot;Times New Roman&q=
+uot;,serif"><span style=3D"font-style:normal"></span></span></span></font><=
+/span></font></span></span><span style=3D"font-family:&quot;Times New Roman=
+&quot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"><span>=
+</span></font></span></span><span style=3D"font-family:&quot;Times New Roma=
+n&quot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"><span=
+><font color=3D"#5856d6"><span></span></font></span></font></span></span>--=
+--------------------------------------------------------------</div><div di=
+r=3D"ltr"><span style=3D"font-family:&quot;Times New Roman&quot;,serif"><sp=
+an style=3D"font-style:normal"><font face=3D"Arial"><span><font color=3D"#5=
+856d6"><span></span></font></span></font></span></span><div class=3D"gmail_=
+quote"><div dir=3D"ltr"><div class=3D"gmail_quote"><div dir=3D"ltr"><div><p=
+ class=3D"MsoNormal" style=3D"margin:0in;font-size:12pt;font-family:&quot;C=
+alibri&quot;,sans-serif"><span style=3D"font-family:&quot;Times New Roman&q=
+uot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"><span><f=
+ont color=3D"#5856d6"><span><br></span></font></span></font></span></span><=
+/p><p class=3D"MsoNormal" style=3D"margin:0in;font-size:12pt;font-family:&q=
+uot;Calibri&quot;,sans-serif"><span style=3D"font-family:&quot;Times New Ro=
+man&quot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"><sp=
+an><font color=3D"#5856d6"><span>
+</span></font>*Mathematics Sin Fronteras (MSF)* es=C2=A0 un programa biling=
+=C3=BCe
+ (ingl=C3=A9s-castellano) (virtual) de=C2=A0 una duraci=C3=B3n de dos meses=
+,=C2=A0 que consiste de una=C2=A0 serie de conferencias extracurriculares d=
+e=C2=A0 matem=C3=A1tica. Dicho programa=C2=A0 se desarrollar=C3=A1 del <b>2=
+0 de septiembre al 18 de noviembre=20
+de 2021,</b>=C2=A0 con s=C3=B3lo una conferencia por semana durante un per=
+=C3=ADodo de=20
+nueve semanas. <span style=3D"font-family:&quot;Times New Roman&quot;,serif=
+"><span style=3D"font-style:normal"><font face=3D"Arial">Contar=C3=A1 con d=
+os=C2=A0 profesoras destacadas, cada una de las cuales impartir=C3=A1 una s=
+erie de cuatro conferencias repartidas
+ en cuatros semanas. Todas las charlas se llevar=C3=A1n a cabo virtualmente=
+ a trav=C3=A9s=C2=A0 <b>de Zoom=C2=A0<span>los=C2=A0</span>jueves </b>de 15=
+:00 a 16:30 ET (Eastern Time de EEUU, es decir que ser=C3=A1 de 16:00 a 17:=
+30 hs de Argentina hasta que cambie la hora en EEUU el 7 de noviembre y las=
+ dos =C3=BAltimas clases pasar=C3=A1n a ser de 17:00 a 18:30 hs de Argentin=
+a)</font></span></span><br>
+=C2=A0<br></span>
+MSF est=C3=A1 orientado a estudiantes universitarixs de los primeros a=C3=
+=B1os de la licenciatura y est=C3=A1 destinado a complementar el plan de es=
+tudios regular. <span>Los</span>=C2=A0detalles del programa y c=C3=B3mo pos=
+tularse se encuentran en el sitio de web, el p=C3=B3ster y archivos adjunto=
+s.=C2=A0
+<font color=3D"#5856d6"><span></span></font>La participaci=C3=B3n es gratui=
+ta, pero estudiantes interesadxs deben postularse debido a=C2=A0que hay un =
+n=C3=BAmero limitado de vacantes.<span><br>
+<font color=3D"#5856d6"><span></span></font></span></font></span></span></p=
+><p class=3D"MsoNormal" style=3D"margin:0in;font-size:12pt;font-family:&quo=
+t;Calibri&quot;,sans-serif"><span style=3D"font-family:&quot;Times New Roma=
+n&quot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"><span=
+><font color=3D"#5856d6"><span><br></span></font></span></font></span></spa=
+n></p><p class=3D"MsoNormal" style=3D"margin:0in;font-size:12pt;font-family=
+:&quot;Calibri&quot;,sans-serif"><span style=3D"font-family:&quot;Times New=
+ Roman&quot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial">=
+<span><font color=3D"#5856d6"><span>
+</span></font>El formulario de solicitud breve y simple se puede encontrar =
+en:=C2=A0=C2=A0 <span></span><a href=3D"https://urldefense.com/v3/__https:/=
+/tinyurl.com/appMSF2021__;!!GCVVS_VUUfljVg!d81nzi2lC8Dtr6Lhvdb_E5-pv4moGgPQ=
+CqpFNGjYHXtoSCW7c9FQTL5X9e_V_a5vuHPuQw$" target=3D"_blank"><span style=3D"c=
+olor:blue">https://tinyurl.com/MSF-Fall-21</span></a><br>
+<span><br></span></span></font></span></span></p><p class=3D"MsoNormal" sty=
+le=3D"margin:0in;font-size:12pt;font-family:&quot;Calibri&quot;,sans-serif"=
+><span style=3D"font-family:&quot;Times New Roman&quot;,serif"><span style=
+=3D"font-style:normal"><font face=3D"Arial"><span><span>Se anima especialme=
+nte a postularse a=C2=A0<span>los</span>=C2=A0grupos subrepresentados.=C2=
+=A0</span>Las
+ solicitudes se aceptar=C3=A1n hasta que se cubran las vacantes, pero las=
+=20
+solicitudes que lleguen antes del 5 de septiembre tendr=C3=A1n
+ m=C3=A1xima consideraci=C3=B3n.<br>
+<font color=3D"#5856d6"><span><br>
+</span></font>El sitio web (en actualizaci=C3=B3n) puede visitarse en:=C2=
+=A0=C2=A0 <span></span><a href=3D"https://urldefense.com/v3/__https://tinyu=
+rl.com/MathSinFront__;!!GCVVS_VUUfljVg!d81nzi2lC8Dtr6Lhvdb_E5-pv4moGgPQCqpF=
+NGjYHXtoSCW7c9FQTL5X9e_V_a5L-qDfSQ$" target=3D"_blank"><span style=3D"color=
+:blue">https://tinyurl.com/MathSinFront</span></a></span></font></span></sp=
+an></p><p class=3D"MsoNormal" style=3D"margin:0in;font-size:12pt;font-famil=
+y:&quot;Calibri&quot;,sans-serif"><span style=3D"font-family:&quot;Times Ne=
+w Roman&quot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"=
+><span><br></span></font></span></span></p><p class=3D"MsoNormal" style=3D"=
+margin:0in;font-size:12pt;font-family:&quot;Calibri&quot;,sans-serif"><span=
+ style=3D"font-family:&quot;Times New Roman&quot;,serif"><span style=3D"fon=
+t-style:normal"><font face=3D"Arial"><span>
+</span></font></span></span></p><p style=3D"line-height:normal;margin:0pt 0=
+in;text-indent:0in;text-align:center;direction:ltr;unicode-bidi:embed"><fon=
+t size=3D"2"><span style=3D"color:rgb(0,0,0)"><span style=3D"font-family:&q=
+uot;Book Antiqua&quot;;font-variant:normal;text-transform:none;font-weight:=
+bold;font-style:normal">Expositoras</span><span style=3D"font-family:&quot;=
+Book Antiqua&quot;;font-variant:normal;text-transform:none;font-weight:bold=
+;font-style:normal"> y </span><span style=3D"font-family:&quot;Book Antiqua=
+&quot;;font-variant:normal;text-transform:none;font-weight:bold;font-style:=
+normal">Temas</span><span style=3D"font-family:&quot;Book Antiqua&quot;;fon=
+t-variant:normal;text-transform:none;font-weight:bold;font-style:normal">:<=
+/span></span></font></p><font size=3D"2"><span style=3D"color:rgb(0,0,0)">
+
+
+
+</span></font><p style=3D"line-height:normal;margin:0pt 0in;text-indent:0in=
+;text-align:center;direction:ltr;unicode-bidi:embed"><font size=3D"2"><span=
+ style=3D"color:rgb(0,0,0)"><span style=3D"font-family:&quot;Book Antiqua&q=
+uot;;font-variant:normal;text-transform:none;font-weight:bold;font-style:no=
+rmal">Ma</span><span style=3D"font-family:&quot;Book Antiqua&quot;;font-var=
+iant:normal;text-transform:none;font-weight:bold;font-style:normal">riana</=
+span><span style=3D"font-family:&quot;Book Antiqua&quot;;font-variant:norma=
+l;text-transform:none;font-weight:bold;font-style:normal"> Olvera </span><s=
+pan style=3D"font-family:&quot;Book Antiqua&quot;;font-variant:normal;text-=
+transform:none;font-weight:bold;font-style:normal">Craviato</span><span sty=
+le=3D"font-family:&quot;Book Antiqua&quot;;font-variant:normal;text-transfo=
+rm:none;font-weight:bold;font-style:normal"> (</span><span style=3D"font-fa=
+mily:&quot;Book Antiqua&quot;;font-variant:normal;text-transform:none;font-=
+weight:bold;font-style:normal">UNC, Chapel Hill</span><span style=3D"font-f=
+amily:&quot;Book Antiqua&quot;;font-variant:normal;text-transform:none;font=
+-weight:bold;font-style:normal">) - </span></span></font></p><font size=3D"=
+2"><span style=3D"color:rgb(0,0,0)">
+
+</span></font><p style=3D"line-height:normal;margin-top:0pt;margin-bottom:0=
+pt;margin-right:0in;text-align:center;direction:ltr;unicode-bidi:embed"><fo=
+nt size=3D"2"><span style=3D"color:rgb(0,0,0)"><span style=3D"font-family:&=
+quot;Book Antiqua&quot;;font-variant:normal;text-transform:none;font-weight=
+:normal;font-style:normal">=E2=80=9C</span><span style=3D"font-family:Arial=
+;font-variant:normal;text-transform:none;font-weight:normal;font-style:norm=
+al">Gr=C3=A1ficas</span><span style=3D"font-family:Arial;font-variant:norma=
+l;text-transform:none;font-weight:normal;font-style:normal"> </span><span s=
+tyle=3D"font-family:Arial;font-variant:normal;text-transform:none;font-weig=
+ht:normal;font-style:normal">aleatorias</span><span style=3D"font-family:Ar=
+ial;font-variant:normal;text-transform:none;font-weight:normal;font-style:n=
+ormal">, </span><span style=3D"font-family:Arial;font-variant:normal;text-t=
+ransform:none;font-weight:normal;font-style:normal">redes</span><span style=
+=3D"font-family:Arial;font-variant:normal;text-transform:none;font-weight:n=
+ormal;font-style:normal"> </span><span style=3D"font-family:Arial;font-vari=
+ant:normal;text-transform:none;font-weight:normal;font-style:normal">social=
+es</span><span style=3D"font-family:Arial;font-variant:normal;text-transfor=
+m:none;font-weight:normal;font-style:normal"> y el internet </span><span st=
+yle=3D"font-family:&quot;Book Antiqua&quot;;font-variant:normal;text-transf=
+orm:none;font-weight:normal;font-style:normal">=E2=80=9D</span></span></fon=
+t></p><font size=3D"2"><span style=3D"color:rgb(0,0,0)">
+
+
+
+</span></font><p style=3D"line-height:normal;margin:0pt 0in;text-indent:0in=
+;text-align:center;direction:ltr;unicode-bidi:embed"><font size=3D"2"><span=
+ style=3D"color:rgb(0,0,0)"><span style=3D"font-family:&quot;Book Antiqua&q=
+uot;;font-variant:normal;text-transform:none;font-weight:bold;font-style:no=
+rmal">Carolina
+Benedetti </span><span style=3D"font-family:&quot;Book Antiqua&quot;;font-v=
+ariant:normal;text-transform:none;font-weight:bold;font-style:normal">Vel=
+=C3=A1zquez</span><span style=3D"font-family:&quot;Book Antiqua&quot;;font-=
+variant:normal;text-transform:none;font-weight:bold;font-style:normal"> </s=
+pan><span style=3D"font-family:&quot;Book Antiqua&quot;;font-variant:normal=
+;text-transform:none;font-weight:bold;font-style:normal">(C</span><span sty=
+le=3D"font-family:&quot;Book Antiqua&quot;;font-variant:normal;text-transfo=
+rm:none;font-weight:bold;font-style:normal">olombia</span><span style=3D"fo=
+nt-family:&quot;Book Antiqua&quot;;font-variant:normal;text-transform:none;=
+font-weight:bold;font-style:normal">) </span><span style=3D"font-family:&qu=
+ot;Book Antiqua&quot;;font-variant:normal;text-transform:none;font-weight:b=
+old;font-style:normal">=E2=80=93</span><span style=3D"font-family:&quot;Boo=
+k Antiqua&quot;;font-variant:normal;text-transform:none;font-weight:bold;fo=
+nt-style:normal"> </span></span></font></p><font size=3D"2"><span style=3D"=
+color:rgb(0,0,0)">
+
+</span></font><p style=3D"line-height:normal;margin:0pt 0in;text-indent:0in=
+;text-align:center;direction:ltr;unicode-bidi:embed"><font size=3D"2"><span=
+ style=3D"color:rgb(0,0,0)"><span style=3D"font-family:&quot;Book Antiqua&q=
+uot;;font-variant:normal;text-transform:none;font-weight:bold;font-style:no=
+rmal">Universidad
+de </span><span style=3D"font-family:&quot;Book Antiqua&quot;;font-variant:=
+normal;text-transform:none;font-weight:bold;font-style:normal">los</span><s=
+pan style=3D"font-family:&quot;Book Antiqua&quot;;font-variant:normal;text-=
+transform:none;font-weight:bold;font-style:normal"> Andes, Bogota Colombia<=
+/span></span></font></p><font size=3D"2"><span style=3D"color:rgb(0,0,0)">
+
+</span></font><p style=3D"line-height:normal;margin-top:0pt;margin-bottom:0=
+pt;margin-right:0in;text-align:center;direction:ltr;unicode-bidi:embed"><fo=
+nt size=3D"2"><span style=3D"color:rgb(0,0,0)"><span style=3D"font-family:&=
+quot;Book Antiqua&quot;;font-variant:normal;text-transform:none;font-weight=
+:bold;font-style:normal">=E2=80=9C</span><span style=3D"font-family:Arial;f=
+ont-variant:normal;text-transform:none;font-weight:normal;font-style:normal=
+">Caminos
+</span><span style=3D"font-family:Arial;font-variant:normal;text-transform:=
+none;font-weight:normal;font-style:normal">reticulares</span><span style=3D=
+"font-family:Arial;font-variant:normal;text-transform:none;font-weight:norm=
+al;font-style:normal">, </span><span style=3D"font-family:Arial;font-varian=
+t:normal;text-transform:none;font-weight:normal;font-style:normal">=C3=A1lg=
+ebra</span><span style=3D"font-family:Arial;font-variant:normal;text-transf=
+orm:none;font-weight:normal;font-style:normal"> lineal y </span><span style=
+=3D"font-family:Arial;font-variant:normal;text-transform:none;font-weight:n=
+ormal;font-style:normal">combinatori</span><span style=3D"font-family:Arial=
+;font-variant:normal;text-transform:none;font-weight:normal;font-style:norm=
+al">a</span><span style=3D"font-family:&quot;Book Antiqua&quot;;font-varian=
+t:normal;text-transform:none;font-weight:normal;font-style:normal">=E2=80=
+=9D</span></span></font></p><font size=3D"2"><span style=3D"color:rgb(0,0,0=
+)"></span><span style=3D"color:rgb(0,0,0)"></span></font><p style=3D"line-h=
+eight:normal;margin:0pt 0in;text-indent:0in;text-align:center;direction:ltr=
+;unicode-bidi:embed"><font size=3D"2"><span style=3D"color:rgb(0,0,0)"><spa=
+n style=3D"font-family:&quot;Book Antiqua&quot;;font-variant:normal;text-tr=
+ansform:none;font-weight:bold;font-style:normal">Lxs
+</span><span style=3D"font-family:&quot;Book Antiqua&quot;;font-variant:nor=
+mal;text-transform:none;font-weight:bold;font-style:normal">participantes
+que completen los seminarios y las tareas recibir=C3=A1n un certificado. </=
+span></span></font></p><span style=3D"color:rgb(0,0,0)"></span>
+
+<p class=3D"MsoNormal" style=3D"margin:0in;font-size:12pt;font-family:&quot=
+;Calibri&quot;,sans-serif"><span style=3D"font-family:&quot;Times New Roman=
+&quot;,serif"><span style=3D"font-style:normal"><font face=3D"Arial"><span>=
+<br>
+<font color=3D"#5856d6"><span><br>
+</span></font></span></font></span></span></p>
+
+</div>
+<h4><span style=3D"font-weight:normal"><span style=3D"color:rgb(0,0,0)"><fo=
+nt size=3D"2">Este programa  est=C3=A1 organizado por <a href=3D"https://ww=
+w.dam.brown.edu/math-coop/" target=3D"_blank"> Math CoOp </a> en la Univers=
+idad de Brown, <a href=3D"https://www.brown.edu/academics/applied-mathemati=
+cs/" target=3D"_blank"> Divisi=C3=B3n de Matem=C3=A1ticas Aplicadas </a>
+ de Brown University, la Iniciativa de Diversidad de los Institutos de=20
+Ciencias Matem=C3=A1ticas,  Mathematical Sciences Institutes Diversity=20
+Initiative
+	      <a href=3D"https://mathinstitutes.org/diversity/" target=3D"_blank">=
+ (MSIDI)  </a>
+	      de la &quot;National Science Foundation
+	      <a href=3D"https://nsf.org/" target=3D"_blank"> (NSF)&quot; </a>
+en Estados Unidos, y  el Sociedad de matem=C3=A1ticas industrialesy aplicad=
+as
+<a href=3D"https://www.siam.org/" target=3D"_blank">  (SIAM). </a>
+	      En particular, agradecemos el apoyo financiero de la MSIDI y SIAM.  =
+ </font></span></span></h4>
+
+<div><font size=3D"1">Comit=C3=A9 organizador:</font></div><div><font size=
+=3D"1">Javiera Paulina Barrera (Universidad Adolfo Ib=C3=A1=C3=B1ez, Chile)=
+<br>Alicia Dickenstein (Universidad de Buenos Aires and CONICET =E2=80=93 A=
+rgentina)<br>Alicia Prieto Langarica (Youngstown State University, Ohio, US=
+)<br>Gabriela Ovando (Universidad Nacional de Rosario y CONICET, Argentina)=
+<br>Kavita Ramanan (Brown University, Rhode Island, US)<br>Amal Taraabt (Po=
+ntificia Universidad Cat=C3=B3lica de Chile, Chile)</font></div><span style=
+=3D"color:rgb(0,0,0)"></span><div><br><br></div></div>
+</div></div>
+</div></div>
+</div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" data-smartma=
+il=3D"gmail_signature"><div dir=3D"ltr">Dr. Gast=C3=B3n Andr=C3=A9s Garc=C3=
+=ADa<div>CONICET</div><div>Universidad Nacional de La Plata<br><a href=3D"h=
+ttp://www.mate.unlp.edu.ar/~ggarcia/" target=3D"_blank">http://www.mate.unl=
+p.edu.ar/~ggarcia/</a></div><div>@gastonandresg</div></div></div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div></div><div id=3D"DAB4FAD8-=
+2DD7-40BB-A1B8-4E2AA1F9FDF2"><br> <table style=3D"border-top:1px solid #d3d=
+4de">
+	<tr>
+      <td style=3D"width:55px;padding-top:18px"><a href=3D"https://www.avas=
+t.com/sig-email?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=
+=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_blank"><img src=3D"https=
+://ipmcdn.avast.com/images/icons/icon-envelope-tick-round-orange-animated-n=
+o-repeat-v1.gif" alt=3D"" width=3D"46" height=3D"29" style=3D"width: 46px; =
+height: 29px;"></a></td>
+		<td style=3D"width:470px;padding-top:17px;color:#41424e;font-size:13px;fo=
+nt-family:Arial,Helvetica,sans-serif;line-height:18px">Libre de virus. <a h=
+ref=3D"https://www.avast.com/sig-email?utm_medium=3Demail&amp;utm_source=3D=
+link&amp;utm_campaign=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_bla=
+nk" style=3D"color:#4453ea">www.avast.com</a> 		</td>
+	</tr>
+</table>
+<a href=3D"#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2" width=3D"1" height=3D"1">=
+</a></div>
+
+--00000000000044fbed05cac886e3--
