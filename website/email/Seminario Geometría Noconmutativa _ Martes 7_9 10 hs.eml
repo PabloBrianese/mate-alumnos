@@ -1,0 +1,278 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:39d:0:0:0:0 with SMTP id 29csp3620531pxh;
+        Mon, 6 Sep 2021 04:22:02 -0700 (PDT)
+X-Received: by 2002:a25:d804:: with SMTP id p4mr15124194ybg.87.1630927322655;
+        Mon, 06 Sep 2021 04:22:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1630927322; cv=none;
+        d=google.com; s=arc-20160816;
+        b=y15/QExuyaco/7bx3wMONqQjgnj5eOXepSY7BST2+SeT2izL4uAG40bu2cWaEEhbfo
+         a6BtArDYQIxFOyfewJRl4Y7DMhRnw1ZyWYCLnkevQjlWN5x1n9zkQVEzGh8EKHryXNTg
+         cLVR1v0tBAJu5dQKADGbIYCCbuX4JFo74rOs0yR0Z08D7DYCCbVZ5eQLwloYIR1QGkrx
+         ynvrDMGBL5AdjjRO+6dsHUL3XIjHXa6MdjGWOcFzpD9ZrqUewT9NALGoLHzPd1XqeOsb
+         yZN5hTsa1xOumlgaEPwo10Jai3E7k4GaE9k66o5vIrSIxQ+gGWqFKdtXSObeYgFBuYTv
+         VLmw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=rBIHj0VIAAWDv739Jr/1+r9FqiHHFirZk6B6nM61/G8=;
+        b=FoHK9TTgtVUtlU2TlfgafDfeGT5UHE/DGrpDTM67TOk6iYw/IBw7HLg7pseri2sS6Y
+         sdCD5MBYEfqBWieOZDmbH47o5gtSkoPMDaNeJ4E6jRPTJhFsqAdBo3Am7VNnqObb5hFi
+         +t8xfORSwTTGgZe/VV4mf8mKSIZh2DzSggVkBLZ5gOgHTofP/pXgYjXhcavWSwMxotx+
+         qaXS7KWqe8TYdRn6LQf5j7oXURD7+q+i5f2CZ5xAvHO5SFqwErJU3ypXfnwCGgWwC3lM
+         CnUFRJhenR7Ct57/FEzsuTdtUdn44ijmD9dk19ZQ5FVPuGr1dLHQuW1U7lk7IM4fIZTQ
+         B74Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=eyOfTjhZ;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id h187sor2005275ybg.186.2021.09.06.04.22.02
+        (Google Transport Security);
+        Mon, 06 Sep 2021 04:22:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=eyOfTjhZ;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=rBIHj0VIAAWDv739Jr/1+r9FqiHHFirZk6B6nM61/G8=;
+        b=eyOfTjhZEWTUHdNEnWwd2uP9WPEBjdrOC1Y6hi77MQ27BDlr/rpPFbClPP6FnMt9j1
+         1fGhRZzXCPcUaAa/yzEB2Noa0sJCnsUaGk9JjQcuU0jGMyj4mocvlsfU8pvXKxCfL6RK
+         t4nhpkUunZ15E0edpVN1UHdLVEqIgkDOXr7LAzL3suERseU00PcUrAQsSiWFGpI+J9Nq
+         5qDYMSuTGp6zE5p4xBP/zAX1YmcmGGC9tZZpXDrxaOwofgahKDsAFQhhsGPbp/FmCURB
+         Cm/fvb+IUp8wtQvdtimy9nwqO9bbHzVPlmYsnqmijMjpgY9cl9b1PQR06QcQYCNYpAva
+         XmBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=rBIHj0VIAAWDv739Jr/1+r9FqiHHFirZk6B6nM61/G8=;
+        b=NWYKZKl6uro9xHFdqXVGwzhw9nogKLNlaE/jul1ohufMsFqGnG+NKrU0F+B5WrAa3A
+         ydCI/vwHDbyctfFWIiclSXsdjXr0EV40xsQ5aEJDKArBLSAnU8RPc1qhy7UDLU9pgDVo
+         2qovMpR1p6Vhx79EJIMtxZhA16RRvx16P5brN6vMxsUXZMsFG5oJ5PCoRYiXBWtLZeIW
+         9PTEKJJYyD0aV7uJqvHec03pKyYDUf7kSmlRzN7bjHn0e7+oXaM9MSwk3EkD0cImJp+B
+         JkXwkqSZtSuKSHLI4BrR2SWXIP35CVabBVq3AlQCqip29kF7xKJQ+FCDRp0svWs5k81g
+         lXwA==
+X-Gm-Message-State: AOAM532oZjtDr/hElg6uLmm5ZDxH3LNugFWxXCQpJz77LX+4Flmw7B4k
+	4CkmS6YWhBgN4zvlTZetJR0uoN9lOfT9vEPXJ1k=
+X-Google-Smtp-Source: ABdhPJwDnfEfCI1aJnDxM40+YBVlxOju4QlbaV1Y/vwGJ18mcvahu/0NY5qCAmXdlE6I88qpC2s7PwIfLtqqpc1gEAs=
+X-Received: by 2002:a25:60a:: with SMTP id 10mr16022267ybg.385.1630927321937;
+ Mon, 06 Sep 2021 04:22:01 -0700 (PDT)
+MIME-Version: 1.0
+References: <088b2274f719e285c5fd3d9b94187ed2@mate.unlp.edu.ar>
+In-Reply-To: <088b2274f719e285c5fd3d9b94187ed2@mate.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 6 Sep 2021 08:21:51 -0300
+Message-ID: <CAN5uefbQ=pcfZpfMbOPwBTBUbj9t-U44oy6nSNiHw8g_rLP-nQ@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Seminario_Geometr=C3=ADa_Noconmutativa_=3A_Martes_7=2F9?=
+	=?UTF-8?Q?_10_hs?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000adb95b05cb51db40"
+
+--000000000000adb95b05cb51db40
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola a todos/as,
+                          les enviamos los datos del seminario GeNoCAS que
+tendr=C3=A1 lugar ma=C3=B1ana a las 10:00hs.
+
+Saludos
+
+---------- Forwarded message ---------
+De: Gisela Tartaglia <gtartaglia@mate.unlp.edu.ar>
+Date: lun, 6 sept 2021 a las 7:56
+Subject: Seminario Geometr=C3=ADa Noconmutativa : Martes 7/9 10 hs
+To:
+
+
+Hola, este martes a las 10:00hs tendremos el seminario virtual de
+Geometr=C3=ADa Noconmutativa del Atl=C3=A1ntico Sur (GeNoCAS)
+<http://cms.dm.uba.ar/Members/gcorti/workgroup.GNC/GeNoCAS_seminar/document=
+_view>.
+
+En esta oportunidad va  a hablar *Christian Voigt* (Glasgow)
+
+Title: *Quantum graphs and quantum Cuntz-Krieger algebras*
+
+ In this talk I will give an introduction to quantum graphs, a
+relatively recent concept with connections to graph theory,  quantum
+groups, and quantum information. I will discuss some examples, and
+then explain how one can associate an operator algebra to a quantum
+graph, in analogy to the construction of Cuntz-Krieger algebras. For
+certain examples this leads to a rather unexpected new description of
+the Cuntz algebras O_n.
+Join Zoom Meeting
+<https://exactas-uba.zoom.us/j/83915550825>https://exactas-uba.zoom.us/j/83=
+915550825
+
+Meeting ID: 839 1555 0825
+Passcode: 550348
+
+
+
+
+Saludos,
+Guillermo Corti=C3=B1as y Gisela Tartaglia
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+Libre
+de virus. www.avast.com
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+
+--000000000000adb95b05cb51db40
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hola a todos/as,<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 les enviamos los da=
+tos del seminario GeNoCAS que tendr=C3=A1 lugar ma=C3=B1ana a las 10:00hs.<=
+/div><div><br></div><div>Saludos<br><br><div class=3D"gmail_quote"><div dir=
+=3D"ltr" class=3D"gmail_attr">---------- Forwarded message ---------<br>De:=
+ <strong class=3D"gmail_sendername" dir=3D"auto">Gisela Tartaglia</strong> =
+<span dir=3D"auto">&lt;<a href=3D"mailto:gtartaglia@mate.unlp.edu.ar">gtart=
+aglia@mate.unlp.edu.ar</a>&gt;</span><br>Date: lun, 6 sept 2021 a las 7:56<=
+br>Subject: Seminario Geometr=C3=ADa Noconmutativa : Martes 7/9 10 hs<br>To=
+: <br></div><br><br><u></u>
+<div>
+<pre>Hola, este martes a las 10:00hs tendremos el seminario virtual de <a h=
+ref=3D"http://cms.dm.uba.ar/Members/gcorti/workgroup.GNC/GeNoCAS_seminar/do=
+cument_view" target=3D"_blank">Geometr=C3=ADa Noconmutativa del Atl=C3=A1nt=
+ico Sur (GeNoCAS)</a>.
+
+En esta oportunidad va  a hablar <strong>Christian Voigt</strong> (Glasgow)
+
+Title: <em>Quantum graphs and quantum Cuntz-Krieger algebras</em>
+
+ In this talk I will give an introduction to quantum graphs, a relatively r=
+ecent concept with connections to graph theory,  quantum groups, and quantu=
+m information. I will discuss some examples, and then explain how one can a=
+ssociate an operator algebra to a quantum graph, in analogy to the construc=
+tion of Cuntz-Krieger algebras. For certain examples this leads to a rather=
+ unexpected new description of the Cuntz algebras O_n.
+
+<a href=3D"https://exactas-uba.zoom.us/j/83915550825" target=3D"_blank">Joi=
+n Zoom Meeting</a>
+<a href=3D"https://exactas-uba.zoom.us/j/83915550825" target=3D"_blank">htt=
+ps://exactas-uba.zoom.us/j/83915550825</a>
+
+Meeting ID: 839 1555 0825
+Passcode: 550348
+
+
+
+
+Saludos,
+Guillermo Corti=C3=B1as y Gisela Tartaglia</pre>
+</div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div></div><div id=3D"DAB4FAD8-=
+2DD7-40BB-A1B8-4E2AA1F9FDF2"><br> <table style=3D"border-top:1px solid #d3d=
+4de">
+	<tr>
+      <td style=3D"width:55px;padding-top:18px"><a href=3D"https://www.avas=
+t.com/sig-email?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=
+=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_blank"><img src=3D"https=
+://ipmcdn.avast.com/images/icons/icon-envelope-tick-round-orange-animated-n=
+o-repeat-v1.gif" alt=3D"" width=3D"46" height=3D"29" style=3D"width: 46px; =
+height: 29px;"></a></td>
+		<td style=3D"width:470px;padding-top:17px;color:#41424e;font-size:13px;fo=
+nt-family:Arial,Helvetica,sans-serif;line-height:18px">Libre de virus. <a h=
+ref=3D"https://www.avast.com/sig-email?utm_medium=3Demail&amp;utm_source=3D=
+link&amp;utm_campaign=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_bla=
+nk" style=3D"color:#4453ea">www.avast.com</a> 		</td>
+	</tr>
+</table>
+<a href=3D"#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2" width=3D"1" height=3D"1">=
+</a></div>
+
+--000000000000adb95b05cb51db40--

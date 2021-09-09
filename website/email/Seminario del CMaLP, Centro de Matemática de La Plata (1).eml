@@ -1,0 +1,403 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:39d:0:0:0:0 with SMTP id 29csp3603736pxh;
+        Mon, 6 Sep 2021 04:00:44 -0700 (PDT)
+X-Received: by 2002:a25:1bc3:: with SMTP id b186mr14736293ybb.284.1630926044371;
+        Mon, 06 Sep 2021 04:00:44 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1630926044; cv=none;
+        d=google.com; s=arc-20160816;
+        b=k36aWab+nuxiCMtXdqWLlwWQzJ1Z273t9ttGigcYsWbvlcECwdyRAbWzUf8mfgwuAp
+         4II9OqLQqoRo7VbJFioEkr/0cB7go3H49XjVcU4AvNPDQeVKHVvBy4MG44VrQC1M3QHu
+         JhFrtdz+RmBaVsvsT84Z52RTSfUgH2aGTkR7G5u2j72IYlkOkIalVFfz59jtj9WWkysM
+         FMgM3W6+QXGPlstO5jwrFpIOHAwG/N7zBadhuaRZNfNyf4c/fMnCD1SKgVQP6Kj5DLNG
+         XS9qgkis3T+vZHQcYJ9LGCnr97MK6ZdMVMFt/ZnAs6neP8cjoowM/F9kZmBGM1/+pbeA
+         w0tw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=QnMNXf0bs9oLolWSQvf8fh3fgQ7BsJwlW2+KIevPty0=;
+        b=t7A2AnLFkINNenW1lAAyMp/8Rco9fgbW/pKjxmuf51eFT83DtyFllnJHs67TrAU/pq
+         b7Eb9yTbNK+nKk+lL1l7Qgl+H7bmLQP2puZKWwwiJ47H0jRK19vzolRsXNr0syOemTdd
+         0EgD6fCQSHbgJjZPiUcnoo/khTM86U1O+aymH1HEZzKM9KB9BIZz9xssApnUb91OzOaz
+         wE1nmmGc9gXsdTxjzY8+Zt27R30gMg383CAIHaAhkEMtgSG4WLGyNxbqZYd/PqtyBQl4
+         yIFgfrbuwB7sfH2/HtdDWuEmrPplOygS3TKRjmrFVg4ktEMsspG4qzgNdQAzdQPeB6S4
+         7JDg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=O8p3qTtO;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id p127sor1751559ybb.26.2021.09.06.04.00.43
+        (Google Transport Security);
+        Mon, 06 Sep 2021 04:00:44 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=O8p3qTtO;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=QnMNXf0bs9oLolWSQvf8fh3fgQ7BsJwlW2+KIevPty0=;
+        b=O8p3qTtOVQ/UgFIYKYPrjfFMH7Qyo0QBOzRAOxzg0YsV20YQQWamexT5Fwo6m/wHeS
+         3n5ZfGOEmokSja9+iVZ/gzn9trt+VkJptgE8dsfF9UgTsfDoxRccS8PwqnqDuChS1KGx
+         DPsB5x8URR1pY/FTZyGtgaxSz30kzvt05/rvUxcAAHMf6TOuQDZYSdxnZPpN9Pwl+Wca
+         4pF2rSm6Z9bwbAXbNLlhsGxJFZdi4wzJhkwUIh4SH8fvIh5soJSLlDN7wmWZMc4iuxGM
+         ui4+9DS7UGAB/WOC2UNkD/OUTYOrfBRIuVAqBp3Vj87J1Mv7mx9YzsVLGi3jwtH/6VM3
+         GBEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=QnMNXf0bs9oLolWSQvf8fh3fgQ7BsJwlW2+KIevPty0=;
+        b=jv0CMHaM0LM8xIsYY0DtLf42QCo+7j3NPRGgFJZlZ8PCi6XOB5V2Fj7PyRHE3q/Qn1
+         5XDpylWzPYImSibPyl/xihr6Qr/B54B82W3TyZgyGs0W7X/Fcig4CGQ6v14kAjDpCzAx
+         i9upaCdxGI2TJB7q5IdQNYNUSesbCIWdhXHOA7hEhXeZ+XWK6GSM3rsBMdICGW5OEDxp
+         HahA1S9HAJnZQin4O3/g5dpG4U956FX3H7tl0ZNHPgMlzW1+reP4pxP+BKccaQ9CyNmM
+         /5aNcqZEOFUTSvLbs0jSIt2LKhxfK06szj+aAiPT/Z5TD8irJkSO7pQb/RGrbkW1YU7a
+         OBNw==
+X-Gm-Message-State: AOAM5335POO/A/b/+0XeE4N5x/n4hnoyOr4IzaTviBlMGJqqcfMPZ+Ph
+	IcjCIh7377y0aXJEvOt+xqf0obxqDq2WXtX5TGw=
+X-Google-Smtp-Source: ABdhPJzdB3B+sACCP/2pgTnR6pMPWi3YxA6hYpAQ5NWB530KASDpNG07lDVAt26RijtkTXDnW83vDX5HtR1IbLRRKss=
+X-Received: by 2002:a25:b782:: with SMTP id n2mr16044349ybh.159.1630926043558;
+ Mon, 06 Sep 2021 04:00:43 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAFT-h1Uqxbpe6tAF12fxOXQG==B8HarVqbHaH_eFaC8sLDd4ow@mail.gmail.com>
+In-Reply-To: <CAFT-h1Uqxbpe6tAF12fxOXQG==B8HarVqbHaH_eFaC8sLDd4ow@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 6 Sep 2021 08:00:00 -0300
+Message-ID: <CAN5uefa4EQ7A=tmWZh0_jANJu94XPXZPoyFeQ-=V+rqi4x1mPw@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Seminario_del_CMaLP=2C_Centro_de_Matem=C3=A1tica_de_L?=
+	=?UTF-8?Q?a_Plata?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, unlplnr2019ak@gmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000007b369f05cb518f88"
+
+--0000000000007b369f05cb518f88
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola a todos/as,
+                          esperamos que se encuentren bien. Les enviamos la
+informaci=C3=B3n y enlace de la conferencia que se har=C3=A1 el viernes 10 =
+a las 16hs
+y que forma parte del primer ciclo de conferencias del seminario del Centro
+de Matem=C3=A1tica de La Plata (CMaLP). Recordamos que puede resultar
+interesante, ya que los conferencistas hablar=C3=A1n tanto de su trabajo
+matem=C3=A1tico como sobre sus lugares de trabajo en el exterior y otros da=
+tos
+de inter=C3=A9s.
+
+Saludos
+
+---------- Forwarded message ---------
+De: Centro de Matem=C3=A1tica de La Plata <cmalp@mate.unlp.edu.ar>
+Date: mi=C3=A9, 1 sept 2021 a las 9:43
+Subject: Seminario del CMaLP, Centro de Matem=C3=A1tica de La Plata
+To: <all@mate.unlp.edu.ar>, <alumnos@mate.unlp.edu.ar>, <
+graduados@mate.unlp.edu.ar>, LIDEB <atalevi@biol.unlp.edu.ar>, LIOMM <
+cortizo@biol.unlp.edu.ar>, CIDCA <angoza27@gmail.com>, CIM <
+aporta@quimica.unlp.edu.ar>, IBBM <lagares1900@gmail.com>, CEQUINOR <
+carlosdv@quimica.unlp.edu.ar>, IFLP <tere.dova@gmail.com>, LIDMA <
+ceciliabcastells@gmail.com>, CINDEFI <cavalitto@quimica.unlp.edu.ar>,
+INIFTA <felix.requejo@gmail.com>, CMALP-1 <marcezuccalli@gmail.com>,
+CMALP-2 <institutodematematicaunlp@gmail.com>, IIFP <
+martinr@biol.unlp.edu.ar>, CINDECA <casella@quimica.unlp.edu.ar>, CIPROVE <
+caffini@biol.unlp.edu.ar>, CEDECOR <pallegre@quimica.unlp.edu.ar>, IFLYSIB =
+<
+sag@iflysib.unlp.edu.ar>, CREG <sheilaons@gmail.com>, PLAPIMU-LASEISIC <
+jljios@quimica.unlp.edu.ar>, CETMIC <scianalberto@gmail.com>, IFLP-2 <
+dova@fisica.unlp.edu.ar>, CETMIC-2 <rendtorff@hotmail.com>, IMBICE <
+marioperello@yahoo.com>, <docentes@mate.unlp.edu.ar>, <
+secre@mate.unlp.edu.ar>, Reinaldo Pis Diez <reinaldo.pisdiez@gmail.com>, <
+pgrado@exactas.unlp.edu.ar>, <academic@exactas.unlp.edu.ar>, <
+secre2@fisica.unlp.edu.ar>, <franciscosperoni@gmail.com>, <
+scytce@exactas.unlp.edu.ar>, Mauricio Federico <erbenmf@gmail.com>, <
+decanato@exactas.unlp.edu.ar>, <secre@biol.unlp.edu.ar>, <
+iflysib@iflysib.unlp.edu.ar>, <secretaria@inifta.unlp.edu.ar>, <
+prensa@exactas.unlp.edu.ar>, <prensa@presi.unlp.edu.ar>, <
+secre@quimica.unlp.edu.ar>
+
+
+Estimados.
+
+El Centro de Matem=C3=A1tica de La Plata (CMaLP) que depende de la Facultad=
+ de
+Ciencias Exactas de la Universidad Nacional de La Plata, tiene el agrado de
+anunciar el comienzo de su Seminario.
+
+El mismo comenzar=C3=A1 en el mes de septiembre de este a=C3=B1o y tendr=C3=
+=A1 una
+frecuencia mensual.  Debido a las limitaciones que todos conocemos, se
+realizar=C3=A1 de manera virtual al menos hasta finalizar el a=C3=B1o 2021.
+
+Vamos a comenzar con un ciclo de conferencias que llamamos "De La Plata por
+el mundo"
+ya que tendremos la oportunidad de escuchar a muchos de los graduados que
+pasaron por la Universidad de La Plata y hoy se encuentran trabajando en
+distintos lugares del mundo.
+
+Despu=C3=A9s de las charlas tendremos la oportunidad de escuchar a los
+conferencistas para conocer sobre sus lugares de trabajo y otros datos de
+inter=C3=A9s.
+
+Las conferencias previstas para este a=C3=B1o son las siguientes:
+
+Viernes 10 de Septiembre: Mart=C3=ADn Argerami (University of Regina, Canad=
+=C3=A1)
+
+Hora: 16:00 (-3 UTC)
+
+Octubre: Paula Balseiro (Universidade Federal Fluminense, Brasil)
+
+Noviembre: Mart=C3=ADn Sombra (Universitat de Barcelona, Espa=C3=B1a)
+
+Diciembre: Antonio Di Scala (Politecnico di Torino, Italia)
+
+
+Para m=C3=A1s informaci=C3=B3n, les sugerimos vsitar nuestra p=C3=A1gina we=
+b
+
+http://cmalp.mate.unlp.edu.ar/seminario.html
+
+La informaci=C3=B3n de acceso a la reuni=C3=B3n es:
+
+https://zoom.us/j/96317364793?pwd=3DNnNWREkrbEFmMEQ4MVZwZzFSK3RsQT09
+
+ID de reuni=C3=B3n: 963 1736 4793
+C=C3=B3digo de acceso: 970763
+
+
+Esperamos contar con la presencia de todos ustedes.
+
+Cordialmente.
+
+CMaLP
+Centro de Matem=C3=A1tica de La Plata
+Facultad de Ciencias Exactas
+de la Universidad Nacional de La Plata
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+Libre
+de virus. www.avast.com
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+<#m_-187692750613622421_DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+
+--0000000000007b369f05cb518f88
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hola a todos/as,<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 esperamos que se en=
+cuentren bien. Les enviamos la informaci=C3=B3n y enlace de la conferencia =
+que se har=C3=A1 el viernes 10 a las 16hs y que forma parte del primer cicl=
+o de conferencias del seminario del Centro de Matem=C3=A1tica de La Plata (=
+CMaLP). Recordamos que puede resultar interesante, ya que=C2=A0los conferen=
+cistas hablar=C3=A1n tanto de su trabajo matem=C3=A1tico como sobre sus lug=
+ares de trabajo en el exterior y otros datos de inter=C3=A9s.=C2=A0</div><d=
+iv><br></div><div>Saludos<br><br><div class=3D"gmail_quote"><div dir=3D"ltr=
+" class=3D"gmail_attr">---------- Forwarded message ---------<br>De: <stron=
+g class=3D"gmail_sendername" dir=3D"auto">Centro de Matem=C3=A1tica de La P=
+lata</strong> <span dir=3D"auto">&lt;<a href=3D"mailto:cmalp@mate.unlp.edu.=
+ar" target=3D"_blank">cmalp@mate.unlp.edu.ar</a>&gt;</span><br>Date: mi=C3=
+=A9, 1 sept 2021 a las 9:43<br>Subject: Seminario del CMaLP, Centro de Mate=
+m=C3=A1tica de La Plata<br>To:  &lt;<a href=3D"mailto:all@mate.unlp.edu.ar"=
+ target=3D"_blank">all@mate.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:alu=
+mnos@mate.unlp.edu.ar" target=3D"_blank">alumnos@mate.unlp.edu.ar</a>&gt;, =
+ &lt;<a href=3D"mailto:graduados@mate.unlp.edu.ar" target=3D"_blank">gradua=
+dos@mate.unlp.edu.ar</a>&gt;, LIDEB &lt;<a href=3D"mailto:atalevi@biol.unlp=
+.edu.ar" target=3D"_blank">atalevi@biol.unlp.edu.ar</a>&gt;, LIOMM &lt;<a h=
+ref=3D"mailto:cortizo@biol.unlp.edu.ar" target=3D"_blank">cortizo@biol.unlp=
+.edu.ar</a>&gt;, CIDCA &lt;<a href=3D"mailto:angoza27@gmail.com" target=3D"=
+_blank">angoza27@gmail.com</a>&gt;, CIM &lt;<a href=3D"mailto:aporta@quimic=
+a.unlp.edu.ar" target=3D"_blank">aporta@quimica.unlp.edu.ar</a>&gt;, IBBM &=
+lt;<a href=3D"mailto:lagares1900@gmail.com" target=3D"_blank">lagares1900@g=
+mail.com</a>&gt;, CEQUINOR &lt;<a href=3D"mailto:carlosdv@quimica.unlp.edu.=
+ar" target=3D"_blank">carlosdv@quimica.unlp.edu.ar</a>&gt;, IFLP &lt;<a hre=
+f=3D"mailto:tere.dova@gmail.com" target=3D"_blank">tere.dova@gmail.com</a>&=
+gt;, LIDMA &lt;<a href=3D"mailto:ceciliabcastells@gmail.com" target=3D"_bla=
+nk">ceciliabcastells@gmail.com</a>&gt;, CINDEFI &lt;<a href=3D"mailto:caval=
+itto@quimica.unlp.edu.ar" target=3D"_blank">cavalitto@quimica.unlp.edu.ar</=
+a>&gt;, INIFTA &lt;<a href=3D"mailto:felix.requejo@gmail.com" target=3D"_bl=
+ank">felix.requejo@gmail.com</a>&gt;, CMALP-1 &lt;<a href=3D"mailto:marcezu=
+ccalli@gmail.com" target=3D"_blank">marcezuccalli@gmail.com</a>&gt;, CMALP-=
+2 &lt;<a href=3D"mailto:institutodematematicaunlp@gmail.com" target=3D"_bla=
+nk">institutodematematicaunlp@gmail.com</a>&gt;, IIFP &lt;<a href=3D"mailto=
+:martinr@biol.unlp.edu.ar" target=3D"_blank">martinr@biol.unlp.edu.ar</a>&g=
+t;, CINDECA &lt;<a href=3D"mailto:casella@quimica.unlp.edu.ar" target=3D"_b=
+lank">casella@quimica.unlp.edu.ar</a>&gt;, CIPROVE &lt;<a href=3D"mailto:ca=
+ffini@biol.unlp.edu.ar" target=3D"_blank">caffini@biol.unlp.edu.ar</a>&gt;,=
+ CEDECOR &lt;<a href=3D"mailto:pallegre@quimica.unlp.edu.ar" target=3D"_bla=
+nk">pallegre@quimica.unlp.edu.ar</a>&gt;, IFLYSIB &lt;<a href=3D"mailto:sag=
+@iflysib.unlp.edu.ar" target=3D"_blank">sag@iflysib.unlp.edu.ar</a>&gt;, CR=
+EG &lt;<a href=3D"mailto:sheilaons@gmail.com" target=3D"_blank">sheilaons@g=
+mail.com</a>&gt;, PLAPIMU-LASEISIC &lt;<a href=3D"mailto:jljios@quimica.unl=
+p.edu.ar" target=3D"_blank">jljios@quimica.unlp.edu.ar</a>&gt;, CETMIC &lt;=
+<a href=3D"mailto:scianalberto@gmail.com" target=3D"_blank">scianalberto@gm=
+ail.com</a>&gt;, IFLP-2 &lt;<a href=3D"mailto:dova@fisica.unlp.edu.ar" targ=
+et=3D"_blank">dova@fisica.unlp.edu.ar</a>&gt;, CETMIC-2 &lt;<a href=3D"mail=
+to:rendtorff@hotmail.com" target=3D"_blank">rendtorff@hotmail.com</a>&gt;, =
+IMBICE &lt;<a href=3D"mailto:marioperello@yahoo.com" target=3D"_blank">mari=
+operello@yahoo.com</a>&gt;,  &lt;<a href=3D"mailto:docentes@mate.unlp.edu.a=
+r" target=3D"_blank">docentes@mate.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mai=
+lto:secre@mate.unlp.edu.ar" target=3D"_blank">secre@mate.unlp.edu.ar</a>&gt=
+;, Reinaldo Pis Diez &lt;<a href=3D"mailto:reinaldo.pisdiez@gmail.com" targ=
+et=3D"_blank">reinaldo.pisdiez@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:pg=
+rado@exactas.unlp.edu.ar" target=3D"_blank">pgrado@exactas.unlp.edu.ar</a>&=
+gt;,  &lt;<a href=3D"mailto:academic@exactas.unlp.edu.ar" target=3D"_blank"=
+>academic@exactas.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secre2@fisica=
+.unlp.edu.ar" target=3D"_blank">secre2@fisica.unlp.edu.ar</a>&gt;,  &lt;<a =
+href=3D"mailto:franciscosperoni@gmail.com" target=3D"_blank">franciscospero=
+ni@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:scytce@exactas.unlp.edu.ar" ta=
+rget=3D"_blank">scytce@exactas.unlp.edu.ar</a>&gt;, Mauricio Federico &lt;<=
+a href=3D"mailto:erbenmf@gmail.com" target=3D"_blank">erbenmf@gmail.com</a>=
+&gt;,  &lt;<a href=3D"mailto:decanato@exactas.unlp.edu.ar" target=3D"_blank=
+">decanato@exactas.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secre@biol.u=
+nlp.edu.ar" target=3D"_blank">secre@biol.unlp.edu.ar</a>&gt;,  &lt;<a href=
+=3D"mailto:iflysib@iflysib.unlp.edu.ar" target=3D"_blank">iflysib@iflysib.u=
+nlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secretaria@inifta.unlp.edu.ar" t=
+arget=3D"_blank">secretaria@inifta.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mai=
+lto:prensa@exactas.unlp.edu.ar" target=3D"_blank">prensa@exactas.unlp.edu.a=
+r</a>&gt;,  &lt;<a href=3D"mailto:prensa@presi.unlp.edu.ar" target=3D"_blan=
+k">prensa@presi.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secre@quimica.u=
+nlp.edu.ar" target=3D"_blank">secre@quimica.unlp.edu.ar</a>&gt;<br></div><b=
+r><br><div dir=3D"ltr"><span style=3D"color:rgb(80,0,80)">Estimados.<div><b=
+r></div><div><div>El Centro de Matem=C3=A1tica de La Plata (CMaLP) que depe=
+nde de la Facultad de Ciencias Exactas de la Universidad Nacional de La Pla=
+ta, tiene el agrado de anunciar el comienzo de su Seminario.</div></div><di=
+v><br></div><div>El mismo comenzar=C3=A1 en el mes de septiembre de este a=
+=C3=B1o y tendr=C3=A1 una frecuencia mensual.=C2=A0 Debido a las limitacion=
+es que todos conocemos, se realizar=C3=A1 de manera virtual al menos hasta =
+finalizar el a=C3=B1o 2021.</div><div><br></div></span><div>Vamos a comenza=
+r con un ciclo de conferencias que llamamos &quot;De La Plata por el mundo&=
+quot;=C2=A0 =C2=A0</div><span style=3D"color:rgb(80,0,80)"><div>ya que tend=
+remos la oportunidad de escuchar a muchos de los graduados que pasaron por =
+la Universidad de La Plata y hoy se encuentran trabajando en distintos luga=
+res del mundo.</div><div><br></div></span><div>Despu=C3=A9s de las charlas =
+tendremos la oportunidad de escuchar a los conferencistas para conocer sobr=
+e sus lugares de trabajo y otros datos de inter=C3=A9s.</div><span style=3D=
+"color:rgb(80,0,80)"><div><br></div><div>Las conferencias previstas para es=
+te a=C3=B1o son las siguientes:<br></div><div><br></div><div><blockquote st=
+yle=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padd=
+ing-left:1ex"><div dir=3D"ltr"><div><div>Viernes 10 de Septiembre: Mart=C3=
+=ADn Argerami (University of Regina, Canad=C3=A1)=C2=A0</div></div></div></=
+blockquote><div>Hora: 16:00 (-3 UTC)</div><div><br></div><div>Octubre: Paul=
+a Balseiro (Universidade Federal Fluminense, Brasil)</div><div><br></div><d=
+iv>Noviembre: Mart=C3=ADn Sombra (Universitat de Barcelona, Espa=C3=B1a)</d=
+iv><div><br></div><div>Diciembre: Antonio Di Scala (Politecnico di Torino, =
+Italia)</div><div><br></div><div><br></div><div>Para m=C3=A1s informaci=C3=
+=B3n, les sugerimos vsitar nuestra p=C3=A1gina web</div><div><br></div><div=
+><a href=3D"http://cmalp.mate.unlp.edu.ar/seminario.html" target=3D"_blank"=
+>http://cmalp.mate.unlp.edu.ar/seminario.html</a></div><div><br></div><div>=
+La informaci=C3=B3n de acceso a la reuni=C3=B3n es:=C2=A0</div><div>=C2=A0<=
+/div><a href=3D"https://zoom.us/j/96317364793?pwd=3DNnNWREkrbEFmMEQ4MVZwZzF=
+SK3RsQT09" rel=3D"noreferrer" target=3D"_blank">https://zoom.us/j/963173647=
+93?pwd=3DNnNWREkrbEFmMEQ4MVZwZzFSK3RsQT09</a><br><br>ID de reuni=C3=B3n: 96=
+3 1736 4793<br>C=C3=B3digo de acceso: 970763<br></div><div><br></div><div><=
+br></div><div>Esperamos contar con la presencia de todos ustedes.<br></div>=
+<div><br></div><div>Cordialmente.</div><div><br></div><div>CMaLP</div><div>=
+Centro de Matem=C3=A1tica de La Plata</div><div>Facultad de Ciencias Exacta=
+s=C2=A0</div><div>de la Universidad Nacional de La Plata</div></span></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" data-smartma=
+il=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr"><div style=3D"text-align:left"><span style=3D"font-size:large"><fo=
+nt color=3D"#000000">Consejeros Alumnos</font><br></span></div><div style=
+=3D"text-align:left"><span style=3D"color:rgb(255,0,0);font-size:large"><fo=
+nt size=3D"2"><font color=3D"#000000">P=C3=A1gina de Facebook del Claustro =
+de Alumnos de Matem=C3=A1tica: <a href=3D"https://www.facebook.com/groups/3=
+26128787595559/" target=3D"_blank">https://www.facebook.com/groups/32612878=
+7595559/</a> </font></font><br></span></div><div style=3D"text-align:left">=
+<b style=3D"color:rgb(255,0,0);font-size:large"></b></div></div></div></div=
+></div></div></div><div id=3D"m_-187692750613622421DAB4FAD8-2DD7-40BB-A1B8-=
+4E2AA1F9FDF2"><br> <table style=3D"border-top:1px solid #d3d4de">
+	<tbody><tr>
+      <td style=3D"width:55px;padding-top:18px"><a href=3D"https://www.avas=
+t.com/sig-email?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=
+=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_blank"><img src=3D"https=
+://ipmcdn.avast.com/images/icons/icon-envelope-tick-round-orange-animated-n=
+o-repeat-v1.gif" alt=3D"" width=3D"46" height=3D"29" style=3D"width:46px;he=
+ight:29px"></a></td>
+		<td style=3D"width:470px;padding-top:17px;color:#41424e;font-size:13px;fo=
+nt-family:Arial,Helvetica,sans-serif;line-height:18px">Libre de virus. <a h=
+ref=3D"https://www.avast.com/sig-email?utm_medium=3Demail&amp;utm_source=3D=
+link&amp;utm_campaign=3Dsig-email&amp;utm_content=3Dwebmail" style=3D"color=
+:#4453ea" target=3D"_blank">www.avast.com</a> 		</td>
+	</tr>
+</tbody></table>
+<a href=3D"#m_-187692750613622421_DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2" wid=
+th=3D"1" height=3D"1"></a></div></div></div>
+
+--0000000000007b369f05cb518f88--

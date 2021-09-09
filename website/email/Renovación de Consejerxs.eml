@@ -1,0 +1,321 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:39d:0:0:0:0 with SMTP id 29csp964450pxh;
+        Wed, 8 Sep 2021 16:01:39 -0700 (PDT)
+X-Received: by 2002:a05:6902:110d:: with SMTP id o13mr909235ybu.530.1631142099385;
+        Wed, 08 Sep 2021 16:01:39 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1631142099; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ECQ7N2Vjr0T/71vvU1u3xckA+1U37k7i4WM4y23SV3k3AKNhiHEBG3P4VE7ShSRV18
+         2w3ZjoL6e7u72VFo1W9h8l9zPMRLuEpueFbhEACNwCZ7k41O3PR4p+WJ4jWWmW0ewAfJ
+         TI/BnNqXvHQhs3fiI23JUEsyd4F/MLZBTWaQMEDL4l44Dr3YCPXzTYdrDWzVz/tJGVK3
+         l6/FRecYMQumGMNpzj+Gbg3psm2ANcAHrNYKEiuj7M5tOecL0FmJTV7oDCvjm24eo1Ps
+         /h7fO1C13xiq0MQkwDRmxFh4SvVuOt09eLWd+wa40ymP0Xq9sBCi414DbPvq96/fGg3Z
+         2ivQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=9Y30umE89NlxfMyjuZP4RRBIx8UFdrmbjZYYacaIP/g=;
+        b=dN6i61i5AbCmtAPNC/2kJ0w75WPvOdy9ZMfwkVN/yj4rDspQnh3k8C6EzVrKOvdCRv
+         BewiMUt8qj0VW8oEGOWlhsEAEKGLaBfQKwbaToLJOBP0kc5T7FonHoVgCZQOIzE8VxfU
+         CsKpCosmydT2fXMvNClqUWLlrD7Gqer6qExnUJ+nZlUO9wL9NhhpDRcVTtphONkrLMx6
+         TeZdfGReDZIBfrMMunfspfX6+6XBO09kQKg2rppyx8DIzg2jM7Xmqsw+qfEIxJiCt+in
+         rkfuAhoFsEb1V0FvcKBvx+HV7qfAZ3yjHm7A4JlpKHIxNnTNSkbNR0wZ/5ds11hmiX0D
+         CxfQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=GNnYXago;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id i72sor215510yba.21.2021.09.08.16.01.36
+        (Google Transport Security);
+        Wed, 08 Sep 2021 16:01:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=GNnYXago;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=9Y30umE89NlxfMyjuZP4RRBIx8UFdrmbjZYYacaIP/g=;
+        b=GNnYXagozLW3m+u+jyWV5OsKJvLkd5OMioB+W28sI7GC3DQuJ+QV16/w5Pt/ijZoLb
+         gSJTkSezHvnQFDDhChLsP2t1ni/jweqfMvnrlJbZtGHLs0WrUgAM7JtQeO2oSP23oC72
+         Qyj8Wl5SUn8SH3XE/DJmriJ84Xl8es5IftmFKHVH6ZBXsH8NWfZcNpklJBoG7cnZVDKN
+         n0nDyj3R9UwCI7JoI/gDMjuIwGMmzDviXZ0c7pQs6Mqmkx1AqNbHRHYpRVhrlcfmzMJJ
+         3eeLSYa1H0eAF/oG4rQ093O2K1auXqpPsKTTDwUSx3BwjhgZ5jCwFk1Hv5j4I1joI4UC
+         EHgw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=9Y30umE89NlxfMyjuZP4RRBIx8UFdrmbjZYYacaIP/g=;
+        b=SXJWQ8IqactZ8rmWS//UIprjZCsEnbTekcgxNXV9vhFnMxTgTBwjt/xFvkQoRsihX/
+         y1lxsefiVQqWEB3iDgzovKGKmQXuiBkt2M5ewZcj/YLyJpBi5ECi5l7YbOduWRzn/3NT
+         1M3XPfa0yZzUMQ3IDuXCrYm6Pd/OrE++k+wMnqqQb+vEtSNBAFzn4M/3Wv+rNjKviHSQ
+         jAb8wpF3O/Re2tGN7i3cF0hxdTRVjszimtCGO50uqZvzAd/TvOB8/VeotgogmEUsKLlj
+         q9nDhG2ajbPFuRi33EJvOQ7O/8g+0LkjoHsO3aXo7IfNUGjJe3rftHux55j2AOymZfEw
+         dWWw==
+X-Gm-Message-State: AOAM530M+/RCeaxfeEKO/uxwgIdCgYl2lmViFHiQg/ux2BUSy8rBjUGr
+	KzxaYB3bBqyG7w3Q/S5S//k7jsbTF2oaNbKC5rc=
+X-Google-Smtp-Source: ABdhPJymyW9zfx6JoGkK+xbkHyXJL6u3BkGvz6OuIiUJKAwlIDtqsaQLckhFGk7G4RpGQsHiX0fF1S71EB1AqyNQdOI=
+X-Received: by 2002:a25:60a:: with SMTP id 10mr875164ybg.385.1631142096277;
+ Wed, 08 Sep 2021 16:01:36 -0700 (PDT)
+MIME-Version: 1.0
+From: Alumnos <alumnosm@gmail.com>
+Date: Wed, 8 Sep 2021 20:01:24 -0300
+Message-ID: <CAN5uefZqvKCv5ryORyqN_28dF6dYvRQZCq_cuDk_dacgtoB1Ew@mail.gmail.com>
+Subject: =?UTF-8?Q?Renovaci=C3=B3n_de_Consejerxs?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000003a156105cb83dd0f"
+
+--0000000000003a156105cb83dd0f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Estimadas/os compas de Licenciatura:
+
+
+Esperamos que se encuentren muy bien.
+
+
+
+Nos comunicamos con ustedes mediante este correo para comunicarles que
+dentro de dos meses se realizar=C3=A1 la renovaci=C3=B3n del Consejo del De=
+partamento
+de Matem=C3=A1tica, el cual cuenta con 4 (cuatro) representantes alumnos/as=
+. Por
+ese motivo, necesitamos cuatro alumnas/os que voluntariamente cubran esos
+lugares *por el per=C3=ADodo de un a=C3=B1o:* de Noviembre 2021 a Noviembre=
+ 2022 (las
+renovaciones se hacen cada a=C3=B1o); pueden ser alumnos y alumnas de cualq=
+uier
+a=C3=B1o de la carrera.
+
+
+El Consejo Departamental es un espacio de encuentro entre representantes de
+cuatro grupos llamados claustros: docentes, no docentes, graduados y
+alumnos. El mismo se re=C3=BAne una vez por semana (a=C3=BAn durante la pan=
+demia se
+sigue reuniendo por Zoom) y all=C3=AD se toman decisiones de diferente =C3=
+=ADndole
+que corresponden al Departamento de Matem=C3=A1tica: distribuci=C3=B3n de d=
+ocentes en
+materias, an=C3=A1lisis de equivalencias, selecci=C3=B3n de aspirantes a ca=
+rgos
+docentes a trav=C3=A9s de CV y muchas otras que surgen a medida que transcu=
+rre
+el a=C3=B1o lectivo. Tales decisiones son mediante voto, por eso es que se
+necesita que haya representantes de cada claustro.
+
+
+Quienes sean los/as cuatro representantes por nuestro claustro de alumnos
+podr=C3=A1n organizarse c=C3=B3mo desean repartirse la asistencia a las reu=
+niones. En
+cada una de las mismas tiene que haber dos. Pueden por ejemplo haber dos
+titulares que vayan siempre y otros dos que sean suplentes, y que vayan
+solo en caso de que un titular no pueda ir, o pueden ir turn=C3=A1ndose com=
+o
+deseen para ir todos a distintas reuniones (por ejemplo, actualmente
+estamos rotando de a 1: matem=C3=A1ticamente, van "a" y "b", luego "b" y "c=
+",
+luego "c" y "d", luego "d" y "a", y arranca otra vez el ciclo).
+
+
+Esta oportunidad de ser parte del Consejo es realmente enriquecedora en
+cuanto a formaci=C3=B3n y experiencia en lo que respecta a muchos temas que
+tienen que ver con las distintas cosas que suceden d=C3=ADa a d=C3=ADa en n=
+uestro
+Departamento y en la facultad en general. Adem=C3=A1s, ser Consejero
+Departamental suma puntaje para cuando quieran presentarse en un concurso
+para ser ayudantes.
+
+
+Quienes tengan inter=C3=A9s en postularse pero quieran sacarse dudas o sabe=
+r m=C3=A1s
+antes de tomar la decisi=C3=B3n, por favor comun=C3=ADquense con nosotros a=
+ esta
+direcci=C3=B3n de correo.
+
+
+
+Es importante que tomen conocimiento de lo siguiente:
+
+
+
+1) En caso de que no lleguemos a contar con suficientes postulantes a
+nuevos/as consejeros/as, designaremos nosotros estudiantes para completar
+la cantidad de 4 representantes alumnos. Desde luego que no es la opci=C3=
+=B3n
+m=C3=A1s agradable para quien lo recibe pero es una labor que nos correspon=
+de
+como compa=C3=B1eros/as.
+
+
+
+2) En caso de superar la cantidad de 4 postulantes, someteremos la
+elecci=C3=B3n  a votaci=C3=B3n de todo el alumnado de Matem=C3=A1tica media=
+nte un
+formulario de Google.
+
+
+Sin otro particular, los saludamos cordialmente y agradecemos desde ya su
+colaboraci=C3=B3n.
+
+
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--0000000000003a156105cb83dd0f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><p class=3D"MsoNormal" style=3D"padding:0px;border:0px;fon=
+t-size:13px">Estimadas/os compas de Licenciatura:</p><p class=3D"MsoNormal"=
+ style=3D"padding:0px;border:0px;font-size:13px"><br></p><p class=3D"MsoNor=
+mal" style=3D"padding:0px;border:0px;font-size:13px">Esperamos que se encue=
+ntren muy bien.</p><p class=3D"MsoNormal" style=3D"padding:0px;border:0px;f=
+ont-size:13px">=C2=A0</p><p class=3D"MsoNormal" style=3D"padding:0px;border=
+:0px;font-size:13px">Nos comunicamos con ustedes mediante este correo para =
+comunicarles que dentro de dos meses se realizar=C3=A1 la renovaci=C3=B3n d=
+el Consejo del Departamento de Matem=C3=A1tica, el cual cuenta con 4 (cuatr=
+o) representantes alumnos/as. Por ese motivo, necesitamos cuatro alumnas/os=
+ que voluntariamente cubran esos lugares=C2=A0<b>por el per=C3=ADodo de un =
+a=C3=B1o:</b>=C2=A0de Noviembre 2021 a Noviembre 2022 (las renovaciones se =
+hacen cada a=C3=B1o); pueden ser alumnos y alumnas de cualquier a=C3=B1o de=
+ la carrera.=C2=A0</p><p class=3D"MsoNormal" style=3D"font-size:13px;paddin=
+g:0px;border:0px"><br></p><p class=3D"MsoNormal" style=3D"font-size:13px;pa=
+dding:0px;border:0px">El Consejo Departamental es un espacio de encuentro e=
+ntre representantes de cuatro grupos llamados claustros: docentes, no docen=
+tes, graduados y alumnos. El mismo se re=C3=BAne una vez por semana (a=C3=
+=BAn durante la pandemia se sigue reuniendo por Zoom) y all=C3=AD se toman =
+decisiones de diferente =C3=ADndole que corresponden al Departamento de Mat=
+em=C3=A1tica: distribuci=C3=B3n de docentes en materias, an=C3=A1lisis de e=
+quivalencias, selecci=C3=B3n de aspirantes a cargos docentes a trav=C3=A9s =
+de CV y muchas otras que surgen a medida que transcurre el a=C3=B1o lectivo=
+. Tales decisiones son mediante voto, por eso es que se necesita que haya r=
+epresentantes de cada claustro.</p><p class=3D"MsoNormal" style=3D"font-siz=
+e:13px;padding:0px;border:0px"><br></p><p class=3D"MsoNormal" style=3D"font=
+-size:13px;padding:0px;border:0px">Quienes sean los/as cuatro representante=
+s por nuestro claustro de alumnos podr=C3=A1n organizarse c=C3=B3mo desean =
+repartirse la asistencia a las reuniones. En cada una de las mismas tiene q=
+ue haber dos. Pueden por ejemplo haber dos titulares que vayan siempre y ot=
+ros dos que sean suplentes, y que vayan solo en caso de que un titular no p=
+ueda ir, o pueden ir turn=C3=A1ndose como deseen para ir todos a distintas =
+reuniones (por ejemplo, actualmente estamos rotando de a 1: matem=C3=A1tica=
+mente, van &quot;a&quot; y &quot;b&quot;, luego &quot;b&quot; y &quot;c&quo=
+t;, luego &quot;c&quot; y &quot;d&quot;, luego &quot;d&quot; y &quot;a&quot=
+;, y arranca otra vez el ciclo).</p><p class=3D"MsoNormal" style=3D"font-si=
+ze:13px;padding:0px;border:0px"><br></p><p class=3D"MsoNormal" style=3D"fon=
+t-size:13px;padding:0px;border:0px">Esta oportunidad de ser parte del Conse=
+jo es realmente enriquecedora en cuanto a formaci=C3=B3n y experiencia en l=
+o que respecta a muchos temas que tienen que ver con las distintas cosas qu=
+e suceden d=C3=ADa a d=C3=ADa en nuestro Departamento y en la facultad en g=
+eneral. Adem=C3=A1s, ser Consejero Departamental suma puntaje para cuando q=
+uieran presentarse en un concurso para ser ayudantes.</p><p class=3D"MsoNor=
+mal" style=3D"font-size:13px;padding:0px;border:0px"><br></p><p class=3D"Ms=
+oNormal" style=3D"font-size:13px;padding:0px;border:0px">Quienes tengan int=
+er=C3=A9s en postularse pero quieran sacarse dudas o saber m=C3=A1s antes d=
+e tomar la decisi=C3=B3n, por favor comun=C3=ADquense con nosotros a esta d=
+irecci=C3=B3n de correo.<br></p><p class=3D"MsoNormal" style=3D"font-size:1=
+3px;padding:0px;border:0px">=C2=A0</p><p class=3D"MsoNormal" style=3D"paddi=
+ng:0px;border:0px;font-size:13px">Es importante que tomen conocimiento de l=
+o siguiente:</p><p class=3D"MsoNormal" style=3D"padding:0px;border:0px;font=
+-size:13px">=C2=A0</p><p class=3D"MsoNormal" style=3D"padding:0px;border:0p=
+x;font-size:13px">1) En caso de que no lleguemos a contar con suficientes p=
+ostulantes a nuevos/as consejeros/as, designaremos nosotros estudiantes par=
+a completar la cantidad de 4 representantes alumnos. Desde luego que no es =
+la opci=C3=B3n m=C3=A1s agradable para quien lo recibe pero es una labor qu=
+e nos corresponde como compa=C3=B1eros/as.</p><p class=3D"MsoNormal" style=
+=3D"padding:0px;border:0px;font-size:13px">=C2=A0</p><p class=3D"MsoNormal"=
+ style=3D"padding:0px;border:0px;font-size:13px">2) En caso de superar la c=
+antidad de 4 postulantes, someteremos la elecci=C3=B3n=C2=A0=C2=A0a votaci=
+=C3=B3n de todo el alumnado de Matem=C3=A1tica mediante un formulario de Go=
+ogle.</p><p class=3D"MsoNormal" style=3D"padding:0px;border:0px;font-size:1=
+3px"><br></p><p class=3D"MsoNormal" style=3D"padding:0px;border:0px;font-si=
+ze:13px">Sin otro particular, los saludamos cordialmente y agradecemos desd=
+e ya su colaboraci=C3=B3n.</p><font color=3D"#888888"><p class=3D"MsoNormal=
+" style=3D"padding:0px;border:0px;font-size:13px">=C2=A0</p><p class=3D"Mso=
+Normal" style=3D"padding:0px;border:0px;font-size:13px"><br></p></font><div=
+><br></div>-- <br><div dir=3D"ltr" data-smartmail=3D"gmail_signature"><div =
+dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-=
+align:left"><span style=3D"font-size:large"><font color=3D"#000000">Conseje=
+ros Alumnos</font><br></span></div><div style=3D"text-align:left"><span sty=
+le=3D"color:rgb(255,0,0);font-size:large"><font size=3D"2"><font color=3D"#=
+000000">P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:=
+ <a href=3D"https://www.facebook.com/groups/326128787595559/" target=3D"_bl=
+ank">https://www.facebook.com/groups/326128787595559/</a> </font></font><br=
+></span></div><div style=3D"text-align:left"><b style=3D"color:rgb(255,0,0)=
+;font-size:large"></b></div></div></div></div></div></div></div></div>
+
+--0000000000003a156105cb83dd0f--
