@@ -1,0 +1,398 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:ccaa:0:0:0:0 with SMTP id gj42csp3296658pxb;
+        Tue, 21 Sep 2021 14:46:10 -0700 (PDT)
+X-Received: by 2002:a25:cac3:: with SMTP id a186mr43721355ybg.370.1632260770630;
+        Tue, 21 Sep 2021 14:46:10 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1632260770; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0kvI3Y7MTuVurjVRK1UosSciV+jG7L4KwQw7+my9Ol5vvIwXAyQ8706l/FNv+Ba7v3
+         8nA29gSYivjISTx1IE6J/O4/3QCe/T2vr1iID5F3u9K9X53XNU2GNaYJyy0TRn9bNj15
+         KGIiBnZmnar5FeTZGPsdf2eWRQ6fKY8Mni5pytiiBn0TCj7naBuCrajot5v/SLe3a4jO
+         GslijsZPtFkK1tlj3Gx5ZCl9lzxxXArunuiqOtD1h9Yjf39jhuGpbN/bQaWGK+GITY9d
+         A3dbsodR+gH77eest+Zr95aTg84TNoY/pcO7Z5qzrq+uAa4LdmvDQiK1qg1pY4cwF5d7
+         KHUQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=s52Hj2vXTu7ds/9YUYsBJiy4xTy4trbuBafkn4SsE68=;
+        b=tvlB04nG7O1yTen0Lb86pD3cWvnO2/ewX1PDF+mSQ833Uu1La1DrvHZAZ8VXXkMKcd
+         PoLCKyoGA5+JpA0l1GUy5YEWMs8sF4rV0UYp5IhlOH5CJCcLJ9ReN1MWfzGdSgswabDk
+         qNnBqfAebVDRfuCJAS3n+v9CqvNDx+V4ZlhCRtNWaLSr+hNcbLC0ooUE9Diz/jnsTHIT
+         ibCTCZ2Teq7KYGD9FmDIdfOm3FCgq8B5DNChH694vxNMRHyQi9CpXVn6byYLmuPddgj7
+         9h98aMtU8Q3YJW/+zbzpD6pkG5HK8WyAX7Cyr+rSNX7+Hj2P4nPvhxxWFWVIm4+EKe1k
+         vVcw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=ZadDlRSv;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o3sor73685ybq.5.2021.09.21.14.46.10
+        (Google Transport Security);
+        Tue, 21 Sep 2021 14:46:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=ZadDlRSv;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=s52Hj2vXTu7ds/9YUYsBJiy4xTy4trbuBafkn4SsE68=;
+        b=ZadDlRSvLixHZNp7QwRbcDKDnwKz/4fIk+EHIWmIPlUzBv+EpufqDZiJKWxOsOPvUz
+         EbuDCC6Fm0S02a/CGgpqkHB0GlTdcUg4ZNFfJVmqT1LS64nCxIOpQgOzIHhHrNVOurRV
+         vTjOHzwXhiFRPUWMWzOerUlI9ce3b+Z+0w9dzn9jHS9lvJQMa7g9+kj2TVDUFYXToLXc
+         sj9tZYlFtdP9MbFtJD7eXRjFN7WmgV6xpE1fuJTvUEkr5nDoUWwbYGnSNegtMiBanQLV
+         RywDdibOPrghvNE+Zf9I2hOvKyFuY3LtDQhmurBNlkx+8kTR81ukjfd++C10wliZ6baP
+         a+NA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=s52Hj2vXTu7ds/9YUYsBJiy4xTy4trbuBafkn4SsE68=;
+        b=GInkjMPHa/5sW1uR8XR/t5MfAE3Un/+WyJ2HTGPx98o7xLoKG5fLeVCD4mmSYjDZp8
+         YfmklXboTTYlVBZhcSCD1aFAJjHk9sE74P4+ydhQGAZN9DDZ3FGzSQMN1tPPU9blHLku
+         BnU7HMIR5UwGkj+/M+bw1xfU9OlMr3JaVk9mpY2gAGQuYhYmnlOi/D13CJ2d/3oZMFSi
+         voZ/yG1aLJbDACuSt+QgoyqU8q7pr1Wh2zGqQrg2M3z42DufpmbabsqcMlGa8EbwsS83
+         hEyQVowPVJ/vVSgqL2PimKZAGJRWrKw/MvaSBwLgymHWMt3uQitxLLzyYWKHePQoeGNq
+         Mzgw==
+X-Gm-Message-State: AOAM530KmrfxIcF+LLDklxVy2QdBI8l/kBOEkddP7FuTCKectPUTNN52
+	CyKmnixGoUB7ReMWcVKJ+2BWXfqPmM/gMnjNpmU=
+X-Google-Smtp-Source: ABdhPJzL+C0AGlqE8DGVOtyKzG55CmiJrhPcSAcfRPAZ3s4IAtoFdGJs3Q6L8kVYLqg240ftw5+6RbL4lMKM2aFttHg=
+X-Received: by 2002:a25:bc91:: with SMTP id e17mr41425181ybk.218.1632260769828;
+ Tue, 21 Sep 2021 14:46:09 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAMfmLj3gEE_baY4V9xcddyD9352esV7=jf+WxOL_-pb5tqkm=w@mail.gmail.com>
+In-Reply-To: <CAMfmLj3gEE_baY4V9xcddyD9352esV7=jf+WxOL_-pb5tqkm=w@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Tue, 21 Sep 2021 18:45:58 -0300
+Message-ID: <CAN5uefaBab+0UL5t-rrjmAuyNr-dFSvQ1-buSk1ibPfwW4s6Sw@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_XIII_Festival_de_Matem=C3=A1tica?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000005dd42005cc885361"
+
+--0000000000005dd42005cc885361
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola a todos/as,
+                          les enviamos informaci=C3=B3n acerca de algunas
+actividades que tendr=C3=A1n lugar en el marco de la UMA de este a=C3=B1o.
+
+Saludos
+---------- Forwarded message ---------
+De: Visibilidad UMA LP <visibilidadumalp@gmail.com>
+Date: mar, 21 sept 2021 a las 15:56
+Subject: XIII Festival de Matem=C3=A1tica
+To: Rossana Di Domenicantonio <rossanadido@gmail.com>, Francisco Martinez
+Peria <martinezperia@gmail.com>, Pedro Massey <pedro.massey@gmail.com>,
+Victoria Fassano <virfeather@yahoo.com.ar>, Bel=C3=A9n Arouxet <
+belenarouxet@gmail.com>, Eduardo Chiumiento <echiumiento@yahoo.com.ar>,
+Jorge <jaantezana@gmail.com>, Alejandra Vahnovan <avahnovan@hotmail.com>,
+Maria Eugenia Garcia <mariaeugeniagarcia@gmail.com>, Marila <
+marila.mate@gmail.com>, Mariana Juchani <mariana_juchani@yahoo.com.ar>,
+Romina Ramirez <rominaramirez_ar@yahoo.com.ar>, Mechi <olea512@gmail.com>,
+Hern=C3=A1n San Mart=C3=ADn <hernan_sm5@hotmail.com>, Ana Rivera <
+anariveratl@gmail.com>, Daniela S=C3=A1nchez <danu_md@hotmail.com>, Ra=C3=
+=BAl Vignau <
+rpvignau@gmail.com>, Nadia Kudraszow <nkudra@gmail.com>, NiCoROjiTO Feliz <
+nicorojito@gmail.com>, Adri <adrianagiacobbi@gmail.com>, Pablo Da Caria <
+pablodc72@hotmail.com>, M. P=C3=ADa Mazzoleni <maria_pia_400@hotmail.com>, =
+Gabi
+Ravenna <gabiravenna@hotmail.com>, Adriana Claudia GALLI <
+adriclauglli@gmail.com>, Claudia Ruscitti <claudia@so-tech.com>, Gabriela
+Correa <gaby_correa2@hotmail.com>, Alumnos Alumnos <alumnosm@gmail.com>,
+Nicol=C3=A1s Borda <nicolasborda@gmail.com>, Noemi Lubomirsky <
+noelubomir@gmail.com>, Noem=C3=AD Gudi=C3=B1o <noemigudino@hotmail.com>, Ju=
+lieta
+Ferrario <julietaferrario@gmail.com>, Flavia Salvatore <
+flavia_s_@hotmail.com>, Calder=C3=B3n, Lucila <luciladaniela@yahoo.com.ar>,
+Mariano Ruiz <maruiz@gmail.com>, Pablo Calder=C3=B3n <pablocalderon1705@gma=
+il.com>,
+marcela zuccalli <marcezuccalli@gmail.com>, German Zorba <
+germanzorba@gmail.com>, Blas <fernandezblas92@gmail.com>, Claudia Alvarado =
+<
+alvarado.clauu@gmail.com>, Sebasti=C3=A1n Zarate <seb4.zarate@gmail.com>,
+Viviano Fernand=C3=A9z <vivianoofernandez2012@gmail.com>, Demetrio Stojanof=
+f <
+demsto@gmail.com>, Nicol=C3=A1s Vescovo <nicolasvescovo@gmail.com>, Nicarm
+Gladius <nic.arm16@gmail.com>, Maximiliano Riddik <maxi_necochea@hotmail.co=
+m>,
+Julieta Lavi=C3=A9 <julietalavie@gmail.com>, Cejas, Eugenia <
+mec.eugenia@gmail.com>, Maria Emma Eyrea Iraz=C3=BA <maemmaeyrea@hotmail.co=
+m>,
+Fazzio, Nadia <nadiafazzio@gmail.com>, Vizzarri, Paula <
+pvizzarri@hotmail.com>, Alejandra Brusasco <brusi98@yahoo.com>, Felix Alo=
+=C3=A9 <
+felixaloe@hotmail.com>, <tatibadaracco@gmail.com>, <giselsoto603@gmail.com>=
+,
+Eduardo Ghiglioni <eghiglioni@gmail.com>, otegui56@gmail.com <
+otegui56@gmail.com>, <julianadisisto@yahoo.com.ar>, <pablobrianese@gmail.co=
+m>,
+<fran.gelp@hotmail.com>, <francopaganiunlp@gmail.com>, <
+antonella.silva.99@gmail.com>, <lucianoscazzola@gmail.com>, <
+benita.duca@gmail.com>, <celestevachetta@gmail.com>, Natalia Ferre <
+nataliaferre66@gmail.com>, <yamilaotero@hotmail.com>, <
+gastonandresg@gmail.com>, <liliana.alcon.unlp@gmail.com>, Marcela Kladniew
+I <marceklad@hotmail.com>
+
+
+
+Estimados,
+
+los invitamos a participar de esta nueva edici=C3=B3n del Festival de Matem=
+=C3=A1tica
+que se llevar=C3=A1 a cabo de modo virtual, en el marco de la Reuni=C3=B3n =
+Anual de
+la UMA.
+En esta oportunidad, las actividades programadas son:
+
+
+- Conferencia de Divulgaci=C3=B3n: Alicia Dickenstein
+Creando objetos matem=C3=A1ticos que son obras de arte
+Mi=C3=A9rcoles 22 de septiembre 18.30hs
+
+
+- XIII Festival de Matem=C3=A1tica - Charlas participativas para todo p=C3=
+=BAblico
+Viernes 24 de septiembre de 18.30 a 20.30hs
+
+
+Ambas actividades se transmiten por el canal de YouTube de virtUMA 2021
+<https://www.youtube.com/channel/UCCvinaF-PiN5-QrNL-aVC-w>.
+
+Toda la informaci=C3=B3n relacionada con el festival se puede encontrar en
+http://visibilidaduma.dm.uba.ar/
+
+Esperamos contar con su participaci=C3=B3n!
+
+Saludos,
+--
+Noelia y Gisela
+Comisi=C3=B3n de Visibilidad Local de la Uni=C3=B3n Matem=C3=A1tica Argenti=
+na
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--0000000000005dd42005cc885361
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br>Hola a todos/as,<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 les enviamos in=
+formaci=C3=B3n acerca de algunas actividades que tendr=C3=A1n lugar en el m=
+arco de la UMA de este a=C3=B1o.</div><div><br></div><div>Saludos<br><div c=
+lass=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">---------- Forwa=
+rded message ---------<br>De: <strong class=3D"gmail_sendername" dir=3D"aut=
+o">Visibilidad UMA LP</strong> <span dir=3D"auto">&lt;<a href=3D"mailto:vis=
+ibilidadumalp@gmail.com">visibilidadumalp@gmail.com</a>&gt;</span><br>Date:=
+ mar, 21 sept 2021 a las 15:56<br>Subject: XIII Festival de Matem=C3=A1tica=
+<br>To: Rossana Di Domenicantonio &lt;<a href=3D"mailto:rossanadido@gmail.c=
+om">rossanadido@gmail.com</a>&gt;, Francisco Martinez Peria &lt;<a href=3D"=
+mailto:martinezperia@gmail.com">martinezperia@gmail.com</a>&gt;, Pedro Mass=
+ey &lt;<a href=3D"mailto:pedro.massey@gmail.com">pedro.massey@gmail.com</a>=
+&gt;, Victoria Fassano &lt;<a href=3D"mailto:virfeather@yahoo.com.ar">virfe=
+ather@yahoo.com.ar</a>&gt;, Bel=C3=A9n Arouxet &lt;<a href=3D"mailto:belena=
+rouxet@gmail.com">belenarouxet@gmail.com</a>&gt;, Eduardo Chiumiento &lt;<a=
+ href=3D"mailto:echiumiento@yahoo.com.ar">echiumiento@yahoo.com.ar</a>&gt;,=
+ Jorge &lt;<a href=3D"mailto:jaantezana@gmail.com">jaantezana@gmail.com</a>=
+&gt;, Alejandra Vahnovan &lt;<a href=3D"mailto:avahnovan@hotmail.com">avahn=
+ovan@hotmail.com</a>&gt;, Maria Eugenia Garcia &lt;<a href=3D"mailto:mariae=
+ugeniagarcia@gmail.com">mariaeugeniagarcia@gmail.com</a>&gt;, Marila &lt;<a=
+ href=3D"mailto:marila.mate@gmail.com">marila.mate@gmail.com</a>&gt;, Maria=
+na Juchani &lt;<a href=3D"mailto:mariana_juchani@yahoo.com.ar">mariana_juch=
+ani@yahoo.com.ar</a>&gt;, Romina Ramirez &lt;<a href=3D"mailto:rominaramire=
+z_ar@yahoo.com.ar">rominaramirez_ar@yahoo.com.ar</a>&gt;, Mechi &lt;<a href=
+=3D"mailto:olea512@gmail.com">olea512@gmail.com</a>&gt;, Hern=C3=A1n San Ma=
+rt=C3=ADn &lt;<a href=3D"mailto:hernan_sm5@hotmail.com">hernan_sm5@hotmail.=
+com</a>&gt;, Ana Rivera &lt;<a href=3D"mailto:anariveratl@gmail.com">anariv=
+eratl@gmail.com</a>&gt;, Daniela S=C3=A1nchez &lt;<a href=3D"mailto:danu_md=
+@hotmail.com">danu_md@hotmail.com</a>&gt;, Ra=C3=BAl Vignau &lt;<a href=3D"=
+mailto:rpvignau@gmail.com">rpvignau@gmail.com</a>&gt;, Nadia Kudraszow &lt;=
+<a href=3D"mailto:nkudra@gmail.com">nkudra@gmail.com</a>&gt;, NiCoROjiTO Fe=
+liz &lt;<a href=3D"mailto:nicorojito@gmail.com">nicorojito@gmail.com</a>&gt=
+;, Adri &lt;<a href=3D"mailto:adrianagiacobbi@gmail.com">adrianagiacobbi@gm=
+ail.com</a>&gt;, Pablo Da Caria &lt;<a href=3D"mailto:pablodc72@hotmail.com=
+">pablodc72@hotmail.com</a>&gt;, M. P=C3=ADa Mazzoleni &lt;<a href=3D"mailt=
+o:maria_pia_400@hotmail.com">maria_pia_400@hotmail.com</a>&gt;, Gabi Ravenn=
+a &lt;<a href=3D"mailto:gabiravenna@hotmail.com">gabiravenna@hotmail.com</a=
+>&gt;, Adriana Claudia GALLI &lt;<a href=3D"mailto:adriclauglli@gmail.com">=
+adriclauglli@gmail.com</a>&gt;, Claudia Ruscitti &lt;<a href=3D"mailto:clau=
+dia@so-tech.com">claudia@so-tech.com</a>&gt;, Gabriela Correa &lt;<a href=
+=3D"mailto:gaby_correa2@hotmail.com">gaby_correa2@hotmail.com</a>&gt;, Alum=
+nos Alumnos &lt;<a href=3D"mailto:alumnosm@gmail.com">alumnosm@gmail.com</a=
+>&gt;, Nicol=C3=A1s Borda &lt;<a href=3D"mailto:nicolasborda@gmail.com">nic=
+olasborda@gmail.com</a>&gt;, Noemi Lubomirsky &lt;<a href=3D"mailto:noelubo=
+mir@gmail.com">noelubomir@gmail.com</a>&gt;, Noem=C3=AD Gudi=C3=B1o &lt;<a =
+href=3D"mailto:noemigudino@hotmail.com">noemigudino@hotmail.com</a>&gt;, Ju=
+lieta Ferrario &lt;<a href=3D"mailto:julietaferrario@gmail.com">julietaferr=
+ario@gmail.com</a>&gt;, Flavia Salvatore &lt;<a href=3D"mailto:flavia_s_@ho=
+tmail.com">flavia_s_@hotmail.com</a>&gt;, Calder=C3=B3n, Lucila &lt;<a href=
+=3D"mailto:luciladaniela@yahoo.com.ar">luciladaniela@yahoo.com.ar</a>&gt;, =
+Mariano Ruiz &lt;<a href=3D"mailto:maruiz@gmail.com">maruiz@gmail.com</a>&g=
+t;, Pablo Calder=C3=B3n &lt;<a href=3D"mailto:pablocalderon1705@gmail.com">=
+pablocalderon1705@gmail.com</a>&gt;, marcela zuccalli &lt;<a href=3D"mailto=
+:marcezuccalli@gmail.com">marcezuccalli@gmail.com</a>&gt;, German Zorba &lt=
+;<a href=3D"mailto:germanzorba@gmail.com">germanzorba@gmail.com</a>&gt;, Bl=
+as &lt;<a href=3D"mailto:fernandezblas92@gmail.com">fernandezblas92@gmail.c=
+om</a>&gt;, Claudia Alvarado &lt;<a href=3D"mailto:alvarado.clauu@gmail.com=
+">alvarado.clauu@gmail.com</a>&gt;, Sebasti=C3=A1n Zarate &lt;<a href=3D"ma=
+ilto:seb4.zarate@gmail.com">seb4.zarate@gmail.com</a>&gt;, Viviano Fernand=
+=C3=A9z &lt;<a href=3D"mailto:vivianoofernandez2012@gmail.com">vivianoofern=
+andez2012@gmail.com</a>&gt;, Demetrio Stojanoff &lt;<a href=3D"mailto:demst=
+o@gmail.com">demsto@gmail.com</a>&gt;, Nicol=C3=A1s Vescovo &lt;<a href=3D"=
+mailto:nicolasvescovo@gmail.com">nicolasvescovo@gmail.com</a>&gt;, Nicarm G=
+ladius &lt;<a href=3D"mailto:nic.arm16@gmail.com">nic.arm16@gmail.com</a>&g=
+t;, Maximiliano Riddik &lt;<a href=3D"mailto:maxi_necochea@hotmail.com">max=
+i_necochea@hotmail.com</a>&gt;, Julieta Lavi=C3=A9 &lt;<a href=3D"mailto:ju=
+lietalavie@gmail.com">julietalavie@gmail.com</a>&gt;, Cejas, Eugenia &lt;<a=
+ href=3D"mailto:mec.eugenia@gmail.com">mec.eugenia@gmail.com</a>&gt;, Maria=
+ Emma Eyrea Iraz=C3=BA &lt;<a href=3D"mailto:maemmaeyrea@hotmail.com">maemm=
+aeyrea@hotmail.com</a>&gt;, Fazzio, Nadia &lt;<a href=3D"mailto:nadiafazzio=
+@gmail.com">nadiafazzio@gmail.com</a>&gt;, Vizzarri, Paula &lt;<a href=3D"m=
+ailto:pvizzarri@hotmail.com">pvizzarri@hotmail.com</a>&gt;, Alejandra Brusa=
+sco &lt;<a href=3D"mailto:brusi98@yahoo.com">brusi98@yahoo.com</a>&gt;, Fel=
+ix Alo=C3=A9 &lt;<a href=3D"mailto:felixaloe@hotmail.com">felixaloe@hotmail=
+.com</a>&gt;,  &lt;<a href=3D"mailto:tatibadaracco@gmail.com">tatibadaracco=
+@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:giselsoto603@gmail.com">giselsot=
+o603@gmail.com</a>&gt;, Eduardo Ghiglioni &lt;<a href=3D"mailto:eghiglioni@=
+gmail.com">eghiglioni@gmail.com</a>&gt;, <a href=3D"mailto:otegui56@gmail.c=
+om">otegui56@gmail.com</a> &lt;<a href=3D"mailto:otegui56@gmail.com">otegui=
+56@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:julianadisisto@yahoo.com.ar">j=
+ulianadisisto@yahoo.com.ar</a>&gt;,  &lt;<a href=3D"mailto:pablobrianese@gm=
+ail.com">pablobrianese@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:fran.gelp@=
+hotmail.com">fran.gelp@hotmail.com</a>&gt;,  &lt;<a href=3D"mailto:francopa=
+ganiunlp@gmail.com">francopaganiunlp@gmail.com</a>&gt;,  &lt;<a href=3D"mai=
+lto:antonella.silva.99@gmail.com">antonella.silva.99@gmail.com</a>&gt;,  &l=
+t;<a href=3D"mailto:lucianoscazzola@gmail.com">lucianoscazzola@gmail.com</a=
+>&gt;,  &lt;<a href=3D"mailto:benita.duca@gmail.com">benita.duca@gmail.com<=
+/a>&gt;,  &lt;<a href=3D"mailto:celestevachetta@gmail.com">celestevachetta@=
+gmail.com</a>&gt;, Natalia Ferre &lt;<a href=3D"mailto:nataliaferre66@gmail=
+.com">nataliaferre66@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:yamilaotero@=
+hotmail.com">yamilaotero@hotmail.com</a>&gt;,  &lt;<a href=3D"mailto:gaston=
+andresg@gmail.com">gastonandresg@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:=
+liliana.alcon.unlp@gmail.com">liliana.alcon.unlp@gmail.com</a>&gt;, Marcela=
+ Kladniew I &lt;<a href=3D"mailto:marceklad@hotmail.com">marceklad@hotmail.=
+com</a>&gt;<br></div><br><br><div dir=3D"ltr"><br clear=3D"all"><div>Estima=
+dos,<div><br></div><div>los invitamos a participar de esta nueva edici=C3=
+=B3n del Festival de Matem=C3=A1tica que se llevar=C3=A1 a cabo de modo vir=
+tual, en el marco de la Reuni=C3=B3n Anual de la UMA.=C2=A0</div><div>En es=
+ta oportunidad, las actividades programadas son:</div><div><br></div><div><=
+br></div><div>-=C2=A0<span style=3D"color:rgb(96,96,96);font-family:Raleway=
+,sans-serif;font-size:15px;font-weight:700">Conferencia de Divulgaci=C3=B3n=
+: Alicia Dickenstein</span></div><div><span style=3D"box-sizing:border-box;=
+font-weight:700;color:rgb(96,96,96);font-family:Raleway,sans-serif;font-siz=
+e:15px">Creando objetos matem=C3=A1ticos que son obras de arte</span><br st=
+yle=3D"box-sizing:border-box;color:rgb(96,96,96);font-family:Raleway,sans-s=
+erif;font-size:15px"><span style=3D"color:rgb(96,96,96);font-family:Raleway=
+,sans-serif;font-size:15px">Mi=C3=A9rcoles 22 de septiembre 18.30hs</span><=
+br style=3D"box-sizing:border-box;color:rgb(96,96,96);font-family:Raleway,s=
+ans-serif;font-size:15px"><br></div><div><span style=3D"color:rgb(96,96,96)=
+;font-family:Raleway,sans-serif;font-size:15px"><br></span></div><div>-=C2=
+=A0<span style=3D"color:rgb(96,96,96);font-family:Raleway,sans-serif;font-s=
+ize:15px;font-weight:700">XIII Festival de Matem=C3=A1tica -=C2=A0Charlas p=
+articipativas para todo p=C3=BAblico</span></div><span style=3D"color:rgb(9=
+6,96,96);font-family:Raleway,sans-serif;font-size:15px">Viernes 24 de septi=
+embre de 18.30 a 20.30hs</span><br style=3D"box-sizing:border-box;color:rgb=
+(96,96,96);font-family:Raleway,sans-serif;font-size:15px"><span style=3D"co=
+lor:rgb(96,96,96);font-family:Raleway,sans-serif;font-size:15px"><br></span=
+></div><div><span style=3D"color:rgb(96,96,96);font-family:Raleway,sans-ser=
+if;font-size:15px"><br></span></div><div><span style=3D"color:rgb(96,96,96)=
+;font-family:Raleway,sans-serif;font-size:15px">Ambas actividades se transm=
+iten por el=C2=A0</span><a href=3D"https://www.youtube.com/channel/UCCvinaF=
+-PiN5-QrNL-aVC-w" style=3D"box-sizing:border-box;color:rgb(9,145,222);text-=
+decoration-line:none;font-family:Raleway,sans-serif;font-size:15px" target=
+=3D"_blank">canal de YouTube de virtUMA 2021</a><span style=3D"color:rgb(96=
+,96,96);font-family:Raleway,sans-serif;font-size:15px">.</span><div><br></d=
+iv><div>Toda la informaci=C3=B3n relacionada con el festival se puede encon=
+trar en</div><div><a href=3D"http://visibilidaduma.dm.uba.ar/" target=3D"_b=
+lank">http://visibilidaduma.dm.uba.ar/</a><br></div><div><br></div><div>Esp=
+eramos contar con su participaci=C3=B3n!</div><div><br></div><div>Saludos,<=
+/div><div>--<br></div></div><div dir=3D"ltr" data-smartmail=3D"gmail_signat=
+ure"><div dir=3D"ltr"><div>Noelia y Gisela</div><div>Comisi=C3=B3n de Visib=
+ilidad Local de la Uni=C3=B3n Matem=C3=A1tica Argentina</div></div></div></=
+div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div></div>
+
+--0000000000005dd42005cc885361--
