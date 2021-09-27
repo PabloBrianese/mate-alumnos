@@ -1,0 +1,273 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:ccaa:0:0:0:0 with SMTP id gj42csp4500396pxb;
+        Mon, 27 Sep 2021 12:29:00 -0700 (PDT)
+X-Received: by 2002:a25:6557:: with SMTP id z84mr1663199ybb.471.1632770940257;
+        Mon, 27 Sep 2021 12:29:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1632770940; cv=none;
+        d=google.com; s=arc-20160816;
+        b=roMVJv1lZsAaR26a1xp0GcWt86CDOlKEbGqMl0HhLDpbuqEtZ4I/RyofVWuN5ck1JD
+         eEjjsoQgOgqxFJ1Cg0QnbQOK28pWmA4wpcEtVetDRyFGDKdfgpzBLG5j8239A/2jvnsj
+         yd+nnfeul7pRI9sRLBlwjblrc2GatPHYHJkQudA5MTUwdGlMHMHVPYr7KjGlWU4yMXtH
+         8xVBf2k/Z0+f8UvY1rQvCFI8SNKJB3eH7J2oD34uCjTEm1WwYDRfBeM0/dq2miDhfUzT
+         dkZ78N0iDO2CXNYNQ7Ev4fzRO5q9ogw8fNyZUtu+EBR5pVu6toFbM1Ers0cq8/BQiLt2
+         +i4A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=k5wmEsWqu6eJ37/kgMDAM46SYuuHtK5Sy4qwgJYc+OQ=;
+        b=otlnGQvQqNtpWprXsDr7waBcO5yN4F543UhMXgjAK7l9uMr8h4fUfOUVUnIpgbJq2j
+         DwlNX3j60uHffsTRxwT2m5zCI5KatA9tWZy1e+s4EHk7WMDtbQYAZU3anpRCDK4ox0LG
+         o0Dv8dZQkWyks0OtwpxhUIgasfepIlb9yJWFOnYzacZDNXmoK7UKc4IIt8m5AsFDd26T
+         Wi7GQLifP1bIbVkQHGMMwObJtDiCg7iPDp/jE+ZbCD9xHcQl/CDMRiwewNB4+NHFEUwX
+         GuB55z2vNOEfd+yACNGofRkY0pHpRDVG+X5Wz1Q1Et0N+QbGO67DAovg2bqSNN+hq9Gu
+         EXRQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=huj2edPk;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id x185sor1635559ybx.176.2021.09.27.12.29.00
+        (Google Transport Security);
+        Mon, 27 Sep 2021 12:29:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=huj2edPk;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=k5wmEsWqu6eJ37/kgMDAM46SYuuHtK5Sy4qwgJYc+OQ=;
+        b=huj2edPkXkrvR+BxYlYUY/kYwG0OZLBd/FftiMtZj2vMdQPLmwuCSOaUqO1owrka8/
+         iQF5xNv53N/tqe3Vu1byhwTNuqpPZekqLRGl6/gx197APtAYtBVKdyfPfmI/3BO7HCTJ
+         9vUQMdzesYhE06L39T3+z4/uxoS6FhNRPezybSoLwaj3ISsn3153gt8WexFlajE4Us/n
+         kdiy3chg9Y8uqVNTYnMjm+wFlR0qAfNhYUb5h4gHRRB9Ky3Fsz3VaRlGM12dTRcgJMct
+         lnpjC0JVPMD6V/D2ND3aNC6Jvupc/7AHfkC7XdRyoUHsggd76rL1EctNFCt62ey3WLxD
+         MimQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=k5wmEsWqu6eJ37/kgMDAM46SYuuHtK5Sy4qwgJYc+OQ=;
+        b=0Aam1CC7nYsD/iRv9AquTyb0lYs3aAa+jdrpWLeD4HPjccAP91zt0TZHtzFeaCL7Pn
+         /QQ82LvXGYeLstehGE/wDMRe1R4WUCTc60qkeGKW90DfOKG3gHMawb87IGpwbd6dO0us
+         G/4oXLN9Z3BUbvIT6ouhnP6mDX7iQSfyJokjXlKzYYT09DWn8OmqJbFWPrYJaJFZtBKz
+         io03+oNJqKfWuyIfXjxJ8Mb14CEJnzDjU35Xbd/vwcldQo9s9rlZ44r2PRvNDO4riFmU
+         Fvbw20AqWxHJEHnJegu45/GPw1GQ57Ex3PGOx9iVMZ4RUSf0qrRQhkHR7snu4Gf20jrm
+         rdIQ==
+X-Gm-Message-State: AOAM5313DZFZh46zYCYySc8wWqe/oVAhtcGSaYyiP3fX8eB6D09Sef/m
+	yUROismswVb8J4TXW56jzYdfDS1yYBr04l8W3Cc=
+X-Google-Smtp-Source: ABdhPJzUNMU/L9lZyDJz0XAy807Rw+GWh2l8u7glX1NPmfGGR4fB4RF0HsABusAFq8VkOPe6tgoDrM8bw/xflL61638=
+X-Received: by 2002:a5b:9:: with SMTP id a9mr1920008ybp.385.1632770939885;
+ Mon, 27 Sep 2021 12:28:59 -0700 (PDT)
+MIME-Version: 1.0
+References: <5557fbc017cca3a0e71c64edacec6b3f@mate.unlp.edu.ar>
+In-Reply-To: <5557fbc017cca3a0e71c64edacec6b3f@mate.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 27 Sep 2021 16:28:47 -0300
+Message-ID: <CAN5uefabXxozBp+7Z+3UEk0wZ+SEhqYCQKAZJYYAyWZjf4gVzg@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Seminario_Geometr=C3=ADa_Noconmutativa_=3A_Martes_28=2F?=
+	=?UTF-8?Q?9_10_hs?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000df1e3b05ccff1b03"
+
+--000000000000df1e3b05ccff1b03
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Gisela Tartaglia <gtartaglia@mate.unlp.edu.ar>
+Date: lun, 27 sept 2021 a las 8:43
+Subject: Seminario Geometr=C3=ADa Noconmutativa : Martes 28/9 10 hs
+To:
+
+
+Hola, este martes a las 10:00hs tendremos el seminario virtual de
+Geometr=C3=ADa Noconmutativa del Atl=C3=A1ntico Sur (GeNoCAS).
+
+En esta oportunidad va a hablar *Toke Meier Carlsen* (Faroe Islands)
+
+Title: *C*-rigidity of topological dynamical systems*
+
+Abstract: There is a long tradition for constructing C*-algebras from
+dynamical systems. On one hand, this has lead to the construction of
+many interesting C*-algebras that can be studied via the corresponding
+dynamical systems. On the other hand, C*-algebras constructed from
+dynamical systems allow us to use tools from the theory of C*-algebras
+to study dynamical systems. It is natural to ask how much information
+about a dynamical system one can extract from a C*-algebra associated
+with it.
+
+C*-rigidity of dynamical systems is the principal that dynamical
+systems can be recovered, up to a suitable notion of equivalence, from
+C*-algebraic data associated with them. An example of this is the
+result of Giordano, Putnam, and Skau that says that the crossed
+products of two Cantor minimal systems are isomorphic if and only if
+the Cantor minimal systems are strong orbit equivalent. Another
+example is the result by Tomiyama that says that the crossed products
+of two topologically transitive dynamical systems on compact metric
+spaces are isomorphic in a diagonal-preserving way if and only if the
+systems are flip conjugate.
+
+Recently, it has been shown that it is possible to recover shifts of
+finite type up to flow equivalence, continuous orbit equivalence, and
+conjugacy from their Cuntz-Krieger algebras.
+
+I will give an overview of these results and explain how groupoids can
+be used to prove and generalise them.
+Join Zoom Meeting
+<https://exactas-uba.zoom.us/j/83915550825>https://exactas-uba.zoom.us/j/83=
+915550825
+
+Meeting ID: 839 1555 0825
+Passcode: 550348
+
+
+Saludos,
+Guillermo Corti=C3=B1as y Gisela Tartaglia
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--000000000000df1e3b05ccff1b03
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Gisela Tartaglia</strong> <span dir=3D"a=
+uto">&lt;<a href=3D"mailto:gtartaglia@mate.unlp.edu.ar">gtartaglia@mate.unl=
+p.edu.ar</a>&gt;</span><br>Date: lun, 27 sept 2021 a las 8:43<br>Subject: S=
+eminario Geometr=C3=ADa Noconmutativa : Martes 28/9 10 hs<br>To: <br></div>=
+<br><br><u></u>
+<div>
+<pre>Hola, este martes a las 10:00hs tendremos el seminario virtual de Geom=
+etr=C3=ADa Noconmutativa del Atl=C3=A1ntico Sur (GeNoCAS).
+
+En esta oportunidad va a hablar <strong>Toke Meier Carlsen</strong> (Faroe =
+Islands)
+
+Title: <em>C*-rigidity of topological dynamical systems</em>
+
+Abstract: There is a long tradition for constructing C*-algebras from dynam=
+ical systems. On one hand, this has lead to the construction of many intere=
+sting C*-algebras that can be studied via the corresponding dynamical syste=
+ms. On the other hand, C*-algebras constructed from dynamical systems allow=
+ us to use tools from the theory of C*-algebras to study dynamical systems.=
+ It is natural to ask how much information about a dynamical system one can=
+ extract from a C*-algebra associated with it.
+
+C*-rigidity of dynamical systems is the principal that dynamical systems ca=
+n be recovered, up to a suitable notion of equivalence, from C*-algebraic d=
+ata associated with them. An example of this is the result of Giordano, Put=
+nam, and Skau that says that the crossed products of two Cantor minimal sys=
+tems are isomorphic if and only if the Cantor minimal systems are strong or=
+bit equivalent. Another example is the result by Tomiyama that says that th=
+e crossed products of two topologically transitive dynamical systems on com=
+pact metric spaces are isomorphic in a diagonal-preserving way if and only =
+if the systems are flip conjugate.=C2=A0
+
+Recently, it has been shown that it is possible to recover shifts of finite=
+ type up to flow equivalence, continuous orbit equivalence, and conjugacy f=
+rom their Cuntz-Krieger algebras.=C2=A0
+
+I will give an overview of these results and explain how groupoids can be u=
+sed to prove and generalise them.
+
+<a href=3D"https://exactas-uba.zoom.us/j/83915550825" target=3D"_blank">Joi=
+n Zoom Meeting</a>
+<a href=3D"https://exactas-uba.zoom.us/j/83915550825" target=3D"_blank">htt=
+ps://exactas-uba.zoom.us/j/83915550825</a>
+
+Meeting ID: 839 1555 0825
+Passcode: 550348
+
+
+Saludos,
+Guillermo Corti=C3=B1as y Gisela Tartaglia</pre>
+</div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--000000000000df1e3b05ccff1b03--

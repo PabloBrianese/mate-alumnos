@@ -1,0 +1,304 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:ccaa:0:0:0:0 with SMTP id gj42csp4501490pxb;
+        Mon, 27 Sep 2021 12:30:29 -0700 (PDT)
+X-Received: by 2002:a25:cb88:: with SMTP id b130mr1808949ybg.318.1632771029067;
+        Mon, 27 Sep 2021 12:30:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1632771029; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nxSPHzCrvY3T7o1tWjkbrRQHvAlL5gdeXrFiH7GNytTGnF/rXfVogF4581hqWmdc/o
+         IpRaPia76rKKiRPv1S/vWqom8A1SIEJotH5E6RqUZ8AlJf8uCQM8GZcFUjBzPVdQtdyF
+         EnIcpWzjFR4eBntyx4LzCxJoF+3kfcyQXVOHCAo8/SRyDZ0RFA3G1hU32lIjUGzp1XVX
+         7bVg3pTDZ99GgOu8KArQ6nR4U8sIc1KRLPvMgNXOCMPXBDU8FXlAp4+pJVJd+p1ijYdk
+         4XvjOPeoBDDtb38GSqaywPjyJlRK/S8nDD2aqql9whMpiqSME6vL6vCMioZg+1bwl8tJ
+         KAPQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=/ahJFOZSk4PAP1XRz+xHSV/TQfCqESWZzbLwE0oa2Nk=;
+        b=cdTcBLJHhGl8PnsOlZt15eFI4KgNYEx32gO8MSra6ay3+mCMmSHCOQ21IgAtEorTnS
+         HwySORSVqC97pIy0LCgWOYKls6JKLRf+dIXnM8qRzFoGatBg/cAFmp50if64X/FpZ3EN
+         YqQyAGb01kkHY8WZiU9pIscVmRasTcGBnhvzJYQSELkrnIJi2gnj+70Zk5GCCEKgwbn4
+         EBo1+Ken7Vos3wkGRq3ff+ZVYNJeKrhtEmXa4l9PyUVzdvD2/8EWWlkQVTrJCsgBwzsK
+         JOLB+IyuDTovwLOm5+uO8jf4IwO6mrSx4/qUq6J9boLrtbMuZGJINUPtZTbbGJjzeVqM
+         GCEg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=aGGTIgoi;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id s133sor1054171ybs.144.2021.09.27.12.30.28
+        (Google Transport Security);
+        Mon, 27 Sep 2021 12:30:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=aGGTIgoi;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=/ahJFOZSk4PAP1XRz+xHSV/TQfCqESWZzbLwE0oa2Nk=;
+        b=aGGTIgoisl+/IAuRTwTG+VHTE08qYQG4+nuJMMAv5yjHu3hiu1GUqvtKRYOze80xlf
+         flDZEFwTCNHUqF7P95cCh1iUJ9W85lJii5OpWNPVlmknrSxJGZGt4DCrOdu1SlanK3eU
+         kcG2Az3a3pp0tD9kUQwQ6L8st69/2olkbkylFVXnuymd2JEkjZ2JugsyDTzV1IPHscDo
+         w6bkzr5+TgZnr1n7IHwKobs+h4DaklYWAhHWrR9g55XzrFJuX1gUBXm9smF5Rn8NLRi5
+         wxH1fGrtUz9ggDZXS3dJeWJUImq8qx6lufJfjbwAYSL0PZHhmF+wytqU9vKWB2AjaH1s
+         /ewQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=/ahJFOZSk4PAP1XRz+xHSV/TQfCqESWZzbLwE0oa2Nk=;
+        b=0nUTg4r9QkAOEOA1v3ffA6SBg6+zl7bs8+ROYMpc/ARcKI/1HsJNlNTB9P2CQ4fnZD
+         xKpqhuGgU2tqhdtCxo4qzLhsjdLJsCHGHBhbDa3BN+/W2HQTx4lSuTPToIccs5F1Pl4G
+         kVvdoWUk/b+FGbEb57YqYiqAAEeeYvrKeyI1cMTkz3ajj2TlcRpLoCune5XCVnmLaZ5a
+         pfZZ4CcG74UH3qEZnCa8yF1a6PrFsIoCriF5jzWlh/YOeEwQCEcSL7nxjhrbHQuasrLT
+         cU7DbYoGNUYROwxIYlu10hd2FXlbd6w5yLsT6SAFIybPcOtQ8u/imRp82Pnu/b3Pjk0O
+         OPAw==
+X-Gm-Message-State: AOAM530pa61zemNBjYjeAd5O0h/aLOcXPjCd23zLP1vZ2G4Ki5mR39v9
+	T/UVltslYLfX4z49GRHqHMEIbfK4vQxywnhUP4M=
+X-Google-Smtp-Source: ABdhPJzRbcE9TwKkucj5Wf54F0srIjg3B1ZvbdzdsrcYaJg3lutfiw9Ja745jjxB3An8svrE5cTiBqD0YYjuzjA+5Pk=
+X-Received: by 2002:a25:4586:: with SMTP id s128mr1841754yba.361.1632771028697;
+ Mon, 27 Sep 2021 12:30:28 -0700 (PDT)
+MIME-Version: 1.0
+References: <fdcc680a-ac4a-a72f-6c81-c043b39cf677@fcaglp.unlp.edu.ar>
+ <63f8e5a2-51ba-7f8e-5797-f7381fb7aa7f@fcaglp.unlp.edu.ar> <61521621.1c69fb81.81150.b4a9SMTPIN_ADDED_MISSING@mx.google.com>
+In-Reply-To: <61521621.1c69fb81.81150.b4a9SMTPIN_ADDED_MISSING@mx.google.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 27 Sep 2021 16:30:16 -0300
+Message-ID: <CAN5uefYza=OUmT+VQo8rhbsNPziw7mi71Qf28Y++LiWRUFU0hA@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Pr=C3=B3ximos_llamados_en_la_FCAGLP?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000002a45ad05ccff212e"
+
+--0000000000002a45ad05ccff212e
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Hern=C3=A1n Tabieres <hernantabieres@ymail.com>
+Date: lun, 27 sept 2021 a las 16:06
+Subject: Pr=C3=B3ximos llamados en la FCAGLP
+To: Alumnos <alumnosm@gmail.com>
+
+
+Reenv=C3=ADo informaci=C3=B3n sobre el llamado al curso de nivelaci=C3=B3n =
+2022 del
+observatorio. Saludos!
+
+
+
+Hern=C3=A1n Enrique Tabieres
+
+
+
+
+
+
+
+Buenas tardes
+
+Comunico sobre los pr=C3=B3ximos llamados docentes en nuestra Facultad:
+
+   - Llamado a Convocatoria a Registro de Aspirantes, a trav=C3=A9s del
+   Departamento de Concursos de FCAG, para la cobertura de diecis=C3=A9is (=
+16)
+   cargos de Auxiliares Docentes Alumnos del =E2=80=9CCurso de Nivelaci=C3=
+=B3n 2022=E2=80=9D, de
+   los cuales ocho (8) ser=C3=A1n destinados a postulantes con antecedentes
+   docentes universitarios y ocho (8) a postulantes sin antecedentes docent=
+es
+   universitarios. Ver Res de Llamado
+   <http://www.fcaglp.unlp.edu.ar/uploads/docs/llamado_convocatoria_aux_doc=
+_al_curso_de_nivelacion_2022.%20convocatoria%20aux%20al%20doc%20curso%20de%=
+20nivelacion%202022%20-%20%201386-21.pdf>
+   El per=C3=ADodo de inscripci=C3=B3n de la presente convocatoria entre lo=
+s d=C3=ADas 1=C2=B0
+   al 7 de octubre de 2021 finalizando el =C3=BAltimo d=C3=ADa a las 12.30 =
+hs. La misma
+   se realizar=C3=A1 mediante formulario. A continuaci=C3=B3n pueden encont=
+rarse los
+   datos para el acceso: https://forms.gle/ZNdQVh4aKkfoXLAi8
+   - Llamado a Convocatoria a Registro de Aspirantes, a trav=C3=A9s del
+   Departamento de Concursos, para la cobertura de cuatro (4) cargos de
+   Instructor del =E2=80=9CCurso de Nivelaci=C3=B3n 2022=E2=80=9D. Ver Res =
+de Llamado
+   <http://www.fcaglp.unlp.edu.ar/uploads/docs/llamado_instructores_2022.%2=
+0convocatoria%20instruct.%20%20curso%20de%20nivelaci%C3%B3n%202022%20-%2013=
+87-21.pdf>
+   El per=C3=ADodo de inscripci=C3=B3n de la presente convocatoria entre lo=
+s d=C3=ADas 1=C2=B0
+   al 7 de octubre de 2021 finalizando el =C3=BAltimo d=C3=ADa a las 12.30 =
+hs. La misma
+   se realizar=C3=A1 mediante formulario. A continuaci=C3=B3n pueden encont=
+rarse los
+   datos para el acceso: https://forms.gle/mq1PqtgNQDbqJAnM6
+
+   Los llamados se encuentran disponibles en el siguiente enlace:
+   http://www.fcaglp.unlp.edu.ar/articulo/2017/4/5/llamado_a_concurso
+   Saludos cordiales,
+
+
+
+   <http://www.fcaglp.unlp.edu.ar/uploads/docs/llamado_convocatoria_aux_doc=
+_al_curso_de_nivelacion_2022.%20convocatoria%20aux%20al%20doc%20curso%20de%=
+20nivelacion%202022%20-%20%201386-21.pdf>
+
+--=20
+Lic. Mar=C3=ADa Florencia Catacchio Departamento de Concursos - FCAGLP
+
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--0000000000002a45ad05ccff212e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Hern=C3=A1n Tabieres</strong> <span dir=
+=3D"auto">&lt;<a href=3D"mailto:hernantabieres@ymail.com">hernantabieres@ym=
+ail.com</a>&gt;</span><br>Date: lun, 27 sept 2021 a las 16:06<br>Subject: P=
+r=C3=B3ximos llamados en la FCAGLP<br>To: Alumnos &lt;<a href=3D"mailto:alu=
+mnosm@gmail.com">alumnosm@gmail.com</a>&gt;<br></div><br><br><div lang=3D"E=
+S-AR" link=3D"blue" vlink=3D"#954F72" style=3D"word-wrap:break-word"><div c=
+lass=3D"m_5035268729698683830WordSection1"><p class=3D"MsoNormal"><span lan=
+g=3D"ES-MX">Reenv=C3=ADo informaci=C3=B3n sobre el llamado al curso de nive=
+laci=C3=B3n 2022 del observatorio. Saludos!<u></u><u></u></span></p><p clas=
+s=3D"MsoNormal"><span lang=3D"ES-MX"><u></u>=C2=A0<u></u></span></p><p clas=
+s=3D"MsoNormal">Hern=C3=A1n Enrique Tabieres</p><p class=3D"MsoNormal"><u><=
+/u>=C2=A0<u></u></p><div style=3D"border:none;border-top:solid #e1e1e1 1.0p=
+t;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNormal" style=3D"border:none;pa=
+dding:0cm"><u></u>=C2=A0<u></u></p></div><p class=3D"MsoNormal"><u></u>=C2=
+=A0<u></u></p><div><p>Buenas tardes</p><p>Comunico sobre los pr=C3=B3ximos =
+llamados docentes en nuestra Facultad:</p><ul type=3D"disc"><li class=3D"Ms=
+oNormal">Llamado a Convocatoria a Registro de Aspirantes, a trav=C3=A9s del=
+ Departamento de Concursos de FCAG, para la cobertura de diecis=C3=A9is (16=
+) cargos de Auxiliares Docentes Alumnos del =E2=80=9CCurso de Nivelaci=C3=
+=B3n 2022=E2=80=9D, de los cuales ocho (8) ser=C3=A1n destinados a postulan=
+tes con antecedentes docentes universitarios y ocho (8) a postulantes sin a=
+ntecedentes docentes universitarios<span style=3D"font-size:9.0pt;font-fami=
+ly:&quot;Open Sans&quot;,sans-serif;color:#555555">. </span><a href=3D"http=
+://www.fcaglp.unlp.edu.ar/uploads/docs/llamado_convocatoria_aux_doc_al_curs=
+o_de_nivelacion_2022.%20convocatoria%20aux%20al%20doc%20curso%20de%20nivela=
+cion%202022%20-%20%201386-21.pdf" title=3D"Llamado convocatoria aux doc al =
+curso de nivelacion
+            2022" target=3D"_blank"><span style=3D"font-size:9.0pt;font-fam=
+ily:&quot;Open Sans&quot;,sans-serif;color:#cccccc;text-decoration:none">Ve=
+r Res de Llamado</span></a><br>El per=C3=ADodo de inscripci=C3=B3n de la pr=
+esente convocatoria entre los d=C3=ADas 1=C2=B0 al 7 de octubre de 2021 fin=
+alizando el =C3=BAltimo d=C3=ADa a las 12.30 hs. La misma se realizar=C3=A1=
+ mediante formulario. A continuaci=C3=B3n pueden encontrarse los datos para=
+ el acceso: <a href=3D"https://forms.gle/ZNdQVh4aKkfoXLAi8" target=3D"_blan=
+k">https://forms.gle/ZNdQVh4aKkfoXLAi8</a><u></u><u></u></li><li class=3D"M=
+soNormal">Llamado a Convocatoria a Registro de Aspirantes, a trav=C3=A9s de=
+l Departamento de Concursos, para la cobertura de cuatro (4) cargos de Inst=
+ructor del =E2=80=9CCurso de Nivelaci=C3=B3n 2022=E2=80=9D.<span style=3D"c=
+olor:#555555;background:white"> </span><a href=3D"http://www.fcaglp.unlp.ed=
+u.ar/uploads/docs/llamado_instructores_2022.%20convocatoria%20instruct.%20%=
+20curso%20de%20nivelaci%C3%B3n%202022%20-%201387-21.pdf" title=3D"Llamado i=
+nstructores 2022" target=3D"_blank"><span style=3D"background:white;text-de=
+coration:none">Ver Res de Llamado</span></a><br>El per=C3=ADodo de inscripc=
+i=C3=B3n de la presente convocatoria entre los d=C3=ADas 1=C2=B0 al 7 de oc=
+tubre de 2021 finalizando el =C3=BAltimo d=C3=ADa a las 12.30 hs. La misma =
+se realizar=C3=A1 mediante formulario. A continuaci=C3=B3n pueden encontrar=
+se los datos para el acceso: <a href=3D"https://forms.gle/mq1PqtgNQDbqJAnM6=
+" target=3D"_blank">https://forms.gle/mq1PqtgNQDbqJAnM6</a><br><br>Los llam=
+ados se encuentran disponibles en el siguiente enlace: <a href=3D"http://ww=
+w.fcaglp.unlp.edu.ar/articulo/2017/4/5/llamado_a_concurso" target=3D"_blank=
+">http://www.fcaglp.unlp.edu.ar/articulo/2017/4/5/llamado_a_concurso</a> <b=
+r>Saludos cordiales,<br><a href=3D"http://www.fcaglp.unlp.edu.ar/uploads/do=
+cs/llamado_convocatoria_aux_doc_al_curso_de_nivelacion_2022.%20convocatoria=
+%20aux%20al%20doc%20curso%20de%20nivelacion%202022%20-%20%201386-21.pdf" ti=
+tle=3D"Llamado convocatoria aux doc al curso de nivelacion
+            2022" target=3D"_blank"><span style=3D"font-size:9.0pt;font-fam=
+ily:&quot;Open Sans&quot;,sans-serif;color:#cccccc;text-decoration:none"><b=
+r><br></span></a><u></u><u></u></li></ul></div><p class=3D"MsoNormal">-- <b=
+r>Lic. Mar=C3=ADa Florencia Catacchio Departamento de Concursos - FCAGLP<u>=
+</u><u></u></p><p class=3D"MsoNormal"><u></u>=C2=A0<u></u></p></div></div><=
+/div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gmai=
+l_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div =
+dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span styl=
+e=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br>=
+</span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0,=
+0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina de=
+ Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://ww=
+w.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.faceb=
+ook.com/groups/326128787595559/</a> </font></font><br></span></div><div sty=
+le=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b>=
+</div></div></div></div></div></div></div></div>
+
+--0000000000002a45ad05ccff212e--

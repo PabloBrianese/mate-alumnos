@@ -1,0 +1,313 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:ccaa:0:0:0:0 with SMTP id gj42csp4499838pxb;
+        Mon, 27 Sep 2021 12:28:17 -0700 (PDT)
+X-Received: by 2002:a05:6902:1029:: with SMTP id x9mr1920070ybt.519.1632770897770;
+        Mon, 27 Sep 2021 12:28:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1632770897; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZY8sDmcgtRWwDgfqfeKp86mVIEj9n621o0x5jTjbxSQMLZjuNq/NC8mGL/Kv++yKfu
+         4Myi9NAQPWEs8d0RuK5pi0H51IbstMhwO6d+AjatTC75wfpeDx+w30ox75iqus6oB3cy
+         Uvd6GqJNQYm/TGkpv8enKFuyT9My02KxWmBeS/rihTydZ1HyOAApTlEnuJkkGIm0xjfc
+         fXdCZr9hLE+lsWS3Xn0MqcF8ZHDNgfvPqxTIN53y/jWP1tXHcFzhQxgG7JeGtQS/+08J
+         xSu98/AlW4/wcFNH1YSubtM7fAF7Q5dBDjykmukk1GH5WRx2iAlorjNgIqBiyG3OFK3H
+         rXfw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=A37r8becJQhhgNJ9VoM/h2bKLe1wkEazturXo6bKf4U=;
+        b=MLDoQ5o6vsIS+IinSzyQEZhAZrhKt6R8cfDxMQU9B2mf5tkBswW+IHBYBtzkromixM
+         iWnPx83nksMtCzOpbc+GvpaAct/COWVXfrAHeirTXwHZmQ41ra8HHd5Q0D0TkcGk/qE0
+         nizdiZ3e1Rd31qV6YeAMzyTcJNfkLE+tOHOPfdHCh/7F/wfTL0uAafUYMrDOgCYgI0xj
+         8LXwjHyR5xRu+l5gLw8WOBAkQhQ9W0C4iQUKaCRdWvbR4AOdYrwbZ04TojSGFPMJY/Mw
+         rdn6o3umNs17xJqN/1jv6UYl5pyyWpGNWcjDLX2vx5AtkAtyVLueqYwem2LurY68WQia
+         1gfA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=LNZtGnv+;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o7sor5956811ybc.98.2021.09.27.12.28.16
+        (Google Transport Security);
+        Mon, 27 Sep 2021 12:28:17 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=LNZtGnv+;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=A37r8becJQhhgNJ9VoM/h2bKLe1wkEazturXo6bKf4U=;
+        b=LNZtGnv+PzXhkXjwL57txbbSSnacZkkUaCNULWINcz7VFg5kiUGzViIU8EiV4JvwwA
+         QobB49sBowffQhLaaLyY8s2j4Iak1GkpWAA8GyvmKZrYWGLhFhpf67C09pL0fbiyWPyu
+         2RVCqHswj2iPvazrNWzr9mVravjg6CD4KXubzYDJ73yIBfX6ONLqmAg2F6zmLAK2dQ2f
+         0+BomoGyEg9BFK9IPavOfq+qztPUCm1Crrym9qHYFrkiroRioqqh7Gd27wrDttI/mxIU
+         6FIgDgpchK/71llCb8YWfDqI/81UCg7jePMJNnpo19+/uohi7N39v6ujNidQQbSclNac
+         Uegw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=A37r8becJQhhgNJ9VoM/h2bKLe1wkEazturXo6bKf4U=;
+        b=uaKwmlGVNhJBqi4Dx7L72QpNfk1AiXQoAUA0FFCH8vcWrlfKxKQRUcO/mhdqFGrEHK
+         0LrWur6RXlzDIWNsMK8nEQbW5Cmwbs0hOnRaS29pzkYmik6FU2DG/fw/7WXx5z/6wSWl
+         U0LXDLh79Xqipnw+MSfhvntqUQhzuP6JpdcT/POYZsLvnuY1Qw2PqoYiO/viENn2CeTw
+         DxX7f8zy+sM4I4Kegqh6VN4XOCvBiy09pwnS18OXvSDmGUuJzgBaFdcLeANr8LRQsIzE
+         rsXS04I05QeImogjMBwV/I6NCh0i0KrQZgRIdzWlTEIr8E4wSeLvH13Cx4kKXPfPt2KY
+         UJVw==
+X-Gm-Message-State: AOAM533yT334icTW1tgIOM3AbO516beQybA9gA/T6Ub7OMAe0rpIc2oM
+	wtPlz1FeSCq369hTnWUaEoVmVcnexzgDGTe/Rxk=
+X-Google-Smtp-Source: ABdhPJyoAwijOFPgctFBD+16vNCNCZGnK+IC1JFJE/yEnKzn6naIhahUWQqzr9xPastH4SAB2Odt4+xgUp2Fo8ytHw8=
+X-Received: by 2002:a25:8409:: with SMTP id u9mr1833459ybk.159.1632770896742;
+ Mon, 27 Sep 2021 12:28:16 -0700 (PDT)
+MIME-Version: 1.0
+References: <CACroB_xpa1SyBC7a6Ly_tfzpuEwEJN4C6ayKSZ64ZO_Ys0vbqg@mail.gmail.com>
+ <CAONndeYUXKSXLCWJcndodVwch8XE-WEH7yHatiz7_8OWnAKpuA@mail.gmail.com>
+In-Reply-To: <CAONndeYUXKSXLCWJcndodVwch8XE-WEH7yHatiz7_8OWnAKpuA@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 27 Sep 2021 16:28:04 -0300
+Message-ID: <CAN5uefZw_prMb+YJA8vMVFgAqKYMV1PtZS9+evDadPuFur88nw@mail.gmail.com>
+Subject: Fwd: ANUNCIO Escuela Emalca Chile 2022
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000004ccc8c05ccff1988"
+
+--0000000000004ccc8c05ccff1988
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: UMA La Plata <rumalaplata@gmail.com>
+Date: lun, 27 sept 2021 a las 6:46
+Subject: Fwd: ANUNCIO Escuela Emalca Chile 2022
+To:
+
+
+
+___________________________________________________________________________=
+________________________
+*Escuela Emalca Virtual Chile: =E2=80=9CMatem=C3=A1ticas y sus Aplicaciones=
+=E2=80=9D*
+
+*http://eventos.cmm.uchile.cl/emalcachile2021/
+<http://eventos.cmm.uchile.cl/emalcachile2021/>*
+
+*Fecha:* 10-21 Enero de 2022
+
+*Lugar e instituci=C3=B3n:* On-Line (organizada por el Centro de Modelamien=
+to
+Matem=C3=A1tico, Universidad de Chile, Santiago, Chile)
+
+*Objetivos:*
+El objetivo de esta escuela es introducir a estudiantes con un background
+equivalente a una licenciatura en matem=C3=A1ticas diferentes temas relevan=
+tes
+de las matem=C3=A1ticas aplicadas modernas. Esto es, temas en: an=C3=A1lisi=
+s num=C3=A9rico
+de EDPs, mec=C3=A1nica matem=C3=A1tica, optimizaci=C3=B3n y algor=C3=ADtmic=
+a. Desde ellos se
+buscar=C3=A1 tambi=C3=A9n explorar el mundo de lo estoc=C3=A1stico. Los est=
+udiantes, a
+trav=C3=A9s de conferencias invitadas, podr=C3=A1n ver aplicaciones reales =
+de las
+matem=C3=A1ticas en diversas ciencias (astronom=C3=ADa, biolog=C3=ADa, cien=
+cias del clima,
+etc.) y en el =C3=A1mbito industrial/estado (salud, manejo de incendios, ci=
+encia
+de materiales, etc.). El estudiante, luego de esta escuela, tendr=C3=A1 un
+panorama de estos temas que lo acercar=C3=A1n a diversas matem=C3=A1ticas o=
+ maneras
+de hacer matem=C3=A1ticas para resolver problemas reales.
+
+*Estructura de la escuela:*
+La Escuela consistir=C3=A1 en 2 cursos semanales de 4 sesiones de 1,5 horas=
+ cada
+una. Cada curso ser=C3=A1 dictado por un investigador activo de su =C3=A1re=
+a quien
+ser=C3=A1 acompa=C3=B1ado por un ayudante (estudiante de doctorado o mag=C3=
+=ADster) para
+apoyar a los estudiantes con clases pr=C3=A1cticas. La evaluaci=C3=B3n de c=
+ada curso
+consistir=C3=A1 en un examen/tarea final consistente en 1 pregunta de desar=
+rollo
+del =C3=A1rea respectiva. Cada profesor decidir=C3=A1 si la respuesta es in=
+dividual o
+en grupo. Los 5 mejores alumnos del curso recibir=C3=A1n un libro de Teor=
+=C3=ADa de
+la Medida (autor Jaime San Mart=C3=ADn) de regalo.
+
+La escuela tendr=C3=A1 una serie de 3 charlas semanales dedicadas a las
+aplicaciones de las matem=C3=A1ticas en otras ciencias y el mundo real, y h=
+abr=C3=A1
+sesiones para presentar los programas de postgrado de las universidades
+participantes.
+
+Luego de registrase y ser aceptado como alumno de la escuela recibir=C3=A1 =
+un
+link para participar en las diferentes actividades.
+
+*Organiza:* Centro de Modelamiento Matem=C3=A1tico =E2=80=93 CMM
+
+*Contacto:* Alejandro Maass (amaass@dim.uchile.cl)
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--0000000000004ccc8c05ccff1988
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">UMA La Plata</strong> <span dir=3D"auto"=
+>&lt;<a href=3D"mailto:rumalaplata@gmail.com">rumalaplata@gmail.com</a>&gt;=
+</span><br>Date: lun, 27 sept 2021 a las 6:46<br>Subject: Fwd: ANUNCIO Escu=
+ela Emalca Chile 2022<br>To: <br></div><br><br><div dir=3D"ltr"><br><div cl=
+ass=3D"gmail_quote"><div dir=3D"ltr"><div>_________________________________=
+__________________________________________________________________<br></div=
+><h3 style=3D"box-sizing:border-box;clear:both;font-family:Roboto,Helvetica=
+,Arial,sans-serif;line-height:1.3;font-size:22px;margin:22px 0px;letter-spa=
+cing:-0.05ex;color:rgb(48,48,48);font-weight:300"><strong style=3D"box-sizi=
+ng:border-box">Escuela Emalca Virtual Chile: =E2=80=9CMatem=C3=A1ticas y su=
+s Aplicaciones=E2=80=9D</strong></h3><div><strong style=3D"box-sizing:borde=
+r-box"><font size=3D"4"><a href=3D"http://eventos.cmm.uchile.cl/emalcachile=
+2021/" target=3D"_blank">http://eventos.cmm.uchile.cl/emalcachile2021/</a><=
+/font><br></strong></div><div><strong style=3D"box-sizing:border-box"><font=
+ size=3D"4"><br></font></strong></div><p style=3D"box-sizing:border-box;mar=
+gin:0px 0px 24px;color:rgb(48,48,48);font-family:&quot;Source Sans Pro&quot=
+;,Helvetica,Arial,sans-serif;font-size:16px"><strong style=3D"box-sizing:bo=
+rder-box">Fecha:</strong>=C2=A010-21 Enero de 2022</p><p style=3D"box-sizin=
+g:border-box;margin:0px 0px 24px;color:rgb(48,48,48);font-family:&quot;Sour=
+ce Sans Pro&quot;,Helvetica,Arial,sans-serif;font-size:16px"><strong style=
+=3D"box-sizing:border-box">Lugar e instituci=C3=B3n:</strong>=C2=A0On-Line =
+(organizada por el Centro de Modelamiento Matem=C3=A1tico, Universidad de C=
+hile, Santiago, Chile)</p><p style=3D"box-sizing:border-box;margin:0px 0px =
+24px;color:rgb(48,48,48);font-family:&quot;Source Sans Pro&quot;,Helvetica,=
+Arial,sans-serif;font-size:16px"><strong style=3D"box-sizing:border-box">Ob=
+jetivos:</strong><br style=3D"box-sizing:border-box">El objetivo de esta es=
+cuela es introducir a estudiantes con un background equivalente a una licen=
+ciatura en matem=C3=A1ticas diferentes temas relevantes de las matem=C3=A1t=
+icas aplicadas modernas. Esto es, temas en: an=C3=A1lisis num=C3=A9rico de =
+EDPs, mec=C3=A1nica matem=C3=A1tica, optimizaci=C3=B3n y algor=C3=ADtmica. =
+Desde ellos se buscar=C3=A1 tambi=C3=A9n explorar el mundo de lo estoc=C3=
+=A1stico. Los estudiantes, a trav=C3=A9s de conferencias invitadas, podr=C3=
+=A1n ver aplicaciones reales de las matem=C3=A1ticas en diversas ciencias (=
+astronom=C3=ADa, biolog=C3=ADa, ciencias del clima, etc.) y en el =C3=A1mbi=
+to industrial/estado (salud, manejo de incendios, ciencia de materiales, et=
+c.). El estudiante, luego de esta escuela, tendr=C3=A1 un panorama de estos=
+ temas que lo acercar=C3=A1n a diversas matem=C3=A1ticas o maneras de hacer=
+ matem=C3=A1ticas para resolver problemas reales.</p><p style=3D"box-sizing=
+:border-box;margin:0px 0px 24px;color:rgb(48,48,48);font-family:&quot;Sourc=
+e Sans Pro&quot;,Helvetica,Arial,sans-serif;font-size:16px"><strong style=
+=3D"box-sizing:border-box">Estructura de la escuela:</strong><br style=3D"b=
+ox-sizing:border-box">La Escuela consistir=C3=A1 en 2 cursos semanales de 4=
+ sesiones de 1,5 horas cada una. Cada curso ser=C3=A1 dictado por un invest=
+igador activo de su =C3=A1rea quien ser=C3=A1 acompa=C3=B1ado por un ayudan=
+te (estudiante de doctorado o mag=C3=ADster) para apoyar a los estudiantes =
+con clases pr=C3=A1cticas. La evaluaci=C3=B3n de cada curso consistir=C3=A1=
+ en un examen/tarea final consistente en 1 pregunta de desarrollo del =C3=
+=A1rea respectiva. Cada profesor decidir=C3=A1 si la respuesta es individua=
+l o en grupo. Los 5 mejores alumnos del curso recibir=C3=A1n un libro de Te=
+or=C3=ADa de la Medida (autor Jaime San Mart=C3=ADn) de regalo.</p><p style=
+=3D"box-sizing:border-box;margin:0px 0px 24px;color:rgb(48,48,48);font-fami=
+ly:&quot;Source Sans Pro&quot;,Helvetica,Arial,sans-serif;font-size:16px">L=
+a escuela tendr=C3=A1 una serie de 3 charlas semanales dedicadas a las apli=
+caciones de las matem=C3=A1ticas en otras ciencias y el mundo real, y habr=
+=C3=A1 sesiones para presentar los programas de postgrado de las universida=
+des participantes.</p><p style=3D"box-sizing:border-box;margin:0px 0px 24px=
+;color:rgb(48,48,48);font-family:&quot;Source Sans Pro&quot;,Helvetica,Aria=
+l,sans-serif;font-size:16px">Luego de registrase y ser aceptado como alumno=
+ de la escuela recibir=C3=A1 un link para participar en las diferentes acti=
+vidades.</p><p style=3D"box-sizing:border-box;margin:0px 0px 24px;color:rgb=
+(48,48,48);font-family:&quot;Source Sans Pro&quot;,Helvetica,Arial,sans-ser=
+if;font-size:16px"><strong style=3D"box-sizing:border-box">Organiza:</stron=
+g>=C2=A0Centro de Modelamiento Matem=C3=A1tico =E2=80=93 CMM</p><p style=3D=
+"box-sizing:border-box;margin:0px 0px 24px;color:rgb(48,48,48);font-family:=
+&quot;Source Sans Pro&quot;,Helvetica,Arial,sans-serif;font-size:16px"><str=
+ong style=3D"box-sizing:border-box">Contacto:</strong>=C2=A0Alejandro Maass=
+ (<a href=3D"mailto:amaass@dim.uchile.cl" target=3D"_blank">amaass@dim.uchi=
+le.cl</a>)</p></div>
+</div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--0000000000004ccc8c05ccff1988--
