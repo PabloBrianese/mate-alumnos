@@ -1,0 +1,1167 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b041:0:0:0:0 with SMTP id s1csp667370pxc;
+        Wed, 29 Sep 2021 11:42:41 -0700 (PDT)
+X-Received: by 2002:a25:cb4c:: with SMTP id b73mr1689427ybg.209.1632940960650;
+        Wed, 29 Sep 2021 11:42:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1632940960; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gtaDyd3m3jXtHcF9TovVdnw2vN3/S90+iopcyt4QCXh7XDzx+ERo13dV2KcJhyjPMm
+         Z0InNDWlst2G9htEf+8FIDFCnb4iMjo/SHa3nCztmgDamO1wOQp0rN5NRcVMBxyOUFmB
+         RszqgH0bJR+3TL9ZaOFSu0HIBQcOHrrA0kilQJXhtLRuzlCkWNnWeGzQ/U0yehYhYb4q
+         /moUulW1ByoxOg63B0qy+a8GgBWX1mkeJx4sL2sAuI1Odx5UHRaX1dAGjSg+dH6gigIo
+         Tf+9HOnnTbDlAXZX4DNEQ1E6BnFZLIZMfMNxwqY33AEyFe6jjA8nAfkBhk7Bl9d9nLWA
+         Bx2Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=bP2O6n3Znq8nk86xMAdSFVOx4I0+xNzqwEPxHjTgsz8=;
+        b=Z697Dv+/924Flc+fQyzKL4LVr/bA1gav2xPPXqRggk3WB0KJ7fHiY+EcSCMsimHZMG
+         a7HOZ6Po4IVNxi955PonbcxK5b8wuDAL/vjUTfO588h+WV+2O8eI5D8Vo7EpjikritSX
+         QyL+ZTv4qtRyxENncEJXCVkPgBaiPKfoch39ZhPeLWpobSfYMFZNQxDekPc167bILkNy
+         P0vO8K3kgJfesizNSBWOKe3QcbKkEvUz/wfOFhRLoyxKIg4+KhAST7pNfHKNjhlyHPom
+         mlS55Cvzd3FVkAi9ZpZRHznNhIX+ZmXjcocTzOuOdcRwxVtsVcBIWPMEPbDEq/XfLa23
+         Nc+g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=Nx1ZESus;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id c124sor245868ybf.183.2021.09.29.11.42.40
+        (Google Transport Security);
+        Wed, 29 Sep 2021 11:42:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=Nx1ZESus;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=bP2O6n3Znq8nk86xMAdSFVOx4I0+xNzqwEPxHjTgsz8=;
+        b=Nx1ZESusrEjkUy+HsFqGbt8k5p8oArh07L7jdY3GZcK0kOWVFVtRcinpYsxNPjr9v1
+         qQJGfKvtUr3/SzOD6KP7pZ936FvIZR3v+o0TOhseV5FvccyLv7ZxrmZ2Ls0vH1EKmHJS
+         +3Lx4UUqldjlPz534xXli5G6qxW6H5xaLqwySuPhPC0PRyWJBZ28j+uL//50bfxCks7K
+         uBlkmDz0CMahUC1weHgxUb7wrA97TLX3iZ2HhXabBIOIO7KhvChYt51AslGMj3XS2hNO
+         w1xRyhFIrBclWt1b22YpprkPjwBlwde2QWJ+gAW5yZKapI52lkM3U2ZzedUVDBJgFF9e
+         VTYQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=bP2O6n3Znq8nk86xMAdSFVOx4I0+xNzqwEPxHjTgsz8=;
+        b=IuAHQuyA/iryr+DbWISpKGAHhUDw0jPNbEJ3JIB8tfwQjUpIvX152REfsPfjCk/dqD
+         YWC7VJY2GTdZ6Y30vIeqCWXtI6v8uuThvv3/Q0pDOGB8LdpnOKEbi0n5blGODgPMxNyl
+         9n/6UEQU2XEQAHe0Tt8Yhv/XW0jzZnE15otwj+7YPVMQE0KZr2TbdsA4iwJeaEXbX0M5
+         SaRP1k3thfsHZNt7h5RzRFSxO2yCaHj8Puqgy4+YGPFoT6ClFM6EOXJnZJo2IGjkXe5h
+         msV/79lx6Y7D6QVZSfgwy/opJ3xOG5Z0TwNlvGbMyg+YxHJFld3njUdMEZ5XApM0NKQ8
+         QriA==
+X-Gm-Message-State: AOAM533hxOj3uwh6sta0SpDPS2KQD3T/8ukbPK8iewsawUG25wEAOGJt
+	QQaex5167G9P8r1HENDcVmSkxubnjVyr2TAXkMU=
+X-Google-Smtp-Source: ABdhPJxEZNcIBmYTRNg7BBjOCzWTDnPBnRxfpeBmm8hjYHDIFOwWfoo6V2Fmdstb4QdiqJofwPzJvD9LjQY7rKn7+F4=
+X-Received: by 2002:a25:4586:: with SMTP id s128mr1536388yba.361.1632940959083;
+ Wed, 29 Sep 2021 11:42:39 -0700 (PDT)
+MIME-Version: 1.0
+References: <129e555feb3ffb5d38c6a26a12875eb5@mate.unlp.edu.ar>
+In-Reply-To: <129e555feb3ffb5d38c6a26a12875eb5@mate.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Wed, 29 Sep 2021 15:42:28 -0300
+Message-ID: <CAN5uefZL76-=6-vMhOLAR=AOP8n_2UjvyBP=nK=EEAHpwQMRjQ@mail.gmail.com>
+Subject: Fwd: SADIO - Ultimos dias para inscribirte! Curso Virtual
+ "Visualizacion de Datos"
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, Francisco Arrieta <fran.gelp@hotmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	Ivan Mindlin <mindlinster@gmail.com>, =?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/mixed; boundary="000000000000cebacb05cd26b151"
+
+--000000000000cebacb05cd26b151
+Content-Type: multipart/alternative; boundary="000000000000cebac905cd26b14f"
+
+--000000000000cebac905cd26b14f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola a todos/as,
+                          les reenviamos informaci=C3=B3n acerca de un curs=
+o
+virtual (que requiere conocimiento previo del lenguaje R).
+
+Saludos
+
+---------- Forwarded message ---------
+De: secre <secre@mate.unlp.edu.ar>
+Date: mi=C3=A9, 29 sept 2021 a las 15:38
+Subject: Fwd: SADIO - Ultimos dias para inscribirte! Curso Virtual
+"Visualizacion de Datos"
+To: docentes mate <docentes@mate.unlp.edu.ar>
+
+
+
+
+-------- Mensaje original --------
+Asunto: SADIO - Ultimos dias para inscribirte! Curso Virtual
+"Visualizacion de Datos"
+Fecha: 29-09-2021 08:56
+Remitente: SADIO <informacion@sadio.org.ar>
+Destinatario: secre@mate.unlp.edu.ar
+
+
+
+  _"en la senda de Sadosky"_
+
+LTIMOS DIAS PARA INSCRIBIRTE!
+
+Estimados,
+Les acercamos informaci=C3=B3n sobre el curso "VISUALIZACIN DE DATOS" que s=
+e
+dictar=C3=A1 virtualmente en el campus de SADIO.
+
+Esperamos que sea de su inter=C3=A9s y agradecemos la difusi=C3=B3n que pue=
+da
+darle.
+
+Saludos cordiales.
+
+=C2=A1Seguinos en nuestras redes sociales para enterarte de m=C3=A1s noveda=
+des!
+
+  [1] [2] [3]
+-------------------------
+
+CURSO VIRTUAL - "VISUALIZACIN DE DATOS"
+
+  FECHA DE INICIO: 4 DE OCTUBRE DE 2021
+
+DOCENTES: Qca. Aguilar, Myrian Elzabeth y Dra. Represa, Natacha Soledad
+
+DURACIN: 2 semanas
+
+DEDICACIN NECESARIA POR SEMANA: 10 horas aproximadamente.
+
+DIRIGIDO A: Profesionales y t=C3=A9cnicos, empleados de organismos p=C3=BAb=
+licos
+y/o privados y p=C3=BAblico en general con conocimientos b=C3=A1sicos en R.
+
+OBJETIVOS: proporcionar herramientas para la generaci=C3=B3n de diferentes
+tipos de gr=C3=A1ficos mediante el empleo del lenguaje R.
+
+FUNDAMENTACIN: La visualizaci=C3=B3n de informaci=C3=B3n se ha convertido e=
+n una
+de las herramientas de m=C3=A1s r=C3=A1pida expansi=C3=B3n en m=C3=BAltiple=
+s =C3=A1mbitos
+profesionales como la estad=C3=ADstica, la investigaci=C3=B3n cient=C3=ADfi=
+ca o el
+periodismo. Se utiliza para analizar y extraer significado de los datos
+con el objetivo de comunicarlos tanto a un p=C3=BAblico especializado como
+al p=C3=BAblico en general.R es un lenguaje de programaci=C3=B3n pensado pa=
+ra la
+manipulaci=C3=B3n, an=C3=A1lisis estad=C3=ADstico y visualizaci=C3=B3n de d=
+atos. Por ser
+un lenguaje de c=C3=B3digo abierto, tiene la particularidad de contar con
+una extensa comunidad activa de colaboradores que desarrollan nuevas
+funciones para m=C3=BAltiples aplicaciones. La incorporaci=C3=B3n de R en e=
+l
+trabajo con datos permite la reproductibilidad de los an=C3=A1lisis
+estad=C3=ADsticos, la posibi lidad de automatizar los procesos, versatilida=
+d
+para la creaci=C3=B3n de gr=C3=A1ficas y aplicaci=C3=B3n de an=C3=A1lisis a=
+corde a las
+necesidades del usuario y la escalabilidad del trabajo. Para facilitar
+su uso y aprendizaje, se ense=C3=B1ar=C3=A1 R a trav=C3=A9s de RStudio, un =
+entorno
+de desarrollo integrado potente e intuitivo. El objetivo del curso es
+proporcionar herramientas para la generaci=C3=B3n de diferentes tipos de
+gr=C3=A1ficos mediante el empleo del lenguaje R.
+
+MODALIDAD: Las clases son virtuales a trav=C3=A9s del campus de SADIO. Cada
+participante tendr=C3=A1 un usuario y contrase=C3=B1a personal para su acce=
+so al
+aula.
+
+ORGANIZACIN DEL CURSO: El curso contar=C3=A1 con 3 bloques, con material
+te=C3=B3rico para su lectura y actividades de ejercitaci=C3=B3n. Para
+interactuar entre el alumnado de la asignatura y entre el alumnado y
+las
+profesoras se trabajar=C3=A1 en foros. Este formato habilita a que cada
+alumno ingrese a la plataforma en el momento y horario que le resulte
+m=C3=A1s productivo, ya que el material queda subido en este lugar y no
+existen restricciones de ingreso ni obligaci=C3=B3n de horarios o encuentro=
+s
+en l=C3=ADnea. La aprobaci=C3=B3n del curso requerir=C3=A1 la aprobaci=C3=
+=B3n de una
+evaluaci=C3=B3n final.
+
+CONTENIDOS:
+
+VISUALIZACIN DE DATOS: C=C3=B3mo lograr una comunicaci=C3=B3n efectiva con
+gr=C3=A1ficos. Reglas b=C3=A1sicas para desarrollar una buena visualizaci=
+=C3=B3n.
+Fundamentos del Storytelling.
+
+GRFICOS ESTTICOS CON R BASE: Argumentos y funciones generales para
+gr=C3=A1ficos: formatos de t=C3=ADtulos, ejes, series, textos y leyendas.
+Argumentos y funciones generales para gr=C3=A1ficos: Formatos de t=C3=ADtul=
+os
+(main, cex.main, font.main, sub, cex.sub, font.sub), ejes (xlab, ylab,
+col.lab, cex.lab, cex.axis, col.axis, las, xlim, ylim), series (col,
+range). Textos y leyendas ( legend, text, mtext).
+
+_Gr=C3=A1ficos Unidimensionales:_
+=E2=9E=94 Gr=C3=A1fico =C3=A1rbol de Tallo y Hoja. Interpretaci=C3=B3n
+=E2=9E=94 Histogramas. Argumentos y funciones espec=C3=ADficas.
+=E2=9E=94 Gr=C3=A1ficos Bar Plot. Argumentos y funciones espec=C3=ADficas.
+Interpretaci=C3=B3n.
+=E2=9E=94 Gr=C3=A1ficos Boxplot. Argumentos y funciones
+espec=C3=ADficas.Interpretaci=C3=B3n.
+=E2=9E=94 Gr=C3=A1ficos de sectores. Argumentos y funciones espec=C3=ADfica=
+s.
+Interpretaci=C3=B3n.
+=E2=9E=94 Gr=C3=A1ficos de Puntos. Argumentos y funciones espec=C3=ADficas.
+Interpretaci=C3=B3n
+_ _
+_Gr=C3=A1ficos Bidimensionales:_
+=E2=9E=94 Gr=C3=A1ficos scatterplot simple. Argumentos y funciones espec=C3=
+=ADficas:
+Interpretaci=C3=B3n
+=E2=9E=94 Gr=C3=A1ficos Dotchart. Argumentos y funciones espec=C3=ADficas.
+Interpretaci=C3=B3n
+=E2=9E=94 Gr=C3=A1ficos starplot: Argumentos y funciones espec=C3=ADficas.
+Interpretaci=C3=B3n
+=E2=9E=94 Gr=C3=A1ficos de dispersi=C3=B3n. Argumentos y funciones espec=C3=
+=ADficas.
+Interpretaci=C3=B3n
+
+_Gr=C3=A1ficos Tridimensionales:_
+=E2=9E=94 Gr=C3=A1ficos 3D.
+=E2=9E=94 Scatter plot 3D (Argumentos: angle, type, highlight.3d).
+=E2=9E=94 Persp (Argumento para rotaci=C3=B3n de gr=C3=A1ficos).
+=E2=9E=94 Contour. Image. Filled. Contour. Interpretaci=C3=B3n
+
+GRFICOS CON GGPLOT
+=E2=9E=94 Introducci=C3=B3n a ggplot2. Componentes de la gram=C3=A1tica de =
+gr=C3=A1ficos.
+=E2=9E=94 Creaci=C3=B3n de gr=C3=A1ficas simples: Histogramas y curvas de d=
+ensidad.
+=E2=9E=94 Gr=C3=A1fica de puntos y/o l=C3=ADneas. Diagramas de Barras, Box-=
+Plots.
+Violin-Plots
+=E2=9E=94 Gr=C3=A1ficos avanzados. M=C3=BAltiples capas en un mismo gr=C3=
+=A1fico.
+M=C3=BAltiples gr=C3=A1ficas.
+=E2=9E=94 Manipulaci=C3=B3n de las escalas. Paletas de colores y modificaci=
+=C3=B3n del
+contenido visual
+
+FORMULARIO DE INSCRIPCIN: https://tinyurl.com/727dbfdu [4]
+
+ARANCELES (EN PESOS ARGENTINOS)
+Inscripci=C3=B3n temprana (hasta el 27/09/2021): $6.000
+Inscripci=C3=B3n tard=C3=ADa (desde el 28/09/2021): $6.600
+Descuento para socios de SADIO 50%
+
+MEDIOS DE PAGO DISPONIBLES:
+- Pago por Transferencias Bancarias (solo para residentes en Argentina)
+a:
+SADIO (CUIT 30-64931218-0)
+BBVA - Sucursal 330 Tribunales
+Cta. Cte. Pesos: 502/7
+CBU: 0170330420000000050276
+- Pago con Tarjeta de cr=C3=A9dito/d=C3=A9bito (Visa, Master o Cabal). Soli=
+citar
+el bot=C3=B3n de pago correspondiente a informacion@sadio.org.ar [5]
+
+ANTECEDENTES DE LAS DOCENTES:
+AGUILAR MYRIAN ELIZABETH. Qu=C3=ADmica, egresada de la Fac. Cs. Exactas,
+Universidad Nacional de La Plata. En relaci=C3=B3n laboral desde el a=C3=B1=
+o
+2004 con el Centro de Investigaciones del Ambiente (CIM) Unidad
+asociada
+a CONICET. Docente con experiencia en investigaci=C3=B3n y extensi=C3=B3n
+universitaria. Participaci=C3=B3n en m=C3=A1s de 13 proyectos de extensi=C3=
+=B3n
+desde el a=C3=B1o 2005. Docente de nivel secundario b=C3=A1sico y escuelas
+t=C3=A9cnicas. Seguimiento de alumnos de escuelas T=C3=A9cnicas
+Pre-Universitarios en Pr=C3=A1cticas Profesionalizantes. Coordinadora del
+Programa "Contaminaci=C3=B3n y Salud Comunitaria" de la Secretar=C3=ADa de
+Extensi=C3=B3n de UNLP.
+
+SOLEDAD REPRESA, Doctora en Ingenier=C3=ADa Geom=C3=A1tica, por la Universi=
+dad
+Polit=C3=A9cnica de Valencia (Espa=C3=B1a) y Doctora en Cs. Exactas, por la
+Universidad Nacional de La Plata, con menci=C3=B3n de honor. Docente de la
+Fac. de Cs. Astron=C3=B3micas y Geof=C3=ADsicas (UNLP). Actualmente, est=C3=
+=A1
+desarrollando una estancia de investigaci=C3=B3n posdoctoral en el Institut=
+o
+de altos estudios espaciales =C2=ABMario Gulich=C2=BB (Comisi=C3=B3n Nacion=
+al de
+Actividades Espaciales - Universidad Nacional de C=C3=B3rdoba) financiada
+por CONICET.
+
+--=20
+  SADIO - Sociedad Argentina de Inform=C3=A1tica
+  Uruguay 252 2=C2=BA "D" (C1015ABF) - Ciudad de Buenos Aires
+  Tel: 4371-5755
+  Email: informacion@sadio.org.ar
+  [6] [7] [8]
+
+  powered by phplist [9] v 2.10.13, (c) tincan ltd [10]
+
+--
+  Para borrarse de esta lista visite este enlace [11]
+
+  Para actualizar sus preferencias visite este enlace [12]
+  Reenviar el mensaje a otra persona este enlace [13]
+
+Links:
+------
+[1]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKA0VTV1YGSVIGUlQ%3D
+[2]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKAkVTV1YGSVIGUlQ%3D
+[3]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKAUVTV1YGSVIGUlQ%3D
+[4]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKAEVTV1YGSVIGUlQ%3D
+[5]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKD0VTV1YGSVIGUlQ%3D
+[6]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKDkVTV1YGSVIGUlQ%3D
+[7]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLB0VTV1YGSVIGUlQ%3D
+[8]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLBkVTV1YGSVIGUlQ%3D
+[9] http://www.phplist.com
+[10]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLBUVTV1YGSVIGUlQ%3D
+[11]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLBEVTV1YGSVIGUlQ%3D
+[12]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLA0VTV1YGSVIGUlQ%3D
+[13]
+http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLAkVTV1YGSVIGUlQ%3D
+
+--=20
+Departamento de Matem=C3=A1tica
+Facultad de Ciencias Exactas
+UNLP
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+Libre
+de virus. www.avast.com
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+
+--000000000000cebac905cd26b14f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hola a todos/as,<div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 les reenviamos info=
+rmaci=C3=B3n acerca de un curso virtual (que requiere conocimiento previo d=
+el lenguaje R).</div><div><br></div><div>Saludos<br><br><div class=3D"gmail=
+_quote"><div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message =
+---------<br>De: <strong class=3D"gmail_sendername" dir=3D"auto">secre</str=
+ong> <span dir=3D"auto">&lt;<a href=3D"mailto:secre@mate.unlp.edu.ar">secre=
+@mate.unlp.edu.ar</a>&gt;</span><br>Date: mi=C3=A9, 29 sept 2021 a las 15:3=
+8<br>Subject: Fwd: SADIO - Ultimos dias para inscribirte! Curso Virtual  &q=
+uot;Visualizacion de Datos&quot;<br>To: docentes mate &lt;<a href=3D"mailto=
+:docentes@mate.unlp.edu.ar">docentes@mate.unlp.edu.ar</a>&gt;<br></div><br>=
+<br><br>
+<br>
+-------- Mensaje original --------<br>
+Asunto: SADIO - Ultimos dias para inscribirte! Curso Virtual <br>
+&quot;Visualizacion de Datos&quot;<br>
+Fecha: 29-09-2021 08:56<br>
+Remitente: SADIO &lt;<a href=3D"mailto:informacion@sadio.org.ar" target=3D"=
+_blank">informacion@sadio.org.ar</a>&gt;<br>
+Destinatario: <a href=3D"mailto:secre@mate.unlp.edu.ar" target=3D"_blank">s=
+ecre@mate.unlp.edu.ar</a><br>
+<br>
+<br>
+<br>
+=C2=A0 _&quot;en la senda de Sadosky&quot;_<br>
+<br>
+LTIMOS DIAS PARA INSCRIBIRTE!<br>
+<br>
+Estimados,<br>
+Les acercamos informaci=C3=B3n sobre el curso &quot;VISUALIZACIN DE DATOS&q=
+uot; que se<br>
+dictar=C3=A1 virtualmente en el campus de SADIO.<br>
+<br>
+Esperamos que sea de su inter=C3=A9s y agradecemos la difusi=C3=B3n que pue=
+da<br>
+darle.<br>
+<br>
+Saludos cordiales.<br>
+<br>
+=C2=A1Seguinos en nuestras redes sociales para enterarte de m=C3=A1s noveda=
+des!<br>
+<br>
+=C2=A0 [1] [2] [3]<br>
+-------------------------<br>
+<br>
+CURSO VIRTUAL - &quot;VISUALIZACIN DE DATOS&quot;<br>
+<br>
+=C2=A0 FECHA DE INICIO: 4 DE OCTUBRE DE 2021<br>
+<br>
+DOCENTES: Qca. Aguilar, Myrian Elzabeth y Dra. Represa, Natacha Soledad<br>
+<br>
+DURACIN: 2 semanas<br>
+<br>
+DEDICACIN NECESARIA POR SEMANA: 10 horas aproximadamente.<br>
+<br>
+DIRIGIDO A: Profesionales y t=C3=A9cnicos, empleados de organismos p=C3=BAb=
+licos<br>
+y/o privados y p=C3=BAblico en general con conocimientos b=C3=A1sicos en R.=
+<br>
+<br>
+OBJETIVOS: proporcionar herramientas para la generaci=C3=B3n de diferentes<=
+br>
+tipos de gr=C3=A1ficos mediante el empleo del lenguaje R.<br>
+<br>
+FUNDAMENTACIN: La visualizaci=C3=B3n de informaci=C3=B3n se ha convertido e=
+n una<br>
+de las herramientas de m=C3=A1s r=C3=A1pida expansi=C3=B3n en m=C3=BAltiple=
+s =C3=A1mbitos<br>
+profesionales como la estad=C3=ADstica, la investigaci=C3=B3n cient=C3=ADfi=
+ca o el<br>
+periodismo. Se utiliza para analizar y extraer significado de los datos<br>
+con el objetivo de comunicarlos tanto a un p=C3=BAblico especializado como<=
+br>
+al p=C3=BAblico en general.R es un lenguaje de programaci=C3=B3n pensado pa=
+ra la<br>
+manipulaci=C3=B3n, an=C3=A1lisis estad=C3=ADstico y visualizaci=C3=B3n de d=
+atos. Por ser<br>
+un lenguaje de c=C3=B3digo abierto, tiene la particularidad de contar con<b=
+r>
+una extensa comunidad activa de colaboradores que desarrollan nuevas<br>
+funciones para m=C3=BAltiples aplicaciones. La incorporaci=C3=B3n de R en e=
+l<br>
+trabajo con datos permite la reproductibilidad de los an=C3=A1lisis<br>
+estad=C3=ADsticos, la posibi lidad de automatizar los procesos, versatilida=
+d<br>
+para la creaci=C3=B3n de gr=C3=A1ficas y aplicaci=C3=B3n de an=C3=A1lisis a=
+corde a las<br>
+necesidades del usuario y la escalabilidad del trabajo. Para facilitar<br>
+su uso y aprendizaje, se ense=C3=B1ar=C3=A1 R a trav=C3=A9s de RStudio, un =
+entorno<br>
+de desarrollo integrado potente e intuitivo. El objetivo del curso es<br>
+proporcionar herramientas para la generaci=C3=B3n de diferentes tipos de<br=
+>
+gr=C3=A1ficos mediante el empleo del lenguaje R.<br>
+<br>
+MODALIDAD: Las clases son virtuales a trav=C3=A9s del campus de SADIO. Cada=
+<br>
+participante tendr=C3=A1 un usuario y contrase=C3=B1a personal para su acce=
+so al<br>
+aula.<br>
+<br>
+ORGANIZACIN DEL CURSO: El curso contar=C3=A1 con 3 bloques, con material<br=
+>
+te=C3=B3rico para su lectura y actividades de ejercitaci=C3=B3n. Para<br>
+interactuar entre el alumnado de la asignatura y entre el alumnado y <br>
+las<br>
+profesoras se trabajar=C3=A1 en foros. Este formato habilita a que cada<br>
+alumno ingrese a la plataforma en el momento y horario que le resulte<br>
+m=C3=A1s productivo, ya que el material queda subido en este lugar y no<br>
+existen restricciones de ingreso ni obligaci=C3=B3n de horarios o encuentro=
+s<br>
+en l=C3=ADnea. La aprobaci=C3=B3n del curso requerir=C3=A1 la aprobaci=C3=
+=B3n de una<br>
+evaluaci=C3=B3n final.<br>
+<br>
+CONTENIDOS:<br>
+<br>
+VISUALIZACIN DE DATOS: C=C3=B3mo lograr una comunicaci=C3=B3n efectiva con<=
+br>
+gr=C3=A1ficos. Reglas b=C3=A1sicas para desarrollar una buena visualizaci=
+=C3=B3n.<br>
+Fundamentos del Storytelling.<br>
+<br>
+GRFICOS ESTTICOS CON R BASE: Argumentos y funciones generales para<br>
+gr=C3=A1ficos: formatos de t=C3=ADtulos, ejes, series, textos y leyendas.<b=
+r>
+Argumentos y funciones generales para gr=C3=A1ficos: Formatos de t=C3=ADtul=
+os<br>
+(main, cex.main, font.main, sub, cex.sub, font.sub), ejes (xlab, ylab,<br>
+col.lab, cex.lab, cex.axis, col.axis, las, xlim, ylim), series (col,<br>
+range). Textos y leyendas ( legend, text, mtext).<br>
+<br>
+_Gr=C3=A1ficos Unidimensionales:_<br>
+=E2=9E=94 Gr=C3=A1fico =C3=A1rbol de Tallo y Hoja. Interpretaci=C3=B3n<br>
+=E2=9E=94 Histogramas. Argumentos y funciones espec=C3=ADficas.<br>
+=E2=9E=94 Gr=C3=A1ficos Bar Plot. Argumentos y funciones espec=C3=ADficas.<=
+br>
+Interpretaci=C3=B3n.<br>
+=E2=9E=94 Gr=C3=A1ficos Boxplot. Argumentos y funciones<br>
+espec=C3=ADficas.Interpretaci=C3=B3n.<br>
+=E2=9E=94 Gr=C3=A1ficos de sectores. Argumentos y funciones espec=C3=ADfica=
+s.<br>
+Interpretaci=C3=B3n.<br>
+=E2=9E=94 Gr=C3=A1ficos de Puntos. Argumentos y funciones espec=C3=ADficas.=
+<br>
+Interpretaci=C3=B3n<br>
+_ _<br>
+_Gr=C3=A1ficos Bidimensionales:_<br>
+=E2=9E=94 Gr=C3=A1ficos scatterplot simple. Argumentos y funciones espec=C3=
+=ADficas:<br>
+Interpretaci=C3=B3n<br>
+=E2=9E=94 Gr=C3=A1ficos Dotchart. Argumentos y funciones espec=C3=ADficas.<=
+br>
+Interpretaci=C3=B3n<br>
+=E2=9E=94 Gr=C3=A1ficos starplot: Argumentos y funciones espec=C3=ADficas.<=
+br>
+Interpretaci=C3=B3n<br>
+=E2=9E=94 Gr=C3=A1ficos de dispersi=C3=B3n. Argumentos y funciones espec=C3=
+=ADficas.<br>
+Interpretaci=C3=B3n<br>
+<br>
+_Gr=C3=A1ficos Tridimensionales:_<br>
+=E2=9E=94 Gr=C3=A1ficos 3D.<br>
+=E2=9E=94 Scatter plot 3D (Argumentos: angle, type, highlight.3d).<br>
+=E2=9E=94 Persp (Argumento para rotaci=C3=B3n de gr=C3=A1ficos).<br>
+=E2=9E=94 Contour. Image. Filled. Contour. Interpretaci=C3=B3n<br>
+<br>
+GRFICOS CON GGPLOT<br>
+=E2=9E=94 Introducci=C3=B3n a ggplot2. Componentes de la gram=C3=A1tica de =
+gr=C3=A1ficos.<br>
+=E2=9E=94 Creaci=C3=B3n de gr=C3=A1ficas simples: Histogramas y curvas de d=
+ensidad.<br>
+=E2=9E=94 Gr=C3=A1fica de puntos y/o l=C3=ADneas. Diagramas de Barras, Box-=
+Plots.<br>
+Violin-Plots<br>
+=E2=9E=94 Gr=C3=A1ficos avanzados. M=C3=BAltiples capas en un mismo gr=C3=
+=A1fico.<br>
+M=C3=BAltiples gr=C3=A1ficas.<br>
+=E2=9E=94 Manipulaci=C3=B3n de las escalas. Paletas de colores y modificaci=
+=C3=B3n del<br>
+contenido visual<br>
+<br>
+FORMULARIO DE INSCRIPCIN: <a href=3D"https://tinyurl.com/727dbfdu" rel=3D"n=
+oreferrer" target=3D"_blank">https://tinyurl.com/727dbfdu</a> [4]<br>
+<br>
+ARANCELES (EN PESOS ARGENTINOS)<br>
+Inscripci=C3=B3n temprana (hasta el 27/09/2021): $6.000<br>
+Inscripci=C3=B3n tard=C3=ADa (desde el 28/09/2021): $6.600<br>
+Descuento para socios de SADIO 50%<br>
+<br>
+MEDIOS DE PAGO DISPONIBLES:<br>
+- Pago por Transferencias Bancarias (solo para residentes en Argentina)<br>
+a:<br>
+SADIO (CUIT 30-64931218-0)<br>
+BBVA - Sucursal 330 Tribunales<br>
+Cta. Cte. Pesos: 502/7<br>
+CBU: 0170330420000000050276<br>
+- Pago con Tarjeta de cr=C3=A9dito/d=C3=A9bito (Visa, Master o Cabal). Soli=
+citar<br>
+el bot=C3=B3n de pago correspondiente a <a href=3D"mailto:informacion@sadio=
+.org.ar" target=3D"_blank">informacion@sadio.org.ar</a> [5]<br>
+<br>
+ANTECEDENTES DE LAS DOCENTES:<br>
+AGUILAR MYRIAN ELIZABETH. Qu=C3=ADmica, egresada de la Fac. Cs. Exactas,<br=
+>
+Universidad Nacional de La Plata. En relaci=C3=B3n laboral desde el a=C3=B1=
+o<br>
+2004 con el Centro de Investigaciones del Ambiente (CIM) Unidad <br>
+asociada<br>
+a CONICET. Docente con experiencia en investigaci=C3=B3n y extensi=C3=B3n<b=
+r>
+universitaria. Participaci=C3=B3n en m=C3=A1s de 13 proyectos de extensi=C3=
+=B3n<br>
+desde el a=C3=B1o 2005. Docente de nivel secundario b=C3=A1sico y escuelas<=
+br>
+t=C3=A9cnicas. Seguimiento de alumnos de escuelas T=C3=A9cnicas<br>
+Pre-Universitarios en Pr=C3=A1cticas Profesionalizantes. Coordinadora del<b=
+r>
+Programa &quot;Contaminaci=C3=B3n y Salud Comunitaria&quot; de la Secretar=
+=C3=ADa de<br>
+Extensi=C3=B3n de UNLP.<br>
+<br>
+SOLEDAD REPRESA, Doctora en Ingenier=C3=ADa Geom=C3=A1tica, por la Universi=
+dad<br>
+Polit=C3=A9cnica de Valencia (Espa=C3=B1a) y Doctora en Cs. Exactas, por la=
+<br>
+Universidad Nacional de La Plata, con menci=C3=B3n de honor. Docente de la<=
+br>
+Fac. de Cs. Astron=C3=B3micas y Geof=C3=ADsicas (UNLP). Actualmente, est=C3=
+=A1<br>
+desarrollando una estancia de investigaci=C3=B3n posdoctoral en el Institut=
+o<br>
+de altos estudios espaciales =C2=ABMario Gulich=C2=BB (Comisi=C3=B3n Nacion=
+al de<br>
+Actividades Espaciales - Universidad Nacional de C=C3=B3rdoba) financiada<b=
+r>
+por CONICET.<br>
+<br>
+-- <br>
+=C2=A0 SADIO - Sociedad Argentina de Inform=C3=A1tica<br>
+=C2=A0 Uruguay 252 2=C2=BA &quot;D&quot; (C1015ABF) - Ciudad de Buenos Aire=
+s<br>
+=C2=A0 Tel: 4371-5755<br>
+=C2=A0 Email: <a href=3D"mailto:informacion@sadio.org.ar" target=3D"_blank"=
+>informacion@sadio.org.ar</a><br>
+=C2=A0 [6] [7] [8]<br>
+<br>
+=C2=A0 powered by phplist [9] v 2.10.13, (c) tincan ltd [10]<br>
+<br>
+--<br>
+=C2=A0 Para borrarse de esta lista visite este enlace [11]<br>
+<br>
+=C2=A0 Para actualizar sus preferencias visite este enlace [12]<br>
+=C2=A0 Reenviar el mensaje a otra persona este enlace [13]<br>
+<br>
+Links:<br>
+------<br>
+[1] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKA0VTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYKA0VTV1YGSVIGUlQ%3D</a><br>
+[2] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKAkVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYKAkVTV1YGSVIGUlQ%3D</a><br>
+[3] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKAUVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYKAUVTV1YGSVIGUlQ%3D</a><br>
+[4] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKAEVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYKAEVTV1YGSVIGUlQ%3D</a><br>
+[5] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKD0VTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYKD0VTV1YGSVIGUlQ%3D</a><br>
+[6] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYKDkVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYKDkVTV1YGSVIGUlQ%3D</a><br>
+[7] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLB0VTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYLB0VTV1YGSVIGUlQ%3D</a><br>
+[8] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLBkVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYLBkVTV1YGSVIGUlQ%3D</a><br>
+[9] <a href=3D"http://www.phplist.com" rel=3D"noreferrer" target=3D"_blank"=
+>http://www.phplist.com</a><br>
+[10] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLBUVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYLBUVTV1YGSVIGUlQ%3D</a><br>
+[11] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLBEVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYLBEVTV1YGSVIGUlQ%3D</a><br>
+[12] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLA0VTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYLA0VTV1YGSVIGUlQ%3D</a><br>
+[13] <br>
+<a href=3D"http://www.sadio.org.ar/lists/lt.php?id=3Df00OBQUCDAYLAkVTV1YGSV=
+IGUlQ%3D" rel=3D"noreferrer" target=3D"_blank">http://www.sadio.org.ar/list=
+s/lt.php?id=3Df00OBQUCDAYLAkVTV1YGSVIGUlQ%3D</a><br>
+<br>
+-- <br>
+Departamento de Matem=C3=A1tica<br>
+Facultad de Ciencias Exactas<br>
+UNLP</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D=
+"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div>=
+<div dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span=
+ style=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font=
+><br></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(2=
+55,0,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gi=
+na de Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https=
+://www.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.=
+facebook.com/groups/326128787595559/</a> </font></font><br></span></div><di=
+v style=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"=
+></b></div></div></div></div></div></div></div></div></div><div id=3D"DAB4F=
+AD8-2DD7-40BB-A1B8-4E2AA1F9FDF2"><br> <table style=3D"border-top:1px solid =
+#d3d4de">
+	<tr>
+      <td style=3D"width:55px;padding-top:18px"><a href=3D"https://www.avas=
+t.com/sig-email?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=
+=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_blank"><img src=3D"https=
+://ipmcdn.avast.com/images/icons/icon-envelope-tick-round-orange-animated-n=
+o-repeat-v1.gif" alt=3D"" width=3D"46" height=3D"29" style=3D"width: 46px; =
+height: 29px;"></a></td>
+		<td style=3D"width:470px;padding-top:17px;color:#41424e;font-size:13px;fo=
+nt-family:Arial,Helvetica,sans-serif;line-height:18px">Libre de virus. <a h=
+ref=3D"https://www.avast.com/sig-email?utm_medium=3Demail&amp;utm_source=3D=
+link&amp;utm_campaign=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_bla=
+nk" style=3D"color:#4453ea">www.avast.com</a> 		</td>
+	</tr>
+</table>
+<a href=3D"#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2" width=3D"1" height=3D"1">=
+</a></div>
+
+--000000000000cebac905cd26b14f--
+--000000000000cebacb05cd26b151
+Content-Type: image/gif; name="MarcaCol_nombre-corto.gif"
+Content-Disposition: attachment; filename="MarcaCol_nombre-corto.gif"
+Content-Transfer-Encoding: base64
+Content-ID: <17c32dc84f9f21c62ee1>
+X-Attachment-Id: 17c32dc84f9f21c62ee1
+
+R0lGODlh2AH+APf/AAtgiCBuk46psy12mSp0l0+MqZ2/z5u+zhM6RABfilKOqwNbhPr8/QVchfz9
+/gFag3upv/H2+Pj6/Guft+Tt8tLi6Qheh/3+/hhpjw5iivv8/fn7/PT4+gdehufv88vd5mCXsgRc
+hevy9Z/B0EWGpQZdhvf6+/P3+RFki/b5+3CiufX4+hVnjcPY4htrkNbk6+3z9l6WsfD1+OPt8fL3
++YWwxAxhiRJljO709+/19+rx9Qlfh+Hr8Obv8w1hid3p7ihzltfl7LrS3bDM2RdojoqzxnqovrbP
+3Cdylt7q7x9tkkCDokOFpBBjiyVxldzo7hNljNXk69vo7dnm7drn7Q9jihpqkKzJ1xZnjmyfuB5t
+kk2LqOnx9Ozz9hRmjTJ6m7jR3LXP2zB4mlqUrz2BobPO2iJvlJm9zYmyxrLN2uLs8ejw9B1skaLC
+0src5VaRrcfb5DZ8ncze5sTZ4lWQrCRwlX+swSt1mDF5mzh9nr/V4HinvWmdtsDW4GKZs4iyxdHh
+6b7V34awxH6rwHyqv9Pi6m2guEmJpmOZs7nR3cHX4UaHpT+Cot/q76TE05q9zuXu8tTj6lmTrjp/
+nzV8na/L2GSatEqJp87f51uUryZyla3K17vT3pS5y1eSrVSQrCNwlKPD0rTO2+Dr8EyKqJC3yViS
+rlyVsDN6nIexxS94mtjm7Iuzx73U30iIplCNqjd9nrfQ3EGDo1OPq6XE08ba45W6y83e5xxrkY61
+yDl+n3WlvGqet4Ouw2+huc/g6ISvw2WbtEKEo421yG6huBlpj32qwJO5yqnH1Ze7zKHC0cnc5bzT
+3keHpjR7nK7K2Dt/oDyAoMjb5Iy0x6vI1kSFpF2WsGabtcXZ46fG1GectXemvYKuwqDB0XSlu1+X
+sY+2yVGOqpK4ypa7zLHM2XmovtDg6J7A0KbF1HamvKrI1midtoGtwmGYskuKp5i8zZG3yi53mXKj
+usLX4XOku6jG1YCswT6BoXGjugBgi2V8gkVhaABbhjhZYQBZg////yH5BAEAAP8ALAAAAADYAf4A
+AAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3MixY0MuUebVOwOhHSlnVjKoXGmjwYIS
+1W55nEmzps2bOHPq3Mmz58MTair0GcHNEpMBWm6U8Me0qVOnAayFieCzqtWrWLNq3cqVogQZjfR0
+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
+--000000000000cebacb05cd26b151
+Content-Type: image/png; name="Web.png"
+Content-Disposition: attachment; filename="Web.png"
+Content-Transfer-Encoding: base64
+Content-ID: <17c32dc84f9ac13346f2>
+X-Attachment-Id: 17c32dc84f9ac13346f2
+
+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
+QmCC
+--000000000000cebacb05cd26b151--
