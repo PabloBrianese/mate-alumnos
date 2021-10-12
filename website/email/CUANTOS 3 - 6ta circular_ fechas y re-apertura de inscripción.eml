@@ -1,0 +1,385 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:3156:0:0:0:0 with SMTP id m22csp4871879pxc;
+        Mon, 11 Oct 2021 17:18:29 -0700 (PDT)
+X-Received: by 2002:a25:1545:: with SMTP id 66mr24645787ybv.521.1633997909464;
+        Mon, 11 Oct 2021 17:18:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1633997909; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YxoVQ52aWa/Ul0+YpQg59auHqedvjwaxieJgf9o5S/IiUqZWtLNmTQFtJsW+kq0KB2
+         iMW3uHFGy3hw6C0MQf9GgMsMcYuqUYbagfTYnSDioH4LI3umvKq91pIE+2UCTXBbX3nt
+         +yZIZFW/lZz1mO5QZlEXtSpxXBjKmwSN4kcIPwhz3ixrHs4z2FoZM4FULMbWIJb5hGy8
+         7W/C3qcE7aXzrDwEGbT9cQUVEtsAUInNhmLcIgliX2kvoqlsiEQxtbkf4Qr6SVdUL6Oa
+         CF03AMnfONIZTNS5SR3q/3z7R3F30Ca4N57bkTCWWs5qcxKdnddWAIAq54wfTaZKNwse
+         PxbA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=c/2/ERA8Rctkkf6N/WTRhCOIuB5CBUxjmO57gPShF/0=;
+        b=lHd7JSpHlVpZPMhCFpFF2b7yGQoJJ2/bX9CoBpdWfSPQyo86yMZmZyedNcET6dQ4zW
+         opZpXpUjUYZgqQE64mfNUEqBY8tR/B9VeTiEWLnuuyNS0YJ1qx9YU/YhYTzzLrBGgXXv
+         J8Qj/9h+2bbfBMxDTm44aSbP9dzuWyB2htbOfFKC2xPaU8M22rbGw8KZXlu5H0aeEbfw
+         Eu5E+Uc1tBJCV2siisP5Hs5C/cYwIYJg7jbmoVxPUpCLYHNVS1oPMHs7wF5l5aTiBpbJ
+         WRwhvteuFq+TXTbLs+VDwXQ77DeTMNGYWI1DpiAtceXyjmeWoe7I+V5STlRKANGkXSb+
+         eBXg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=b67fU0ZM;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id v69sor3148606ybb.151.2021.10.11.17.18.28
+        (Google Transport Security);
+        Mon, 11 Oct 2021 17:18:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=b67fU0ZM;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=c/2/ERA8Rctkkf6N/WTRhCOIuB5CBUxjmO57gPShF/0=;
+        b=b67fU0ZM3MrkOm0gYmLNcKLdWQvop50DKFbG3zYYoRMvSAEmVUphvoQiAXsOpuMSWy
+         Tgt+ECma1QOoJB1c8Q6NUWu22YQfH9VHArE57tDTzE98/wCDDONrBOJGAeEJsidRErou
+         15JifFvNPL0YHeC2TAL8Ykeb5hKypWXSWSftsSW+jCeAVUcZJH0k9KYj/no3BdSQxSlU
+         PHHMu7FTp9R1xRSyGRaY/pHIF/CdzWIa86vfCZx412PX8khNpqi5CKthP0Omt+1fVJcS
+         7NJtUr1d/l5ePsig0mV7H/nCFAsTQmT1d+RkjLAuDRnCGovMFVSsy1XKVZkHE+W7V8kH
+         +NGQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=c/2/ERA8Rctkkf6N/WTRhCOIuB5CBUxjmO57gPShF/0=;
+        b=vxel+KYkxR8eL9YVEM0pBbv+nYGyZ/bPWQ/gSh2PfNEGn0dnjT8/m5lcl0imTVBQ6l
+         mRo2LSXadQyoal8RUVd14cx+5W//YxIpwkflh5RXehlqZVFDnJO1rw50NHTB0wdyFrKe
+         ENPS2WYx1sXYSFZ7XAE6oM22+wtbORat9YdKehS4UcDrf3r8h3fD5UD7+1p3ePV8l6QH
+         deyBTBzNpsv6Do8N0RxpsoqTcXn4WZu5jcHYTw5aFzCjzSY1XFQa6fkY+PP/r0Vk/xho
+         nlxUko+ObxzvgMyIubqkCKVB++e7h4Cg4nTqG584mkv2DKcMVD5exemdpVzhGq4Z7tvi
+         1Utg==
+X-Gm-Message-State: AOAM530cpkkRPeSsADgP2qfI+JjMPD9cV254Y1NaAV7B/yD4fF/kkMf1
+	thxpztDRj0oMZw6a00CD8VfoGK/91fU5pfBTW8Q=
+X-Google-Smtp-Source: ABdhPJxGHTOR3yCX85vpYVzgsVObcPZ2UBtXq7qgE5cL94vaaYAm7E+Y7Jttqv4ETDiIyQeMnnqX/od65ipPcr8JOsM=
+X-Received: by 2002:a25:9782:: with SMTP id i2mr24064005ybo.119.1633997908570;
+ Mon, 11 Oct 2021 17:18:28 -0700 (PDT)
+MIME-Version: 1.0
+References: <CALX49WtP_DEkH-1ZB6OMvVeg4EWh3pzPC0yH+CyrUXqDyBWcHQ@mail.gmail.com>
+ <CAMuvy4_F6anHJq7LqP8UdAb3Foi24ejn6AWzJRa9RjC2=Xz+ew@mail.gmail.com>
+In-Reply-To: <CAMuvy4_F6anHJq7LqP8UdAb3Foi24ejn6AWzJRa9RjC2=Xz+ew@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 11 Oct 2021 21:18:16 -0300
+Message-ID: <CAN5uefbahKPXJzMHTcJgESY6f00CymeFB=V8Pri0N01geWC1Vg@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_CUANTOS_3_=2D_6ta_circular=3A_fechas_y_re=2Dapertura_?=
+	=?UTF-8?Q?de_inscripci=C3=B3n?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, rodrigo_lp6@hotmail.com, 
+	sebastian-grippo@hotmail.com, vcasali18@gmail.com, 
+	veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000e7775505ce1cc8b4"
+
+--000000000000e7775505ce1cc8b4
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Mariela Portesi <portesi@fisica.unlp.edu.ar>
+Date: jue, 7 oct 2021 a las 20:50
+Subject: Fwd: CUANTOS 3 - 6ta circular: fechas y re-apertura de inscripci=
+=C3=B3n
+To:
+Cc: <todos@fisica.unlp.edu.ar>, <alumnos@fisica.unlp.edu.ar>, <
+alumnosm@gmail.com>, <grad@mate.unlp.edu.ar>, <docentes@mate.unlp.edu.ar>, =
+<
+charlas.iflysib@gmail.com>, <secretaria@inifta.unlp.edu.ar>, <
+info@ciop.unlp.edu.ar>, <difusion@ciop.unlp.edu.ar>, <
+roxanar@ciop.unlp.edu.ar>, <prensa@exactas.unlp.edu.ar>, <
+academic@exactas.unlp.edu.ar>, <secre@quimica.unlp.edu.ar>, <
+secre@biol.unlp.edu.ar>, <prensa@presi.unlp.edu.ar>, <
+posgradounlp@presi.unlp.edu.ar>, <boletin.posgrado@presi.unlp.edu.ar>, <
+ialp@fcaglp.unlp.edu.ar>, <secretaria@iar.unlp.edu.ar>, <
+difusion@info.unlp.edu.ar>, <secretaria@cespi.unlp.edu.ar>, <
+pthomas@lidi.info.unlp.edu.ar>, <epec@ing.unlp.edu.ar>, <
+fcnym@museo.fcnym.unlp.edu.ar>, <posgrado@frlp.utn.edu.ar>, <
+idihcs@fahce.unlp.edu.ar>, <deptofi@fahce.unlp.edu.ar>, <
+agenda@conicet.gov.ar>, <secretaria-cct@laplata-conicet.gov.ar>, <
+prensa@laplata-conicet.gov.ar>, <cct@mardelplata-conicet.gob.ar>, <
+difusion.cic@gmail.com>, Asociaci=C3=B3n F=C3=ADsica Argentina <
+secretaria@fisica.org.ar>, <ingenier@fi.mdp.edu.ar>, Departamento de
+Informes e Inscripciones de la Secretar=C3=ADa de Posgrado <
+informes_posgrado@unq.edu.ar>, <comunicacion.institucional@unsam.edu.ar>, <
+investigacion@unsam.edu.ar>, <graduados@unsam.edu.ar>, <
+infoposgrado@unlu.edu.ar>, <informes@unlu.edu.ar>, <info@ungs.edu.ar>,
+Posgrados UNDAV <posgrados@undav.edu.ar>, Prensa Undav <prensa@undav.edu.ar=
+>,
+<posgrado@unnoba.edu.ar>, <cursosposgrado@unnoba.edu.ar>, <
+secyt@famaf.unc.edu.ar>, <comunicaciones@secyt.unc.edu.ar>, Secretaria de
+F=C3=ADsica <secre2@fisica.unlp.edu.ar>, secre <secre@mate.unlp.edu.ar>, <
+locic@googlegroups.com>
+
+
+
+Este es un recordatorio de la escuela y taller CUANTOS 3, a realizarse del
+15 al 17/11/2021.
+La fecha de cierre de inscripci=C3=B3n y env=C3=ADo de res=C3=BAmenes de co=
+ntribuciones es
+el *Viernes 15/10/2021*.
+Gracias por difundir.
+
+---------- Forwarded message ---------
+De: CUANTOS 3 La Plata <cuantos2020@gmail.com>
+Subject: CUANTOS 3 - 6ta circular: fechas y re-apertura de inscripci=C3=B3n
+
+CUANTOS 3 - 6ta CIRCULAR
+
+La Tercera Escuela y Taller Argentino de Cu=C3=A1ntica (CUANTOS 3) se lleva=
+r=C3=A1 a
+cabo del *Lunes 15 al Mi=C3=A9rcoles 17 de Noviembre de 2021*, en *modalida=
+d
+virtual* desde el Instituto de F=C3=ADsica La Plata (IFLP), La Plata, Argen=
+tina.
+sites.goog.com/view/cuantos2020
+
+Se ha resuelto volver a abrir la inscripci=C3=B3n, dado el tiempo transcurr=
+ido
+desde la fecha original del evento. Si ya te hab=C3=ADas anotado en 2020, t=
+en=C3=A9s
+que re-inscribirte. En ambos casos, complet=C3=A1 este formulario online:
+https://forms.gle/M4fkZXw571YsThgK8
+
+*FECHAS IMPORTANTES*:
+- Cierre de inscripci=C3=B3n / re-inscripci=C3=B3n (obligatoria):  15/10/20=
+21.
+- Cierre de env=C3=ADo / re-env=C3=ADo de res=C3=BAmenes de contribuciones =
+orales o
+p=C3=B3sters:  15/10/2021.
+- Notificaci=C3=B3n de aceptaci=C3=B3n de contribuciones:  31/10/2021.
+- Inicio de CUANTOS 3:  15/11/2021 (online).
+
+Este evento vincular=C3=A1 a estudiantes e investigadores del pa=C3=ADs y d=
+e la
+regi=C3=B3n, interesados en distintas =C3=A1reas de la Mec=C3=A1nica Cu=C3=
+=A1ntica como control
+de sistemas cu=C3=A1nticos, =C3=B3ptica cu=C3=A1ntica, informaci=C3=B3n cu=
+=C3=A1ntica,
+nanotecnolog=C3=ADa basada en dispositivos cu=C3=A1nticos, correlaciones cu=
+=C3=A1nticas,
+etc.
+
+Las actividades previstas son: 3 cursos tutoriales y 9 contribuciones
+orales (por videoconferencia Zoom), y sesiones de p=C3=B3sters (en la plata=
+forma
+Gather.Town ).
+La escuela ha sido aprobada como curso de posgrado de la Facultad de
+Ciencias Exactas, UNLP. Quienes deseen acreditarlo (otorga 1 cr=C3=A9dito),
+deber=C3=A1n asistir a los tutoriales y aprobar un cuestionario de evaluaci=
+=C3=B3n al
+finalizar la escuela.
+
+Esperamos tu participaci=C3=B3n !!
+
+Comit=C3=A9 Organizador
+cuantos2020@gmail.com
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--000000000000e7775505ce1cc8b4
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Mariela Portesi</strong> <span dir=3D"au=
+to">&lt;<a href=3D"mailto:portesi@fisica.unlp.edu.ar">portesi@fisica.unlp.e=
+du.ar</a>&gt;</span><br>Date: jue, 7 oct 2021 a las 20:50<br>Subject: Fwd: =
+CUANTOS 3 - 6ta circular: fechas y re-apertura de inscripci=C3=B3n<br>To: <=
+br>Cc:  &lt;<a href=3D"mailto:todos@fisica.unlp.edu.ar">todos@fisica.unlp.e=
+du.ar</a>&gt;,  &lt;<a href=3D"mailto:alumnos@fisica.unlp.edu.ar">alumnos@f=
+isica.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:alumnosm@gmail.com">alumn=
+osm@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:grad@mate.unlp.edu.ar">grad@m=
+ate.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:docentes@mate.unlp.edu.ar">=
+docentes@mate.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:charlas.iflysib@g=
+mail.com">charlas.iflysib@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:secreta=
+ria@inifta.unlp.edu.ar">secretaria@inifta.unlp.edu.ar</a>&gt;,  &lt;<a href=
+=3D"mailto:info@ciop.unlp.edu.ar">info@ciop.unlp.edu.ar</a>&gt;,  &lt;<a hr=
+ef=3D"mailto:difusion@ciop.unlp.edu.ar">difusion@ciop.unlp.edu.ar</a>&gt;, =
+ &lt;<a href=3D"mailto:roxanar@ciop.unlp.edu.ar">roxanar@ciop.unlp.edu.ar</=
+a>&gt;,  &lt;<a href=3D"mailto:prensa@exactas.unlp.edu.ar">prensa@exactas.u=
+nlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:academic@exactas.unlp.edu.ar">ac=
+ademic@exactas.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secre@quimica.un=
+lp.edu.ar">secre@quimica.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secre@=
+biol.unlp.edu.ar">secre@biol.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:pr=
+ensa@presi.unlp.edu.ar">prensa@presi.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"m=
+ailto:posgradounlp@presi.unlp.edu.ar">posgradounlp@presi.unlp.edu.ar</a>&gt=
+;,  &lt;<a href=3D"mailto:boletin.posgrado@presi.unlp.edu.ar">boletin.posgr=
+ado@presi.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:ialp@fcaglp.unlp.edu.=
+ar">ialp@fcaglp.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:secretaria@iar.=
+unlp.edu.ar">secretaria@iar.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:dif=
+usion@info.unlp.edu.ar">difusion@info.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"=
+mailto:secretaria@cespi.unlp.edu.ar">secretaria@cespi.unlp.edu.ar</a>&gt;, =
+ &lt;<a href=3D"mailto:pthomas@lidi.info.unlp.edu.ar">pthomas@lidi.info.unl=
+p.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:epec@ing.unlp.edu.ar">epec@ing.unl=
+p.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:fcnym@museo.fcnym.unlp.edu.ar">fcn=
+ym@museo.fcnym.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:posgrado@frlp.ut=
+n.edu.ar">posgrado@frlp.utn.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:idihcs@f=
+ahce.unlp.edu.ar">idihcs@fahce.unlp.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:=
+deptofi@fahce.unlp.edu.ar">deptofi@fahce.unlp.edu.ar</a>&gt;,  &lt;<a href=
+=3D"mailto:agenda@conicet.gov.ar">agenda@conicet.gov.ar</a>&gt;,  &lt;<a hr=
+ef=3D"mailto:secretaria-cct@laplata-conicet.gov.ar">secretaria-cct@laplata-=
+conicet.gov.ar</a>&gt;,  &lt;<a href=3D"mailto:prensa@laplata-conicet.gov.a=
+r">prensa@laplata-conicet.gov.ar</a>&gt;,  &lt;<a href=3D"mailto:cct@mardel=
+plata-conicet.gob.ar">cct@mardelplata-conicet.gob.ar</a>&gt;,  &lt;<a href=
+=3D"mailto:difusion.cic@gmail.com">difusion.cic@gmail.com</a>&gt;, Asociaci=
+=C3=B3n F=C3=ADsica Argentina &lt;<a href=3D"mailto:secretaria@fisica.org.a=
+r">secretaria@fisica.org.ar</a>&gt;,  &lt;<a href=3D"mailto:ingenier@fi.mdp=
+.edu.ar">ingenier@fi.mdp.edu.ar</a>&gt;, Departamento de Informes e Inscrip=
+ciones de la Secretar=C3=ADa de Posgrado &lt;<a href=3D"mailto:informes_pos=
+grado@unq.edu.ar">informes_posgrado@unq.edu.ar</a>&gt;,  &lt;<a href=3D"mai=
+lto:comunicacion.institucional@unsam.edu.ar">comunicacion.institucional@uns=
+am.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:investigacion@unsam.edu.ar">inves=
+tigacion@unsam.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:graduados@unsam.edu.a=
+r">graduados@unsam.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:infoposgrado@unlu=
+.edu.ar">infoposgrado@unlu.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:informes@=
+unlu.edu.ar">informes@unlu.edu.ar</a>&gt;,  &lt;<a href=3D"mailto:info@ungs=
+.edu.ar">info@ungs.edu.ar</a>&gt;, Posgrados UNDAV &lt;<a href=3D"mailto:po=
+sgrados@undav.edu.ar">posgrados@undav.edu.ar</a>&gt;, Prensa Undav &lt;<a h=
+ref=3D"mailto:prensa@undav.edu.ar">prensa@undav.edu.ar</a>&gt;,  &lt;<a hre=
+f=3D"mailto:posgrado@unnoba.edu.ar">posgrado@unnoba.edu.ar</a>&gt;,  &lt;<a=
+ href=3D"mailto:cursosposgrado@unnoba.edu.ar">cursosposgrado@unnoba.edu.ar<=
+/a>&gt;,  &lt;<a href=3D"mailto:secyt@famaf.unc.edu.ar">secyt@famaf.unc.edu=
+.ar</a>&gt;,  &lt;<a href=3D"mailto:comunicaciones@secyt.unc.edu.ar">comuni=
+caciones@secyt.unc.edu.ar</a>&gt;, Secretaria de F=C3=ADsica &lt;<a href=3D=
+"mailto:secre2@fisica.unlp.edu.ar">secre2@fisica.unlp.edu.ar</a>&gt;, secre=
+ &lt;<a href=3D"mailto:secre@mate.unlp.edu.ar">secre@mate.unlp.edu.ar</a>&g=
+t;,  &lt;<a href=3D"mailto:locic@googlegroups.com">locic@googlegroups.com</=
+a>&gt;<br></div><br><br><div dir=3D"ltr"><div><br></div><div>Este es un rec=
+ordatorio de la escuela y taller CUANTOS 3, a realizarse del 15 al 17/11/20=
+21.=C2=A0</div><div>La fecha de cierre de inscripci=C3=B3n y env=C3=ADo de =
+res=C3=BAmenes de contribuciones es el=C2=A0<u>Viernes 15/10/2021</u>.</div=
+><div>Gracias por difundir.=C2=A0</div><div><br></div><div class=3D"gmail_q=
+uote"><div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message --=
+-------<br>De: <strong class=3D"gmail_sendername" dir=3D"auto">CUANTOS 3 La=
+ Plata</strong> <span dir=3D"auto">&lt;<a href=3D"mailto:cuantos2020@gmail.=
+com" target=3D"_blank">cuantos2020@gmail.com</a>&gt;</span><br>Subject: CUA=
+NTOS 3 - 6ta circular: fechas y re-apertura de inscripci=C3=B3n<br></div><d=
+iv style=3D"text-align:left"><br></div><div style=3D"text-align:left">CUANT=
+OS 3 - 6ta CIRCULAR</div><div style=3D"text-align:left"><br></div><div styl=
+e=3D"text-align:left">La Tercera Escuela y Taller Argentino de Cu=C3=A1ntic=
+a (CUANTOS 3) se llevar=C3=A1 a cabo del <b>Lunes 15 al Mi=C3=A9rcoles 17 d=
+e Noviembre de 2021</b>, en <b>modalidad virtual</b> desde el Instituto de =
+F=C3=ADsica La Plata (IFLP), La Plata, Argentina.</div><div style=3D"text-a=
+lign:left"><a href=3D"http://sites.goog.com/view/cuantos2020" target=3D"_bl=
+ank">sites.goog.com/view/cuantos2020</a></div><div style=3D"text-align:left=
+"><br></div><div style=3D"text-align:left">Se ha resuelto volver a abrir la=
+ inscripci=C3=B3n, dado el tiempo transcurrido desde la fecha original del =
+evento. Si ya te hab=C3=ADas anotado en 2020, ten=C3=A9s que re-inscribirte=
+. En ambos casos, complet=C3=A1 este formulario online:=C2=A0</div><div sty=
+le=3D"text-align:left"><a href=3D"https://forms.gle/M4fkZXw571YsThgK8" targ=
+et=3D"_blank">https://forms.gle/M4fkZXw571YsThgK8</a>=C2=A0<br></div><div s=
+tyle=3D"text-align:left"><br></div><div style=3D"text-align:left"><b>FECHAS=
+ IMPORTANTES</b>:</div><div style=3D"text-align:left">- Cierre de inscripci=
+=C3=B3n / re-inscripci=C3=B3n (obligatoria): =C2=A0<font color=3D"#ff0000">=
+15/10/2021</font>.</div><div style=3D"text-align:left">- Cierre de env=C3=
+=ADo / re-env=C3=ADo de res=C3=BAmenes de contribuciones orales o p=C3=B3st=
+ers: =C2=A0<font color=3D"#ff0000">15/10/2021</font>.</div><div style=3D"te=
+xt-align:left">- Notificaci=C3=B3n de aceptaci=C3=B3n de contribuciones: =
+=C2=A031/10/2021.</div><div style=3D"text-align:left">- Inicio de CUANTOS 3=
+: =C2=A015/11/2021 (online).</div><div style=3D"text-align:left"><br></div>=
+<div style=3D"text-align:left">Este evento vincular=C3=A1 a estudiantes e i=
+nvestigadores del pa=C3=ADs y de la regi=C3=B3n, interesados en distintas =
+=C3=A1reas de la Mec=C3=A1nica Cu=C3=A1ntica como control de sistemas cu=C3=
+=A1nticos, =C3=B3ptica cu=C3=A1ntica, informaci=C3=B3n cu=C3=A1ntica, nanot=
+ecnolog=C3=ADa basada en dispositivos cu=C3=A1nticos, correlaciones cu=C3=
+=A1nticas, etc.</div><div style=3D"text-align:left"><br></div><div style=3D=
+"text-align:left">Las actividades previstas son: 3 cursos tutoriales y 9 co=
+ntribuciones orales (por videoconferencia Zoom), y sesiones de p=C3=B3sters=
+ (en la plataforma Gather.Town ).</div><div style=3D"text-align:left">La es=
+cuela ha sido aprobada como curso de posgrado de la Facultad de Ciencias Ex=
+actas, UNLP. Quienes deseen acreditarlo (otorga 1 cr=C3=A9dito), deber=C3=
+=A1n asistir a los tutoriales y aprobar un cuestionario de evaluaci=C3=B3n =
+al finalizar la escuela.</div><div style=3D"text-align:left"><br></div><div=
+ style=3D"text-align:left">Esperamos tu participaci=C3=B3n !!</div><div sty=
+le=3D"text-align:left"><br></div><div style=3D"text-align:left">Comit=C3=A9=
+ Organizador</div><div style=3D"text-align:left"><a href=3D"mailto:cuantos2=
+020@gmail.com" target=3D"_blank">cuantos2020@gmail.com</a>=C2=A0<br></div>
+</div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--000000000000e7775505ce1cc8b4--
