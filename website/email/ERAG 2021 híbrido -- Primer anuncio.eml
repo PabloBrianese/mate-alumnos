@@ -1,0 +1,366 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp717834pxy;
+        Wed, 27 Oct 2021 11:04:18 -0700 (PDT)
+X-Received: by 2002:a25:1089:: with SMTP id 131mr25643443ybq.385.1635357858363;
+        Wed, 27 Oct 2021 11:04:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1635357858; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Y9KY2V4UIbGY852vRvzZNydtDc2IhCsYbry6YuBYwxP4ptk0hV5wCLQa7jgbDz/Yuy
+         owe77TJaIhODxxbFq3mznz97Hcj7pT1mELP5HDoCKSnbgsBPvqZe2ZeUtWLxhwYalK5l
+         Fb4Hto9tYyNGB4GFyGE54mMUWmgFXX8V6Tf7ue0Vfc1Mr3ZKa9QVT9liekOVXFepZD3e
+         QPf7iFCh3r4xrkEHQXOdAnQGkTvYk5Nj+WUdN11exDkiqLx1OVY8sKqvS/HsTpVCO887
+         yKP5NIQpVLqm+Bd7MW/4GpCjedF4qQvWMQA3afPCqu5I8JJqFTLCeD+aSv1/L/obrPnJ
+         hB5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=XFJUFE/kq8Cj3TPCL230dfjCtDmHVJaOKuHuvnp99FU=;
+        b=znpfQ/6qWqO4m+PlXL9HPVeJ3diz43teTgtq5hogNZn+aw0WAVDlfOljIEa8kny5Xj
+         Zx8GiN9+bE9RpuXzk+uhTm9B1Dty9CsMhKbzo4YYYI2efTv4IgMf4qPOZlO2mDE7PenH
+         bc64DCrsFUhbbpaR4+JXExSq2zHrH69VrSgmvgmLyVcusa/3A2f5+BaDnvVW9aBjiXWr
+         8wGmRkzkoBsBStzy4bWqgKYjbFDxdk3Y5W3iOC0D4JaTGx5DY9tG6B6askILLhKyoy/z
+         H18CMBesWgP76DbX7JYRyvi6ZKjQEHVA93xgZt+/k0f7oeszG+k6/mOBP2H6KT6ko5Hm
+         qBUA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=ju8x1Oln;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id x1sor254137ybr.200.2021.10.27.11.04.18
+        (Google Transport Security);
+        Wed, 27 Oct 2021 11:04:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=ju8x1Oln;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=XFJUFE/kq8Cj3TPCL230dfjCtDmHVJaOKuHuvnp99FU=;
+        b=ju8x1OlnMWoNQU3fs1pDq4OweO0yFtuQy2IR3MUnqZ3s61qV3Mkg09bYNIOl3f8aGi
+         FquWcMulQhXz99i7ZlrbJ+1Q0cjLZsoVGz2Ltrh9mw+XyTGMnPL8OEdyn9fgPnDVMrK5
+         yNimFlKzcJbj7n142upYihFN+cZBd/ZG2rOk4p7kdOaG4wfZujBSJ/+DYDWmhtQw854R
+         PKA8SsdVf4j3xjU9gqnlgNDRtXEgSfpro6qqw5TQIJ4laPag6gd5ehRxpPSvs+Eu0M+r
+         SugLJ7ByQU/QkJgA3xkQF9sbrWDkE7z6uB4oEridVdjRZDprCm4ejXhEAPlzdtk2YGDi
+         dkLg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=XFJUFE/kq8Cj3TPCL230dfjCtDmHVJaOKuHuvnp99FU=;
+        b=mr+WN/voLVdAww20GtTdsi4pgfpH8uHohkwLEQQqPWp19FXKXBMjY05Ax1NWh4mlq/
+         BtOgUKm3kETftdCuj9LdDL473VnyUqZnfe6BtIZ3fljGSArFQgQYOy4cLNp7qHCZDJBi
+         aHcxC2JRRnWe6eTb/pmSUnFxFBdrkNe/ApJe+Jh08nki3Z2blH4Mrz9NxknhAk642cTT
+         pObHnFw7oz8xmo4gszNBv0o8NHctbjWjyBLQUdQR2PhfXsuIHiCiJ5GDXhlsMTwDckfY
+         Xtpx+hUmuGNdUTpnhB/X5w9ieUM32N+h5+MjMLtQGaFrEHgjRQ2ktXIGrem9EFHhHYEg
+         w3Bw==
+X-Gm-Message-State: AOAM533RffM2eRK9dJ5p/JnJ3HVnGOyh7sYo54X/RU8hY2TFlSTcmpr2
+	QyFTKR+jFNC8s/XNaohAL/RLvFReh5YBeoVpJfC/G6n4
+X-Google-Smtp-Source: ABdhPJynW/qWo3aJI+pNH4U8Fz77hzXOSzcx+Oejh/GvI98O3OpEccRRQJty8mVey4quVHSZpR74Tz26WTC+B8kgGWQ=
+X-Received: by 2002:a25:6e0a:: with SMTP id j10mr33243856ybc.361.1635357857922;
+ Wed, 27 Oct 2021 11:04:17 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAAYRPUt4jUtoF1HocSWPZn8sBUXct_6MdqBY3NzNOR0CV9yi9w@mail.gmail.com>
+In-Reply-To: <CAAYRPUt4jUtoF1HocSWPZn8sBUXct_6MdqBY3NzNOR0CV9yi9w@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Wed, 27 Oct 2021 15:04:03 -0300
+Message-ID: <CAN5uefZpK-iDQf2V1z17tVNbYnO9pVsTj6oz7an+nuhBUCgzYA@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_ERAG_2021_h=C3=ADbrido_=2D=2D_Primer_anuncio?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000033c1cc05cf596cb8"
+
+--00000000000033c1cc05cf596cb8
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa <ggarcia@mate.unlp.edu.ar>
+Date: lun, 25 oct 2021 a las 15:12
+Subject: ERAG 2021 h=C3=ADbrido -- Primer anuncio
+To: <all@mate.unlp.edu.ar>, <alumnos@mate.unlp.edu.ar>, Docentes
+Departamento de Matem=C3=A1tica <docentes@mate.unlp.edu.ar>
+
+
+---------------------------------
+POR FAVOR DIFUNDIR
+---------------------------------
+
+
+*XXVIII Encuentro Rioplatense de =C3=81lgebra y Geometr=C3=ADa*
+1 al 3 de diciembre de 2021
+CMaLP -- Departamento de Matem=C3=A1tica
+Facultad de Ciencias Exactas
+Universidad Nacional de La Plata
+La Plata, Argentina
+
+Tenemos el agrado de anunciar el XXVIII Encuentro Rioplatense de =C3=81lgeb=
+ra y
+Geometr=C3=ADa que tendr=C3=A1 lugar entre el 1 y el 3 de diciembre de 2021=
+, bajo el
+formato de congreso h=C3=ADbrido. Esto es, se puede participar del encuentr=
+o
+tanto en forma presencial como en forma virtual. La parte presencial se
+llevar=C3=A1 a cabo en la Facultad de Ciencias Exactas de la Universidad
+Nacional de La Plata, La Plata, Argentina.
+Constar=C3=A1 de 2 cursos y varias conferencias.
+
+Los invitamos a visitar la p=C3=A1gina web
+http://www.mate.unlp.edu.ar/erag/
+
+En ella se podr=C3=A1 registrar al evento y encontrar=C3=A1 informaci=C3=B3=
+n actualizada
+del mismo.
+
+La inscripci=C3=B3n es totalmente gratuita y la participaci=C3=B3n es libre=
+.
+Sin embargo, solicitamos a las personas interesadas que se inscriban y
+elijan su modo de participaci=C3=B3n, presencial o virtual, para poder orga=
+nizar
+el evento de la mejor manera posible (i.e. coordinar env=C3=ADos de enlaces=
+ de
+charlas, novedades, etc).
+
+Los Encuentros est=C3=A1n dirigidos a investigadores/as formados/as, estudi=
+antes
+de doctorado y estudiantes avanzados/as de la licenciatura, con intereses
+en temas de =C3=A1lgebra en general, representaciones, =C3=A1lgebra homol=
+=C3=B3gica,
+geometr=C3=ADa algebraica y =C3=A1reas afines (topolog=C3=ADa algebraica, t=
+eor=C3=ADa de
+n=C3=BAmeros, etc.).
+
+Los Encuentros Rioplatenses comenzaron a realizarse hacia fines de 1996,
+alternativamente en Montevideo y Buenos Aires. En 2016 se realiz=C3=B3 por
+primera vez
+en la ciudad de La Plata.
+
+El objetivo principal de esta actividad es fomentar el encuentro tanto
+entre investigadores/as de la regi=C3=B3n como entre estudiantes avanzados/=
+as de
+grado y posgrado.
+
+*IMPORTANTE*
+
+Se dispone de fondos para cubrir
+gastos de alojamiento o traslado de un n=C3=BAmero limitado de participante=
+s.
+
+   - La fecha l=C3=ADmite para pedir ayuda econ=C3=B3mica:  *30 de noviembr=
+e de 2021.*
+   - Inscripci=C3=B3n:  hasta el* 30 de noviembre de 2021.*
+   - Propuestas para charlas cortas: hasta* 12 de noviembre de 2021.*
+
+*ACTIVIDADES:*
+
+*Cursos*
+
+   -
+
+   Marcelo Lanzilotta (Universidad de la Rep=C3=BAblica).
+   -
+
+   Mat=C3=ADas Menni (Universidad Nacional de La Plata)
+
+*Conferencistas invitados*
+
+
+   - Fiorela Rossi Bertone (UNS)
+   - Leandro Cagliero (FaMAF)
+   - Eugenia Ellis (UdelaR)
+   - Emilio Lauret (UNS)
+   - Carlos Parra (UACh, Chile)
+   - Rafael Parra (UdelaR)
+   - Julia Plavnik (Indiana University Bloomington, E.E.U.U.)
+   - Sibylle Schroll (Uni Colonia, Alemania)
+   - Hipolito Treffinger (Universit=C3=A9 de Paris y Sorbonne Universit=C3=
+=A9,
+   Francia)
+
+
+Comit=C3=A9 Organizador ERAG 2021
+
+
+--=20
+Dr. Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa
+CMaLP-CIC-CONICET
+Universidad Nacional de La Plata
+http://www.mate.unlp.edu.ar/~ggarcia/
+@gastonandresg
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--00000000000033c1cc05cf596cb8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa</str=
+ong> <span dir=3D"auto">&lt;<a href=3D"mailto:ggarcia@mate.unlp.edu.ar">gga=
+rcia@mate.unlp.edu.ar</a>&gt;</span><br>Date: lun, 25 oct 2021 a las 15:12<=
+br>Subject: ERAG 2021 h=C3=ADbrido -- Primer anuncio<br>To:  &lt;<a href=3D=
+"mailto:all@mate.unlp.edu.ar">all@mate.unlp.edu.ar</a>&gt;,  &lt;<a href=3D=
+"mailto:alumnos@mate.unlp.edu.ar">alumnos@mate.unlp.edu.ar</a>&gt;, Docente=
+s Departamento de Matem=C3=A1tica &lt;<a href=3D"mailto:docentes@mate.unlp.=
+edu.ar">docentes@mate.unlp.edu.ar</a>&gt;<br></div><br><br><div dir=3D"ltr"=
+><div>---------------------------------</div><div>POR FAVOR DIFUNDIR</div><=
+div>---------------------------------</div><div><br></div><div><b>XXVIII En=
+cuentro Rioplatense de =C3=81lgebra y Geometr=C3=ADa<br></b></div><div>1 al=
+ 3 de diciembre de 2021<br></div><div>CMaLP -- Departamento de Matem=C3=A1t=
+ica</div><div>Facultad de Ciencias Exactas<br>Universidad Nacional de La Pl=
+ata=C2=A0</div><div>La Plata, Argentina<br></div><div><br></div><div>Tenemo=
+s el agrado de anunciar el XXVIII Encuentro Rioplatense de =C3=81lgebra y G=
+eometr=C3=ADa que tendr=C3=A1 lugar entre el 1 y el 3 de diciembre de 2021,=
+ bajo el formato de congreso h=C3=ADbrido. Esto es, se puede participar del=
+ encuentro tanto en forma presencial como en forma virtual. La parte presen=
+cial se llevar=C3=A1 a cabo en la Facultad de Ciencias Exactas de la Univer=
+sidad Nacional de La Plata, La Plata, Argentina.=C2=A0</div><div>Constar=C3=
+=A1 de 2 cursos y varias conferencias.</div><div><br>Los invitamos a visita=
+r la p=C3=A1gina web</div><div><a href=3D"http://www.mate.unlp.edu.ar/erag/=
+" target=3D"_blank">http://www.mate.unlp.edu.ar/erag/</a><br></div><div><br=
+></div><div>En ella se podr=C3=A1 registrar al evento y encontrar=C3=A1 inf=
+ormaci=C3=B3n actualizada del mismo.=C2=A0</div><div><br></div>La inscripci=
+=C3=B3n es totalmente gratuita y la participaci=C3=B3n es libre.=C2=A0<div>=
+Sin embargo, solicitamos a las personas interesadas que se inscriban y elij=
+an su modo de participaci=C3=B3n, presencial o virtual, para poder organiza=
+r el evento de la mejor manera posible (i.e. coordinar env=C3=ADos de enlac=
+es de charlas, novedades, etc).<div><br></div><div><div style=3D"font-size:=
+12.8px"><span style=3D"border-collapse:collapse">Los Encuentros est=C3=A1n =
+dirigidos a investigadores/as formados/as, estudiantes de doctorado y estud=
+iantes avanzados/as de la licenciatura, con intereses en temas de =C3=A1lge=
+bra en general, representaciones, =C3=A1lgebra homol=C3=B3gica, geometr=C3=
+=ADa algebraica y =C3=A1reas afines (topolog=C3=ADa algebraica, teor=C3=ADa=
+ de n=C3=BAmeros, etc.).=C2=A0<br><br>Los Encuentros Rioplatenses comenzaro=
+n a realizarse hacia fines de 1996, alternativamente en Montevideo y Buenos=
+ Aires. En 2016 se realiz=C3=B3 por=C2=A0</span>primera=C2=A0vez en la ciud=
+ad de La Plata.</div><div style=3D"font-size:12.8px"><span style=3D"border-=
+collapse:collapse"><br>El objetivo principal de esta actividad es fomentar =
+el encuentro tanto entre investigadores/as de la regi=C3=B3n como entre est=
+udiantes avanzados/as de grado y posgrado.=C2=A0<br></span></div></div><div=
+ style=3D"font-size:12.8px"><span style=3D"border-collapse:collapse"><br></=
+span></div><div style=3D"font-size:12.8px"><span style=3D"border-collapse:c=
+ollapse"><b>IMPORTANTE</b></span></div><div style=3D"font-size:12.8px"><spa=
+n style=3D"border-collapse:collapse"><br></span></div><div style=3D"font-si=
+ze:12.8px"><span style=3D"border-collapse:collapse">Se dispone de fondos pa=
+ra cubrir=C2=A0</span></div><div style=3D"font-size:12.8px">gastos de aloja=
+miento o traslado de un n=C3=BAmero limitado de participantes.=C2=A0</div><=
+div style=3D"font-size:12.8px"><ul><li style=3D"margin-left:15px">La fecha =
+l=C3=ADmite para pedir ayuda econ=C3=B3mica:=C2=A0=C2=A0<b>30 de noviembre =
+de 2021.</b></li><li style=3D"margin-left:15px">Inscripci=C3=B3n:=C2=A0 has=
+ta=C2=A0el<b>=C2=A030 de noviembre de 2021.</b><br></li><li style=3D"margin=
+-left:15px">Propuestas para charlas cortas: hasta<b>=C2=A012 de noviembre d=
+e 2021.</b><br></li></ul><div><b>ACTIVIDADES:</b></div></div><div><b><br></=
+b></div><div><b>Cursos</b></div><div><ul><li style=3D"margin-left:15px"><fo=
+nt face=3D"arial, helvetica, sans-serif"><p style=3D"margin-bottom:0cm;disp=
+lay:inline"><font color=3D"#000000" style=3D"font-weight:bold"><span style=
+=3D"font-weight:normal">Marcelo Lanzilotta (Universidad de la Rep=C3=BAblic=
+a).=C2=A0</span></font></p></font></li><li style=3D"margin-left:15px"><font=
+ face=3D"arial, helvetica, sans-serif"><p style=3D"margin-bottom:0cm;displa=
+y:inline"><font color=3D"#000000" style=3D"font-weight:bold"><span style=3D=
+"font-weight:normal">Mat=C3=ADas Menni (Universidad Nacional de La Plata)</=
+span></font></p></font></li></ul><div><font color=3D"#000000" face=3D"arial=
+, helvetica, sans-serif"><b>Conferencistas invitados</b></font></div></div>=
+<div><p style=3D"margin-bottom:0cm"></p><ul><li style=3D"margin-left:15px">=
+Fiorela Rossi Bertone (UNS)</li><li style=3D"margin-left:15px">Leandro Cagl=
+iero (FaMAF)</li><li style=3D"margin-left:15px">Eugenia Ellis (UdelaR)</li>=
+<li style=3D"margin-left:15px">Emilio Lauret (UNS)</li><li style=3D"margin-=
+left:15px">Carlos Parra (UACh, Chile)</li><li style=3D"margin-left:15px">Ra=
+fael Parra (UdelaR)</li><li style=3D"margin-left:15px">Julia Plavnik (India=
+na University Bloomington, E.E.U.U.)</li><li style=3D"margin-left:15px">Sib=
+ylle Schroll (Uni Colonia, Alemania)</li><li style=3D"margin-left:15px">Hip=
+olito Treffinger (Universit=C3=A9 de Paris y Sorbonne Universit=C3=A9, Fran=
+cia)</li></ul><p style=3D"margin-bottom:0cm"><br></p><p style=3D"margin-bot=
+tom:0cm"><span style=3D"color:rgb(0,0,0);font-family:arial,helvetica,sans-s=
+erif;font-size:12.8px">Comit=C3=A9 Organizador ERAG 2021</span></p></div><f=
+ont color=3D"#888888"><div><br></div></font></div><div><br></div>-- <br><di=
+v dir=3D"ltr" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=
+=3D"ltr">Dr. Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa<br><div>CMaLP-CIC-CONICET<=
+br>Universidad Nacional de La Plata<br><a href=3D"http://www.mate.unlp.edu.=
+ar/~ggarcia/" target=3D"_blank">http://www.mate.unlp.edu.ar/~ggarcia/</a><d=
+iv>@gastonandresg<br></div></div></div></div></div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--00000000000033c1cc05cf596cb8--

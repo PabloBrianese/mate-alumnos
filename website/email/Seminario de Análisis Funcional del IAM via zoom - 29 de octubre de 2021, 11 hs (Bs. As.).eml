@@ -1,0 +1,346 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp716248pxy;
+        Wed, 27 Oct 2021 11:02:51 -0700 (PDT)
+X-Received: by 2002:a25:b085:: with SMTP id f5mr3925976ybj.500.1635357771707;
+        Wed, 27 Oct 2021 11:02:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1635357771; cv=none;
+        d=google.com; s=arc-20160816;
+        b=u86bEMSe90laslxfkpbaXxesNVh9nRG/E+k3YHKIvJNdoKsibKNyQXGQBepXyFr9L0
+         staftFhYr3DFElbgkjp277i3ADmWGlSSdR2UuAyAkswyHWOh9qaquJWEavS/TFCCLfha
+         B/RG+cdMZJpyGJYCuTfWh9vSjvX6aKNBnn9XYIk/3lBK5MD6Qlt9rjfx2NNyWPjbHuti
+         AQtscM6KCbND1E2ZdDbHfCoxeQA4xMK0F0u22xvWdIu/UhNtwe6DN9Ds0FljFF1QE461
+         /x9TVG4rlyLg9rGuFlzo6iNt4CB/Ryhuv1dTuQhhLB/u/Y8N6uAc3ctTSimTFV6i+cTL
+         V6Hg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=LbyIzfT/rfJhExHuqNbACLr9Vx7kZGihQoYf1Z4oHSY=;
+        b=FimUQDh/Df7oRbqozi2keQvkA/oFlCmoi67I0hZfMREIVhWCORqUFCsvMWHMHwuhRd
+         pvOjaCQwn0QZna/mkpXP8HioCcCeDpglRKlXESgJS3qYO+/JZPQg50AK2ncDkxgxAzau
+         OEpWkDQo+vqF3c+d3+xSeF8lJ86DcnV6ZEl7rWfvIxaetsI0aWGh1EUXwkcxZ5HnMacw
+         uDUTu+mNlJbK7zVx3F89fTrR9eAZnpWSbBgkhs6P2Ubz5pM2mnn2vf5MRNzyoEYcMP+D
+         5lYGenz7qc6rDYMERF2jdJ+J/xa35qkr4F+shBErFf27sMSOIQurjAdO0IzbmJBaQCPF
+         8lDQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=RVtWSsYS;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id q3sor273598ybu.125.2021.10.27.11.02.42
+        (Google Transport Security);
+        Wed, 27 Oct 2021 11:02:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=RVtWSsYS;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=LbyIzfT/rfJhExHuqNbACLr9Vx7kZGihQoYf1Z4oHSY=;
+        b=RVtWSsYSRgFUr6VxL0/zXE0LiqfnP84xy5n2KzMxLaT0Jr8rP8/Her31sPKmx5Z9Ls
+         mLptcbsmo2B+lIINttZ41IjOfF9+b2tksv59Uqbxt7/gqM4PhdP6FrXNp9nn0M5+2PPG
+         PBIFyLFgMs+4uhQJfPcMGq+3HwSXGQLlnEF0hMeKuONskXmUvWwijUrf1soofOyaj9/y
+         l3XgM1tUNokFIgJ+xoVLT1cAJiR2VwIl09yz5A2YiVPg1rdxh8/9bMZWoGRdT14wqLGe
+         xt2iZ60Hi59x/jRh8GAcI/SwgANj2+5UZKz3TAZ8kguMTzasDONErWKajEapTYzG6PhQ
+         yFJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=LbyIzfT/rfJhExHuqNbACLr9Vx7kZGihQoYf1Z4oHSY=;
+        b=cQdMc5IzYOMbCJFSX07N2qhCaArd2OslCfBMWhodZerHm62/j7DZa5rx0ziSLqRPtF
+         FoL/hvqCzO44C1zcqkUL6aEHzDwZcKhFB7qR5bHNpN1JqdA2JPy1gSaOG1wDSCaF9Iju
+         4b8wqwXgcfUzj3+c6njZgJMBu+QYTfxBYUfL6gH23jv8N4M5kdyq6cyvf8DyIKxM3fs4
+         7aFb9btLQ1/PiFXra0sUKElVAM9Becv1CUkqleK6MGo3RzMH5TL4UedFlLgjT4Nabiqt
+         n94dETecXaoBsnyTZIs+75RuRGscUqvVL4NAPioSIz1wK3vYZxi3uuSFk5SJynAUKBmh
+         RXMg==
+X-Gm-Message-State: AOAM532rTLpaxX6qT5DR50uh2UW8eUraR/ZfKbzqbzkwB6IvEF2Qr28S
+	kT6MRY34GkbYRR1iBCYyYnRMoIOeZjlSGCv9+zU=
+X-Google-Smtp-Source: ABdhPJwoG/JNGdXGG/pFpqLov8pqA2EN8ARhkvVwpenRziMVHdP9KlFlCMclxCs4Nh+BlRWOgn/bivQ+Vcn8u7phrwA=
+X-Received: by 2002:a25:9bc4:: with SMTP id w4mr8984209ybo.539.1635357762301;
+ Wed, 27 Oct 2021 11:02:42 -0700 (PDT)
+MIME-Version: 1.0
+References: <77729929b9c22937d29295411aec1fa4@mate.unlp.edu.ar>
+In-Reply-To: <77729929b9c22937d29295411aec1fa4@mate.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Wed, 27 Oct 2021 15:02:28 -0300
+Message-ID: <CAN5uefbz8DRbOC2G1QpRPL3Q2-QQvggAxwy=PCyGdq6qZLcc0A@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Seminario_de_An=C3=A1lisis_Funcional_del_IAM_via_zo?=
+	=?UTF-8?Q?om_=2D_29_de_octubre_de_2021=2C_11_hs_=28Bs=2E_As=2E=29?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000080b24305cf596616"
+
+--00000000000080b24305cf596616
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: secre <secre@mate.unlp.edu.ar>
+Date: mi=C3=A9, 27 oct 2021 a las 9:35
+Subject: Fwd: Seminario de An=C3=A1lisis Funcional del IAM via zoom - 29 de
+octubre de 2021, 11 hs (Bs. As.)
+To: docentes mate <docentes@mate.unlp.edu.ar>
+
+
+
+
+-------- Mensaje original --------
+Asunto: Seminario de An=C3=A1lisis Funcional del  IAM via zoom - 29 de
+octubre de 2021, 11 hs (Bs. As.)
+Fecha: 26-10-2021 20:12
+Remitente: Cecilia Farias <ceciliafarias@yahoo.com>
+Destinatario: "docentes@mate.unlp.edu.ar" <docentes@mate.unlp.edu.ar>
+
+El Instituto Argentino de Matem=C3=A1tica =E2=80=9CAlberto P. Calder=C3=B3n=
+=E2=80=9D tiene
+el agrado de invitarlos al
+
+  Seminario de An=C3=A1lisis Funcional "Mischa Cotlar"
+
+que se realizar=C3=A1 el d=C3=ADa viernes 29 de octubre de 2021 a las 11 HS=
+.
+(Bs. As.)
+
+Expositor: Elona Agora (IAM - CONICET)
+
+  T=C3=ADtulo: Extrapolaci=C3=B3n y desigualdades puntuales
+
+Resumen:
+
+Dado un operador de Calder=C3=B3n=E2=80=93Zygmund, la estimaci=C3=B3n de su=
+ reordenada
+decreciente por la suma del operador de Hardy y su adjunto es bien
+conocida. En esta charla, discutiremos estimaciones puntuales para la
+reordenada decreciente de un operador sublineal T, donde T abarca una
+serie de operadores cl=C3=A1sicos del inter=C3=A9s en An=C3=A1lisis Arm=C3=
+=B3nico, como
+son por ejemplo, los operadores de Bochner=E2=80=93Riesz, los operadores Ro=
+ugh
+y sparse, ciertos multiplicadores de Fourier y los operadores que
+satisfacen una desigualdad de tipo Fefferman=E2=80=93Stein. Entre otras cos=
+as,
+estas estimaciones puntuales est=C3=A1n vinculadas a los teoremas de
+extrapolaci=C3=B3n de Zygmund y Yano. Esta charla est=C3=A1 basada en traba=
+jos
+conjuntos con J. Antezana, S. Baena y M. J. Carro.
+
+Unirse a la reuni=C3=B3n Zoom
+
+https://conicet-gov-ar.zoom.us/j/83588954802?pwd=3DSU1veXNyckRKck53dG43OEJl=
+bjVBZz09
+[1]
+
+ID de reuni=C3=B3n: 835 8895 4802 [2]
+  C=C3=B3digo de acceso: 950220
+
+  [3]
+
+Si desea conocer las pr=C3=B3ximas charlas programadas o ver las charlas
+pasadas, por favor entre en la p=C3=A1gina web del seminario ''Mischa
+Cotlar'': https://seminariomcotlar.wordpress.com/ [4]
+
+
+
+Links:
+------
+[1]
+https://conicet-gov-ar.zoom.us/j/83588954802?pwd=3DSU1veXNyckRKck53dG43OEJl=
+bjVBZz09
+[2] http://extension.mate.unlp.edu.ar/callto:835%208895%204802
+[3]
+https://conicet-gov-ar.zoom.us/j/84580472701?pwd=3DU2NsdnBBYWJJTXY2cGhuRUM5=
+YWpidz09
+[4] https://seminariomcotlar.wordpress.com/
+
+--=20
+Departamento de Matem=C3=A1tica
+Facultad de Ciencias Exactas
+UNLP
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--00000000000080b24305cf596616
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">secre</strong> <span dir=3D"auto">&lt;<a=
+ href=3D"mailto:secre@mate.unlp.edu.ar">secre@mate.unlp.edu.ar</a>&gt;</spa=
+n><br>Date: mi=C3=A9, 27 oct 2021 a las 9:35<br>Subject: Fwd: Seminario de =
+An=C3=A1lisis Funcional del  IAM via zoom - 29 de octubre de 2021, 11 hs (B=
+s. As.)<br>To: docentes mate &lt;<a href=3D"mailto:docentes@mate.unlp.edu.a=
+r">docentes@mate.unlp.edu.ar</a>&gt;<br></div><br><br><br>
+<br>
+-------- Mensaje original --------<br>
+Asunto: Seminario de An=C3=A1lisis Funcional del=C2=A0 IAM via zoom - 29 de=
+ <br>
+octubre de 2021, 11 hs (Bs. As.)<br>
+Fecha: 26-10-2021 20:12<br>
+Remitente: Cecilia Farias &lt;<a href=3D"mailto:ceciliafarias@yahoo.com" ta=
+rget=3D"_blank">ceciliafarias@yahoo.com</a>&gt;<br>
+Destinatario: &quot;<a href=3D"mailto:docentes@mate.unlp.edu.ar" target=3D"=
+_blank">docentes@mate.unlp.edu.ar</a>&quot; &lt;<a href=3D"mailto:docentes@=
+mate.unlp.edu.ar" target=3D"_blank">docentes@mate.unlp.edu.ar</a>&gt;<br>
+<br>
+El Instituto Argentino de Matem=C3=A1tica =E2=80=9CAlberto P. Calder=C3=B3n=
+=E2=80=9D tiene<br>
+el agrado de invitarlos al<br>
+<br>
+=C2=A0 Seminario de An=C3=A1lisis Funcional &quot;Mischa Cotlar&quot;<br>
+<br>
+que se realizar=C3=A1 el d=C3=ADa viernes 29 de octubre de 2021 a las 11 HS=
+.<br>
+(Bs. As.)<br>
+<br>
+Expositor: Elona Agora (IAM - CONICET)<br>
+<br>
+=C2=A0 T=C3=ADtulo: Extrapolaci=C3=B3n y desigualdades puntuales<br>
+<br>
+Resumen:<br>
+<br>
+Dado un operador de Calder=C3=B3n=E2=80=93Zygmund, la estimaci=C3=B3n de su=
+ reordenada<br>
+decreciente por la suma del operador de Hardy y su adjunto es bien<br>
+conocida. En esta charla, discutiremos estimaciones puntuales para la<br>
+reordenada decreciente de un operador sublineal T, donde T abarca una<br>
+serie de operadores cl=C3=A1sicos del inter=C3=A9s en An=C3=A1lisis Arm=C3=
+=B3nico, como<br>
+son por ejemplo, los operadores de Bochner=E2=80=93Riesz, los operadores Ro=
+ugh<br>
+y sparse, ciertos multiplicadores de Fourier y los operadores que<br>
+satisfacen una desigualdad de tipo Fefferman=E2=80=93Stein. Entre otras cos=
+as,<br>
+estas estimaciones puntuales est=C3=A1n vinculadas a los teoremas de<br>
+extrapolaci=C3=B3n de Zygmund y Yano. Esta charla est=C3=A1 basada en traba=
+jos<br>
+conjuntos con J. Antezana, S. Baena y M. J. Carro.<br>
+<br>
+Unirse a la reuni=C3=B3n Zoom<br>
+<br>
+<a href=3D"https://conicet-gov-ar.zoom.us/j/83588954802?pwd=3DSU1veXNyckRKc=
+k53dG43OEJlbjVBZz09" rel=3D"noreferrer" target=3D"_blank">https://conicet-g=
+ov-ar.zoom.us/j/83588954802?pwd=3DSU1veXNyckRKck53dG43OEJlbjVBZz09</a><br>
+[1]<br>
+<br>
+ID de reuni=C3=B3n: 835 8895 4802 [2]<br>
+=C2=A0 C=C3=B3digo de acceso: 950220<br>
+<br>
+=C2=A0 [3]<br>
+<br>
+Si desea conocer las pr=C3=B3ximas charlas programadas o ver las charlas<br=
+>
+pasadas, por favor entre en la p=C3=A1gina web del seminario &#39;&#39;Misc=
+ha<br>
+Cotlar&#39;&#39;: <a href=3D"https://seminariomcotlar.wordpress.com/" rel=
+=3D"noreferrer" target=3D"_blank">https://seminariomcotlar.wordpress.com/</=
+a> [4]<br>
+<br>
+<br>
+<br>
+Links:<br>
+------<br>
+[1] <br>
+<a href=3D"https://conicet-gov-ar.zoom.us/j/83588954802?pwd=3DSU1veXNyckRKc=
+k53dG43OEJlbjVBZz09" rel=3D"noreferrer" target=3D"_blank">https://conicet-g=
+ov-ar.zoom.us/j/83588954802?pwd=3DSU1veXNyckRKck53dG43OEJlbjVBZz09</a><br>
+[2] <a href=3D"http://extension.mate.unlp.edu.ar/callto:835%208895%204802" =
+rel=3D"noreferrer" target=3D"_blank">http://extension.mate.unlp.edu.ar/call=
+to:835%208895%204802</a><br>
+[3] <br>
+<a href=3D"https://conicet-gov-ar.zoom.us/j/84580472701?pwd=3DU2NsdnBBYWJJT=
+XY2cGhuRUM5YWpidz09" rel=3D"noreferrer" target=3D"_blank">https://conicet-g=
+ov-ar.zoom.us/j/84580472701?pwd=3DU2NsdnBBYWJJTXY2cGhuRUM5YWpidz09</a><br>
+[4] <a href=3D"https://seminariomcotlar.wordpress.com/" rel=3D"noreferrer" =
+target=3D"_blank">https://seminariomcotlar.wordpress.com/</a><br>
+<br>
+-- <br>
+Departamento de Matem=C3=A1tica<br>
+Facultad de Ciencias Exactas<br>
+UNLP<br>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--00000000000080b24305cf596616--
