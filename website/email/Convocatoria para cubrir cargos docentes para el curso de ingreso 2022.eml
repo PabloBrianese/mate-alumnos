@@ -1,0 +1,276 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp720353pxy;
+        Wed, 27 Oct 2021 11:06:45 -0700 (PDT)
+X-Received: by 2002:a25:bc0f:: with SMTP id i15mr31106776ybh.233.1635358005584;
+        Wed, 27 Oct 2021 11:06:45 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1635358005; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MNSze6fkRbIb6atC9Uuxfm9Z3YDUqx2m0wrNjZ53mHtXiUKWEF4kfSRK8iVwXMxDDE
+         r4IkKZU+kKPGI95DEWaywyQS9XMMgqHrHYp6mWVABor6VR2jV/xThmXZF1pNDBSfjmCl
+         tdUs5xXNfW/KAgxuZ8G/1MPoXTho43/pcUv/Z0DvU8orWRMZAlcJb8K1lCsaCxV9hAfD
+         KzoH6bfCfxiLGznt+yKcF6osqVVF3s3eEgHzvAHlpOQUoYMYlfLqP7hqxxIstexdeYAj
+         Z9gY5qWsiATJ3pYcr7rRCnyVfRKT2IqfZR2mtgWKZjG5ykmSOEydC72fQdo1rm7RZqcE
+         pyqQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=UWzaLY0+//LKP461eZtfi1Nv58BNlV7aIw6QdF4v4Ac=;
+        b=iEZvnOl9n47f1D7Vie49fJIWt6rVVu9VPJqmfzFPijVPNY4JcCpww6UDe4cEAD+Hn1
+         EEPbtl/4bYbp2xzcJ+eLZIyRko80PnDdDtOBb0niCWaN+I9X9R1sUVc5ffJvEoSpAP9x
+         svsmKi3lmmyRGOVG5A9dmXrGFJ4putNa1iydwyw0GIJIBFhFSojdCcR0R481vOhLzliJ
+         6kIvIDFVkM8+h8JBXgFYPNFPNQIEdhC6wucevY5j6BOb+M4BASlEqVDqzLUgY/Uh9Bgr
+         vXwAMwtzZCmN/nbfyNek59wKVDTTcODwInXGfFa3p2fGeJIA1Lkq6uppmzDz3RW8d/Aw
+         mSJQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=DYvkQETZ;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id w1sor279956ybm.167.2021.10.27.11.06.45
+        (Google Transport Security);
+        Wed, 27 Oct 2021 11:06:45 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=DYvkQETZ;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=UWzaLY0+//LKP461eZtfi1Nv58BNlV7aIw6QdF4v4Ac=;
+        b=DYvkQETZizVWeYP/+BT27M4nYp/UjfP36epfUsx3h3rZ0ifcq9Y2z/gmFcv5z8WdGW
+         DP8gEaOfTBYsucejixKI2EoIB++yLOuPnAGkFhW2IUKS1dSpH3u+pa8S6L5gIuATiMO1
+         6UQruIzkESRecUM9QuMx1Mj6pM3KKI8DXFqF+f8dv5HFNGA0xDGNjhn2shDcs6RWLoSo
+         4WCVqDe6ZCznghsVMEOFzcKipoGORzfeNvTrCuhc6kehsTtmo5Q0Xg4jp9+YHrJ9uid4
+         3NiKSmvMNTdYfC5BwG72QO+KCmAzYtwEchdqS59nCP7TZhje0m7FSFgX9lKoTn48HNqc
+         O/jQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=UWzaLY0+//LKP461eZtfi1Nv58BNlV7aIw6QdF4v4Ac=;
+        b=i36nEPAOJZWUfGg1qCyzACBSgayHmIqREBMSzghszFtNMXh6d4gSzy86hqRN8fgg/V
+         uX0NpN35yK+j97s7TPKrSuWfQelqL1pDKL/n5KG3aEP+BpUaX8LsVCgQqeUYLVClH5Nc
+         homUxfiGT5kFutWMentxoE3FyjU/qCcGxIGmr53gWwwkGoBSrm6cL27CkTrb52N4i3eq
+         uy9P9KCRBGttxUgR46/D/RUjBIPQ8F2vYowcolb/clua0h8JhC29ziKcAHPcA8f+M4zi
+         IxRVlVpZb2weV4gE6OFbTtMU79NIluwpgBMvZYWwZt3fcYf1d3WUdGkrYJawv2EJt0/e
+         lcug==
+X-Gm-Message-State: AOAM532dnob2TYM6T89cgzq0uMCh+MmoiN4bh0q+szWu5Qi4HCy7IMCd
+	tysnaVWjGASslT6w3TzVaFS9H55oOVQb0puBfvk=
+X-Google-Smtp-Source: ABdhPJwrBMKu1bHItpRiOqEBOohQSMCXOdeHY5VWE47uo3Z2kCTpASUgCcVRWyN+80PAGx8h5icFhvZOerdLlmknARU=
+X-Received: by 2002:a25:bfc8:: with SMTP id q8mr1796910ybm.455.1635358005204;
+ Wed, 27 Oct 2021 11:06:45 -0700 (PDT)
+MIME-Version: 1.0
+References: <e4da0b6e50bd77acee1a25b6a8dda999@mate.unlp.edu.ar>
+In-Reply-To: <e4da0b6e50bd77acee1a25b6a8dda999@mate.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Wed, 27 Oct 2021 15:06:31 -0300
+Message-ID: <CAN5uefZgd_2YFjORDdpr=79LEXr=du4ocfj87XevUdBteEjFYw@mail.gmail.com>
+Subject: Fwd: Convocatoria para cubrir cargos docentes para el curso de
+ ingreso 2022
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000fb1b5d05cf59742e"
+
+--000000000000fb1b5d05cf59742e
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: secre <secre@mate.unlp.edu.ar>
+Date: lun, 25 oct 2021 a las 21:12
+Subject: Fwd: Convocatoria para cubrir cargos docentes para el curso de
+ingreso 2022
+To: docentes mate <docentes@mate.unlp.edu.ar>
+
+
+
+
+-------- Mensaje original --------
+Asunto: Convocatoria para cubrir cargos docentes para el curso de
+ingreso 2022
+Fecha: 25-10-2021 12:53
+Remitente: Espacio Pedag=C3=B3gico
+<espaciopedagogico.exactas.unlp@gmail.com>
+Destinatario: Espacio Pedag=C3=B3gico
+<espacio_pedagogico@exactas.unlp.edu.ar>
+Copia: secre2@fisica.unlp.edu.ar, Secretaria de Ciencias Biologicas
+<secre@biol.unlp.edu.ar>, Secretar=C3=ADa Depto. de Matem=C3=A1tica
+<secre@mate.unlp.edu.ar>, secre2@quimica.unlp.edu.ar
+
+Estimadxs!
+En el siguiente link est=C3=A1 disponible la informaci=C3=B3n sobre la
+convocatoria para cubrir cargos docentes para el curso de ingreso 2022
+de nuestra Facultad, que estar=C3=A1 abierta hasta el MARTES 2 DE NOVIEMBRE
+A LAS 23:59 HORAS.
+
+http://www.exactas.unlp.edu.ar/articulo/2017/10/13/convocatoria_para_cubrir=
+_cargos_docentes_para_el_curso_de_ingreso_2022
+[1]
+
+Agradecemos la difusi=C3=B3n de esta informaci=C3=B3n en la comunidad del
+Departamento.
+
+Desde ya muchas gracias,
+Equipo del Espacio Pedag=C3=B3gico.
+
+Links:
+------
+[1]
+http://www.exactas.unlp.edu.ar/articulo/2017/10/13/convocatoria_para_cubrir=
+_cargos_docentes_para_el_curso_de_ingreso_2022
+
+--=20
+Departamento de Matem=C3=A1tica
+Facultad de Ciencias Exactas
+UNLP
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--000000000000fb1b5d05cf59742e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">secre</strong> <span dir=3D"auto">&lt;<a=
+ href=3D"mailto:secre@mate.unlp.edu.ar">secre@mate.unlp.edu.ar</a>&gt;</spa=
+n><br>Date: lun, 25 oct 2021 a las 21:12<br>Subject: Fwd: Convocatoria para=
+ cubrir cargos docentes para el curso de  ingreso 2022<br>To: docentes mate=
+ &lt;<a href=3D"mailto:docentes@mate.unlp.edu.ar">docentes@mate.unlp.edu.ar=
+</a>&gt;<br></div><br><br><br>
+<br>
+-------- Mensaje original --------<br>
+Asunto: Convocatoria para cubrir cargos docentes para el curso de <br>
+ingreso 2022<br>
+Fecha: 25-10-2021 12:53<br>
+Remitente: Espacio Pedag=C3=B3gico <br>
+&lt;<a href=3D"mailto:espaciopedagogico.exactas.unlp@gmail.com" target=3D"_=
+blank">espaciopedagogico.exactas.unlp@gmail.com</a>&gt;<br>
+Destinatario: Espacio Pedag=C3=B3gico <br>
+&lt;<a href=3D"mailto:espacio_pedagogico@exactas.unlp.edu.ar" target=3D"_bl=
+ank">espacio_pedagogico@exactas.unlp.edu.ar</a>&gt;<br>
+Copia: <a href=3D"mailto:secre2@fisica.unlp.edu.ar" target=3D"_blank">secre=
+2@fisica.unlp.edu.ar</a>, Secretaria de Ciencias Biologicas <br>
+&lt;<a href=3D"mailto:secre@biol.unlp.edu.ar" target=3D"_blank">secre@biol.=
+unlp.edu.ar</a>&gt;, Secretar=C3=ADa Depto. de Matem=C3=A1tica <br>
+&lt;<a href=3D"mailto:secre@mate.unlp.edu.ar" target=3D"_blank">secre@mate.=
+unlp.edu.ar</a>&gt;, <a href=3D"mailto:secre2@quimica.unlp.edu.ar" target=
+=3D"_blank">secre2@quimica.unlp.edu.ar</a><br>
+<br>
+Estimadxs!<br>
+En el siguiente link est=C3=A1 disponible la informaci=C3=B3n sobre la<br>
+convocatoria para cubrir cargos docentes para el curso de ingreso 2022<br>
+de nuestra Facultad, que estar=C3=A1 abierta hasta el MARTES 2 DE NOVIEMBRE=
+<br>
+A LAS 23:59 HORAS.<br>
+<br>
+<a href=3D"http://www.exactas.unlp.edu.ar/articulo/2017/10/13/convocatoria_=
+para_cubrir_cargos_docentes_para_el_curso_de_ingreso_2022" rel=3D"noreferre=
+r" target=3D"_blank">http://www.exactas.unlp.edu.ar/articulo/2017/10/13/con=
+vocatoria_para_cubrir_cargos_docentes_para_el_curso_de_ingreso_2022</a><br>
+[1]<br>
+<br>
+Agradecemos la difusi=C3=B3n de esta informaci=C3=B3n en la comunidad del<b=
+r>
+Departamento.<br>
+<br>
+Desde ya muchas gracias,<br>
+Equipo del Espacio Pedag=C3=B3gico.<br>
+<br>
+Links:<br>
+------<br>
+[1] <br>
+<a href=3D"http://www.exactas.unlp.edu.ar/articulo/2017/10/13/convocatoria_=
+para_cubrir_cargos_docentes_para_el_curso_de_ingreso_2022" rel=3D"noreferre=
+r" target=3D"_blank">http://www.exactas.unlp.edu.ar/articulo/2017/10/13/con=
+vocatoria_para_cubrir_cargos_docentes_para_el_curso_de_ingreso_2022</a><br>
+<br>
+-- <br>
+Departamento de Matem=C3=A1tica<br>
+Facultad de Ciencias Exactas<br>
+UNLP<br>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--000000000000fb1b5d05cf59742e--
