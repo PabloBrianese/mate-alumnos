@@ -1,0 +1,267 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp3141128pxy;
+        Mon, 1 Nov 2021 06:22:09 -0700 (PDT)
+X-Received: by 2002:a25:c8c7:: with SMTP id y190mr32112709ybf.366.1635772928845;
+        Mon, 01 Nov 2021 06:22:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1635772928; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PZyDnp/mwDjZd7Xev4TxCjXWjoZQ/klWAQDZ46fGYQJJ6Shhc12M57oNpkTbrpYYp4
+         w+wTKbwg89yTP4gX7AkjH3nSvwouj/HTVmhsyUOr6bUfZayaEi6pZbOAX+083CHuzFId
+         Ai4YCUv8DKo2+X+w7YX4WsYBSv11ch8uanhzy4haW7hZ9FRwX3LjFbF4CK+73lTxSq3X
+         32r+hG7w4LcYSHAmJG+83BKZJBG7XMGlfy8q63lY6oszbBOwOZ49VQRAgSngjfhP/beQ
+         eVMo8kymOegqD0PSnqdUhPQrxLqHiVNJojIt6UvxTG5sBL7Hlu/uM3lE2MSWTcqTsl39
+         ZjfA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=d34HdXuy7Muke/IrMBoE9HvjGUqxe3jHUZfFNEKGWTs=;
+        b=Ca2TIaf61J4KKHecm/ympdZIMiiAW+H3Sj6waw+fNkxHHCZjclCWsaO5EwjzTOgzCv
+         +XOvVuG8TEefWhxDOIkNP1GBcUvv62wuH4Xcbv2fmBpFROUs2XAnvjlHA/Bcmq359KcU
+         jUJN+YNCmuGqr+qF2pNUTtqSQ6uMbrNtxiePz8iMHwXE0DSowTFhNCXEhGx1ASyp0jIH
+         7tA6S+tHp9jJ5x5GdbQNGKh3hSdZ/54YFAgpFGmjerbzGO/NQA7RDnaHjoBF+aQ9LDQF
+         gmSdZ9aXPbxy/1ljCVRs7Eig3S+F6szvBHTfJVZ+sDOZbGVOaLl+4GBCpSKL2KXGMYfp
+         zS+Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=QpMJemRC;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o21sor5401540ybg.69.2021.11.01.06.22.08
+        (Google Transport Security);
+        Mon, 01 Nov 2021 06:22:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=QpMJemRC;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=d34HdXuy7Muke/IrMBoE9HvjGUqxe3jHUZfFNEKGWTs=;
+        b=QpMJemRCBhNjut4LrZOOMR0LOAOebdVBfYGKRUXV1jrzutzZsHdqFrr7xlVHdIBrlL
+         NzdlGLbH5T1svwXSTxYKR8O6aVAOdkIqoZVsII+QuoqNxXsF6r6v9D9yrtndh9qvg79/
+         +LIFxLFrQDvped4pCGuKyFXCmFoaUDJV4gOS/x8yiG67py8+d7U0btKUOTalOZChdmw8
+         8RcRaRSodzRiziYlRYZLupTvRPjEMHDscUo5Qg1HPAbhRRUWx9vKOQPIbZDXDcBcePov
+         47XWoClzU/yhBEDNWB5rKCeJgbgu9k9Sdr74S7dpfJ/AEmdkJMtnuX5A5xY8OwByGeo2
+         a+PA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=d34HdXuy7Muke/IrMBoE9HvjGUqxe3jHUZfFNEKGWTs=;
+        b=V6MsHB79NGKY/7fc/UuvjSNDVXdIq1bVCOuOqFjGbliAoKX8X41Af19cs7JOFEMLz9
+         8uz6n6L4lE749ealk2LoECiuuQb38GUTGX5O/PJD6oMqEj2tiq83hmrNwWcH94VmkI+M
+         2FsCQLpJajKFCSLxTtJMMD1z7QqLjSVnVBsG/CMMpL9eQsGMQlH3ABJRaDr1GwhzLJLL
+         rlR6unEmF3giVyFx2W/UFRiPpgjvloOmrNvox3IkmXNO62fOm4VsxjcTfar1aHUkFect
+         XB4SlLzr0GljfTTatE6/8aVV+OzP4WBni8ElxLv0ygT0aQBvtxM2AK4hUwaHfYY6Ws3G
+         wVTw==
+X-Gm-Message-State: AOAM531DiSxXpKiBNtxly5l6Mr4oICOcfaVzfL18XBEKgyXsbZRerC4C
+	S1v03QC9bHajVcCg61berOa/nX/dpQNMCw8F3YuCvwnw
+X-Google-Smtp-Source: ABdhPJwXigExDbYu+FhWsqLahQgULrqlMWdE3cHIKcltg4Ct0UBuagjPk03CvD3rJbgKJWdSUBA2caILHx29fxMUWWc=
+X-Received: by 2002:a25:1089:: with SMTP id 131mr30825623ybq.385.1635772927970;
+ Mon, 01 Nov 2021 06:22:07 -0700 (PDT)
+MIME-Version: 1.0
+References: <a85939a7a767a004a4c68cd7de494218@mate.unlp.edu.ar>
+In-Reply-To: <a85939a7a767a004a4c68cd7de494218@mate.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 1 Nov 2021 10:22:00 -0300
+Message-ID: <CAN5uefbaoPCOu2bh9aw8Wf2oZqAx0RXD2MGG9j01hFpjwwT9Hg@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Seminario_Geometr=C3=ADa_Noconmutativa_=3A_Martes_2=2F1?=
+	=?UTF-8?Q?1_10hs?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000004e127105cfba102b"
+
+--0000000000004e127105cfba102b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Gisela Tartaglia <gtartaglia@mate.unlp.edu.ar>
+Date: lun, 1 nov 2021 a las 8:37
+Subject: Seminario Geometr=C3=ADa Noconmutativa : Martes 2/11 10hs
+To:
+
+
+Hola, este martes a las 10:00hs tendremos el seminario virtual de
+Geometr=C3=ADa Noconmutativa del Atl=C3=A1ntico Sur (GeNoCAS)
+<http://cms.dm.uba.ar/Members/gcorti/workgroup.GNC/GeNoCAS_seminar/document=
+_view>.
+
+En esta oportunidad va a hablar *Elizabeth Gillaspy* (Montana)
+
+Title: *The Weyl construction for dynamical Cartan subalgebras*
+
+Abstract: Building on earlier work of Kumjian, Renault proved in 2008
+that a C*-algebra A has a Cartan subalgebra B iff A is the C*-algebra
+of a twist over a topologically principal groupoid W (the Weyl
+groupoid of the Cartan pair (B, A)).  However, one can build
+C*-algebras out of much more general groupoids.  Do those have Cartan
+subalgebras, and if so, what is the relationship between the Weyl
+groupoid and the original groupoid?
+
+In joint work with A. Duwenig, R. Norton, S. Reznikoff, and S. Wright,
+we identified situations when a subgroupoid S of a non-principal
+groupoid G will give rise to a Cartan subalgebra B =3D C*(S) of A =3D
+C*(G).  Subsequent work, joint with A. Duwenig and R. Norton, revealed
+that the Weyl groupoid W of the pair (B, A) is a semidirect product: W
+=3D G/S =E2=8B=89=C5=9C .  We also describe the Weyl twist explicitly in th=
+e
+situation where there is a continuous section G/S =E2=86=92 G.
+
+If you're still mostly lost after reading this abstract, never fear!
+The talk will not assume familiarity with groupoids, their
+C*-algebras, or Cartan subalgebras for C*-algebras, and should (I
+hope) be more comprehensible.
+ Join Zoom Meeting
+<https://exactas-uba.zoom.us/j/83915550825>https://exactas-uba.zoom.us/j/83=
+915550825
+
+Meeting ID: 839 1555 0825
+Passcode: 550348
+
+
+Saludos,
+Guillermo Corti=C3=B1as y Gisela Tartaglia
+
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--0000000000004e127105cfba102b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Gisela Tartaglia</strong> <span dir=3D"a=
+uto">&lt;<a href=3D"mailto:gtartaglia@mate.unlp.edu.ar">gtartaglia@mate.unl=
+p.edu.ar</a>&gt;</span><br>Date: lun, 1 nov 2021 a las 8:37<br>Subject: Sem=
+inario Geometr=C3=ADa Noconmutativa : Martes 2/11 10hs<br>To: <br></div><br=
+><br><u></u>
+<div>
+<pre>Hola, este martes a las 10:00hs tendremos el seminario virtual de <a h=
+ref=3D"http://cms.dm.uba.ar/Members/gcorti/workgroup.GNC/GeNoCAS_seminar/do=
+cument_view" target=3D"_blank">Geometr=C3=ADa Noconmutativa del Atl=C3=A1nt=
+ico Sur (GeNoCAS)</a>.
+
+En esta oportunidad va a hablar <strong>Elizabeth Gillaspy</strong> (Montan=
+a)
+
+Title: <em>The Weyl construction for dynamical Cartan subalgebras</em>
+
+Abstract: Building on earlier work of Kumjian, Renault proved in 2008 that =
+a C*-algebra A has a Cartan subalgebra B iff A is the C*-algebra of a twist=
+ over a topologically principal groupoid W (the Weyl groupoid of the Cartan=
+ pair (B, A)).=C2=A0 However, one can build C*-algebras out of much more ge=
+neral groupoids.=C2=A0 Do those have Cartan subalgebras, and if so, what is=
+ the relationship between the Weyl groupoid and the original groupoid?
+
+In joint work with A. Duwenig, R. Norton, S. Reznikoff, and S. Wright, we i=
+dentified situations when a subgroupoid S of a non-principal groupoid G wil=
+l give rise to a Cartan subalgebra B =3D C*(S) of A =3D C*(G).=C2=A0 Subseq=
+uent work, joint with A. Duwenig and R. Norton, revealed that the Weyl grou=
+poid W of the pair (B, A) is a semidirect product: W =3D G/S =E2=8B=89=C5=
+=9C .=C2=A0 We also describe the Weyl twist explicitly in the situation whe=
+re there is a continuous section G/S =E2=86=92 G.
+
+If you&#39;re still mostly lost after reading this abstract, never fear! Th=
+e talk will not assume familiarity with groupoids, their C*-algebras, or Ca=
+rtan subalgebras for C*-algebras, and should (I hope) be more comprehensibl=
+e.=20
+
+<a href=3D"https://exactas-uba.zoom.us/j/83915550825" target=3D"_blank"> Jo=
+in Zoom Meeting</a>
+<a href=3D"https://exactas-uba.zoom.us/j/83915550825" target=3D"_blank">htt=
+ps://exactas-uba.zoom.us/j/83915550825</a>
+
+Meeting ID: 839 1555 0825
+Passcode: 550348
+
+
+Saludos,
+Guillermo Corti=C3=B1as y Gisela Tartaglia</pre>
+</div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--0000000000004e127105cfba102b--

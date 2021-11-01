@@ -1,0 +1,249 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp1997898pxy;
+        Thu, 28 Oct 2021 13:27:19 -0700 (PDT)
+X-Received: by 2002:a5b:950:: with SMTP id x16mr2678300ybq.463.1635452839215;
+        Thu, 28 Oct 2021 13:27:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1635452839; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nSNj5/ypVETyrhLfSKP+sdPSw0r8QCWCxETX0N8U+Ls6nHwT6wNmyGqptVUr9vYfIm
+         BbfkUMumYz/RNUUdf8Fi1ePOjCaDPmboDDpcNO/CplwQqbwpTwJYTDVu1JpD4dwBxv/t
+         vCaxAd6yQt3b2FZqcoXZ4jYWS8f1nWCQoJM8o4SCC2LLhCnVBI0vE4HUUMASOLyii3jm
+         5cB80Bh9D6nlSWhcgPDZGbxSxLxSxu8V/4hfp4fNbNQF6M55iOnGK4bttylS47fgC1nr
+         hNJ59UTZaDtATiZHkYzyK9FgbwpzEmjwmkubrnXh5UzfpOq5Bxw0m0fQh5eqa3v//ykL
+         +XSw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=kWdKrAH+4QSYmbg4X2J1coff1xd1SoZuRykPn97vTS4=;
+        b=WwqS6LL8c5D1qYmDTrdq6KvRC9HkDRG/8IopqjmDk4KveUK4OTrHsCMCoX4lAQljNK
+         Ue3MG4s67BmPI68fPWm0uw9KJt3U39kJTCs2rH3BkhXwZgCPBNsvuitX+RAUVdD1fuV6
+         kGdB7B1vcSeKuT/Wybh8c1meRjG9m/zYjfCf1Thl+X6bPqtA+lwShJcSkmTSkoCYfLM3
+         V5CRb8opMQTTcONL4ZT9QDyoTOu5pY+4lq6E0nliVwl/75uSoztGFLnrVzXZrS82uq+z
+         DO2yplHlET6pJD0lhw5Fa1I8t6jHBHowQ8cUVf04ZzspTpJUF+NoMbgAcvXctcQxMZnO
+         UPUg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=DMSwCQQy;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id x7sor1657112ybl.144.2021.10.28.13.27.19
+        (Google Transport Security);
+        Thu, 28 Oct 2021 13:27:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=DMSwCQQy;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=kWdKrAH+4QSYmbg4X2J1coff1xd1SoZuRykPn97vTS4=;
+        b=DMSwCQQyB4+uKoKK3AjeJo39GkUpMUvDbf4QkaBU/nlJFtnwtaGS1b/Ow96y9infoY
+         /jLkIPJ4PYKjc6OUFkf8fIEWNG1EBAGIzuSv4Va0A2OACVvoD3BIIMSI0hEdeKKhHv89
+         VW87vcdBuaJJef2WbOv4Sd/z6OzhBQ3PSBf9jfJ+VusEGU5TTg7+V8cscOktlOg+CS/l
+         SIktNLcl1vC2moQdwCmyAB5ue8tEthghWCfPCST4V5cDJ/mXv9/u3ExTPSiYb2DKH0Pt
+         f+K2tZBka/DWGnnlJ12F4lghvG1gardW318+QfAGTMm0TR0s5X1dDT8af3VAjkpO58hM
+         w/cQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=kWdKrAH+4QSYmbg4X2J1coff1xd1SoZuRykPn97vTS4=;
+        b=J4sc4dXbII3UNAv1ZeTxj95adX1FxOJMCAvcaEQk51+unyEao9LnQ6/J7eFXGOiWw0
+         ZaleDWVSXqvlGETQwvQRWoJqL5inLs/BwOUhIuHZsIvS/7SoP71Rk3T5ArGAa5u7yhH4
+         NMsmtkxSchkjIycQYVy8gmXAr3c8wyTmDl75YLghwdHgfAbAkX+xHyk+oLeeNx+zsz8n
+         68ULTbTj2y3Na1/UXGaGqkytR8PZqXNpAdGwmzzslnmQ4I6+sHjw3p+YYPD5tCZ6C4dD
+         s5AyC0GrtdsFjFYehZIZc9/+/X+ZCTzXw87Zxp8UhFfNI5QNv6H7Al7+CQghIn0GtR7d
+         Ufuw==
+X-Gm-Message-State: AOAM531aUEcYU+TNjNzU02inYNrgHguvP7k9XyhOIIDmmI57aWNvnu/w
+	idO6DDF2UCxJScRFPAH4Vz8/QrBj2tAGrTgmZVw=
+X-Google-Smtp-Source: ABdhPJwrk/S55+0THd2SPc8gdBKNqDXgkU/UVmUwCz+Bo1ewK8FUSAkXw2gcQvN/YxaYl2sCV1P1SQvQRIB+ZZb1I/k=
+X-Received: by 2002:a25:1089:: with SMTP id 131mr7056891ybq.385.1635452838794;
+ Thu, 28 Oct 2021 13:27:18 -0700 (PDT)
+MIME-Version: 1.0
+References: <6626119087c5312494c1e1d50a51b6e0@exactas.unlp.edu.ar>
+In-Reply-To: <6626119087c5312494c1e1d50a51b6e0@exactas.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Thu, 28 Oct 2021 17:27:05 -0300
+Message-ID: <CAN5uefYWTLXk=obU0nj8T6j4EBypThCbt5gq=TyHXpZHfngkQQ@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Conversatorio_sobre_la_Elaboraci=C3=B3n_Segura_de_P?=
+	=?UTF-8?Q?roductos_de_Cosm=C3=A9tica_Natural?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000080da9105cf6f899f"
+
+--00000000000080da9105cf6f899f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: <extension@exactas.unlp.edu.ar>
+Date: jue, 28 oct 2021 a las 16:26
+Subject: Conversatorio sobre la Elaboraci=C3=B3n Segura de Productos de
+Cosm=C3=A9tica Natural
+To: Secretar=C3=ADa de Extensi=C3=B3n (alternativo) Fac Cs Exactas - UNLP <
+extension.exactas@gmail.com>
+
+
+Estimadas/os:
+
+les hacemos llegar la invitaci=C3=B3n del Proyecto de Extensi=C3=B3n de
+Elaboraci=C3=B3n Segura de Productos de Cosm=C3=A9tica
+Natural, al Conversatorio sobre la Elaboraci=C3=B3n Segura de Productos de
+Cosm=C3=A9tica Natural, que se estar=C3=A1
+llevando a cabo, el d=C3=ADa Viernes 29/10 a las 14 hs. de forma virtual a
+trav=C3=A9s del siguiente Link: https://meet.google.com/vcj-aegb-txg.
+
+Entre otros, se abordaran los sgtes. temas:
+=C2=BFhay relaci=C3=B3n entre la bot=C3=A1nica, la cosm=C3=A9tica natural y=
+ la farmacolog=C3=ADa?
+=C2=BFcual es el rol del estudiante de naturales/exactas en la elaboraci=C3=
+=B3n de
+cosm=C3=A9tica natural?
+=C2=BFc=C3=B3mo originar herramientas de empoderamiento para productoras?
+
+
+Se agradece difusi=C3=B3n
+Atentamente
+
+
+--=20
+_____________________________________
+Secretar=C3=ADa de Extensi=C3=B3n Universitaria
+Facultad de Ciencias Exactas - UNLP
+Tel=C3=A9fonos: 54 - 221-4226977 / 6979 / 6981
+Wsp: +54 9 2215 11-1180
+Twitter: @EExactasUNLP
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--00000000000080da9105cf6f899f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <span dir=3D"=
+auto">&lt;<a href=3D"mailto:extension@exactas.unlp.edu.ar">extension@exacta=
+s.unlp.edu.ar</a>&gt;</span><br>Date: jue, 28 oct 2021 a las 16:26<br>Subje=
+ct: Conversatorio sobre la Elaboraci=C3=B3n Segura de Productos de Cosm=C3=
+=A9tica Natural<br>To: Secretar=C3=ADa de Extensi=C3=B3n (alternativo) Fac =
+Cs Exactas - UNLP &lt;<a href=3D"mailto:extension.exactas@gmail.com">extens=
+ion.exactas@gmail.com</a>&gt;<br></div><br><br>Estimadas/os:<br>
+<br>
+les hacemos llegar la invitaci=C3=B3n del Proyecto de Extensi=C3=B3n de <br=
+>
+Elaboraci=C3=B3n Segura de Productos de Cosm=C3=A9tica<br>
+Natural, al Conversatorio sobre la Elaboraci=C3=B3n Segura de Productos de =
+<br>
+Cosm=C3=A9tica Natural, que se estar=C3=A1<br>
+llevando a cabo, el d=C3=ADa Viernes 29/10 a las 14 hs. de forma virtual a =
+<br>
+trav=C3=A9s del siguiente Link: <a href=3D"https://meet.google.com/vcj-aegb=
+-txg" rel=3D"noreferrer" target=3D"_blank">https://meet.google.com/vcj-aegb=
+-txg</a>.<br>
+<br>
+Entre otros, se abordaran los sgtes. temas:<br>
+=C2=BFhay relaci=C3=B3n entre la bot=C3=A1nica, la cosm=C3=A9tica natural y=
+ la farmacolog=C3=ADa?<br>
+=C2=BFcual es el rol del estudiante de naturales/exactas en la elaboraci=C3=
+=B3n de <br>
+cosm=C3=A9tica natural?<br>
+=C2=BFc=C3=B3mo originar herramientas de empoderamiento para productoras?<b=
+r>
+<br>
+<br>
+Se agradece difusi=C3=B3n<br>
+Atentamente<br>
+<br>
+<br>
+-- <br>
+_____________________________________<br>
+Secretar=C3=ADa de Extensi=C3=B3n Universitaria<br>
+Facultad de Ciencias Exactas - UNLP<br>
+Tel=C3=A9fonos: 54 - 221-4226977 / 6979 / 6981<br>
+Wsp: +54 9 2215 11-1180<br>
+Twitter: @EExactasUNLP<br>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--00000000000080da9105cf6f899f--

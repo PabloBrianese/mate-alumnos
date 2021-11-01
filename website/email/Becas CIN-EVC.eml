@@ -1,0 +1,238 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp217188pxy;
+        Fri, 29 Oct 2021 08:56:28 -0700 (PDT)
+X-Received: by 2002:a25:3a05:: with SMTP id h5mr13235702yba.306.1635522988735;
+        Fri, 29 Oct 2021 08:56:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1635522988; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KoAp21d0Lk4eNyX17Gf+keC1L2kDebCk6JSPEiC10QsoghfXF7CU/PmU2Ndb6QCoTU
+         3Xbycg4siAcybUBl5aD1yk+TxmUOJy0SgtkqiolL0+LukygysVx6PuSv9cWoPwskOVwJ
+         3mrrTx63DdahxN6oMaQPwtoMF1Jd3Or1b6Z0dsxBinyRqcpGy5shfB9p1/SMwz6ZCbl+
+         YZ9gnPLIjvjcbh9evlrzBoj+N+wEQBml1tCbY20c/hqWsySssFJ7CoVOzPX8sIHXVOdd
+         OwxnbQYgKXwv4/YajdWFvYI/p5jjRkIQlwnPxAfEnlEC72Gmr4UtBJ+NR0UdLM7p+Xpd
+         YzYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=VN4EfchEFNNLzXiWGgLFsbmJ4ATzsqq0Gzqt3mA+f9s=;
+        b=NLEiZ3Xh7R/8MNvSGDhIRCXE4V45sGtIf6+wv4ja8TiL0060r61d+qY/QYW4spy7o6
+         ZQ/ct8zK8pPU8lHt0o4Ra5G81898/1xfPtRVEk1C187OY3m6r0ATeoBJNqdgF8QD8l+v
+         5hYZyeZG54YzSG8O4g05zfzwBj+FKMiBs0ASurae5MaWSCbJzk5kCDVgWP3NTi1/ri8n
+         zeofPPEKaBScYIHyDwgHo+2XJ6lCgeqowdRzFowzzijKUJbdBewrWBmu4mQer2FlWWf9
+         b3ItFyaz5T4WhSG20lMPfFH53p8Xrc53+36TaPHdZ/libSF5kxeET0sNEhFEdhM5tjxi
+         a++Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=XymBbvq5;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id p8sor2600941ybu.150.2021.10.29.08.56.28
+        (Google Transport Security);
+        Fri, 29 Oct 2021 08:56:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=XymBbvq5;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=VN4EfchEFNNLzXiWGgLFsbmJ4ATzsqq0Gzqt3mA+f9s=;
+        b=XymBbvq5O9C8IRaJGxNl/KBtmvB5Oc5fxUo9T4uGH9gCjeFNo9K5fU8iyNGMNZI/hr
+         Wy4kgbmxJNWXybBGgHLTVFOfrmRIhelHoGrXcOCdUWb75xhQRZKrslWxsMy7Ny8A/FJt
+         VEsRyYQHSZSO8pyFaWeHE3wvYsyV0Woi8AUkb393h5RIkAYEPdwZ3nM5DchzwO6qrJvT
+         r0j1vLJBkkryGip1D4143xoBOkfkmStEyxemKc5Cqgm8j9h2JommdGhMCh/I7MXir6hN
+         TxySbM2EMwDYANO2p5dXnKtm3m9Yf79rgiKGJfy+B+5Vq192PcDJ+HolEOZeNAekd/rM
+         lhOA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=VN4EfchEFNNLzXiWGgLFsbmJ4ATzsqq0Gzqt3mA+f9s=;
+        b=DCAICrdXmgHKpX3KYPPMvrvb9WFEpt0w61vFqNVg+moj1McrmrsZMU75QoB8+yKdy4
+         tVQWqcD4ii7KN+fHrCIX0e5hXUByHAVO1B+ck7R9FsM+UI57SYHDSjniEth18UjSKkJV
+         4PnXROBofhmwUuMmjOUIRuQO50YdZU8rPFfU0S8k+EIQzZIE2XZGgaZrC/qu9pNkZ5Yh
+         c5YctekYN/p+WIyNfjLgndiPO3Hq+7DlD/KHG/f/cvOa2p9p2FEbhlUbNJyuxKtMofOc
+         Usoq1k65KndYs7t64vv42TLLqh72DP9SUuDdC6mQSExUm5HXiefzKF5Df+2H0zFcDETn
+         3WpA==
+X-Gm-Message-State: AOAM532ZvkR22dsdIgelIbVDmRgNMU3CxLKxBL3DfLRFuV771ejqD8Zh
+	4JqSF6/kfDWE/1kr9Msp5mE6WOZ7q2DdEA0viFznwrxM
+X-Google-Smtp-Source: ABdhPJzkNviu4oNmhgVb/doLaVmWb4QiawoTPjzDjjJHOSqHfi99IQNDLcijMRW0ad+zXdB0q9QTQFVtqaGgFVzGSco=
+X-Received: by 2002:a25:9bc4:: with SMTP id w4mr13212591ybo.539.1635522988044;
+ Fri, 29 Oct 2021 08:56:28 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAAYRPUtFKH1epa=zKfWz=V7W=ZMr3wvXCcqYewacFfbPTfQ2NA@mail.gmail.com>
+In-Reply-To: <CAAYRPUtFKH1epa=zKfWz=V7W=ZMr3wvXCcqYewacFfbPTfQ2NA@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Fri, 29 Oct 2021 12:56:16 -0300
+Message-ID: <CAN5uefaGKRgHPdU14hBLZ+-5NDnJ_VPLMYg64+UcsOoPKvjH0Q@mail.gmail.com>
+Subject: Fwd: Becas CIN-EVC
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000b9765b05cf7fded6"
+
+--000000000000b9765b05cf7fded6
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa <ggarcia@mate.unlp.edu.ar>
+Date: vie, 29 oct 2021 a las 8:29
+Subject: Becas CIN-EVC
+To: Alumnos <alumnosm@gmail.com>, <alumnos@mate.unlp.edu.ar>
+
+
+Hola gente:
+
+El 1 de noviembre abre la convocatoria a las becas CIN-EVC
+
+Dice en la p=C3=A1gina web:
+
+En el marco del =E2=80=9CPlan de Fortalecimiento de la Investigaci=C3=B3n C=
+ient=C3=ADfica, el
+Desarrollo Tecnol=C3=B3gico y la Innovaci=C3=B3n en las Universidades Nacio=
+nales=E2=80=9D
+(Ac. Pl. N=C2=BA 676/08 y 687/09), el Consejo Interuniversitario Nacional (=
+CIN)
+otorgar=C3=A1 Becas de Est=C3=ADmulo a las Vocaciones Cient=C3=ADficas (Bec=
+as EVC =E2=80=93 CIN)
+para estudiantes de grado de instituciones universitarias p=C3=BAblicas que
+deseen iniciar su formaci=C3=B3n en investigaci=C3=B3n.
+
+La convocatoria 2021 permanecer=C3=A1 abierta entre el 1 de noviembre y el =
+3 de
+diciembre a las 13 horas.
+
+Para m=C3=A1s informaci=C3=B3n, visitar
+
+https://www.cin.edu.ar/convocatoria-2021-de-las-becas-de-estimulo-a-las-voc=
+aciones-cientificas/
+
+Saludos,
+Gast=C3=B3n
+--
+Dr. Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa
+CMaLP-CIC-CONICET
+Universidad Nacional de La Plata
+http://www.mate.unlp.edu.ar/~ggarcia/
+@gastonandresg
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--000000000000b9765b05cf7fded6
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Gast=C3=B3n Andr=C3=A9s Garc=C3=ADa</str=
+ong> <span dir=3D"auto">&lt;<a href=3D"mailto:ggarcia@mate.unlp.edu.ar">gga=
+rcia@mate.unlp.edu.ar</a>&gt;</span><br>Date: vie, 29 oct 2021 a las 8:29<b=
+r>Subject: Becas CIN-EVC<br>To: Alumnos &lt;<a href=3D"mailto:alumnosm@gmai=
+l.com">alumnosm@gmail.com</a>&gt;,  &lt;<a href=3D"mailto:alumnos@mate.unlp=
+.edu.ar">alumnos@mate.unlp.edu.ar</a>&gt;<br></div><br><br><div dir=3D"ltr"=
+><div>Hola gente:</div><div><br></div><div>El 1 de noviembre abre la convoc=
+atoria a las becas CIN-EVC</div><div><br></div><div>Dice en la=C2=A0p=C3=A1=
+gina web:=C2=A0</div><div><br></div>En el marco del =E2=80=9CPlan de Fortal=
+ecimiento de la Investigaci=C3=B3n Cient=C3=ADfica, el Desarrollo Tecnol=C3=
+=B3gico y la Innovaci=C3=B3n en las Universidades Nacionales=E2=80=9D (Ac. =
+Pl. N=C2=BA 676/08 y 687/09), el Consejo Interuniversitario Nacional (CIN) =
+otorgar=C3=A1 Becas de Est=C3=ADmulo a las Vocaciones Cient=C3=ADficas (Bec=
+as EVC =E2=80=93 CIN) para estudiantes de grado de instituciones universita=
+rias p=C3=BAblicas que deseen iniciar su formaci=C3=B3n en investigaci=C3=
+=B3n.<br><br>La convocatoria 2021 permanecer=C3=A1 abierta entre el 1 de no=
+viembre y el 3 de diciembre a las 13 horas.<br><br>Para m=C3=A1s informaci=
+=C3=B3n, visitar=C2=A0<br><br><div><a href=3D"https://www.cin.edu.ar/convoc=
+atoria-2021-de-las-becas-de-estimulo-a-las-vocaciones-cientificas/" target=
+=3D"_blank">https://www.cin.edu.ar/convocatoria-2021-de-las-becas-de-estimu=
+lo-a-las-vocaciones-cientificas/</a><br></div><div><br></div><div>Saludos,<=
+/div><div>Gast=C3=B3n</div>--<div dir=3D"ltr" data-smartmail=3D"gmail_signa=
+ture"><div dir=3D"ltr"><div dir=3D"ltr">Dr. Gast=C3=B3n Andr=C3=A9s Garc=C3=
+=ADa<br><div>CMaLP-CIC-CONICET<br>Universidad Nacional de La Plata<br><a hr=
+ef=3D"http://www.mate.unlp.edu.ar/~ggarcia/" target=3D"_blank">http://www.m=
+ate.unlp.edu.ar/~ggarcia/</a><div>@gastonandresg<br></div></div></div></div=
+></div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--000000000000b9765b05cf7fded6--

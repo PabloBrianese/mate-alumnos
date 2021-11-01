@@ -1,0 +1,355 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp1998521pxy;
+        Thu, 28 Oct 2021 13:28:08 -0700 (PDT)
+X-Received: by 2002:a05:6902:1025:: with SMTP id x5mr8021934ybt.3.1635452888054;
+        Thu, 28 Oct 2021 13:28:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1635452888; cv=none;
+        d=google.com; s=arc-20160816;
+        b=A+kwzdtg6NG6592i6EXzqLdWGGEEbY4CSzwEKsaOsKEGfgWM4BFd4+m1hcJNwm0+nl
+         nIvRp8/PeLBRumjrQ71AbgF8ySmDD1JR+asNpoKNGC8pf+qxyDBu1MZQlIggM353Ou64
+         AhCllfw9WxLa37uDSIsPBSbHQ9AMPYlsLVrhef347gPO4tYPAFSL1xn3d+lxvHTNKYJW
+         9WpXB1dGA7CjfYBskUNxmRnICSRjzBDE894WCnUER0nzBrBE/XSvM3G3NmkBpW4Ut58/
+         TMCXLBLLPONNbkTRrvRhXoFcTKdSfEiw3UOAKCNSdepPf1yz0A2azL0y987kKaygs4OB
+         SPJw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=xUiZuPtoaw5ZTqS6Ga6CLW/tRtjRbVYu37cxOnSE2oU=;
+        b=QLD7LHW9ArSbJVEZHUOoE8TCxHyAyuRvsOmwfnqfdn0CnFWmLO48/oBLQBUEpM/wr2
+         TH5mC/H+/TM9OSLIc091FBmvVxMUCR7DBDb2FGLPYZzZuXiW4hHVvOeFW0IcC8RWJUZy
+         0kHIKSbX13//1au/pPE4eW2XrVsS/CD4JYEyU1XmxyygxJU0pOSdOgjVGTfWDAvCvJJ+
+         U3UizT6qWEn0JuZAFz8If2fgupmTyS83qWsJeGX1o21uyLh5cEx/d1rqwmXxuTSfg/vk
+         uZyY4v7N/Bptl0F1FKXkZUmJ0/kVjv02E3E0cSbXnnGs73zZcf3L47HBheFBQlCg8CA6
+         fdAg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=f5wKCQxS;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a9sor1698184ybc.138.2021.10.28.13.28.07
+        (Google Transport Security);
+        Thu, 28 Oct 2021 13:28:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=f5wKCQxS;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=xUiZuPtoaw5ZTqS6Ga6CLW/tRtjRbVYu37cxOnSE2oU=;
+        b=f5wKCQxSPz4BEKnMKo6voLsLQDQJQGP6j7W0D4CwBSLTiIdPLGmZJ/fJNPNnmU4jjB
+         29AMPcY03yoBH4E0t/wDiOZawRrBihltIwk0R4o6t27m7F3fehtMoaqWVLFkVEuPXQLT
+         diS1jrGg7IebKjCajBK+3PsDsMtaHzVGqVtQayj13ktcv1sHa+ZvhYRNIxJSX8BuuVqz
+         1Bwy1/tlN/DOJy3w354FrkhSEH6la7f3eb1QPvVYHdwAOijd7I4VhUuCpVtjFePktW6s
+         9oBzmOVWtLQZa3s3gBAi4DC/pH84Gdn4l0ACxUhrwHdBHZQsMHdOqk/MrTUqTqcPXpFX
+         150A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=xUiZuPtoaw5ZTqS6Ga6CLW/tRtjRbVYu37cxOnSE2oU=;
+        b=nl1mv8tHOJua3nn8GWIDtBsahu4QywZypdoi/WUKRr66NRI5XOns65z4mSC1sBBjrA
+         E0lEMU9FK0nS1vNY/61oMOdiLDe8WFSQRu4Tj65AxeCoat0GXIrVo+rAbLidDWtuU37y
+         7piGTCcU79Pny8KaNqzy61G3LKLv+sCQwp/Wi0b2TCprFVE5M1FIkUR1QMqYCGRwB5nM
+         yoKjGxJfYZ7vZDGXnEmym8dQXgp2olJRaeyePUqk5nf57+ku1GRT3IzmsXQlLkPf2qkf
+         5NVKtbqEpZ9ehpjeDKEpd+KKTK+TkqVGiT6jpIhEfAUNOJJ0urOMXHqjl6vIrDyrBWR+
+         4Lmg==
+X-Gm-Message-State: AOAM531Fd7h9v8v4nnBUbrW4I9MvJ8FJopOODPV41kI4B/twiheikWBO
+	ZFIdDAHW168/gKFLry/WmAs1/ruop7z1454OoS0=
+X-Google-Smtp-Source: ABdhPJwQf2/O9XmnaiLDFlGiuTlBEy8z5coh9kxjP92ZUCNQ84oyKG7InVIavdAHC1AbdGSwlLFxGKTPf4bfXcU8fbk=
+X-Received: by 2002:a25:bfc8:: with SMTP id q8mr7149319ybm.455.1635452887537;
+ Thu, 28 Oct 2021 13:28:07 -0700 (PDT)
+MIME-Version: 1.0
+References: <f1354f5282189a367b2b787aff64e99e@exactas.unlp.edu.ar>
+In-Reply-To: <f1354f5282189a367b2b787aff64e99e@exactas.unlp.edu.ar>
+From: Alumnos <alumnosm@gmail.com>
+Date: Thu, 28 Oct 2021 17:27:54 -0300
+Message-ID: <CAN5uefY-5meYfWpwzRhvVq=sARCvyoRKGVZq1dkq1bftnRk44A@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Habilitaci=C3=B3n_de_ex=C3=A1menes_parciales_presencial?=
+	=?UTF-8?Q?es_con_distanciamiento?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000068c4fc05cf6f8c4a"
+
+--00000000000068c4fc05cf6f8c4a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Secretar=C3=ADa Asuntos Acad=C3=A9micos - FCEx-UNLP <academic@exactas.u=
+nlp.edu.ar>
+Date: jue, 28 oct 2021 a las 16:30
+Subject: Habilitaci=C3=B3n de ex=C3=A1menes parciales presenciales con dist=
+anciamiento
+To: Ciencias Exactas Decanato <decanato@exactas.unlp.edu.ar>
+
+
+A toda la comunidad de la Facultad de Ciencias Exactas.
+
+Por medio de la presente y teniendo en cuenta la evoluci=C3=B3n de la
+situaci=C3=B3n de emergencia sanitaria por la pandemia de COVID-19, los
+alcances de la Resoluci=C3=B3n N=C2=B0 4387/21, la Disposici=C3=B3n 176/21 =
+de la
+presidencia de la Universidad Nacional de La Plata y el Protocolo para
+actividades presenciales con distanciamiento de la Facultad de Ciencias
+Exactas.
+
+Queremos comunicar que, a partir del mes de noviembre, las c=C3=A1tedras qu=
+e
+definan tomar ex=C3=A1menes parciales en forma presencial estar=C3=A1n habi=
+litadas
+para llevarlo a cabo cumpliendo con las pautas del Protocolo para
+actividades presenciales con distanciamiento que rige en la Facultad.
+
+Se deber=C3=A1n tener en cuenta las siguientes condiciones:
+
+-La materia que opte por tomar examen parcial presencial deber=C3=A1
+solicitar aulas a aulas@exactas.unlp.edu.ar indicando el n=C3=BAmero de
+estudiantes previsto con 10 o m=C3=A1s d=C3=ADas corridos de anticipaci=C3=
+=B3n. De
+acuerdo a esto, se asignar=C3=A1n locales para dicho examen presencial. De =
+no
+disponerse de locales suficientes para garantizar el aforo previsto en
+el protocolo actual, el examen no podr=C3=A1 llevarse a cabo de forma
+presencial.
+
+-El d=C3=ADa del examen parcial docentes y estudiantes completar=C3=A1n la
+declaraci=C3=B3n jurada que prev=C3=A9 el Protocolo , que quedaran en custo=
+dia de
+los responsables de la c=C3=A1tedra.
+
+-Durante el examen estudiantes y docentes deber=C3=A1n observar las normas
+del protocolo. En caso de examen escrito, las y los docentes deber=C3=A1n
+prever la forma de resguardar las hojas en recipientes de cierre
+herm=C3=A9tico (tipo bolsas ziploc o similar).
+
+- Las y los estudiantes que por diferentes motivos no puedan rendir el
+examen parcial de forma presencial, expresar=C3=A1n esa imposibilidad a los
+responsables de las materias a trav=C3=A9s de un correo electr=C3=B3nico do=
+nde
+detallar=C3=A1n los motivos. El mail tendr=C3=A1 car=C3=A1cter de declaraci=
+=C3=B3n jurada.
+En estos casos, la c=C3=A1tedra deber=C3=A1 garantizar una opci=C3=B3n virt=
+ual para la
+toma del examen parcial en el mismo d=C3=ADa establecido para el parcial
+presencial.
+
+-Los motivos causales de eximici=C3=B3n de la presencialidad incluyen: 1)
+personas que por motivo de la pandemia se encuentren fuera de la ciudad
+de La Plata al momento del examen y no cuentan con los medios para
+llegar a la Facultad. 2) Personas que pertenecen a grupos de riesgo
+vinculados a la COVID-19, y que acrediten que a=C3=BAn no han transcurrido =
+21
+d=C3=ADas corridos desde haber completado el esquema de vacunaci=C3=B3n de
+cualquiera de las vacunas destinadas a generar inmunidad adquirida
+contra la COVID-19, o que conviven con una persona en esas condiciones.
+
+
+Sigamos cuid=C3=A1ndonos entre todos y todas,
+
+Saludos cordiales,
+
+Prof. Dr. Mauricio F. Erben =E2=80=93 Decano
+Prof. Dr. Francisco Speroni Aguirre =E2=80=93 Secretario Acad=C3=A9mico
+
+
+--=20
+----------------------------------------
+Secretar=C3=ADa de Asuntos Acad=C3=A9micos
+Facultad de Ciencias Exactas - UNLP
+
+www.exactas.unlp.edu.ar
+FB: Facultad de Ciencias Exactas - UNLP
+IG/Twitter: @exactas_unlp
+----------------------------------------
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--00000000000068c4fc05cf6f8c4a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Secretar=C3=ADa Asuntos Acad=C3=A9micos =
+- FCEx-UNLP</strong> <span dir=3D"auto">&lt;<a href=3D"mailto:academic@exac=
+tas.unlp.edu.ar">academic@exactas.unlp.edu.ar</a>&gt;</span><br>Date: jue, =
+28 oct 2021 a las 16:30<br>Subject: Habilitaci=C3=B3n de ex=C3=A1menes parc=
+iales presenciales con distanciamiento<br>To: Ciencias Exactas Decanato &lt=
+;<a href=3D"mailto:decanato@exactas.unlp.edu.ar">decanato@exactas.unlp.edu.=
+ar</a>&gt;<br></div><br><br>A toda la comunidad de la Facultad de Ciencias =
+Exactas.<br>
+<br>
+Por medio de la presente y teniendo en cuenta la evoluci=C3=B3n de la <br>
+situaci=C3=B3n de emergencia sanitaria por la pandemia de COVID-19, los <br=
+>
+alcances de la Resoluci=C3=B3n N=C2=B0 4387/21, la Disposici=C3=B3n 176/21 =
+de la <br>
+presidencia de la Universidad Nacional de La Plata y el Protocolo para <br>
+actividades presenciales con distanciamiento de la Facultad de Ciencias <br=
+>
+Exactas.<br>
+<br>
+Queremos comunicar que, a partir del mes de noviembre, las c=C3=A1tedras qu=
+e <br>
+definan tomar ex=C3=A1menes parciales en forma presencial estar=C3=A1n habi=
+litadas <br>
+para llevarlo a cabo cumpliendo con las pautas del Protocolo para <br>
+actividades presenciales con distanciamiento que rige en la Facultad.<br>
+<br>
+Se deber=C3=A1n tener en cuenta las siguientes condiciones:<br>
+<br>
+-La materia que opte por tomar examen parcial presencial deber=C3=A1 <br>
+solicitar aulas a <a href=3D"mailto:aulas@exactas.unlp.edu.ar" target=3D"_b=
+lank">aulas@exactas.unlp.edu.ar</a> indicando el n=C3=BAmero de <br>
+estudiantes previsto con 10 o m=C3=A1s d=C3=ADas corridos de anticipaci=C3=
+=B3n. De <br>
+acuerdo a esto, se asignar=C3=A1n locales para dicho examen presencial. De =
+no <br>
+disponerse de locales suficientes para garantizar el aforo previsto en <br>
+el protocolo actual, el examen no podr=C3=A1 llevarse a cabo de forma <br>
+presencial.<br>
+<br>
+-El d=C3=ADa del examen parcial docentes y estudiantes completar=C3=A1n la =
+<br>
+declaraci=C3=B3n jurada que prev=C3=A9 el Protocolo , que quedaran en custo=
+dia de <br>
+los responsables de la c=C3=A1tedra.<br>
+<br>
+-Durante el examen estudiantes y docentes deber=C3=A1n observar las normas =
+<br>
+del protocolo. En caso de examen escrito, las y los docentes deber=C3=A1n <=
+br>
+prever la forma de resguardar las hojas en recipientes de cierre <br>
+herm=C3=A9tico (tipo bolsas ziploc o similar).<br>
+<br>
+- Las y los estudiantes que por diferentes motivos no puedan rendir el <br>
+examen parcial de forma presencial, expresar=C3=A1n esa imposibilidad a los=
+ <br>
+responsables de las materias a trav=C3=A9s de un correo electr=C3=B3nico do=
+nde <br>
+detallar=C3=A1n los motivos. El mail tendr=C3=A1 car=C3=A1cter de declaraci=
+=C3=B3n jurada. <br>
+En estos casos, la c=C3=A1tedra deber=C3=A1 garantizar una opci=C3=B3n virt=
+ual para la <br>
+toma del examen parcial en el mismo d=C3=ADa establecido para el parcial <b=
+r>
+presencial.<br>
+<br>
+-Los motivos causales de eximici=C3=B3n de la presencialidad incluyen: 1) <=
+br>
+personas que por motivo de la pandemia se encuentren fuera de la ciudad <br=
+>
+de La Plata al momento del examen y no cuentan con los medios para <br>
+llegar a la Facultad. 2) Personas que pertenecen a grupos de riesgo <br>
+vinculados a la COVID-19, y que acrediten que a=C3=BAn no han transcurrido =
+21 <br>
+d=C3=ADas corridos desde haber completado el esquema de vacunaci=C3=B3n de =
+<br>
+cualquiera de las vacunas destinadas a generar inmunidad adquirida <br>
+contra la COVID-19, o que conviven con una persona en esas condiciones.<br>
+<br>
+<br>
+Sigamos cuid=C3=A1ndonos entre todos y todas,<br>
+<br>
+Saludos cordiales,<br>
+<br>
+Prof. Dr. Mauricio F. Erben =E2=80=93 Decano<br>
+Prof. Dr. Francisco Speroni Aguirre =E2=80=93 Secretario Acad=C3=A9mico<br>
+<br>
+<br>
+-- <br>
+----------------------------------------<br>
+Secretar=C3=ADa de Asuntos Acad=C3=A9micos<br>
+Facultad de Ciencias Exactas - UNLP<br>
+<br>
+<a href=3D"http://www.exactas.unlp.edu.ar" rel=3D"noreferrer" target=3D"_bl=
+ank">www.exactas.unlp.edu.ar</a><br>
+FB: Facultad de Ciencias Exactas - UNLP<br>
+IG/Twitter: @exactas_unlp<br>
+----------------------------------------<br>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--00000000000068c4fc05cf6f8c4a--
