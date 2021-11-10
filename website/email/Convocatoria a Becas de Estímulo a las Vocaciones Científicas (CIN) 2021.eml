@@ -1,0 +1,528 @@
+Delivered-To: pablobrianese@gmail.com
+Received: by 2002:a05:6a10:b795:0:0:0:0 with SMTP id a21csp266642pxy;
+        Mon, 8 Nov 2021 14:13:08 -0800 (PST)
+X-Received: by 2002:a25:a427:: with SMTP id f36mr2854081ybi.245.1636409588042;
+        Mon, 08 Nov 2021 14:13:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1636409588; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MkQrX1ZV9iT2ysLHAZ7/mYv0aJzUaMXmAHlbjiaIZK6cPQ8SEee8k6mxcXQ5i3gzqt
+         MqAeoTcBIWkAjY/uwn5KDTutUZ0gWwxqcJnTDon71LIpqlOpKjS7FRhnt6TUGQ5wJZX1
+         TZDsnzKFD8In0y2dnuA0mOtkgh+pMprNyJUU9zbtJqw8QQNsh8j6l7zu/5PPgyX230AT
+         //0a+4uONB0fF0fOAL3tht9dsaH0qZ8E10Ctx1V22N0EblU7IqxS9y3XcDhmock/DkVu
+         h/5v1A2CnooU6tNZX1SAI/te3CmF8F00L/9PjnQgGuBOz6FJlVQlWs8GOKla4GuKuzWl
+         O8mQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=y8+s0nxgwjuTES6Fq1wbnZ5Z4NOd+INLYmw0Y3dmJko=;
+        b=WRISp8mpd0Soj2mqQJUasNh3sPMDEySc0g8lwDxH8fGHw4ScY9C2DDpnx396bMWWPz
+         tNQwxi6DQce1R5XRHcmPAAzdDH9Gu24E8uAS+cW38vZOlk74QiBV9XGGxaDzMUFmwsgt
+         0BUEjg1L4EUx+cuoBJEnv+usPQK1CmGt3+LB1GTad2p4E0tegvNqTWQd6hPgDAHrJX11
+         YQs6GzsflbLIglGYIcZDhzhBfTdXmmIbV9iG9oig9XYCfnjKP20twZnQxx1a+6d+NHxR
+         3cdnhj1CDC88HjJkQ0JfyyjKLeOlE55QISpr+0j5hi+5sIWXDjsioYMBugkuupkEyFfO
+         jieQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=mqZHbkII;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <alumnosm@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id s29sor6656180ybe.31.2021.11.08.14.13.07
+        (Google Transport Security);
+        Mon, 08 Nov 2021 14:13:08 -0800 (PST)
+Received-SPF: pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=mqZHbkII;
+       spf=pass (google.com: domain of alumnosm@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=alumnosm@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=y8+s0nxgwjuTES6Fq1wbnZ5Z4NOd+INLYmw0Y3dmJko=;
+        b=mqZHbkIIko+XflTphlxbIEvq+fAuziiic4pAu7BXir76wAsAKmgdWUYHmoyxk6SMji
+         E51+4QHANQ3thuLZxkWPbDOhMFpHSBiZ/xtfENqukyraRcJUVERIYk/kFGLMF84Rf+4e
+         zzIeRGwurOqTnaoDC+cFE1ftNEsmPj5DkKBJyrI26KltrZRB13EaY+RyZp5fre3s++5E
+         MFAB5N7KnyZVmW4nltMMowffYb+YXihcrcpli+9yAGs7HU0vqncXC9m5t946HJIiIy1q
+         A9slyAS6Mhz5RDeIfo6bIoEBsXnYVSzJFo9Ycrbq9/dx66m8UGBHj68HnoAhf+MKO3KN
+         PbyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=y8+s0nxgwjuTES6Fq1wbnZ5Z4NOd+INLYmw0Y3dmJko=;
+        b=MG5dXi+CQyGqEEVr229yi71aSRCu9uiP7IEEfH2RUxUV3vSdygJsY3GGXhN+yP9f9h
+         RMCqOCHVPsE9v00cVVnCKxsNU/2Kv6qQTFOmHuRlVAppWj6EcpN5AUhU2o3GqNctLOJl
+         tYFlNOx1wE0tKLIALhBYcoVoTUZXPPxcaQadSY6MODhsEjFDcwlg5HPR3+KzcSFCBv5y
+         TsjpbAY+J4qLCHjhDO4ZThlXYHGJycIAgrWq8vGb4qFPOq5UcLJ7JFvDKN+FVYVaE44i
+         KMfz+yMM9PFcUY6IxgFRC9yh/2KvVhTS2DM8aXrLbRB+v6DWpAsQbikpB8P3X63PijDo
+         riMg==
+X-Gm-Message-State: AOAM532BGdcENGlo5GakW5FxHWuA5q7GTE96Tr+vQ+tCpx4oDHIoCcuv
+	WZ4CA2GJx2m+Nv42BSywG4L+WvLyFochUTO49j0=
+X-Google-Smtp-Source: ABdhPJwVs9QCatnPt/b3+0ULCEg+UFRiF9/QgzRu+SOlkmgpRGEFcPos3pi2O/ew4SquD7mLk9hoZXjs3VodMejExe8=
+X-Received: by 2002:a25:dc50:: with SMTP id y77mr3100972ybe.119.1636409586848;
+ Mon, 08 Nov 2021 14:13:06 -0800 (PST)
+MIME-Version: 1.0
+References: <a95c3008527086e79a3c5af8e2f6a774@exactas.unlp.edu.ar>
+ <CAHAqN9m1bLfe6Td34B4vUFxkdpZw9awCptrzOxF9HucdN5ecXw@mail.gmail.com> <CAOU0DCqCJCuWj4zq6WeFQOr5ATJkyKeroTyH=mrJJpUymfhoXw@mail.gmail.com>
+In-Reply-To: <CAOU0DCqCJCuWj4zq6WeFQOr5ATJkyKeroTyH=mrJJpUymfhoXw@mail.gmail.com>
+From: Alumnos <alumnosm@gmail.com>
+Date: Mon, 8 Nov 2021 19:12:55 -0300
+Message-ID: <CAN5uefas--WLp1w=d3Me-z494SZZCUxrFvGEDYCucok7jrTRjw@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Convocatoria_a_Becas_de_Est=C3=ADmulo_a_las_Vocacio?=
+	=?UTF-8?Q?nes_Cient=C3=ADficas_=28CIN=29_2021?=
+To: aymadx@hotmail.com, cami23zorzo97@gmail.com, caritomendes@hotmail.com, 
+	debodiaz@hotmail.com.ar, dromina23@gmail.com, ernesbon28@gmail.com, 
+	fedea_95@hotmail.com, gabbue@gmail.com, gianina_30_9@hotmail.com, 
+	gonza.maldo.1@gmail.com, joaco.gl@hotmail.com, josefinaanicolas@gmail.com, 
+	lautarolp-@hotmail.com, lucasssdezeo@gmail.com, mariano.c88@gmail.com, 
+	melinaiarrojo@gmail.com, nataliaguadalupevergani@hotmail.com, 
+	pau_doc@live.com.ar, rocivaya2000@gmail.com, sebastian-grippo@hotmail.com, 
+	vcasali18@gmail.com, veronicamartin_est@hotmail.com, war.esteban185@gmail.com, 
+	"Agaras, Noelia" <noelia.agaras@gmail.com>, =?UTF-8?Q?Ana_Fern=C3=A1ndez?= <enanafer@hotmail.com>, 
+	Angela Banegas <angelabanegas@outlook.es>, 
+	Aylin Evelyn Morales Llosa <ailin.mll.91@gmail.com>, Befa Michi <jodabe_95@hotmail.com>, 
+	Braian Zurita <braian_23lz@hotmail.com>, Bruno Di Lenarda <brunodilenarda@gmail.com>, 
+	Carla Aparicio <carlagiseaparicio@gmail.com>, Carla Encina <carla.n.encina@gmail.com>, 
+	Carmen Alvarez <carmenalvarezhayes@gmail.com>, Claudio Punti <claudiopunti@gmail.com>, 
+	=?UTF-8?Q?Correa=2C_Mar=C3=ADa_Gabriela?= <gaby_correa2@hotmail.com>, 
+	=?UTF-8?B?Q29zdGFsLCBIZXJuw6Fu?= <hernancostal@gmail.com>, 
+	Cristian Hrynkiewicz <cmhrynkiewicz@hotmail.com>, Debora Diaz <deborahdenisediaz55@gmail.com>, 
+	Diego Morcelle <dmorcelle@gmail.com>, Emanuel Barbiera <emab_91@yahoo.com.ar>, 
+	Emiliano Domecq <emidomecq13@gmail.com>, Emiliano Maccaroni <emilianomaccaroni@gmail.com>, 
+	Emiliano Moreira <emi_gabriel1995@hotmail.com>, Emma Arditti <ciber.deck.16@gmail.com>, 
+	Erica Micaela Chaile <erica.micaela.chaile@gmail.com>, 
+	Esteban Staniscia <estebanstaniscia@gmail.com>, 
+	Ezequiel Figueroa <ezequiel.figueroa98@hotmail.com>, Ezequiel Masini <masini.eze@gmail.com>, 
+	Facundo Barcos <fbarcos.carp@gmail.com>, Facundo Cruz <facundolorenzocruz@hotmail.com>, 
+	Federico Agustin Lemes <federicolemes@hotmail.com>, Federico Ravettino <federave@hotmail.com>, 
+	Fernanda Micucci <fernandamicucci-fdm@hotmail.com>, 
+	=?UTF-8?Q?Fernando_D=2E_Blanc=C3=A1?= <fernandodblanca@gmail.com>, 
+	Flavia Franco <flafranco2610@gmail.com>, 
+	Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>, 
+	Francisco Barrot <franciscobarrot98@gmail.com>, 
+	Francisco Marquez <franciscomarquez98@hotmail.com>, 
+	Francisco Savignone <savignonefrancisco@gmail.com>, =?UTF-8?Q?Gast=C3=B3n_Koster?= <tom_8825@hotmail.com>, 
+	Georgina Ojeda <georginaojeda@outlook.com>, Gisel Soto <giselsoto_603@hotmail.com>, 
+	Guadalupe Payo Vidal <guadapayovidal@hotmail.com>, 
+	=?UTF-8?Q?Guillermo_Andr=C3=A9s_Console_Valoni?= <guillermo.console@gmail.com>, 
+	=?UTF-8?Q?Hern=C3=A1n_Tabieres?= <hernantabieres@hotmail.com>, 
+	Iara Sanhuenza <aylensv.13@gmail.com>, Ismael Tisminetzky <ismatim@gmail.com>, 
+	=?UTF-8?Q?Iv=C3=A1n_Lucchesi?= <ilucches@hotmail.com>, 
+	Jimena Abad <abadjimena.tw@gmail.com>, 
+	=?UTF-8?Q?Joaqu=C3=ADn_Garc=C3=ADa_Villegas?= <joaquing199821@gmail.com>, 
+	Lautaro Ochotorena <lau_sansimon@hotmail.com>, =?UTF-8?Q?Lautaro_Rodr=C3=ADguez?= <unlplnr2019ak@gmail.com>, 
+	=?UTF-8?Q?Leonardo_Mu=C3=B1oz?= <zmodulusm@gmail.com>, 
+	Lucia Insausti <insaustilucia@gmail.com>, Luciana Decaux <luchita.lp@hotmail.com>, 
+	Luciano Scazzola <lucianoscazzola@gmail.com>, Luis Navarro <navarroluis@hotmail.com.ar>, 
+	Manuela Fredriks <manufredriks@gmail.com>, Marco Sanchez <marcoads95@hotmail.com>, 
+	Maria Cecilia Herrera <ce_4384@hotmail.com>, Maria Fazzio <fazzio.mari@gmail.com>, 
+	Maria Pilar Galassi <galassimariapilar@gmail.com>, Mario Imparato <mario.imparato92@gmail.com>, 
+	Melina Di-Benedictis <melidb@hotmail.com>, Morena Andrieu <andrieumorena@gmail.com>, 
+	=?UTF-8?Q?Moretton=2C_Mat=C3=ADas?= <matiasmoretton@gmail.com>, 
+	=?UTF-8?B?TcOzbmljYSBNb3lh?= <tania.monii.la12@gmail.com>, 
+	Natalia Morales <natz.g.morales@gmail.com>, Nicolas Vescovo <nicolasvescovo@hotmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Altamirano?= <nicolasaltamiranounlp@gmail.com>, 
+	=?UTF-8?Q?Nicol=C3=A1s_Tassone?= <nicolastassone15@hotmail.com>, 
+	Pablo Brianese <pablobrianese@gmail.com>, =?UTF-8?Q?Pilco_Rueda=2C_Anal=C3=ADa?= <an.pilco.r@gmail.com>, 
+	"Polli, Manuel" <atucriterio_polli@hotmail.com>, 
+	"Romero, Marilina" <marilinaromero@gmail.com>, Romina Albornoz <rominadeluise@gmail.com>, 
+	Roxana Ferro <roxana_ferro_04@hotmail.com>, "Salvatore, Flavia" <flavia_s_@hotmail.com>, 
+	Samir Najul <sam.nj7@gmail.com>, Santiago Elcunovich <santiago.elcunovich@gmail.com>, 
+	Santiago Palumbo <palumbosantiago@gmail.com>, Sebastian Cleis <scleis66@gmail.com>, 
+	Selene Vidal <selenevidal7@gmail.com>, =?UTF-8?B?U2lsdmEsIEdhc3TDs24=?= <gaston.silva@gmail.com>, 
+	"Sosa, Nelson" <nelson_19_87@hotmail.com>, Tomas Romero <tomas48188@gmail.com>, 
+	Tomislav <lc.tomislav@gmail.com>, Urko Zabaljauregui <zabalurko@gmail.com>, 
+	Urso Cabrera <urso1304@hotmail.com>, "Vachetta, Celeste" <ignaciapilar@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Andrada?= <valentin.math.prog@hotmail.com>, 
+	=?UTF-8?Q?Valent=C3=ADn_Cielli?= <valentincielli27@gmail.com>, 
+	Vanina Berduque <vaninaberduque@outlook.com>, Victoria <victoria_95_11@hotmail.com>, 
+	Ximena Andorno <xime_andorno@hotmail.com.ar>, Yamila Otero <yamilaotero@hotmail.com>, 
+	Yerimen Arias <turko.cnlp@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000021964e05d04e4c91"
+
+--00000000000021964e05d04e4c91
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+De: Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>
+Date: dom, 7 nov 2021 a las 15:03
+Subject: Fwd: Convocatoria a Becas de Est=C3=ADmulo a las Vocaciones Cient=
+=C3=ADficas
+(CIN) 2021
+To: <Alumnosm@gmail.com>
+
+
+Buenas!
+             disculpen si es que hab=C3=ADan enviado esta info y se me pas=
+=C3=B3,
+pero me pareci=C3=B3 que era informaci=C3=B3n relevante como para difundir.
+
+Saludos, Francisco
+
+---------- Forwarded message ---------
+De: marcela zuccalli <marcezuccalli@gmail.com>
+Date: dom, 7 nov 2021 a las 14:37
+Subject: Fwd: Convocatoria a Becas de Est=C3=ADmulo a las Vocaciones Cient=
+=C3=ADficas
+(CIN) 2021
+To: Francisco Arrieta <francisco.arrieta.zuccalli@gmail.com>
+
+
+
+
+---------- Forwarded message ---------
+De: <difusioncyt@exactas.unlp.edu.ar>
+Date: mi=C3=A9, 3 nov 2021 a las 18:42
+Subject: Convocatoria a Becas de Est=C3=ADmulo a las Vocaciones Cient=C3=AD=
+ficas
+(CIN) 2021
+To:
+
+
+Estimadas y estimados,
+
+Cumplimos en informar que el Consejo Interuniversitario Nacional (CIN)
+convoca a estudiantes de nivel de grado que deseen iniciar su formaci=C3=B3=
+n en
+investigaci=C3=B3n, a postularse en el presente llamado de Becas Est=C3=ADm=
+ulo a las
+Vocaciones Cient=C3=ADficas (EVC) 2021.
+
+Las Becas EVC del CIN tienen como finalidad facilitar la iniciaci=C3=B3n en=
+ la
+investigaci=C3=B3n en Ingenier=C3=ADas y Tecnolog=C3=ADas, Ciencias Agr=C3=
+=ADcolas, Ciencias
+M=C3=A9dicas y de la Salud, Ciencias Naturales y Exactas, Ciencias Sociales=
+ y
+Humanidades. Se espera que los/las becarios/as realicen una experiencia de
+un a=C3=B1o de duraci=C3=B3n, integr=C3=A1ndose a un proyecto de investigac=
+i=C3=B3n acreditado
+y financiado de la misma instituci=C3=B3n en donde estudia, y que cumplan c=
+on
+el plan de trabajo propuesto bajo la gu=C3=ADa de un/a docente-investigador=
+/a,
+quien actuar=C3=A1 como su director/a.
+
+La Beca EVC consiste en el otorgamiento de un estipendio mensual por un
+per=C3=ADodo de doce (12) meses como un apoyo para dedicarse durante doce h=
+oras
+semanales a las tareas y actividades de investigaci=C3=B3n, que se
+complementar=C3=A1n necesariamente con el avance de los estudios de la carr=
+era
+de grado que se realiza.
+
+Se podr=C3=A1n postular a Becas EVC estudiantes avanzados/as con un promedi=
+o de
+al menos seis (6) puntos (incluidos aplazos). Se considera estudiante
+avanzado/a a aquel/ella alumno/a que haya aprobado como m=C3=ADnimo el 50% =
+de
+las materias del plan de estudio de la carrera que cursa, al momento
+del cierre de inscripci=C3=B3n del concurso de beca.
+
+Se recomienda visitar el sitio http://evc.cin.edu.ar/ creado especialmente
+para la convocatoria y dar lectura a los documentos que se encuentran en la
+solapa =E2=80=9CInformaci=C3=B3n=E2=80=9D, en particular el Instructivo par=
+a Postulantes.
+
+La gesti=C3=B3n de la convocatoria 2021 la llevar=C3=A1n a cabo, en conjunt=
+o, la
+Secretar=C3=ADa de Ciencia y T=C3=A9cnica y la Direcci=C3=B3n de Ense=C3=B1=
+anza de la Facultad.
+
+*INFORMACI=C3=93N IMPORTANTE*
+
+1) La inscripci=C3=B3n estar=C3=A1 abierta hasta el d=C3=ADa viernes 3 de d=
+iciembre de
+2021, a las 13 horas.
+
+2) El/la postulante deber=C3=A1 gestionar el certificado anal=C3=ADtico a t=
+rav=C3=A9s del
+SIU. Desde la solapa =E2=80=9CReportes: -reporte de materias cursadas y apr=
+obadas=E2=80=9D
+se puede obtener el certificado. El mismo no requiere firma ya que sale con
+c=C3=B3digo QR.
+
+3) Para solicitar el* Formulario de Rendimiento Acad=C3=A9mico,* el/la post=
+ulante
+puede enviar por mail a la direcci=C3=B3n becas.cin@exactas.unlp.edu.ar =C3=
+=9ANICAMENTE
+su nombre y apellido, n=C3=BAmero de DNI y carrera en la que se encuentra
+inscripto/a. Desde la Direcci=C3=B3n de Ense=C3=B1anza completar=C3=A1n y c=
+ertificar=C3=A1n el
+Formulario y lo reenviar=C3=A1n al o a la postulante. NO ENVIAR EL FORMULAR=
+IO.
+Tener en cuenta que el tr=C3=A1mite tarda 5 (cinco) d=C3=ADas.
+
+4) Alternativamente, el Formulario de Rendimiento Acad=C3=A9mico se podr=C3=
+=A1
+solicitar en forma presencial en la Direcci=C3=B3n de Ense=C3=B1anza los d=
+=C3=ADas lunes y
+mi=C3=A9rcoles de 9 a 12 hs, o los d=C3=ADas martes y jueves de 14 a 17 hs.=
+ Tener en
+cuenta que el tr=C3=A1mite tarda 5 (cinco) d=C3=ADas.
+
+*5) Los datos referentes a los promedios que deben ser cargados en el
+sistema corresponden a los promedios con aplazos tanto de la carrera como
+del alumno*
+
+6) En aquellos casos en que el proyecto de investigaci=C3=B3n en el que se
+inserta el plan de trabajo NO SE ENCUENTRE ACREDITADO POR LA UNLP, deber=C3=
+=A1
+adjuntarse documentaci=C3=B3n que acredite que el mismo se encuentra vigent=
+e y
+que se encontrar=C3=A1 vigente durante el periodo de disfrute de la Beca EV=
+C y
+que el director o la directora o el codirector o la codirectora forman
+parte del mismo.
+
+7) Recordar que los CV del director o de la directora y del codirector o de
+la codirectora deben estar en formato SIGEVA.
+
+8) Una vez cargada la documentaci=C3=B3n en el sistema, imprimir la
+ficha generada por el mismo y gestionar las firmas de (i) el/la postulante,
+(ii) de el/la directora/a del proyecto de investigaci=C3=B3n en que se enma=
+rca
+la beca, (iii) de el/la directora/a de beca, (iv) de el/la co-director/a de
+beca (si corresponde). Enviar la ficha CON ESAS CUATRO FIRMAS, en formato
+pdf, JUNTO AL RESTO DE LA DOCUMENTACI=C3=93N SUBIDA AL SISTEMA a
+scytce@exactas.unlp.edu.ar donde se tramitar=C3=A1 la firma del Decano y de=
+sde
+donde posteriormente se enviar=C3=A1 a la Secretar=C3=ADa de Ciencia y T=C3=
+=A9cnica de la
+UNLP para completar el tr=C3=A1mite. No ser=C3=A1n aceptadas las fichas que=
+ no
+est=C3=A9n acompa=C3=B1adas por el resto de los documentos y formularios qu=
+e
+fueron subidos al sistema.
+
+*9) Si la unidad de investigaci=C3=B3n o el lugar de trabajo donde se
+desarrollar=C3=A1 la beca depende de otra facultad deber=C3=A1n tramitar la=
+ firma del
+Decano/a de esa facultad, previo al env=C3=ADo de los archivos a nuestra
+secretar=C3=ADa. *
+
+FECHAS IMPORTANTES: se establece como FECHA L=C3=8DMITE para la solicitud d=
+el
+certificado de Rendimiento Acad=C3=A9mico el d=C3=ADa 29 de noviembre de 20=
+21. Se
+establece como FECHA L=C3=8DMITE para la recepci=C3=B3n de fichas para la f=
+irma del
+Decano el d=C3=ADa 3 de diciembre de 2021, a las 18:00 hs.
+
+Por dudas referidas al Formulario de Certificaci=C3=B3n de
+Antecedentes Acad=C3=A9micos, comunicarse al mail becas.cin@exactas.unlp.ed=
+u.ar.
+Por dudas referidas al Formulario de Antecedentes Acad=C3=A9micos, comunica=
+rse
+al mail scytce@exactas.unlp.edu.ar.
+
+Saludos cordiales
+--=20
+*----------------------------------------*
+*Difusi=C3=B3n Secretar=C3=ADa de Ciencia y T=C3=A9cnica  *
+Facultad de Ciencias Exactas
+
+*ATENCI=C3=93N*: esta cuenta difusioncyt@exactas.unlp.edu.ar s=C3=B3lo se u=
+tiliza
+para difundir informaci=C3=B3n a toda la comunidad de la Facultad, pero *no
+funciona como correo de consulta*. Por favor, para comunicarse con nosotros
+escriba a scytce@exactas.unlp.edu.ar.
+Desde ya, muchas gracias =C3=81rea de archivos adjuntos
+
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+Libre
+de virus. www.avast.com
+<https://www.avast.com/sig-email?utm_medium=3Demail&utm_source=3Dlink&utm_c=
+ampaign=3Dsig-email&utm_content=3Dwebmail>
+<#m_-7206201557883549980_m_-7358393365232703555_m_-3263115827237871323_DAB4=
+FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>
+
+
+--=20
+Consejeros Alumnos
+P=C3=A1gina de Facebook del Claustro de Alumnos de Matem=C3=A1tica:
+https://www.facebook.com/groups/326128787595559/
+
+--00000000000021964e05d04e4c91
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=
+=3D"gmail_sendername" dir=3D"auto">Francisco Arrieta</strong> <span dir=3D"=
+auto">&lt;<a href=3D"mailto:francisco.arrieta.zuccalli@gmail.com">francisco=
+.arrieta.zuccalli@gmail.com</a>&gt;</span><br>Date: dom, 7 nov 2021 a las 1=
+5:03<br>Subject: Fwd: Convocatoria a Becas de Est=C3=ADmulo a las Vocacione=
+s Cient=C3=ADficas (CIN) 2021<br>To:  &lt;<a href=3D"mailto:Alumnosm@gmail.=
+com">Alumnosm@gmail.com</a>&gt;<br></div><br><br><div dir=3D"ltr">Buenas!<d=
+iv>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0disculpen si es que hab=
+=C3=ADan enviado esta info y se me pas=C3=B3, pero me pareci=C3=B3 que era =
+informaci=C3=B3n relevante como para difundir.</div><div><br></div><div>Sal=
+udos, Francisco<br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D=
+"gmail_attr">---------- Forwarded message ---------<br>De: <strong class=3D=
+"gmail_sendername" dir=3D"auto">marcela zuccalli</strong> <span dir=3D"auto=
+">&lt;<a href=3D"mailto:marcezuccalli@gmail.com" target=3D"_blank">marcezuc=
+calli@gmail.com</a>&gt;</span><br>Date: dom, 7 nov 2021 a las 14:37<br>Subj=
+ect: Fwd: Convocatoria a Becas de Est=C3=ADmulo a las Vocaciones Cient=C3=
+=ADficas (CIN) 2021<br>To: Francisco Arrieta &lt;<a href=3D"mailto:francisc=
+o.arrieta.zuccalli@gmail.com" target=3D"_blank">francisco.arrieta.zuccalli@=
+gmail.com</a>&gt;<br></div><br><br><div dir=3D"ltr"><br><br><div class=3D"g=
+mail_quote"><div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded mess=
+age ---------<br>De: <span dir=3D"auto">&lt;<a href=3D"mailto:difusioncyt@e=
+xactas.unlp.edu.ar" target=3D"_blank">difusioncyt@exactas.unlp.edu.ar</a>&g=
+t;</span><br>Date: mi=C3=A9, 3 nov 2021 a las 18:42<br>Subject: Convocatori=
+a a Becas de Est=C3=ADmulo a las Vocaciones Cient=C3=ADficas (CIN) 2021<br>=
+To: <br></div><br><br><div style=3D"font-size:10pt;font-family:Verdana,Gene=
+va,sans-serif">
+<p><span><span>Estimadas y estimados,</span><br></span></p>
+<p>Cumplimos en informar que el Consejo Interuniversitario Nacional=C2=A0(C=
+IN) convoca a estudiantes de nivel de grado que deseen iniciar su=C2=A0form=
+aci=C3=B3n en investigaci=C3=B3n, a postularse en el presente llamado de=C2=
+=A0Becas Est=C3=ADmulo a las Vocaciones Cient=C3=ADficas (EVC) 2021.<br><br=
+>Las Becas EVC del CIN tienen como finalidad facilitar la iniciaci=C3=B3n=
+=C2=A0en la investigaci=C3=B3n en Ingenier=C3=ADas y Tecnolog=C3=ADas, Cien=
+cias=C2=A0Agr=C3=ADcolas, Ciencias M=C3=A9dicas y de la Salud, Ciencias Nat=
+urales y=C2=A0Exactas, Ciencias Sociales y Humanidades. Se espera que los/l=
+as=C2=A0becarios/as realicen una experiencia de un a=C3=B1o de duraci=C3=B3=
+n,=C2=A0integr=C3=A1ndose a un proyecto de investigaci=C3=B3n acreditado y =
+financiado=C2=A0de la misma instituci=C3=B3n en donde estudia, y que cumpla=
+n con el=C2=A0plan de trabajo propuesto bajo la gu=C3=ADa de un/a=C2=A0doce=
+nte-investigador/a, quien actuar=C3=A1 como su director/a.<br><br>La Beca E=
+VC consiste en el otorgamiento de un estipendio mensual por=C2=A0un per=C3=
+=ADodo de doce (12) meses como un apoyo para dedicarse durante=C2=A0doce ho=
+ras semanales a las tareas y actividades de investigaci=C3=B3n,=C2=A0que se=
+ complementar=C3=A1n necesariamente con el avance de los estudios=C2=A0de l=
+a carrera de grado que se realiza.<br><br>Se podr=C3=A1n postular a Becas E=
+VC estudiantes avanzados/as=C2=A0con un promedio de al menos seis (6)=C2=A0=
+puntos (incluidos aplazos). Se considera estudiante avanzado/a a=C2=A0aquel=
+/ella alumno/a que haya aprobado como m=C3=ADnimo el 50% de las=C2=A0materi=
+as del plan de estudio de la carrera que cursa, al momento del=C2=A0cierre =
+de inscripci=C3=B3n del concurso de beca.<br><br>Se recomienda visitar el s=
+itio=C2=A0<a href=3D"http://evc.cin.edu.ar/" rel=3D"noopener noreferrer" ta=
+rget=3D"_blank">http://evc.cin.edu.ar/</a>=C2=A0creado=C2=A0especialmente p=
+ara la convocatoria y dar lectura a los documentos=C2=A0que se encuentran e=
+n la solapa =E2=80=9CInformaci=C3=B3n=E2=80=9D, en particular el=C2=A0Instr=
+uctivo para Postulantes.<br><br>La gesti=C3=B3n de la convocatoria 2021 la =
+llevar=C3=A1n a cabo, en conjunto,=C2=A0la Secretar=C3=ADa de Ciencia y T=
+=C3=A9cnica y la Direcci=C3=B3n de Ense=C3=B1anza de la=C2=A0Facultad.<br><=
+br><strong>INFORMACI=C3=93N IMPORTANTE</strong><br><br>1)=C2=A0La inscripci=
+=C3=B3n estar=C3=A1 abierta hasta el d=C3=ADa viernes 3 de diciembre de 202=
+1, a las 13 horas.</p>
+<p><span>2) El/la postulante deber=C3=A1 gestionar el certificado anal=C3=
+=ADtico a=C2=A0trav=C3=A9s del SIU. Desde la solapa =E2=80=9CReportes: -rep=
+orte de materias=C2=A0cursadas y aprobadas=E2=80=9D se puede obtener el cer=
+tificado. El mismo no=C2=A0requiere firma ya que sale con c=C3=B3digo QR.<b=
+r><br></span>3) Para solicitar el<strong><span>=C2=A0</span>Formulario de R=
+endimiento Acad=C3=A9mico,</strong><span>=C2=A0</span>el/la=C2=A0postulante=
+ puede enviar por mail a la direcci=C3=B3n=C2=A0<a href=3D"mailto:becas.cin=
+@exactas.unlp.edu.ar" rel=3D"noopener noreferrer" target=3D"_blank">becas.c=
+in@exactas.unlp.edu.ar</a>=C2=A0=C3=9ANICAMENTE su nombre y apellido,=C2=A0=
+n=C3=BAmero de DNI y carrera en la que se encuentra inscripto/a. Desde la=
+=C2=A0Direcci=C3=B3n de Ense=C3=B1anza completar=C3=A1n y certificar=C3=A1n=
+ el Formulario y lo=C2=A0reenviar=C3=A1n al o a la postulante. NO ENVIAR EL=
+ FORMULARIO. Tener en cuenta que el tr=C3=A1mite tarda 5 (cinco) d=C3=ADas.=
+</p>
+<p>4) Alternativamente, el Formulario de Rendimiento Acad=C3=A9mico se podr=
+=C3=A1 solicitar en forma presencial en la Direcci=C3=B3n de Ense=C3=B1anza=
+ los d=C3=ADas lunes y mi=C3=A9rcoles de 9 a 12 hs, o los d=C3=ADas martes =
+y jueves de 14 a 17 hs. Tener en cuenta que el tr=C3=A1mite tarda 5 (cinco)=
+ d=C3=ADas.</p>
+<p><strong>5) Los datos referentes a los promedios que deben ser cargados e=
+n el sistema=C2=A0corresponden a los promedios con aplazos tanto de la carr=
+era como del alumno</strong></p>
+<div>
+<div>
+<p>6) En aquellos casos en que el proyecto de investigaci=C3=B3n en el que=
+=C2=A0se inserta el plan de trabajo NO SE ENCUENTRE ACREDITADO POR LA=C2=A0=
+UNLP, deber=C3=A1 adjuntarse documentaci=C3=B3n que acredite que el mismo s=
+e=C2=A0encuentra vigente y que se encontrar=C3=A1 vigente durante el period=
+o de=C2=A0disfrute de la Beca EVC y que el director o la directora o el=C2=
+=A0codirector o la codirectora forman parte del mismo.<br><br>7) Recordar q=
+ue los CV del director o de la directora y del=C2=A0codirector o de la codi=
+rectora deben estar en formato SIGEVA.<br><br>8) Una vez cargada la documen=
+taci=C3=B3n en el sistema, imprimir la ficha=C2=A0generada por el mismo y g=
+estionar las firmas de (i) el/la=C2=A0postulante, (ii) de el/la directora/a=
+ del proyecto de investigaci=C3=B3n=C2=A0en que se enmarca la beca, (iii) d=
+e el/la directora/a de beca, (iv)=C2=A0de el/la co-director/a de beca (si c=
+orresponde). Enviar la ficha CON=C2=A0ESAS CUATRO FIRMAS, en formato pdf, J=
+UNTO AL RESTO DE LA=C2=A0DOCUMENTACI=C3=93N SUBIDA AL SISTEMA a=C2=A0<a hre=
+f=3D"mailto:scytce@exactas.unlp.edu.ar" rel=3D"noopener noreferrer" target=
+=3D"_blank">scytce@exactas.unlp.edu.ar</a>=C2=A0donde=C2=A0se tramitar=C3=
+=A1 la firma del Decano y desde donde posteriormente se=C2=A0enviar=C3=A1 a=
+ la Secretar=C3=ADa de Ciencia y T=C3=A9cnica de la UNLP para=C2=A0completa=
+r el tr=C3=A1mite. No ser=C3=A1n aceptadas las fichas que no est=C3=A9n=C2=
+=A0acompa=C3=B1adas por el resto de los documentos y formularios que fueron=
+=C2=A0subidos al sistema.<br><br><strong>9) Si la=C2=A0unidad de investigac=
+i=C3=B3n=C2=A0o el lugar de trabajo donde se desarrollar=C3=A1 la beca depe=
+nde de otra facultad deber=C3=A1n tramitar la firma del Decano/a de esa fac=
+ultad, previo al env=C3=ADo de los archivos a nuestra secretar=C3=ADa.=C2=
+=A0</strong></p>
+<p>FECHAS IMPORTANTES: se establece como FECHA L=C3=8DMITE para la solicitu=
+d=C2=A0del certificado de Rendimiento Acad=C3=A9mico el d=C3=ADa 29 de novi=
+embre de=C2=A02021. Se establece como FECHA L=C3=8DMITE para la recepci=C3=
+=B3n de fichas=C2=A0para la firma del Decano el d=C3=ADa 3 de diciembre de =
+2021, a las 18:00 hs.<br><br>Por dudas referidas al Formulario de Certifica=
+ci=C3=B3n de Antecedentes=C2=A0Acad=C3=A9micos, comunicarse al mail=C2=A0<a=
+ href=3D"mailto:becas.cin@exactas.unlp.edu.ar" rel=3D"noopener noreferrer" =
+target=3D"_blank">becas.cin@exactas.unlp.edu.ar</a>.<br>Por dudas referidas=
+ al Formulario de Antecedentes Acad=C3=A9micos,=C2=A0comunicarse al mail=C2=
+=A0<a href=3D"mailto:scytce@exactas.unlp.edu.ar" rel=3D"noopener noreferrer=
+" target=3D"_blank">scytce@exactas.unlp.edu.ar</a>.<br><br>Saludos cordiale=
+s</p>
+</div>
+</div>
+<div>-- <br>
+<div style=3D"margin:0;padding:0;font-family:monospace"><strong>-----------=
+-----------------------------</strong></div>
+<div style=3D"margin:0;padding:0;font-family:monospace"><strong>Difusi=C3=
+=B3n=C2=A0Secretar=C3=ADa de Ciencia y T=C3=A9cnica=C2=A0=C2=A0</strong></d=
+iv>
+<div style=3D"margin:0;padding:0;font-family:monospace">Facultad de Ciencia=
+s Exactas=C2=A0</div>
+<div style=3D"margin:0;padding:0;font-family:monospace">=C2=A0</div>
+<div style=3D"margin:0;padding:0;font-family:monospace"><strong>ATENCI=C3=
+=93N</strong>: esta cuenta <a href=3D"mailto:difusioncyt@exactas.unlp.edu.a=
+r" target=3D"_blank">difusioncyt@exactas.unlp.edu.ar</a> s=C3=B3lo se utili=
+za para difundir informaci=C3=B3n a toda la comunidad de la Facultad, pero =
+<strong>no funciona como correo de consulta</strong>. Por favor, para comun=
+icarse con nosotros escriba a <a href=3D"mailto:scytce@exactas.unlp.edu.ar"=
+ target=3D"_blank">scytce@exactas.unlp.edu.ar</a>. <br> Desde ya, muchas gr=
+acias =C3=81rea de archivos adjuntos</div>
+</div>
+</div>
+</div></div><div id=3D"m_-7206201557883549980m_-7358393365232703555m_-32631=
+15827237871323DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2"><br> <table style=3D"bo=
+rder-top:1px solid #d3d4de">
+	<tbody><tr>
+      <td style=3D"width:55px;padding-top:18px"><a href=3D"https://www.avas=
+t.com/sig-email?utm_medium=3Demail&amp;utm_source=3Dlink&amp;utm_campaign=
+=3Dsig-email&amp;utm_content=3Dwebmail" target=3D"_blank"><img src=3D"https=
+://ipmcdn.avast.com/images/icons/icon-envelope-tick-round-orange-animated-n=
+o-repeat-v1.gif" alt=3D"" width=3D"46" height=3D"29" style=3D"width:46px;he=
+ight:29px"></a></td>
+		<td style=3D"width:470px;padding-top:17px;color:#41424e;font-size:13px;fo=
+nt-family:Arial,Helvetica,sans-serif;line-height:18px">Libre de virus. <a h=
+ref=3D"https://www.avast.com/sig-email?utm_medium=3Demail&amp;utm_source=3D=
+link&amp;utm_campaign=3Dsig-email&amp;utm_content=3Dwebmail" style=3D"color=
+:#4453ea" target=3D"_blank">www.avast.com</a> 		</td>
+	</tr>
+</tbody></table>
+<a href=3D"#m_-7206201557883549980_m_-7358393365232703555_m_-32631158272378=
+71323_DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2" width=3D"1" height=3D"1"></a></=
+div>
+</div></div></div>
+</div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"text-align:left"><span sty=
+le=3D"font-size:large"><font color=3D"#000000">Consejeros Alumnos</font><br=
+></span></div><div style=3D"text-align:left"><span style=3D"color:rgb(255,0=
+,0);font-size:large"><font size=3D"2"><font color=3D"#000000">P=C3=A1gina d=
+e Facebook del Claustro de Alumnos de Matem=C3=A1tica: <a href=3D"https://w=
+ww.facebook.com/groups/326128787595559/" target=3D"_blank">https://www.face=
+book.com/groups/326128787595559/</a> </font></font><br></span></div><div st=
+yle=3D"text-align:left"><b style=3D"color:rgb(255,0,0);font-size:large"></b=
+></div></div></div></div></div></div></div></div>
+
+--00000000000021964e05d04e4c91--
